@@ -31,7 +31,30 @@ jobs:
       - name: run buildRun.sh
         run: sh buildRun.sh
           
-      - uses: actions/upload-artifact@v2
+      - name: Zip katacoda
+        uses: thedoctor0/zip-release@master
         with:
-          name: release
-          path: build/output/katacoda
+          filename: 'katacoda.zip'
+          path: 'build/output/katacoda'
+          
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: true
+          prerelease: true
+          
+      - name: Upload Release Asset katacoda
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./katacoda.zip
+          asset_name: katacoda.zip
+          asset_content_type: application/zip
