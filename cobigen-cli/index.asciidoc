@@ -13,7 +13,7 @@ To use the cobigen cli you first have to install the devonfw ide. You will find 
 installDevonfwIde([java,mvn])
 --
 
-Now, you have to download cobigen 
+Now, you have to download cobigen
 [step]
 --
 installCobiGen()
