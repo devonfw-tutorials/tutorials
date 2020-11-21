@@ -1,9 +1,7 @@
 name: CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
+  pull_request_target:
     branches: [ main ]
     
   workflow_dispatch:
@@ -12,32 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout tutorial-compiler
-        uses: actions/checkout@v2
+      - uses: mshick/add-pr-comment@v1
         with:
-          repository: devonfw-forge/tutorial-compiler
-      
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          path: playbooks
-      
-      - name: install TS
-        run: npm install typescript
-      
-      - name: npm install
-        run: npm install
-
-      - name: run buildRun.sh
-        run: sh buildRun.sh
-      
-      - name: Release
-        uses: thedoctor0/zip-release@master
-        with:
-          filename: 'release.zip'
-          path: 'build/output/katacoda'
-          
-      - uses: actions/upload-artifact@v2
-        with:
-          name: release
-          path: release.zip
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: |
+            You can view the generated tutorials of this PR on https://www.katacoda.com/devonfw-dev in a few minutes.
