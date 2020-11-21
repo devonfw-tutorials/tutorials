@@ -36,3 +36,8 @@ jobs:
         with:
           filename: 'release.zip'
           path: 'build/output/katacoda'
+          
+      - uses: actions/upload-artifact@v2
+        with:
+          name: release
+          path: release.zip
