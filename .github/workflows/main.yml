@@ -30,14 +30,8 @@ jobs:
 
       - name: run buildRun.sh
         run: sh buildRun.sh
-      
-      - name: Release
-        uses: thedoctor0/zip-release@master
-        with:
-          filename: 'release.zip'
-          path: 'build/output/katacoda'
           
       - uses: actions/upload-artifact@v2
         with:
           name: release
-          path: release.zip
+          path: build/output/katacoda
