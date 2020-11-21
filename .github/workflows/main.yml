@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+    
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout tutorial-compiler
+        uses: actions/checkout@v2
+        with:
+          repository: devonfw-forge/tutorial-compiler
+      
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          path: playbooks
+      
+      - name: install TS
+        run: npm install typescript
+      
+      - name: npm install
+        run: npm install
+
+      - name: run buildRun.sh
+        run: sh buildRun.sh
+      
+      - name: Release
+        uses: thedoctor0/zip-release@master
+        with:
+          filename: 'release.zip'
+          path: 'build/output/katacoda'
