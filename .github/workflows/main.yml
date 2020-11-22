@@ -33,5 +33,3 @@ jobs:
 
       - name: run buildRun.sh
         run: sh buildRun.sh
-          
-      
