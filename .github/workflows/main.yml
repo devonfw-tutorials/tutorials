@@ -1,7 +1,9 @@
 name: CI
 
 on:
-  pull_request_target:
+  push:
+    branches: [ main ]
+  pull_request:
     branches: [ main ]
     
   workflow_dispatch:
@@ -10,9 +12,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: mshick/add-pr-comment@v1
+      - name: Checkout tutorial-compiler
+        uses: actions/checkout@v2
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: 'github-actions[bot]'
-          message: |
-            You can view the generated tutorials of this PR on https://www.katacoda.com/devonfw-dev in a few minutes.
+          repository: devonfw-forge/tutorial-compiler
+      
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
+        with:
+          repository: devonfw-forge/tutorials
+          path: playbooks
+      
+      - uses: actions/setup-node@v2-beta
+      
+      - name: install TS
+        run: npm install typescript
+      
+      - name: npm install
+        run: npm install
+
+      - name: run buildRun.sh
+        run: sh buildRun.sh
