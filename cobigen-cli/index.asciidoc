@@ -18,3 +18,8 @@ Now, you have to download cobigen
 --
 installCobiGen()
 --
+You are ready to create your first project.
+[step]
+--
+createProject()
+--
