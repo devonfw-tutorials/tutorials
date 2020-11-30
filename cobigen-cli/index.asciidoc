@@ -19,6 +19,12 @@ Now, you have to download cobigen
 installCobiGen()
 --
 
+Now you are ready to create your first project
+[step]
+--
+createProject("java","cobigenexample")
+--
+
 ====
 CobiGen is integrated via plugin in the VS Code IDE. We will use it to generate code from one single java class based on existing templates.
 [step]
