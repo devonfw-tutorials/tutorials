@@ -55,5 +55,5 @@ Now you are ready to create your first project
 
 [step]
 --
-createDevon4jProject("cobigenexample", "/root/devonfw/workspace/main")
+createDevon4jProject("cobigenexample")
 --
