@@ -31,6 +31,12 @@ Create the entity class which will be passed to the cobigen cli generator later
 createFile("cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java", "files/CustomerEntity.java")
 --
 
+Change the entity class
+[step]
+--
+changeFile("/root/devonfw/workspaces/main/cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java", NewFunction, "files/CustomerEntityFunction.java")
+--
+
 Build the java project
 [step]
 --

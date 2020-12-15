@@ -25,9 +25,10 @@ public class CustomerEntity {
   /**
    * @param firstname the firstname to set
    */
-  public void setFirstname(String firstname) {
-    this.firstname = firstname;
-  }
+  
+   
+  //NewFunction
+
 
   /**
    * @return the lastname
