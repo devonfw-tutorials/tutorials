@@ -15,6 +15,8 @@ public class CustomerEntity {
 
   private int age;
 
+  private static final long serialVersionUID = 1L;
+
   /**
    * @return the firstname
    */
@@ -25,10 +27,9 @@ public class CustomerEntity {
   /**
    * @param firstname the firstname to set
    */
-  
-   
-  //NewFunction
-
+  public void setFirstname(String firstname) {
+    this.firstname = firstname;
+  }
 
   /**
    * @return the lastname
@@ -57,5 +58,7 @@ public class CustomerEntity {
   public void setAge(int age) {
     this.age = age;
   }
+
+  //CustomerEntity-I-Content1
 
 }
