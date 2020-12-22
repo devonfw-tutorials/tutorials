@@ -1,4 +1,4 @@
-private static final long serialVersionUID = 1L;
+private int age;
 
 private String company;
 

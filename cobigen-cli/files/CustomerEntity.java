@@ -15,8 +15,6 @@ public class CustomerEntity {
 
   private int age;
 
-  private static final long serialVersionUID = 1L;
-
   /**
    * @return the firstname
    */
