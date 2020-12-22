@@ -57,6 +57,4 @@ public class CustomerEntity {
     this.age = age;
   }
 
-  //CustomerEntity-I-Content1
-
 }
