@@ -7,5 +7,10 @@ This is a Test for the function cloneRepository
 cloneRepository("", "https://github.com/devonfw-forge/tutorial-compiler.git")
 --
 
+[step]
+--
+cloneRepository("devonfw", "https://github.com/devonfw-forge/tutorial-compiler.git")
+--
+
 
 
