@@ -16,11 +16,30 @@ And you can find the documentation here:
 
 https://github.com/devonfw/jump-the-queue/wiki
 ====
+
 [step]
 --
-restoreDevonfwIDE()
+restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
+
+Okay let's start!
+
 [step]
 --
-cloneRepository("", "https://github.com/devonfw-forge/tutorial-compiler.git")
+cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
+--
+
+[step]
+--
+buildJava("jump-the-queue/java/jtqi", true)
+--
+
+[step]
+--
+runServerJava("devonfw/workspaces/main/jump-the-queue/java/jtqj/server")
+--
+
+[step]
+--
+runServerJava("devonfw/workspaces/main/jump-the-queue/java/jtqj/server")
 --
