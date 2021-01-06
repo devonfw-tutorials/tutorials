@@ -5,5 +5,10 @@ This is a simple test tutorial for buildNg
 
 [step]
 --
-buildNg("")
+cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
+--
+
+[step]
+--
+buildNg("jump-the-queue/angular")
 --
