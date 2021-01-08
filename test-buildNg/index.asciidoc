@@ -5,6 +5,11 @@ This is a simple test tutorial for buildNg
 
 [step]
 --
+installDevonIde(["ng"])
+--
+
+[step]
+--
 cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 --
 
