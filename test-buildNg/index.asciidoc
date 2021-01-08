@@ -5,7 +5,7 @@ This is a simple test tutorial for buildNg
 
 [step]
 --
-installDevonIde(["ng"])
+installDevonfwIde(["ng"])
 --
 
 [step]
