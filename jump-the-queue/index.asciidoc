@@ -39,8 +39,3 @@ buildJava("jump-the-queue/java/jtqj", true)
 runServerJava("devonfw/workspaces/main/jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
 --
 
-[step]
---
-runServerJava("devonfw/workspaces/main/jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
---
-
