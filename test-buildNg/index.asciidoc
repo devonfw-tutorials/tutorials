@@ -10,7 +10,7 @@ installDevonfwIde(["ng"])
 
 [step]
 --
-cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
+cloneRepository("", "https://github.com/devonfw/my-thai-star.git")
 --
 
 // [step]
@@ -20,7 +20,7 @@ cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 
 [step]
 --
-buildNg("jump-the-queue/angular")
+buildNg("my-thai-star/angular")
 --
 
 
