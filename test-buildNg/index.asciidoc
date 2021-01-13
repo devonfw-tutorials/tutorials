@@ -5,5 +5,15 @@ This is a simple test tutorial for buildNg
 
 [step]
 --
-buildNg("")
+installDevonfwIde(["node", "ng"])
+--
+
+[step]
+--
+cloneRepository("", "https://github.com/devonfw/my-thai-star.git")
+--
+
+[step]
+--
+buildNg("my-thai-star/angular")
 --
