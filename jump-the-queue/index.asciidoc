@@ -17,11 +17,6 @@ And you can find the documentation here:
 https://github.com/devonfw/jump-the-queue/wiki
 ====
 
-[step]
---
-restoreDevonfwIde(["java","mvn"], "2020.08.001")
---
-
 Okay let's start!
 
 [step]
@@ -31,11 +26,11 @@ cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 
 [step]
 --
-buildJava("jump-the-queue/java/jtqj", true)
+buildJava("jump-the-queue/java/jtqi", true)
 --
 
 [step]
 --
-runServerJava("devonfw/workspaces/main/jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
+runServerJava("jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
 --
 
