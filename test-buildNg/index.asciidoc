@@ -15,5 +15,10 @@ cloneRepository("", "https://github.com/devonfw/my-thai-star.git")
 
 [step]
 --
+npmInstall("my-thai-star/angular")
+--
+
+[step]
+--
 buildNg("my-thai-star/angular")
 --
