@@ -1,0 +1,21 @@
+= Test dockerCompose
+====
+This is a simple test tutorial for dockerCompose
+====
+
+[step]
+--
+installDevonfwIde(["java", "mvn"])
+--
+
+[step]
+--
+cloneRepository("", "https://github.com/devonfw/my-thai-star.git")
+--
+
+[step]
+--
+dockerCompose("my-thai-star", { "startupTime": 600, "port": 8081})
+--
+
+
