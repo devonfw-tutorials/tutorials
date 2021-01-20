@@ -13,10 +13,10 @@ installDevonfwIde(["node", "ng"])
 cloneRepository("", "https://github.com/devonfw/my-thai-star.git")
 --
 
-// [step]
-// --
-// buildNg("jump-the-queue/angular", "testdist")
-// --
+[step]
+--
+npmInstall("my-thai-star/angular")
+--
 
 [step]
 --
