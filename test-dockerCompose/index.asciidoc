@@ -10,12 +10,12 @@ installDevonfwIde(["java", "mvn"])
 
 [step]
 --
-cloneRepository("", "https://github.com/dockersamples/101-tutorial.git")
+cloneRepository("", "https://github.com/devonfw-forge/my-thai-star.git")
 --
 
 [step]
 --
-dockerCompose("101-tutorial", { "startupTime": 300, "port": 8000})
+dockerCompose("my-thai-star", { "startupTime": 720, "port": 8080})
 --
 
 
