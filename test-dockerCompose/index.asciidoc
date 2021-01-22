@@ -10,12 +10,12 @@ installDevonfwIde(["java", "mvn"])
 
 [step]
 --
-cloneRepository("", "https://github.com/devonfw/my-thai-star.git")
+cloneRepository("", "https://github.com/dockersamples/example-voting-app.git")
 --
 
 [step]
 --
-dockerCompose("my-thai-star", { "startupTime": 900, "port": 8081})
+dockerCompose("example-voting-app", { "startupTime": 720, "port": 5000})
 --
 
 
