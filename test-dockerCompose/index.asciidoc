@@ -5,17 +5,17 @@ This is a simple test tutorial for dockerCompose
 
 [step]
 --
-installDevonfwIde(["java", "mvn"])
+installDevonfwIde(["java","mvn"])
 --
 
 [step]
 --
-cloneRepository("", "https://github.com/devonfw-forge/my-thai-star.git")
+cloneRepository("", "https://github.com/docker/awesome-compose.git")
 --
 
 [step]
 --
-dockerCompose("my-thai-star", { "startupTime": 900, "port": 8080})
+dockerCompose("awesome-compose/angular", { "startupTime": 300, "port": 4200})
 --
 
 
