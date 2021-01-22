@@ -15,7 +15,7 @@ cloneRepository("", "https://github.com/devonfw-forge/my-thai-star.git")
 
 [step]
 --
-dockerCompose("my-thai-star", { "startupTime": 720, "port": 8080})
+dockerCompose("my-thai-star", { "startupTime": 900, "port": 8080})
 --
 
 
