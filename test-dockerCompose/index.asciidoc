@@ -10,12 +10,12 @@ installDevonfwIde(["java", "mvn"])
 
 [step]
 --
-cloneRepository("", "https://github.com/dockersamples/example-voting-app.git")
+cloneRepository("", "https://github.com/b00giZm/docker-compose-nodejs-examples.git")
 --
 
 [step]
 --
-dockerCompose("example-voting-app", { "startupTime": 720, "port": 5000})
+dockerCompose("docker-compose-nodejs-examples/00-basic-express-generator", { "startupTime": 300, "port": 3030})
 --
 
 
