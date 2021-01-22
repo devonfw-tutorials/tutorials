@@ -15,7 +15,7 @@ cloneRepository("", "https://github.com/dockersamples/101-tutorial.git")
 
 [step]
 --
-dockerCompose("https://github.com/dockersamples/101-tutorial.git", { "startupTime": 300, "port": 8000})
+dockerCompose("101-tutorial", { "startupTime": 300, "port": 8000})
 --
 
 
