@@ -1,0 +1,18 @@
+= Test downloadFile
+====
+This is a simple test tutorial for downloadFile
+====
+
+[step]
+--
+installDevonfwIde(["java"])
+--
+
+[step]
+--
+downloadFile("https://bit.ly/2BCkFa9", "downloads", "devonfw.tar.gz")
+--
+
+
+
+
