@@ -10,7 +10,7 @@ installDevonfwIde(["java"])
 
 [step]
 --
-downloadFile("https://bit.ly/2BCkFa9", "downloads", "devonfw.tar.gz")
+downloadFile("https://bit.ly/2BCkFa9", { "dir": "downloads", "name": "devonfw.tar.gz"})
 --
 
 
