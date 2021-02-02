@@ -1,0 +1,1 @@
+baseUrlRestServices: 'https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/jumpthequeue/services/rest',
