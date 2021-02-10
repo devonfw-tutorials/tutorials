@@ -28,7 +28,7 @@ createDevon4jProject("cobigenexample")
 Create the entity class which will be passed to the cobigen cli generator later
 [step]
 --
-createFil("cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java", "files/CustomerEntity.java")
+createFile("cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java", "files/CustomerEntity.java")
 --
 
 Build the java project
