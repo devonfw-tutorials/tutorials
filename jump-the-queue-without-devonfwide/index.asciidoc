@@ -17,12 +17,6 @@ And you can find the documentation here:
 https://github.com/devonfw/jump-the-queue/wiki
 ====
 
-First install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
-[step]
---
-installDevonfwIde(["java","mvn"])
---
-
 Clone the Jump The Queue repository. You can find it on https://github.com/devonfw/jump-the-queue.
 [step]
 --
