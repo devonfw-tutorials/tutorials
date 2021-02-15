@@ -15,4 +15,4 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           message: |
-            You can view the generated tutorials of this PR on https://www.katacoda.com/devonfw-dev in a few minutes. You just have to wait for the next run of the deployment action https://github.com/devonfw/katacoda-scenarios-dev/actions
+            You can view the generated tutorials of this PR on https://www.katacoda.com/devonfw-dev in a few minutes. You just have to wait for the next run of the deployment action https://github.com/devonfw-tutorials/katacoda-scenarios-dev/actions
