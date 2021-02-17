@@ -36,5 +36,5 @@ npmInstall("my-thai-star/angular")
 Run the frontend server.
 [step]
 --
-runClientNg("my-thai-star/angular", { "startupTime": 250, "port": 4200, "path": "" })
+runClientNg("my-thai-star/angular", { "startupTime": 350, "port": 4200, "path": "" })
 --
