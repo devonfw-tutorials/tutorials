@@ -1,4 +1,4 @@
-= My Thai Star
+= My Thai Star Demo
 ====
 Test tutorial for My Thai Star
 ====
