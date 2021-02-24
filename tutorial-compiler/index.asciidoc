@@ -6,48 +6,94 @@ The first part will be to setup your workspace.
 
 Afterwards we will show you, how to write your own tutorials using an asciidoc.
 
+Requirements: 
+ * github-account and already logged in
+
 You can find the documentation here:
 
 https://github.com/devonfw-forge/tutorial-compiler/wiki
 
 ====
 
+====
 Let's start!
 
 First of all, go to the tutorial-compiler repository on github:
 
-https://github.com/devonfw-forge/tutorial-compiler
+https://github.com/devonfw-tutorials/tutorial-compiler
 
 [step]
 --
-nextKatacodaStep("Fork the 'tutorial-compiler'-repository", "images/fork.jpg");
+nextKatacodaStep("Fork the 'tutorial-compiler'-repository", [{ "image": "images/fork.jpg" }])
+--
+
+Fork the repository by clicking on the fork-button.
+====
+
+====
+Go to your repositories, click on 'tutorial-compiler' and copy the repository Url as shown in image below.
+
+[step]
+--
+nextKatacodaStep("Copy the 'tutorial-compiler'-URL", [{ "image": "images/clone_code.jpg" }])
+--
+
+====
+
+====
+Usually you would paste the copied URLs next to the 'git clone' - command, but in this tutorial we will clone the original 'tutorial-compiler'-repository. Therefore we are able to write the asciidoc-files and generate the tutorials, but we can not push changes in the source code to it.
+[step]
+--
+cloneRepository("", "https://github.com/devonfw-tutorials/tutorial-compiler.git")
+--
+====
+
+====
+Switch to the 'tutorials'-repository and repeat all the previous steps:
+
+https://github.com/devonfw-tutorials/tutorials.git
+
+- Fork the 'tutorials'-repository
+- Copy the 'tutorials'-URL
+
+[step]
+--
+cloneRepository("", "https://github.com/devonfw-tutorials/tutorials.git")
+--
+After this step you should have both repositories in the same folder next to each other.
+====
+
+[step]
+--
+npmInstall("", {"name": "typescript", "global": true})
 --
 
 [step]
 --
-buildJava("jump-the-queue/java/jtqj", true)
---
-
-Wait until you see the message "BUILD SUCCESS".
-
-[step]
---
-runServerJava("jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
+npmInstall("tutorial-compiler", {})
 --
 
 [step]
 --
-npmInstall("jump-the-queue/angular")
+createFile("tutorials/my-thai-star/index.asciidoc")
 --
 
-The following two steps are only needed in this tutorial. Normally you can simply execute "ng serve", open the https://localhost:4200/ and start using the app.
-
+Add the Tutorial Title : "My Thai Star"
 [step]
 --
-changeFile("jump-the-queue/angular/src/environments/environment.ts", { "file": "placeholder.txt", "placeholder": "http://localhost:8081/jumpthequeue/services/rest" })
+changeFile("tutorials/my-thai-star/index.asciidoc", {"content": "= My Thai Star"})
 --
 
+Add the Introduction to this scenario
 [step]
 --
-runClientNg("jump-the-queue/angular", { "startupTime": 200, "port": 4200, "path": "" })
+changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/intro.txt", "placeholder": "= My Thai Star" })
 --
+
+Add the needed functions 
+[step]
+--
+changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/functions.txt", "placeholder": "This is the online demo of https://github.com/devonfw/my-thai-star" })
+--
+
+
