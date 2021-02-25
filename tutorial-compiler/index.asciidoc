@@ -1,6 +1,6 @@
 = Tutorial Compiler 
 ==== 
-In this scenario you will use the tutorial-compiler to generate the cobigen tutorial.
+In this scenario you will use the tutorial-compiler to generate the "my-thai-star" tutorial.
 
 The first part will be to setup your workspace.
 
@@ -70,7 +70,7 @@ npmInstall("", {"name": "typescript", "global": true})
 
 [step]
 --
-npmInstall("tutorial-compiler", {})
+npmInstall("tutorial-compiler")
 --
 
 [step]
@@ -84,7 +84,7 @@ Add the Tutorial Title : "My Thai Star"
 changeFile("tutorials/my-thai-star/index.asciidoc", {"content": "= My Thai Star"})
 --
 
-Add the Introduction to this scenario
+Add the introduction to this scenario
 [step]
 --
 changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/intro.txt", "placeholder": "= My Thai Star" })
@@ -95,5 +95,3 @@ Add the needed functions
 --
 changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/functions.txt", "placeholder": "This is the online demo of https://github.com/devonfw/my-thai-star" })
 --
-
-
