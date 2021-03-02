@@ -10,6 +10,7 @@ More information about CobiGen on https://devonfw.com/website/pages/docs/master-
 ====
 To use the CobiGen cli you first have to do the following Setup:
 [step]
+== Requirement Setup for CobiGen
 --
 installDevonfwIde(["java","mvn"])
 installCobiGen()
