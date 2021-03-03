@@ -17,7 +17,6 @@ jobs:
           message: |
             You can view the generated tutorials of this PR on https://www.katacoda.com/devonfw-dev in a few minutes. You just have to wait for the next run of the deployment action https://github.com/devonfw-tutorials/katacoda-scenarios-dev/actions
             
-    steps:
       - name: Repository dispatch
         uses: peter-evans/repository-dispatch@v1
         with:
