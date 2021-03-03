@@ -99,10 +99,6 @@ changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/intro.txt", "
 
 ====
 Last but not least add all the needed functions for this tutorial.
-[step]
---
-changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/functions.txt", "placeholder": "This is the online demo of https://github.com/devonfw/my-thai-star" })
---
 
 Follow the link below to find a list of all available functions and their descriptions
 https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Functions
@@ -111,6 +107,11 @@ Feel free to add your own functions to the compiler
 You will find all the information you need on:
 
 https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Development
+[step]
+--
+changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/functions.txt", "placeholder": "This is the online demo of https://github.com/devonfw/my-thai-star" })
+--
+
 
 
 ====
