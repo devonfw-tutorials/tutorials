@@ -7,7 +7,7 @@ The first part will be to setup your workspace.
 Afterwards we will show you, how to write your own tutorials using an asciidoc.
 
 Requirements: 
- * github-account and already logged in
+ * github-account
 
 You can find the documentation here:
 
@@ -16,6 +16,7 @@ https://github.com/devonfw-forge/tutorial-compiler/wiki
 ====
 
 ====
+# Setup your workspace
 Let's start!
 
 First of all, go to the tutorial-compiler repository on github:
@@ -73,25 +74,36 @@ npmInstall("", {"name": "typescript", "global": true})
 npmInstall("tutorial-compiler")
 --
 
+# Write the my-thai-star tutorial
+
+Let's start with the second part of this tutorial and write the "my-thai-star" tutorial.
+
 [step]
 --
 createFile("tutorials/my-thai-star/index.asciidoc")
 --
 
-Add the Tutorial Title : "My Thai Star"
+Add the tutorial title "My Thai Star"
 [step]
 --
 changeFile("tutorials/my-thai-star/index.asciidoc", {"content": "= My Thai Star"})
 --
 
-Add the introduction to this scenario
+You have to write the introduction in between these equal signs '====' and underneath the title. 
+
 [step]
 --
 changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/intro.txt", "placeholder": "= My Thai Star" })
 --
 
-Add the needed functions 
+====
+Last but not least add all the needed functions for this tutorial.
 [step]
 --
 changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/functions.txt", "placeholder": "This is the online demo of https://github.com/devonfw/my-thai-star" })
 --
+
+Follow the link below to find a list of all available functions and their descriptions
+https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Functions
+
+====
