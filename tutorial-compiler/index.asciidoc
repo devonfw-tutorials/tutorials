@@ -4,10 +4,10 @@ In this scenario you will use the tutorial-compiler to generate the "my-thai-sta
 
 The first part will be to setup your workspace.
 
-Afterwards we will show you, how to write your own tutorials using an asciidoc.
+Afterwards we will show you, how to write your own tutorials.
 
 Requirements: 
- * github-account
+ *  GitHub account
 
 You can find the documentation here:
 
@@ -19,7 +19,7 @@ https://github.com/devonfw-forge/tutorial-compiler/wiki
 # Setup your workspace
 Let's start!
 
-First of all, go to the tutorial-compiler repository on github:
+First of all, go to the tutorial-compiler repository on  GitHub:
 
 https://github.com/devonfw-tutorials/tutorial-compiler
 
@@ -29,10 +29,11 @@ nextKatacodaStep("Fork the 'tutorial-compiler'-repository", [{ "image": "images/
 --
 
 Fork the repository by clicking on the fork-button.
+This will create a copy of this repository in your GitHub account. You will find it in 'Your repositories'.
 ====
 
 ====
-Go to your repositories, click on 'tutorial-compiler' and copy the repository Url as shown in image below.
+Go to your repositories, click on 'tutorial-compiler' and copy the repository URL as shown in image below.
 
 [step]
 --
@@ -105,5 +106,11 @@ changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/functions.txt
 
 Follow the link below to find a list of all available functions and their descriptions
 https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Functions
+
+Feel free to add your own functions to the compiler
+You will find all the information you need on:
+
+https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Development
+
 
 ====
