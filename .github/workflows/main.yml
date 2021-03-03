@@ -33,3 +33,12 @@ jobs:
 
       - name: run buildRun.sh
         run: sh buildRun.sh
+  dispatch:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: devonfw-tutorials/katacoda-scenarios-dev
