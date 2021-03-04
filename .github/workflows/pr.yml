@@ -22,3 +22,4 @@ jobs:
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: devonfw-tutorials/katacoda-scenarios-dev
+          event-type: dispatch-katacoda-scenarios-dev
