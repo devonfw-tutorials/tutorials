@@ -1,0 +1,24 @@
+= Test Tutorial for CreateNgProject
+====
+createNgBuild
+====
+
+Install Devonfw IDE
+[step]
+--
+installDevonfwIde(["java", "mvn", "node", "ng", "npm"])
+--
+
+[step]
+--
+createFolder("test")
+createNgProject("testAngular", "test")
+--
+
+[step]
+--
+createNgProject("testAngular2")
+--
+
+
+
