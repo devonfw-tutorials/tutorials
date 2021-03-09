@@ -12,10 +12,10 @@ More information about CobiGen on https://devonfw.com/website/pages/docs/master-
 restoreDevonfwIde(["java","mvn"])
 --
 
-For this tutorial an installation of the Devon IDE is required.
+For this tutorial an installation of the Devon IDE is required, which was already set up for you.
 To begin you need to install Cobigen and create a Project.
 [step]
-== Install Cobigen and create Project
+== Create Java Project
 --
 installCobiGen()
 createDevon4jProject("cobigenexample")
