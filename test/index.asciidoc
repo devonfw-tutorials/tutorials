@@ -12,12 +12,12 @@ installDevonfwIde(["java", "mvn", "node", "ng", "npm"])
 [step]
 --
 createFolder("test")
-createNgProject("testAngular", "test")
+createDevon4ngProject("testAngular", "test")
 --
 
 [step]
 --
-createNgProject("testAngular2")
+createDevon4ngProject("testAngular2")
 --
 
 
