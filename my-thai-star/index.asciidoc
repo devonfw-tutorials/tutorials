@@ -2,21 +2,19 @@
 ====
 This is the online demo of https://github.com/devonfw/my-thai-star
 ====
+
+First you need to clone the My Thai Star repository.
 [step]
 --
-First you need to clone the My Thai Star repository.
-
-`git clone https://github.com/devonfw/my-thai-star.git`{{execute T1}}
+cloneRepository(["https://github.com/devonfw/my-thai-star.git"])
+--
 
 Now you need to switch to the folder you just created.
 
 `cd my-thai-star`{{execute T1}}
 
-After that, you can build and run the application. Run `docker-compose up`{{execute T1}}
---
-
-
+After that, you can build and run the application. 
 [step]
 --
-Now you can open <a href="https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/">https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/</a> to use My Thai Star.
+dockerCompose()
 --
