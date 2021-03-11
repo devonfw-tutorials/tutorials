@@ -7,7 +7,7 @@ The first part will be to setup your workspace.
 Afterwards we will show you, how to write your own tutorials.
 
 Requirements: 
- *  GitHub account
+ * GitHub account
 
 You can find the documentation here:
 
@@ -23,32 +23,21 @@ First of all, go to the tutorial-compiler repository on  GitHub:
 
 https://github.com/devonfw-tutorials/tutorial-compiler
 
-[step]
---
-nextKatacodaStep("Fork the 'tutorial-compiler'-repository", [{ "image": "images/fork.jpg" }])
---
-
 Fork the repository by clicking on the fork-button.
 This will create a copy of this repository in your GitHub account. You will find it in 'Your repositories'.
-====
-
-====
-Go to your repositories, click on 'tutorial-compiler' and copy the repository URL as shown in image below.
 
 [step]
 --
-nextKatacodaStep("Copy the 'tutorial-compiler'-URL", [{ "image": "images/clone_code.jpg" }])
+nextKatacodaStep("Fork the 'tutorial-compiler'-repository and copy the URL", [{"image": "images/fork.jpg"}, {"content": "\nGo to your repositories, click on 'tutorial-compiler' and copy the repository URL as shown in image below.\n"}, {"image": "images/clone_code.jpg"}])
 --
-
 ====
 
-====
+
 Usually you would paste the copied URLs next to the 'git clone' - command, but in this tutorial we will clone the original 'tutorial-compiler'-repository. Therefore we are able to write the asciidoc-files and generate the tutorials, but we can not push changes in the source code to it.
 [step]
 --
 cloneRepository("", "https://github.com/devonfw-tutorials/tutorial-compiler.git")
 --
-====
 
 ====
 Switch to the 'tutorials'-repository and repeat all the previous steps:
@@ -62,16 +51,13 @@ https://github.com/devonfw-tutorials/tutorials.git
 --
 cloneRepository("", "https://github.com/devonfw-tutorials/tutorials.git")
 --
+
 After this step you should have both repositories in the same folder next to each other.
 ====
 
 [step]
 --
 npmInstall("", {"name": "typescript", "global": true})
---
-
-[step]
---
 npmInstall("tutorial-compiler")
 --
 
@@ -97,21 +83,52 @@ You have to write the introduction in between these equal signs '====' and under
 changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/intro.txt", "placeholder": "= My Thai Star" })
 --
 
-====
 Last but not least add all the needed functions for this tutorial.
 
 Follow the link below to find a list of all available functions and their descriptions
 https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Functions
 
 Feel free to add your own functions to the compiler
+
 You will find all the information you need on:
 
 https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Development
+
 [step]
 --
 changeFile("tutorials/my-thai-star/index.asciidoc", {"file": "text/functions.txt", "placeholder": "This is the online demo of https://github.com/devonfw/my-thai-star" })
 --
 
+====
+For this step you need to open you local terminal at your forked and cloned 'tutorials' folder.
+Run the commands
+1. 'git add .' 
+2. 'git commit -m "my-thai-star"'
+3. 'git push'
 
+This will save all the changes and push them into your GitHub-repository 'tutorials'. 
 
+Switch to your browser and open:
+https://github.com/devonfw-tutorials/tutorials
+
+Click on 'Pull requests' > 'New pull request'.
+
+[step]
+--
+nextKatacodaStep("Create a pull request", [{"image": "images/pull_request.jpg"},{"image": "images/compare.jpg"}])
+--
+
+You might have to click on 'compare across forks'.
+
+Select
+
+    * base repository: devonfw-tutorials
+    * base: main
+    * head repository: [username]/tutorials
+    * compare: 'main'
+
+and finally create the pull request by clicking on 'Create pull request'.
+
+After a while you will find your tutorial on: 
+https://www.katacoda.com/devonfw-dev
 ====
