@@ -1,0 +1,38 @@
+This is the online demo of https://github.com/devonfw/my-thai-star
+====
+
+First install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
+[step]
+--
+installDevonfwIde(["java","mvn", "npm", "ng"])
+--
+
+Clone the My-Thai-Star repository. You can find it on https://github.com/devonfw/my-thai-star.
+[step]
+--
+cloneRepository("", "https://github.com/devonfw/my-thai-star.git")
+--
+
+The next step is to build the java project within the My-Thai-Star repository.
+[step]
+--
+buildJava("my-thai-star/java/mtsj")
+--
+
+Start the java backend server.
+[step]
+--
+runServerJava("my-thai-star/java/mtsj/server", { "startupTime": 100, "port": 8081, "path": "mythaistar" })
+--
+
+Install the dependencies of the angular project.
+[step]
+--
+npmInstall("my-thai-star/angular")
+--
+
+Run the frontend server.
+[step]
+--
+runClientNg("my-thai-star/angular", { "startupTime": 350, "port": 4200, "path": "" })
+--
