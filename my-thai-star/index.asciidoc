@@ -6,7 +6,7 @@ This is the online demo of https://github.com/devonfw/my-thai-star
 First you need to clone the My Thai Star repository.
 [step]
 --
-cloneRepository(["https://github.com/devonfw/my-thai-star.git"])
+cloneRepository("my-thai-star","https://github.com/devonfw/my-thai-star.git")
 --
 
 Now you need to switch to the folder you just created.
@@ -16,5 +16,5 @@ Now you need to switch to the folder you just created.
 After that, you can build and run the application. 
 [step]
 --
-dockerCompose()
+dockerCompose("my-thai-star", { "startupTime": 600, "port": 8081, "path": "" })
 --
