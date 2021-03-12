@@ -22,7 +22,7 @@ createDevon4ngProject("testAngular2", "test")
 
 [step]
 --
-createDevon4ngProject("testAngular3", "", "--verbose")
+createDevon4ngProject("testAngular3", "", ["--verbose"])
 --
 
 
