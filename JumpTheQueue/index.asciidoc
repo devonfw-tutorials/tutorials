@@ -18,7 +18,6 @@ cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 --
 
 ====
-Build and Run the Java Server
 [step]
 == Build and Run Java Server
 --
@@ -29,7 +28,7 @@ Now the Java Server should be running.
 ====
 
 ====
-Build and Run the Angular Frontend Server
+Now build and run the Angular Frontend Server. For that you need to install the dependencies first.
 [step]
 == Serve the Frontend Server
 --
