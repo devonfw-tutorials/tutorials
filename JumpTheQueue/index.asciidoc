@@ -27,12 +27,20 @@ runServerJava("jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 80
 Now the Java Server should be running.
 ====
 
+In the next steps we want build and run the Angular Frontend Server. For that you need to install the dependencies first.
+[step]
+--
+npmInstall("jump-the-queue/angular")
+--
+
 ====
-Now build and run the Angular Frontend Server. For that you need to install the dependencies first.
+Now build and run the Anguar Server.
+The following two steps are only needed in this tutorial. Normally you can simply execute "ng serve", open the https://localhost:4200/ and start using the app.
+In the next step you need to change the Base URL for the REST Services. 
 [step]
 == Serve the Frontend Server
 --
-npmInstall("jump-the-queue/angular")
+changeFile("jump-the-queue/angular/src/environments/environment.ts", {"content": "https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/jumpthequeue/services/rest", "placeholder": "http://localhost:8081/jumpthequeue/services/rest"})
 runClientNg("jump-the-queue/angular", { "startupTime": 200, "port": 4200, "path": "" })
 --
 Now the Angular Frontend Server should be running.
