@@ -3,24 +3,22 @@ name: CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
     
   workflow_dispatch:
 jobs:
-  build:
+  build_main:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
-          repository: devonfw-forge/tutorial-compiler
+          repository: devonfw-tutorials/tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: devonfw-forge/tutorials
+          repository: devonfw-tutorials/tutorials
           path: playbooks
       
       - uses: actions/setup-node@v2-beta
@@ -33,3 +31,10 @@ jobs:
 
       - name: run buildRun.sh
         run: sh buildRun.sh
+      
+      - name: Repository dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: devonfw-tutorials/katacoda-scenarios
+          event-type: dispatch-katacoda-scenarios
