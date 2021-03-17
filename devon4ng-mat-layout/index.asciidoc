@@ -16,10 +16,3 @@ createDevon4ngProject("devon4ng-mat-layout", "")
 Enter `y` {{execute T1}} when it asks whether it would like to add Angular routing and select `SCSS` when it asks for the stylesheet format.
 
 ====
-Now you are ready to create your first project
-[step]
---
-createDevon4jProject("cobigenexample")
---
-
-====
