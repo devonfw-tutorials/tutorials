@@ -8,11 +8,17 @@ The purpose of this tutorial is to get a basic understanding of creating layouts
 restoreDevonfwIde(["java","mvn", "npm", "ng"])
 --
 ====
-Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html. Once you have setup devonfw ide, you are ready to create your first devon4ng project
+Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
+Once you have setup devonfw ide, you are ready to create your first devon4ng project.
 [step]
 --
 createDevon4ngProject("devon4ng-mat-layout", "")
+runClientNg("devon4ng-mat-layout", { "startupTime": 200, "port": 4200, "path": "" })
 --
-Enter `y` {{execute T1}} when it asks whether it would like to add Angular routing and select `SCSS` when it asks for the stylesheet format.
+Enter
+
+`y` {{execute T1}} 
+
+when it asks whether it would like to add Angular routing and select `SCSS` when it asks for the stylesheet format.
 
 ====
