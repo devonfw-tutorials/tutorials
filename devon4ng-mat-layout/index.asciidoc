@@ -13,7 +13,6 @@ Once you have setup devonfw ide, you are ready to create your first devon4ng pro
 [step]
 --
 createDevon4ngProject("devon4ng-mat-layout", "")
-runClientNg("devon4ng-mat-layout", { "startupTime": 200, "port": 4200, "path": "" })
 --
 Enter
 
@@ -21,4 +20,8 @@ Enter
 
 when it asks whether it would like to add Angular routing and select `SCSS` when it asks for the stylesheet format.
 
+[step]
+--
+runClientNg("devon4ng-mat-layout", { "startupTime": 200, "port": 4200, "path": "" })
+--
 ====
