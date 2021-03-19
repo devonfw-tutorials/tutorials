@@ -6,14 +6,8 @@ CobiGen is a generic incremental code generator. It allows you build Java CRUD a
 CobiGen provides Maven and Eclipse integrations. But there is also a command line interface (CLI) which enables the generation of code using only few commands.
 
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
-====
+
 
 To use the cobigen cli you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
-
-[step]
---
-installDevonfwIde(["java", "mvn", "node", "ng", "npm"])
---
-
 
 ====
