@@ -8,10 +8,11 @@ CobiGen provides Maven and Eclipse integrations. But there is also a command lin
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 
 
-To use the cobigen cli you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
-
 [step]
 --
 cloneRepository("", "https://github.com/devonfw/cobigen.git")
 --
+
+
+To use the cobigen cli you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
 ====
