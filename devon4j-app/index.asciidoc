@@ -4,8 +4,9 @@ Devon4j is the Java stack of devonfw. It allows you to build business applicatio
 
 More information about Devon4j on https://devonfw.com/website/pages/docs/devon4j.asciidoc.html
 
-= Project structure
+
 ====
+== Project structure
 The structure of a devon4j application is divided into the following modules:
 
 api: module containing the API of your application. The API contains the required artifacts to interact with your application via remote services. This can be REST service interfaces, transfer-objects with their interfaces and datatypes but also OpenAPI or gRPC contracts.
