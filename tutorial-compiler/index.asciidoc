@@ -1,13 +1,13 @@
 = Create a tutorial with the Tutorial-Compiler
 ==== 
-In this scenario you will learn how to create your own tutorial with the Tutorial-Compiler.
+In this scenario, you will learn how to create your own tutorial using the tutorial compiler.
 
-You will learn how to set up the environment and you will get introduced in the syntax for writing own tutorial.
+You will learn how to set up the environment and get an introduction to the syntax for writing your own tutorial.
 
 Requirements: 
  * GitHub account
 
-You can find the documentation here:
+You can find the documentation of the tutorial compiler here:
 
 https://github.com/devonfw-forge/tutorial-compiler/wiki
 ====
@@ -30,11 +30,11 @@ nextKatacodaStep("Fork the tutorials repository", [{"image": "images/fork.jpg"},
 ====
 
 
-Paste the URL to the 'git clone' command to clone the repostitory. For this tutorial we will use clone the original tutorial-compiler repository of the 'devonfw-tutorials' GitHub account. Therefore we are able to write the asciidoc-files and generate the tutorials, but we can not push changes in the source code to it.
+Paste the URL to the 'git clone' command to clone the repostitory. For this tutorial we will use the original tutorials repository of the 'devonfw-tutorials' GitHub account to show the workflow of creating the tutorial.
 [step]
 == Clone the repository
 --
-cloneRepository("", "https://github.com/devonfw-tutorials/tutorial-compiler.git")
+cloneRepository("", "https://github.com/devonfw-tutorials/tutorials.git")
 --
 
 ====
@@ -64,12 +64,14 @@ It's time to add some content to the tutorial. You can find the syntax are tutor
 
 At first we will add a title to the first line of the file.
 [step]
+== Add the title
 --
 changeFile("tutorials/myTutorial/index.asciidoc", {"content": "= Title of my new tutorial"})
 --
 
 The next step is to add some description lines below the title. The description has to be surrounded by `====`.
 [step]
+== Add the description
 --
 changeFile("tutorials/myTutorial/index.asciidoc", {"file": "files/description.txt", "placeholder": "= Title of my new tutorial" })
 --
@@ -78,6 +80,7 @@ Last but not least add a step. A step consists of an explanation, a function to 
 
 In this tutorial we will add a simple step which creates a new file.
 [step]
+== Add a step
 --
 changeFile("tutorials/myTutorial/index.asciidoc", {"file": "files/step.txt" })
 --
@@ -86,7 +89,7 @@ changeFile("tutorials/myTutorial/index.asciidoc", {"file": "files/step.txt" })
 --
 nextKatacodaStep("Alternative syntax", [{ "file": "files/alternativeSyntax.md" }])
 --
-
+df
 [step]
 --
 nextKatacodaStep("Push tutorial", [{ "file": "files/pushTutorial.md" }])
