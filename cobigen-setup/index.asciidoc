@@ -12,4 +12,4 @@ Now we have to install devonfw for cobigen setup.
 --
 cloneRepository("cobigenrepo", "https://github.com/devonfw/cobigen.git")
 --
-For this tutorial an installation of the devonfw IDE is required, which was already set up for you.
+
