@@ -100,3 +100,8 @@ nextKatacodaStep("Alternative syntax", [{ "file": "files/alternativeSyntax.md" }
 --
 nextKatacodaStep("Push tutorial", [{ "file": "files/pushTutorial.md" }])
 --
+
+[step]
+--
+nextKatacodaStep("Local testing", [{ "file": "files/localTesting.md" }])
+--
