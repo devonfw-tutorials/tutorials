@@ -6,10 +6,17 @@ CobiGen provides Maven and Eclipse integrations. But there is also a command lin
 
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 ====
+[step]
+--
+restoreDevonfwIde(["java", "mvn", "node", "ng", "npm"])
+--
 
-Now we have to install devonfw for cobigen setup.
+Make sure to install the devonfw IDE before executing the next steps. For this tutorial we have done it for you.
+Afterwards clone the Jump-The-Queue Repository.
 [step]
 --
 cloneRepository("", "https://github.com/devonfw/cobigen.git")
 --
-For this tutorial an installation of the devonfw IDE is required, which was already set up for you.
+
+====
+
