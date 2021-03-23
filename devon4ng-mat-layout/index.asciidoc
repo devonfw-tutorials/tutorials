@@ -15,12 +15,12 @@ Once you have setup devonfw ide, you are ready to create your first devon4ng pro
 createDevon4ngProject("devon4ng-mat-layout", "", ["--style=scss", "--routing=true"])
 runClientNg("devon4ng-mat-layout", { "startupTime": 200, "port": 4200, "path": "" })
 --
-
-====
 Next we will add Angular Material to our application.
+====
+
 [step]
 --
 npmInstall("", {"name": "@angular/material @angular/cdk @angular/animations", "args": ["--save"]})
 --
-
+Once the dependencies are installed, we need to import the BrowserAnimationsModule in our AppModule for animations support.
 ====
