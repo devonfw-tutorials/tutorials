@@ -36,6 +36,5 @@ Install devonfw ide.
 --
 restoreDevonfwIde(["java", "mvn"],"2020.12.001")
 --
-
-
+Additional text here.
 ====
