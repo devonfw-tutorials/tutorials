@@ -36,7 +36,6 @@ restoreDevonfwIde(["java", "mvn"],"2020.12.001")
 
 Make sure to install the devonfw IDE before executing the next steps. For this tutorial we have done it for you.
 Afterwards create devon4j project.
-====
 
 [step]
 --
@@ -110,9 +109,8 @@ is archived in the devonfw by the right templates and best-practices that avoid 
 * *performance* +
 is obtained by choosing the right products and proper configurations. While the actual implementation of the application matters for performance a proper design is important as it is the key to allow performance-optimizations (see e.g. link:guide-caching.asciidoc[caching]).
 ====
-
-[step]
 == Build and Run Java Server
+[step]
 --
 buildJava("sampleapp", true)
 runServerJava("sampleapp", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
