@@ -57,7 +57,7 @@ createFile("tutorials/myTutorial/index.asciidoc")
 
 [step]
 --
-nextKatacodaStep("Create a pull request", [{ "file": "files/createPullRequest.md" }])
+nextKatacodaStep("Create a pull request", [{ "file": "files/createPullRequest1.md" }, {"image": "images/pull_request.jpg"},{"image": "images/compare.jpg"}, { "file": "files/createPullRequest2.md" }])
 --
 
 It's time to add some content to the tutorial. You can find the syntax are tutorial is written in on https://github.com/devonfw-tutorials/tutorials/wiki/Development.
@@ -89,7 +89,7 @@ changeFile("tutorials/myTutorial/index.asciidoc", {"file": "files/step.txt" })
 --
 nextKatacodaStep("Alternative syntax", [{ "file": "files/alternativeSyntax.md" }])
 --
-df
+
 [step]
 --
 nextKatacodaStep("Push tutorial", [{ "file": "files/pushTutorial.md" }])
