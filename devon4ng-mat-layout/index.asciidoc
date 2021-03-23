@@ -23,4 +23,3 @@ Next we will add Angular Material to our application.
 npmInstall("", {"name": "@angular/material @angular/cdk @angular/animations", "args": ["--save"]})
 --
 Once the dependencies are installed, we need to import the BrowserAnimationsModule in our AppModule for animations support.
-====
