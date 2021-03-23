@@ -144,5 +144,3 @@ runServerJava("sampleapp", { "startupTime": 40, "port": 8081, "path": "jumpthequ
 --
 Now the Java Server should be running.
 ====
-
-
