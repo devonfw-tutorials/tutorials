@@ -57,7 +57,7 @@ createFile("tutorials/myTutorial/index.asciidoc")
 
 [step]
 --
-nextKatacodaStep("Create a pull request", [{ "file": "files/createPullRequest1.md" }, {"image": "images/pull_request.jpg"}, {"content": "You might have to click on 'compare across forks'."}, {"image": "images/compare.jpg"}, { "file": "files/createPullRequest2.md" }])
+nextKatacodaStep("Create a pull request", [{ "file": "files/createPullRequest1.md" }, {"image": "images/pull_request.jpg"}, {"content": "\nYou might have to click on 'compare across forks'.\n"}, {"image": "images/compare.jpg"}, { "file": "files/createPullRequest2.md" }])
 --
 
 The syntax in which the tutorial is written can be found at https://github.com/devonfw-tutorials/tutorials/wiki/Development.
