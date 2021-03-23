@@ -12,16 +12,8 @@ Before creating a devon4ng application, you first have to install the devonfw id
 Once you have setup devonfw ide, you are ready to create your first devon4ng project.
 [step]
 --
-createDevon4ngProject("devon4ng-mat-layout", "")
---
-Enter
-
-`y` {{execute T1}} 
-
-when it asks whether it would like to add Angular routing and select `SCSS` when it asks for the stylesheet format.
-
-[step]
---
+createDevon4ngProject("devon4ng-mat-layout", "", ["--style=scss", "--routing=true"])
 runClientNg("devon4ng-mat-layout", { "startupTime": 200, "port": 4200, "path": "" })
 --
+
 ====
