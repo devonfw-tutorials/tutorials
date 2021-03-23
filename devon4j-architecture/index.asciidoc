@@ -112,6 +112,12 @@ is obtained by choosing the right products and proper configurations. While the 
 ====
 
 [step]
+== Build and Run Java Server
+--
+buildJava("sampleapp", true)
+runServerJava("sampleapp", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
+--
+Now the Java Server should be running.
 == Technology Stack
 The technology stack of the devonfw is illustrated by the following table.
 
@@ -135,11 +141,4 @@ The technology stack of the devonfw is illustrated by the following table.
 |link:guide-aop.asciidoc[AOP]|framework|http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Proxy.html[dynamic proxies]|http://docs.spring.io/autorepo/docs/spring/3.0.6.RELEASE/spring-framework-reference/html/aop.html[spring AOP]
 |=======================
 
-[step]
-== Build and Run Java Server
---
-buildJava("sampleapp", true)
-runServerJava("sampleapp", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
---
-Now the Java Server should be running.
 ====
