@@ -113,7 +113,6 @@ is obtained by choosing the right products and proper configurations. While the 
 [step]
 --
 buildJava("sampleapp", true)
-runServerJava("sampleapp", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
 --
 Now the Java Server should be running.
 == Technology Stack
