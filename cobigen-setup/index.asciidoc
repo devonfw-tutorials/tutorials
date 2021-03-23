@@ -10,6 +10,6 @@ More information about CobiGen on https://devonfw.com/website/pages/docs/master-
 Now we have to install devonfw for cobigen setup.
 [step]
 --
-cloneRepository("cobigenrepo", "https://github.com/devonfw/cobigen.git")
+cloneRepository("Ide Setup", "https://github.com/devonfw/ide.git")
 --
 
