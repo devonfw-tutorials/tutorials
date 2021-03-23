@@ -17,3 +17,10 @@ runClientNg("devon4ng-mat-layout", { "startupTime": 200, "port": 4200, "path": "
 --
 
 ====
+Next we will add Angular Material to our application.
+[step]
+--
+npmInstall("", {"name": "@angular/material @angular/cdk @angular/animations", "args": ["--save"]})
+--
+
+====
