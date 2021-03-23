@@ -1,11 +1,10 @@
-You might have to click on 'compare across forks'.
 
 Select
 
     * base repository: devonfw-tutorials
     * base: main
     * head repository: [your username]/tutorials
-    * compare: '[your branch name]'
+    * compare: [your branch name]
 
 and finally create the pull request by clicking on 'Create pull request'.
 
