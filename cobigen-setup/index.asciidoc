@@ -38,8 +38,9 @@ CobiGen - FreeMaker Template Engine v7.0.0
 CobiGen - Velocity Template Engine v7.0.0
 
 To start with Cobigen setup tutorial. You first need to have devonIde already installed.
+
 [step]
 --
-cloneRepository("Ide Setup", "https://github.com/devonfw/ide.git")
+restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
 
