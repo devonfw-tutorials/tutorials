@@ -32,7 +32,7 @@ nextKatacodaStep("Fork the tutorials repository", [{"image": "images/fork.jpg"},
 
 Paste the URL to the 'git clone' command to clone the repostitory. For this tutorial we will use the original tutorials repository of the 'devonfw-tutorials' GitHub account to show the workflow of creating the tutorial.
 
-When you run the command on your machine, you will of course need to customize the URL and add your personal GitHub name. So the command will be 'git clone https://github.com/YourName/tutorials.git'.
+When you run the command on your machine, you will of course need to customize the URL and add your personal GitHub name. So the command will be `git clone https://github.com/YourName/tutorials.git`.
 [step]
 == Clone the repository
 --
@@ -78,6 +78,7 @@ The next step is to add some description lines below the title. The description 
 changeFile("tutorials/myTutorial/index.asciidoc", {"file": "files/description.txt", "placeholder": "= Title of my new tutorial" })
 --
 
+====
 Last but not least add a step. 
 
 Each step consists of
@@ -86,7 +87,6 @@ Each step consists of
 * a function to execute (You can find a list with the currently available functions on https://github.com/devonfw-tutorials/tutorial-compiler/wiki/Functions)
 * and an optional explanation of the results of the step.
 
-====
 In this tutorial we will add a simple step which creates a new file.
 [step]
 == Add a step
