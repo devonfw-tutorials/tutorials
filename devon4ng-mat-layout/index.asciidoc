@@ -7,7 +7,7 @@ The purpose of this tutorial is to get a basic understanding of creating layouts
 --
 restoreDevonfwIde(["java","mvn", "npm", "ng"])
 --
-====
+
 Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
 Once you have setup devonfw ide, you are ready to create your first devon4ng project.
 [step]
@@ -15,11 +15,22 @@ Once you have setup devonfw ide, you are ready to create your first devon4ng pro
 createDevon4ngProject("devon4ng-mat-layout", "", ["--style=scss", "--routing=true"])
 runClientNg("devon4ng-mat-layout", { "startupTime": 200, "port": 4200, "path": "" })
 --
-Next we will add Angular Material to our application.
-====
 
+Next we will add Angular Material to our application.
 [step]
 --
 npmInstall("", {"name": "@angular/material @angular/cdk @angular/animations", "args": ["--save"]})
 --
+
 Once the dependencies are installed, we need to import the BrowserAnimationsModule in our AppModule for animations support.
+Also, Angular Material provides a host of components for designing our application. All the components are well structured into NgModules. For each component from the Angular Material library that we want to use, we have to import the respective NgModule.
+[step]
+--
+changeFile("devon4ng-mat-layout/src/app/app.module.ts", { "file": "files/app.module.ts", "placeholder": "private static final long serialVersionUID = 1L;" })
+--
+
+To use Material Design Icons along with the mat-icon component, we will load the Material Icons library in our src/index.html file by adding this line: `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
+[step]
+--
+changeFile("devon4ng-mat-layout/src/index.html", { "file": "files/index.html", "placeholder": "private static final long serialVersionUID = 1L;" })
+--
