@@ -27,3 +27,8 @@ To run the tutorial-compiler execute the following command:
 `bash localBuildRun.sh -e katacoda -p myTutorial`{{execute T1}}
 
 This will execute your newly create tutorial in the 'katacoda' environment. If you obmit the '-e' and '-p' paramter, all tutorials are executed in all environments.
+
+The tutorial-compiler will now create the files needed for a katacoda tutorial. You can find the files in the 'build/output/katacoda/myTutorial' directory of the tutorial-compiler.
+The step you added to your tutorial will be displayed in the following file:
+
+`tutorial-compiler/build/output/katacoda/myTutorial/step1.md`{{open}}
