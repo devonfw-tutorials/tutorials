@@ -26,11 +26,11 @@ Once the dependencies are installed, we need to import the BrowserAnimationsModu
 Also, Angular Material provides a host of components for designing our application. All the components are well structured into NgModules. For each component from the Angular Material library that we want to use, we have to import the respective NgModule.
 [step]
 --
-changeFile("devon4ng-mat-layout/src/app/app.module.ts", { "file": "files/app.module.ts", "placeholder": "private static final long serialVersionUID = 1L;" })
+changeFile("main/devon4ng-mat-layout/src/app/app.module.ts", { "file": "files/app.module.ts", "placeholder": "private static final long serialVersionUID = 1L;" })
 --
 
 To use Material Design Icons along with the mat-icon component, we will load the Material Icons library in our src/index.html file by adding this line: `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`
 [step]
 --
-changeFile("devon4ng-mat-layout/src/index.html", { "file": "files/index.html", "placeholder": "private static final long serialVersionUID = 1L;" })
+changeFile("main/devon4ng-mat-layout/src/index.html", { "file": "files/index.html", "placeholder": "private static final long serialVersionUID = 1L;" })
 --
