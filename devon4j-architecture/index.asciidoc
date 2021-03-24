@@ -6,7 +6,5 @@ There are many different views that are summarized by the term architecture. Fir
 Install devonfw ide.
 [step]
 --
-installDevonfwIde(["java", "mvn"],"2020.12.001")
+installDevonfwIde(["java", "mvn"])
 --
-Additional text here.
-====
