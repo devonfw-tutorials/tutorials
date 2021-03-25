@@ -65,8 +65,10 @@ restoreDevonfwIde(["java","mvn"], "2020.08.001")
 Now we will proceed with Cobigen installation.
 
 [step]
+== Install CobiGen and create Java Project
 --
 installCobigenPlugin()
+createDevon4jProject("cobigensample")
 --
 
 
