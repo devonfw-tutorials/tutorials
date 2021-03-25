@@ -46,3 +46,9 @@ We will clear the `app.component.html` file and setup a header with a menu butto
 --
 changeFile("devon4ng-mat-layout/src/app/app.component.html", { "file": "files/app.component.txt" })
 --
+
+We want to keep the sidenav toggling menu button on the left and move the rest to the right to make it look better. To do this lets add the following style to the `menu` class in `app.component.scss`:
+[step]
+--
+changeFile("devon4ng-mat-layout/src/app/app.component.scss", { "file": "files/app.component.scss.txt" })
+--
