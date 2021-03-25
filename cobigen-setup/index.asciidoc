@@ -67,10 +67,6 @@ Now we will proceed with Cobigen installation.
 
 Firstly, we have to clone the cobigen repository.
 
-[step]
---
-cloneRepository("cobigenreposetup", "https://github.com/devonfw/cobigen.git") 
---
 
 
 
