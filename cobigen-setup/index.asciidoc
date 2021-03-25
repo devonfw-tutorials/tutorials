@@ -68,7 +68,7 @@ Firstly, we have to clone the cobigen repository.
 
 [step]
 --
-cloneRepository("cobigensetup", "https://github.com/devonfw/cobigen.git") 
+cloneRepository("cobigenreposetup", "https://github.com/devonfw/cobigen.git") 
 --
 
 
