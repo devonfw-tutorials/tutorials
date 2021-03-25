@@ -64,11 +64,11 @@ restoreDevonfwIde(["java","mvn"], "2020.08.001")
 
 Now we will proceed with Cobigen installation.
 
+Firstly, we have to clone the cobigen repository.
+
 [step]
-== Install CobiGen and create Java Project
 --
-installCobigenPlugin()
-createDevon4jProject("cobigensample")
+cloneRepository("cobigensetup", "https://github.com/devonfw/cobigen.git") 
 --
 
 
