@@ -52,3 +52,14 @@ We want to keep the sidenav toggling menu button on the left and move the rest t
 --
 changeFile("devon4ng-mat-layout/src/app/app.component.scss", { "file": "files/app.component.scss.txt" })
 --
+
+Next, we will create a sidenav. But before that lets create a couple of components to navgate between, the links of which we will add to the sidenav. You can use the `ng generate component` (or `ng g c` command for short) to create Home and Data components. But here, we will create them manually. We nest them in the pages sub-directory since they represent our pages.
+[step]
+--
+createFile("devon4ng-mat-layout/src/app/pages/home/home.component.html", "files/home.component.txt")
+createFile("devon4ng-mat-layout/src/app/pages/home/home.component.scss", "files/home.component.scss.txt")
+createFile("devon4ng-mat-layout/src/app/pages/home/home.component.ts", "files/home.component.ts.txt")
+createFile("devon4ng-mat-layout/src/app/pages/data/data.component.html", "files/data.component.txt")
+createFile("devon4ng-mat-layout/src/app/pages/data/data.component.scss", "files/home.component.scss.txt")
+createFile("devon4ng-mat-layout/src/app/pages/data/data.component.ts", "files/data.component.ts.txt")
+--
