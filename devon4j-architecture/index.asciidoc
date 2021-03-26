@@ -44,3 +44,13 @@ createDevon4jProject("sampleapp")
 --
 In console under workspaces-> main you should be able to see folder sampleapp. If you will expand this project you will see api, core and server module generated. All modules follow architectural concept explain previously.
 ====
+
+[step]
+--
+nextKatacodaStep("Technical Reference Architecture", [{ "file": "nfr.md" }])
+--
+
+[step]
+--
+nextKatacodaStep("Technology stack", [{ "file": "technology stack.md" }])
+--
