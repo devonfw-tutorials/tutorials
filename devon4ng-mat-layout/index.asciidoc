@@ -53,7 +53,7 @@ We want to keep the sidenav toggling menu button on the left and move the rest t
 changeFile("devon4ng-mat-layout/src/app/app.component.scss", { "file": "files/app.component.scss.txt" })
 --
 
-Next, we will create a sidenav. But before that lets create a couple of components to navgate between, the links of which we will add to the sidenav. You can use the `ng generate component` (or `ng g c` command for short) to create Home and Data components. But here, we will create them manually. We nest them in the pages sub-directory since they represent our pages.
+Next, we will create a sidenav. But before that lets create a couple of components to navgate between, the links of which we will add to the sidenav. You can use the `ng generate component` (or `ng g c` command for short) to create Home and Data components. But here, we will create them manually. We nest them in the `pages` sub-directory since they represent our pages.
 [step]
 --
 createFile("devon4ng-mat-layout/src/app/pages/home/home.component.html", "files/home.component.txt")
@@ -62,4 +62,30 @@ createFile("devon4ng-mat-layout/src/app/pages/home/home.component.ts", "files/ho
 createFile("devon4ng-mat-layout/src/app/pages/data/data.component.html", "files/data.component.txt")
 createFile("devon4ng-mat-layout/src/app/pages/data/data.component.scss", "files/home.component.scss.txt")
 createFile("devon4ng-mat-layout/src/app/pages/data/data.component.ts", "files/data.component.ts.txt")
+--
+
+Let us set up the routing such that when we visit the root url we see the HomeComponent and when we visit `/data` url we see the DataComponent. We had opted for routing while creating the application, so we have the routing module `app-routing.module.ts` setup for us. In this file, we have the empty routes array where we set up our routes:
+[step]
+--
+changeFile("devon4ng-mat-layout/src/app/app-routing.module.ts", { "file": "files/app-routing.module.txt" })
+--
+
+We need to provide a hook where the components will be loaded when their respective URLs are loaded. We do that by using the `router-outlet` directive in the `app.component.html`:
+[step]
+--
+changeFile("devon4ng-mat-layout/src/app/app.component.html", { "file": "files/app.component-routing.txt" })
+--
+
+Let us finally create the sidenav. To implement the sidenav we need to use 3 Angular Material components: `mat-sidenav-container`, `mat-sidenav` and `mat-sidenav-content`. The `mat-sidenav-container`, as the name suggests, acts as a container for the `sidenav` and the associated content. So it is the parent element, and `mat-sidenav` and `mat-sidenav-content` are the children sibling elements. `mat-sidenav` represents the sidenav. We can put any content we want, though it is usually used to conatain a list of navigational links. The `mat-sidenav-content` element is for conataining our main page content. Since we need the `sidenav` application-wide, we will put it in the `app.component.html`
+[step]
+--
+changeFile("devon4ng-mat-layout/src/app/app.component.html", { "file": "files/app.component-sidenav.txt" })
+changeFile("devon4ng-mat-layout/src/app/app.component.scss", { "file": "files/app.component-sidenav.scss.txt" })
+--
+
+The sidenav’s width will be corrected when we add the navigational links to it. That is the only thing remaining to be done. Lets implement it now:
+[step]
+--
+changeFile("devon4ng-mat-layout/src/app/app.component.html", { "file": "files/app.component-navlinks.txt" })
+changeFile("devon4ng-mat-layout/src/app/app.component.scss", { "file": "files/app.component-navlinks.scss.txt" })
 --
