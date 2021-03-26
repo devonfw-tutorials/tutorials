@@ -62,14 +62,9 @@ restoreDevonfwIde(["java","mvn"], "2020.08.001")
 
 8. Templates can be fully tailored to project needs - this is considered as a simple task.
 
-Now we will proceed with Cobigen installation.
 ====
-
+Now we will proceed with Cobigen installation.
 [step]
 --
 createFolder("Desktop/cobigen")
 --
-
-
-
-
