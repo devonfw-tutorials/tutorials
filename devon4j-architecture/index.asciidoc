@@ -7,17 +7,23 @@ This tutorial aims to explain architecture for devon4j application.There are man
     * *Business Architecture*
     * *Technical Architecture*
 ====
-
+====
+This step explains Key principles and architecture principles.
 [step]
 --
 nextKatacodaStep("Key and Architecture Principles", [{ "file": "principles.md" }])
 --
-
+Dummy text to test.
+====
+====
+This step explains application architecture.
 [step]
 --
 nextKatacodaStep("Application Architecture", [{ "file": "architecture.md" }])
 --
-
+Dummy text.
+====
+====
 Now, after having detailed understanding of devon4j architecture principle and concept , in this step we will create sample devon4j application.
 Before creating devon4j application we need to install devonfw-ide.
 [step]
@@ -25,7 +31,7 @@ Before creating devon4j application we need to install devonfw-ide.
 restoreDevonfwIde(["java", "mvn"])
 --
 Before proceeding to next steps ide should be installed.
-
+====
 ====
 In this, we will create sample devon4j application with name sampleapp. 
 [step]

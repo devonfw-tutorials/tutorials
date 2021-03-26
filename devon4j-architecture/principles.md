@@ -1,4 +1,3 @@
-This step explains Key principles and architecture principles.
 
 ### Key Principles
 
