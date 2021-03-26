@@ -8,77 +8,17 @@ This tutorial aims to explain architecture for devon4j application.There are man
     * *Technical Architecture*
 ====
 
-This step explains Key principles and architecture principles.
+[step]
+--
+nextKatacodaStep("Key and Architecture Principles", [{ "file": "principles.md" }])
+--
 
-### Key Principles
+[step]
+--
+nextKatacodaStep("Application Architecture", [{ "file": "architecture.md" }])
+--
 
-For devonfw we follow these fundamental key principles for all decisions about architecture, design, or choosing standards, libraries, and frameworks:
-
-* *KISS* 
-Keep it small and simple
-* *Open* 
-Commitment to open standards and solutions (no required dependencies to commercial or vendor-specific standards or solutions)
-* *Patterns* 
-We concentrate on providing patterns, best-practices and examples rather than writing framework code.
-* *Solid* 
-We pick solutions that are established and have been proven to be solid and robust in real-live (business) projects.
-
-### Architecture Principles
-Additionally we define the following principles that our architecture is based on:
-
-* *Component Oriented Design* 
-We follow a strictly component oriented design to address the following sub-principles:
-*  [Separation of Concerns](http://en.wikipedia.org/wiki/Separation_of_concerns)
-*  [Reusability](http://en.wikipedia.org/wiki/Reusability) and avoiding [redundant code](http://en.wikipedia.org/wiki/Redundant_code)
-*  [Information Hiding](http://en.wikipedia.org/wiki/Information_hiding) via component API and its exchangeable implementation treated as secret.
-*  _Design by Contract_ for self-contained, descriptive, and stable component APIs.
-*  [Layering](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#technical-architecture) as well as separation of business logic from technical code for better maintenance.
-*  _Data Sovereignty_ (and _high cohesion with low coupling_) says that a component is responsible for its data and changes to this data shall only happen via the component. Otherwise, maintenance problems will arise to ensure that data remains consistent. Therefore, interfaces of a component that may be used by other components are designed _call-by-value_ and not _call-by-reference_.
-* *Homogeneity* 
-Solve similar problems in similar ways and establish a uniform [code-style](https://github.com/devonfw/devon4j/blob/master/documentation/coding-conventions.asciidoc).
-
-As an architect you should be prepared for the future by reading the [TechnoVision](https://www.capgemini.com/de-de/wp-content/uploads/sites/5/2020/07/TechnoVision-2020-Report.pdf).
 ====
-
-### Application Architecture
-
-For the architecture of an application we distinguish the following views:
-
-* The [Business Architecture](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#business-architecture) describes an application from the business perspective. It divides the application into business components and with full abstraction of technical aspects.
-* The [Technical Architecture](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#technical-architecture) describes an application from the technical implementation perspective. It divides the application into technical layers and defines which technical products and frameworks are used to support these layers.
-* The Infrastructure Architecture describes an application from the operational infrastructure perspective. It defines the nodes used to run the application including clustering, load-balancing and networking. This view is not explored further in this guide.
-
-### Business Architecture
-The _business architecture_ divides the application into _business components_. A business component has a well-defined responsibility that it encapsulates. All aspects related to that responsibility have to be implemented within that business component. Further, the business architecture defines the dependencies between the business components. These dependencies need to be free of cycles. A business component exports its functionality via well-defined interfaces as a self-contained API. A business component may use another business component via its API and compliant with the dependencies defined by the business architecture.
-
-As the business domain and logic of an application can be totally different, the devonfw can not define a standardized business architecture. Depending on the business domain it has to be defined from scratch or from a domain reference architecture template. For very small systems it may be suitable to define just a single business component containing all the code.
-
-### Technical Architecture
-The _technical architecture_ divides the application into technical _layers_ based on the [multilayered architecture](http://en.wikipedia.org/wiki/Multilayered_architecture). A layer is a unit of code with the same category such as a service or presentation logic. So, a layer is often supported by a technical framework. Each business component can therefore be split into _component parts_ for each layer. However, a business component may not have component parts for every layer (e.g. only a presentation part that utilized logic from other components).
-
-An overview of the technical reference architecture of the devonfw is given by figure ["Technical Reference Architecture"](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#img-t-architecture).
-It defines the following layers visualized as horizontal boxes:
-
-* [client layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-client-layer.asciidoc) for the front-end (GUI).
-* [service layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-service-layer.asciidoc) for the services used to expose functionality of the
-back-end to the client or other consumers.
-* [batch layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-batch-layer.asciidoc) for exposing functionality in batch-processes (e.g. mass imports).
-* [logic layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-logic-layer.asciidoc) for the business logic.
-* [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).
-
-Also, you can see the (business) components as vertical boxes (e.g. _A_ and _X_) and how they are composed out of component parts each one assigned to one of the technical layers.
-
-Further, there are technical components for cross-cutting aspects grouped by the gray box on the left. Here is a complete list:
-
-* [Security](https://github.com/devonfw/devon4j/blob/master/documentation/guide-security.asciidoc)
-* [Logging](https://github.com/devonfw/devon4j/blob/master/documentation/guide-logging.asciidoc)
-* [Monitoring](https://github.com/devonfw/devon4j/blob/master/documentation/guide-monitoring.asciidoc)
-* [Transaction-Handling](https://github.com/devonfw/devon4j/blob/master/documentation/guide-transactions.asciidoc)
-* [Exception-Handling](https://github.com/devonfw/devon4j/blob/master/documentation/guide-exceptions.asciidoc)
-* [Internationalization](https://github.com/devonfw/devon4j/blob/master/documentation/guide-i18n.asciidoc)
-* [Dependency-Injection](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dependency-injection.asciidoc)
-====
-
 Now, after having detailed understanding of devon4j architecture principle and concept , in this step we will create sample devon4j application.
 Before creating devon4j application we need to install devonfw-ide.
 [step]
@@ -87,7 +27,6 @@ restoreDevonfwIde(["java", "mvn"])
 --
 Before proceeding to next steps ide should be installed.
 ====
-
 In this, we will create sample devon4j application with name sampleapp. 
 [step]
 --
@@ -96,30 +35,12 @@ createDevon4jProject("sampleapp")
 In console under workspaces-> main you should be able to see folder sampleapp. If you will expand this project you will see api, core and server module generated. All modules follow architectural concept explain previously.
 ====
 
-![Technical Reference Architecture](https://devonfw.com/website/pages/docs/images/T-Architecture.svg)
+[step]
+--
+nextKatacodaStep("Technical Reference Architecture", [{ "file": "nfr.md" }])
+--
 
-We reflect this architecture in our code as described in our [coding conventions](https://github.com/devonfw/devon4j/blob/master/documentation/coding-conventions.asciidoc#packages) allowing a traceability of business components, use-cases, layers, etc. into the code and giving
-developers a sound orientation within the project.
-
-Further, the architecture diagram shows the allowed dependencies illustrated by the dark green connectors.
-Within a business component a component part can call the next component part on the layer directly below via a dependency on its API (vertical connectors).
-While this is natural and obvious, it is generally forbidden to have dependencies upwards the layers
-or to skip a layer by a direct dependency on a component part two or more layers below.
-The general dependencies allowed between business components are defined by the [business architecture](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#business-architecture).
-In our reference architecture diagram we assume that the business component `A1` is allowed to depend
-on component `A2`. Therefore, a use-case within the logic component part of `A1` is allowed to call a
-use-case from `A2` via a dependency on the component API. The same applies for dialogs on the client layer.
-This is illustrated by the horizontal connectors. Please note that [persistence entities](https://github.com/devonfw/devon4j/blob/master/documentation/guide-jpa.asciidoc#entity) are part of the API of the data-access component part so only the logic component part of the same
-business component may depend on them.
-
-The technical architecture has to address non-functional requirements:
-
-* *scalability* 
-is established by keeping state in the client and making the server state-less (except for login session). Via load-balancers new server nodes can be added to improve performance (horizontal scaling).
-* *availability* and *reliability* 
-are addressed by clustering with redundant nodes avoiding any single-point-of failure. If one node fails the system is still available. Further, the software has to be robust so there are no dead-locks or other bad effects that can make the system unavailable or not reliable.
-* *security* 
-is archived in the devonfw by the right templates and best-practices that avoid vulnerabilities. See [security guidelines](https://github.com/devonfw/devon4j/blob/master/documentation/guide-security.asciidoc) for further details.
-* *performance* 
-is obtained by choosing the right products and proper configurations. While the actual implementation of the application matters for performance a proper design is important as it is the key to allow performance-optimizations (see e.g. [caching](https://github.com/devonfw/devon4j/blob/master/documentation/guide-caching.asciidoc)).
-====
+[step]
+--
+nextKatacodaStep("Technology stack", [{ "file": "technology stack.md" }])
+--
