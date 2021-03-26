@@ -27,6 +27,7 @@ Dummy text.
 Now, after having detailed understanding of devon4j architecture principle and concept , in this step we will create sample devon4j application.
 Before creating devon4j application we need to install devonfw-ide.
 [step]
+== Install devonfw-ide
 --
 restoreDevonfwIde(["java", "mvn"])
 --
@@ -35,6 +36,7 @@ Before proceeding to next steps ide should be installed.
 ====
 In this, we will create sample devon4j application with name sampleapp. 
 [step]
+== create devon4j project
 --
 createDevon4jProject("sampleapp")
 --
