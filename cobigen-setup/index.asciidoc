@@ -29,7 +29,6 @@ CobiGen provides an Eclipse integration as well as a Maven Integration.
 CobiGen comes with an extensive documentation for users and developers.
 
 Templates can be fully tailored to project needs - this is considered as a simple task.
-
 ====
 
 Now we will proceed with Cobigen installation.
