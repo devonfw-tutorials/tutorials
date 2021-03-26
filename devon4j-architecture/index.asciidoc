@@ -27,21 +27,3 @@ restoreDevonfwIde(["java", "mvn"])
 --
 Before proceeding to next steps ide should be installed.
 ====
-====
-In this, we will create sample devon4j application with name sampleapp. 
-[step]
---
-createDevon4jProject("sampleapp")
---
-In console under workspaces-> main you should be able to see folder sampleapp. If you will expand this project you will see api, core and server module generated. All modules follow architectural concept explain previously.
-====
-
-[step]
---
-nextKatacodaStep("Technical Reference Architecture", [{ "file": "nfr.md" }])
---
-
-[step]
---
-nextKatacodaStep("Technology stack", [{ "file": "technology stack.md" }])
---
