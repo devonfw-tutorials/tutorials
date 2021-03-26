@@ -7,32 +7,50 @@ CobiGen provides Maven and Eclipse integrations. But there is also a command lin
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 ====
 
-To start with Cobigen setup tutorial. You first need to have devonIde already installed. Which was already set up for you.
 
+To start with Cobigen setup tutorial. You first need to have devonIde already installed. Which was already set up for you.
 [step]
 --
 restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
 
-Before proceeding with setup. Have a look at feature and characteristics of cobigen.
-
-Generate fresh files across all the layers of a application - ready to run.
-
-Add on to existing files merging code into it. E.g. generate new methods into existing java classes or adding nodes to an XML file. Merging of contents into existing files will be done using structural merge mechanisms.
-
-Structural merge mechanisms are currently implemented for Java, XML, Java Property Syntax, JSON, Basic HTML, Text Append, TypeScript.
-
-Conflicts can be resolved individually but automatically by former configuration for each template.
-
-CobiGen provides an Eclipse integration as well as a Maven Integration.
-
-CobiGen comes with an extensive documentation for users and developers.
-
-Templates can be fully tailored to project needs - this is considered as a simple task.
-====
 
 Now we will proceed with Cobigen installation.
 [step]
 --
-createFolder("Desktop/cobigen")
+installCobiGen()
+--
+
+
+====
+
+Using the following command and option you will be able to customize your generation as follows:
+
+=> cobigen, cg: Main entry point of the CLI. If no arguments are passed, man page will be printed.
+
+=> [generate, g]: Command used for code generation.
+
+   -> InputGlob: Glob pattern of the input file or the whole path of the input file from which the code will be generated.
+
+   -> < --increment, -i > : Specifies an increment ID to be generated. You can also search increments by name and CobiGen will output the resultant list. If an exact match found, code generation will happen.
+
+   -> < --template, -t > : specifies a template ID to be generated. You can also search templates by name and CobiGen will output the resultant list.
+
+   -> < --outputRootPath, -out >: The project file path in which you want to generate your code. If no output path is given, CobiGen will use the project of your input file.
+
+=> [adapt-templates, a]: Generates a new templates folder next to the cobigen cli and stores its location    inside  a configuration file. After executing this command, the CLI will attempt to use the specified Templates folder.
+
+    -> < --custom-location, -cl > : Allows the user to choose an absolute file path to a custom location where the CobiGen Templates should be stored and read from.
+
+=> < --verbose, -v > : Prints debug information, verbose log.
+
+=> < --help, -h > : Prints man page.
+
+=> < update, u> : This command compare the artificial pom plug-ins version with central latest version available and user can update any outdated plug-ins version .
+
+Now we will create devon4j project to create operation in Java code.
+
+[step]
+--
+createDevon4jProject("cobigensetupexample")
 --
