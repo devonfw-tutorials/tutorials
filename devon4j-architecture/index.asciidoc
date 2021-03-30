@@ -13,7 +13,6 @@ This step explains Key principles and architecture principles.
 --
 nextKatacodaStep("Key and Architecture Principles", [{ "file": "principles.md" }])
 --
-Dummy text to test.
 ====
 ====
 This step explains application architecture.
@@ -21,7 +20,6 @@ This step explains application architecture.
 --
 nextKatacodaStep("Application Architecture", [{ "file": "architecture.md" }])
 --
-Dummy text.
 ====
 ====
 Now, after having detailed understanding of devon4j architecture principle and concept , in this step we will create sample devon4j application.
