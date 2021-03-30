@@ -6,7 +6,6 @@ After completeing this tutorial you will be aware of devon4j structure and archi
 
 ====
 ====
-
 ### Step1 : Install devonfw-ide
 
 To create devon4j application it is necessary to have devonfw-ide installed on your machine.For this tutorial purpose we will have it installed here.
@@ -15,7 +14,7 @@ If you want to try it on local machine you can refer [here](https://devonfw.com/
 
 [step]
 --
-restoreDevonfwIde(["java", "mvn", "vscode"])
+installDevonfwIde(["java","mvn","vscode"])
 --
 Before proceeding to next steps make sure ide is installed.
 ====
