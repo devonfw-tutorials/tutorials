@@ -1,50 +1,33 @@
 = Tutorial for the devon4j architecture
 ====
-This tutorial aims to explain architecture for devon4j application.There are many different views that are summarized by the term architecture. It focuses on
-* *Key Principles* 
-* *Architecture Principles* 
-* *Application Architecture* 
-    * *Business Architecture*
-    * *Technical Architecture*
+
+This tutorial aims to explain concepts and principles of devon4j architecture with help of an example.
+After completeing this tutorial you will be aware of devon4j structure and architecture. 
+
 ====
 ====
-This step explains Key principles and architecture principles.
+### Step1 : Install devonfw-ide
+
+To create devon4j application it is necessary to have devonfw-ide installed on your machine.For this tutorial purpose we will have it installed here.
+
+If you want to try it on local machine you can refer [here](https://devonfw.com/website/pages/docs/devonfw-ide-introduction.asciidoc.html#setup.asciidoc).
+
 [step]
 --
-nextKatacodaStep("Key and Architecture Principles", [{ "file": "principles.md" }])
+restoreDevonfwIde(["java", "mvn", "vscode"])
 --
+Before proceeding to next steps make sure ide is installed.
 ====
 ====
-This step explains application architecture.
-[step]
---
-nextKatacodaStep("Application Architecture", [{ "file": "architecture.md" }])
---
-====
-====
-Now, after having detailed understanding of devon4j architecture principle and concept , in this step we will create sample devon4j application.
-Before creating devon4j application we need to install devonfw-ide.
-[step]
---
-restoreDevonfwIde(["java", "mvn"])
---
-Before proceeding to next steps ide should be installed.
-====
-====
-In this, we will create sample devon4j application with name sampleapp. 
+### Step2: Create devon4j sample application
+
+Once devonfw-ide is installed , we will create sample devon4j application with name *sampleapp*. 
+
+If you want to create devon4j application on your local there are two ways to do it:
+* In eclipse as shown[here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-eclipse)
+* Using command line as shown [here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-command-line)]
+
 [step]
 --
 createDevon4jProject("sampleapp")
---
-In explorer window near katacoda editor, you can see folder structure like devonfw-> workspaces-> main you should be able to see folder sampleapp. If you will expand this project you will see api, core and server modules generated. All modules follow architectural concept explain previously.
-====
-
-[step]
---
-nextKatacodaStep("Technical Reference Architecture", [{ "file": "nfr.md" }])
---
-
-[step]
---
-nextKatacodaStep("Technology stack", [{ "file": "technology stack.md" }])
 --
