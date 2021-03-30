@@ -36,7 +36,7 @@ In this, we will create sample devon4j application with name sampleapp.
 --
 createDevon4jProject("sampleapp")
 --
-In console under workspaces-> main you should be able to see folder sampleapp. If you will expand this project you will see api, core and server module generated. All modules follow architectural concept explain previously.
+In explorer window near katacoda editor, you can see folder structure like devonfw-> workspaces-> main you should be able to see folder sampleapp. If you will expand this project you will see api, core and server modules generated. All modules follow architectural concept explain previously.
 ====
 
 [step]
