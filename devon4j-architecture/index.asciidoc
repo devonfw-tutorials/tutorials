@@ -14,7 +14,7 @@ If you want to try it on local machine you can refer [here](https://devonfw.com/
 
 [step]
 --
-installDevonfwIde(["java","mvn","vscode"])
+installDevonfwIde(["java","mvn","eclipse"])
 --
 Before proceeding to next steps make sure ide is installed.
 ====
