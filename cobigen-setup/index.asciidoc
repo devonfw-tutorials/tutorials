@@ -1,5 +1,5 @@
 = Tutorial for Cobigen Setup
-====
+
 CobiGen is a generic incremental code generator. It allows you to build Java CRUD application based on the devonfw architecture including all software layers. You can generate all necessary classes and services (DAOs, Transfer Objects, simple CRUD use cases with REST services) of the application from one single entity class.
 
 CobiGen provides Maven and Eclipse integrations. But there is also a command line interface (CLI) which enables the generation of code using only few commands.
@@ -31,23 +31,23 @@ Using the following command and option you will be able to customize your genera
 
 => [generate, g]: Command used for code generation.
 
-   -> InputGlob: Glob pattern of the input file or the whole path of the input file from which the code will be generated.
+   - InputGlob: Glob pattern of the input file or the whole path of the input file from which the code will be generated.
 
-   -> < --increment, -i > : Specifies an increment ID to be generated. You can also search increments by name and CobiGen will output the resultant list. If an exact match found, code generation will happen.
+   - < --increment, -i > : Specifies an increment ID to be generated. You can also search increments by name and CobiGen will output the resultant list. If an exact match found, code generation will happen.
 
-   -> < --template, -t > : specifies a template ID to be generated. You can also search templates by name and CobiGen will output the resultant list.
+   - < --template, -t > : specifies a template ID to be generated. You can also search templates by name and CobiGen will output the resultant list.
 
-   -> < --outputRootPath, -out >: The project file path in which you want to generate your code. If no output path is given, CobiGen will use the project of your input file.
+   - < --outputRootPath, -out >: The project file path in which you want to generate your code. If no output path is given, CobiGen will use the project of your input file.
 
 => [adapt-templates, a]: Generates a new templates folder next to the cobigen cli and stores its location    inside  a configuration file. After executing this command, the CLI will attempt to use the specified Templates folder.
 
-    -> < --custom-location, -cl > : Allows the user to choose an absolute file path to a custom location where the CobiGen Templates should be stored and read from.
+    - < --custom-location, -cl > : Allows the user to choose an absolute file path to a custom location where the CobiGen Templates should be stored and read from.
 
-=> < --verbose, -v > : Prints debug information, verbose log.
+    - < --verbose, -v > : Prints debug information, verbose log.
 
-=> < --help, -h > : Prints man page.
+    - < --help, -h > : Prints man page.
 
-=> < update, u> : This command compare the artificial pom plug-ins version with central latest version available and user can update any outdated plug-ins version .
+    - < update, u> : This command compare the artificial pom plug-ins version with central latest version available and user can update any outdated plug-ins version .
 
 Now we will create devon4j project to create operation in Java code.
 
@@ -97,17 +97,16 @@ If you find an error like Compiled class foo\bar\EmployeeEntity.java has not bee
 Remark: CobiGen is preinstalled in the devonfw/devon-ide.
 
 1.1  Preconditions
-    -> Eclipse 4.x
+    - Eclipse 4.x
 
-    -> Java 7 Runtime (for starting eclipse with CobiGen). This is independent from the target version of your developed code
+    - Java 7 Runtime (for starting eclipse with CobiGen). This is independent from the target version of your developed code
 
 1.2. Installation steps
     1. Open the eclipse installation dialog
-    menu bar → Help → Install new Software…
+    menu bar → Help → Install new Software
 
     2. Open CobiGen’s update site
-       Insert the update site of your interest into the filed Work with and press Add …​
-
+    Insert the update site of your interest into the filed Work with and press Add
     Stable releases: https://dl.bintray.com/devonfw/cobigen.p2/
 
 [step]
@@ -118,48 +117,44 @@ cloneRepository("cobigen-devon4j-template","https://github.com/dixyushi/cobigen.
     3. Follow the installation wizard
     Select CobiGen Eclipse Plug-in → Next → Next → accept the license → Finish → OK → Yes
 
-    4. Once installed, a new menu entry named "CobiGen" will show up in the Package Explorer’s context menu. In the sub menu there will the Generate…​ command, which may ask you to update the templates, and then you can start the generation wizard of CobiGen. You can adapt the templates by clicking on Adapt Templates which will give you the possibility to import the CobiGen_Templates automatically so that you can modified them.
+    4. Once installed, a new menu entry named "CobiGen" will show up in the Package Explorer’s context menu. In the sub menu there will the Generate​ command, which may ask you to update the templates, and then you can start the generation wizard of CobiGen. You can adapt the templates by clicking on Adapt Templates which will give you the possibility to import the CobiGen_Templates automatically so that you can modified them.
 
     4. Checkout (clone) your project’s templates folder or use the current templates released with CobiGen (https://github.com/devonfw/cobigen/tree/master/cobigen-templates) and then choose Import -> General -> Existing Projects into Workspace to import the templates into your workspace.
 
     5. Now you can start generating. To get an introduction of CobiGen try the devon4j templates and work on the devon4j sample application. There you might want to start with Entity objects as a selection to run CobiGen with, which will give you a good overview of what CobiGen can be used for right out of the box in devon4j based development. If you need some more introduction in how to come up with your templates and increments, please be referred to the documentation of the context configuration and the templates configuration
 
-==  2. Updating
-
-    Upgrading eclipse CobiGen plug-in to v3.0.0 needs some more attention of the user due to a changed plug-in architecture of CobiGen’s core module and the eclipse integration. Eventually, we were able to provide any plug-in of CobiGen separately as its own eclipse bundle (fragment), which is automatically discovered by the main CobiGen Eclipse plug-in after installation.
 ====
-= Usage
 
+= Usage
 CobiGen has two different generation modes depending on the input selected for generation. The first one is the simple mode, which will be started if the input contains only one input artifact, e.g. for Java an input artifact currently is a Java file. The second one is the batch mode, which will be started if the input contains multiple input artifacts, e.g. for Java this means a list of files. In general this means also that the batch mode might be started when selecting complex models as inputs, which contain multiple input artifacts. The latter scenario has only been covered in the research group,yet.
 
 == 1. Simple Mode
-    Selecting the menu entry Generate…​ the generation wizard will be opened:
-    The left side of the wizard shows all available increments, which can be selected to be generated. Increments are a container like concept encompassing multiple files to be generated, which should result in a semantically closed generation output. On the right side of the wizard all files are shown, which might be effected by the generation - dependent on the increment selection of files on the left side. The type of modification of each file will be encoded into following color scheme if the files are selected for generation:
+    Selecting the menu entry Generate​ the generation wizard will be opened.The left side of the wizard shows all available increments, which can be selected to be generated. Increments are a container like concept encompassing multiple files to be generated, which should result in a semantically closed generation output. On the right side of the wizard all files are shown, which might be effected by the generation - dependent on the increment selection of files on the left side. The type of modification of each file will be encoded into following color scheme if the files are selected for generation:
 
-    -> green: files, which are currently non-existent in the file system. These files will be created during generation
+    - green: files, which are currently non-existent in the file system. These files will be created during generation
 
-    -> yellow: files, which are currently existent in the file system and which are configured to be merged with generated contents.
+    - yellow: files, which are currently existent in the file system and which are configured to be merged with generated contents.
 
-    -> red: files, which are currently existent in the file system. These files will be overwritten if manually selected.
+    - red: files, which are currently existent in the file system. These files will be overwritten if manually selected.
 
-    -> no color: files, which are currently existent in the file system. Additionally files, which were unselected and thus will be ignored during generation.
+    - no color: files, which are currently existent in the file system. Additionally files, which were unselected and thus will be ignored during generation.
 
 Selecting an increment on the left side will initialize the selection of all shown files to be generated on the right side, whereas green and yellow categorized files will be selected initially. A manual modification of the pre-selection can be performed by switching to the customization tree using the Customize button on the right lower corner.
 
-"Optional: If you want to customize the generation object model of a Java input class, you might continue with the Next > button instead of finishing the generation wizard. The next generation wizard page is currently available for Java file inputs and lists all non-static fields of the input. Unselecting entries will lead to an adapted object model for generation, such that unselected fields will be removed in the object model for generation. By default all fields will be included in the object model.""
+"Optional: If you want to customize the generation object model of a Java input class, you might continue with the Next > button instead of finishing the generation wizard. The next generation wizard page is currently available for Java file inputs and lists all non-static fields of the input. Unselecting entries will lead to an adapted object model for generation, such that unselected fields will be removed in the object model for generation. By default all fields will be included in the object model."
 
-Using the Finish button, the generation will be performed. Finally, CobiGen runs the eclipse internal organize imports and format source code for all generated sources and modified sources. Thus it is possible, that---especially organize imports opens a dialog if some types could not be determined automatically. This dialog can be easily closed by pressing on Continue. If the generation is finished, the Success! dialog will pop up.
+Using the Finish button, the generation will be performed. Finally, CobiGen runs the eclipse internal organize imports and format source code for all generated sources and modified sources. Thus it is possible, that especially organize imports opens a dialog if some types could not be determined automatically. This dialog can be easily closed by pressing on Continue. If the generation is finished, the Success! dialog will pop up.
 
 == 2. Batch mode
 If there are multiple input elements selected, e.g., Java files, CobiGen will be started in batch mode. For the generation wizard dialog this means, that the generation preview will be constrained to the first selected input element. It does not preview the generation for each element of the selection or of a complex input. The selection of the files to be generated will be generated for each input element analogously afterwards.
 
 Thus the color encoding differs also a little bit:
 
-    -> yellow: files, which are configured to be merged.
+    - yellow: files, which are configured to be merged.
 
-    -> red: files, which are not configured with any merge strategy and thus will be created if the file does not exist or overwritten if the file already exists
+    - red: files, which are not configured with any merge strategy and thus will be created if the file does not exist or overwritten if the file already exists
 
-    -> no color: files, which will be ignored during generation
+    - no color: files, which will be ignored during generation
 
 Initially all possible files to be generated will be selected.
 
