@@ -2,26 +2,25 @@
 ====
 CobiGen is a generic incremental code generator. It allows you to build Java CRUD application based on the devonfw architecture including all software layers. You can generate all necessary classes and services (DAOs, Transfer Objects, simple CRUD use cases with REST services) of the application from one single entity class.
 
-CobiGen provides Maven and Eclipse integrations. But there is also a command line interface (CLI) which enables the generation of code using only few commands.
+Here in this tutorial we will learn how we can set up the cobigen environment in our system along with eclipse and maven integration. 
+
+Cobigen provides eclipse and maven integration. There is command line interface(CLI) through which we can proceed with integration.
 
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 ====
+== Prerequisites
+First we need to have devonfw Ide installed in our system to get started with cobigen setup.
 
-
-To start with Cobigen setup tutorial. You first need to have devonIde already installed. Which was already set up for you.
 [step]
 --
 restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
-
-
+Now, devonfw IDE installation is completed.
 Now we will proceed with Cobigen installation.
 [step]
 --
 installCobiGen()
 --
-
-
 ====
 
 == Commands and options
@@ -55,7 +54,7 @@ Now we will create devon4j project to create operation in Java code.
 --
 createDevon4jProject("cobigensetupexample")
 --
-
+====
 == CLI Execution steps:
 CobiGen CLI is installed inside your devonfw distribution. In order to execute it follow the next steps:
 
@@ -124,7 +123,6 @@ cloneRepository("cobigen-devon4j-template","https://github.com/dixyushi/cobigen.
     5. Now you can start generating. To get an introduction of CobiGen try the devon4j templates and work on the devon4j sample application. There you might want to start with Entity objects as a selection to run CobiGen with, which will give you a good overview of what CobiGen can be used for right out of the box in devon4j based development. If you need some more introduction in how to come up with your templates and increments, please be referred to the documentation of the context configuration and the templates configuration
 
 ====
-
 = Usage
 CobiGen has two different generation modes depending on the input selected for generation. The first one is the simple mode, which will be started if the input contains only one input artifact, e.g. for Java an input artifact currently is a Java file. The second one is the batch mode, which will be started if the input contains multiple input artifacts, e.g. for Java this means a list of files. In general this means also that the batch mode might be started when selecting complex models as inputs, which contain multiple input artifacts. The latter scenario has only been covered in the research group,yet.
 
