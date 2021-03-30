@@ -43,3 +43,26 @@ To resolve the errors caused by generation some extra files we will do troublesh
 nextKatacodaStep("Troubleshooting in CLI", [{ "file": "files/cliTroubleshooting.md" }])
 --
 
+Now in the next we will see how to integrate cobigen in eclipse.
+====
+
+In this step we will learn about how we can integrate cobigen in eclipse.
+[step]
+--
+nextKatacodaStep("Eclipse Integration", [{ "file": "files/eclipseIntegration.md" }])
+--
+
+After installation we will go through the modes of usage of cobigen.
+====
+In this step we will learn about the types of modes for usage of cobigen.
+[step]
+--
+nextKatacodaStep("Usage mode of cobigen in eclipse", [{ "file": "files/cobigenUsageMode.md" }])
+--
+
+Now you know how to use cobigen in a particular project.
+However there can be some error while using cobigen. There are times where the selected command don't run as per requirement so for that we do health check for cobigen templates.
+[step]
+--
+nextKatacodaStep("Cobigen Health Check", [{ "file": "files/cobigenHealthCheck.md" }])
+--
