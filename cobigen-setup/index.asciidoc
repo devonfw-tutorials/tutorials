@@ -28,14 +28,14 @@ Using the following command and option you will be able to customize your genera
 --
 nextKatacodaStep("Commands and Options", [{ "file": "files/commandsAndOptions.md" }])
 --
-
+====
 In order to execute the commands we will have to initialize the CobiGen CLI first.
 
 [step]
 --
 nextKatacodaStep("CLI Execution steps", [{ "file": "files/cliExecutionCommands.md" }])
 --
-
+====
 To resolve the errors caused by generation some extra files we will do troubleshooting in CLI.
 
 [step]
