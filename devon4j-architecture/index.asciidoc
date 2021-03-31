@@ -14,7 +14,7 @@ If you want to try it on local machine you can refer [here](https://devonfw.com/
 
 [step]
 --
-installDevonfwIde(["java","mvn","eclipse"])
+installDevonfwIde(["java","mvn","vscode"])
 --
 Before proceeding to next steps make sure ide is installed.
 ====
@@ -38,5 +38,5 @@ Once project is created switch to next tab of IDE. In IDE explorer you can see f
 
 [step]
 --
-nextKatacodaStep("### Step 3: Understand devon4j application architecture", [{ "file": "devon4j-app-arch.md" }])
+nextKatacodaStep("Step 3: Understand devon4j application architecture", [{ "file": "devon4j-app-arch.md" }])
 --
