@@ -38,5 +38,10 @@ Once project is created switch to next tab of IDE. In IDE explorer you can see f
 
 [step]
 --
+nextKatacodaStep("devon4j application architecture", [{ "image": "images/devon4j_proj_structure.JPG }])
+--
+
+[step]
+--
 nextKatacodaStep("Step 3: Understand devon4j application architecture", [{ "file": "devon4j-app-arch.md" }])
 --
