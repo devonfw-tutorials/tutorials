@@ -30,15 +30,9 @@ jobs:
       - name: Get message
         id: get_message
         run: |
-          cat message.txt
           message=`cat message.txt`
-          echo "1"
           echo ${message}
-          echo "2"
           echo "::set-output name=message::$message"
-
-      - name: Test
-        run: echo "Test ${{ steps.get_message.outputs.message }}"
 
       - name: Request changes
         if:  ${{ steps.get_message.outputs.message != '' }}
@@ -46,5 +40,5 @@ jobs:
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: ${{ env.REQUEST_CHANGE_MESSAGE }}
+          body: ${{ steps.get_message.outputs.message }}
 
