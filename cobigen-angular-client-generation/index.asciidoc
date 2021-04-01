@@ -19,12 +19,12 @@ installCobiGen()
 CobiGen uses the backend classes for generating your code used in the angular application. So in the next steps you will create a java project, create a simple java class and run the backend server.
 [step]
 --
-createDevon4jProject("backend-server")
+createDevon4jProject("backend server")
 --
 
 [step]
 == Build and run the Java backend server
 --
-buildJava("backend-server")
-runServerJava("backend-server")
+buildJava("backend server")
+runServerJava("backend server")
 --
