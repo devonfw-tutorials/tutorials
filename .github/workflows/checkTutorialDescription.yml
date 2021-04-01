@@ -35,13 +35,13 @@ jobs:
           echo "1"
           echo ${message}
           echo "2"
-          echo "::set-output name=message::$content"
+          echo "::set-output name=message::$message"
 
       - name: Test
         run: echo "Test ${{ steps.get_message.outputs.message }}"
 
       - name: Request changes
-        if:  ${{ env.REQUEST_CHANGE_MESSAGE != '' }}
+        if:  ${{ steps.get_message.outputs.message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
