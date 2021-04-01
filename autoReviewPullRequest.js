@@ -41,7 +41,7 @@ async function autoReviewPullRequest() {
         }
     } catch(e) {
         console.error(e);
-        process.env["REQUEST_CHANGE_MESSAGE"] = requestChangeMessage;
+        child_process.spawnSync("REQUEST_CHANGE_MESSAGE=" + requestChangeMessage)
         return -1;
     }
 
