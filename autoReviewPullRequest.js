@@ -41,11 +41,12 @@ async function autoReviewPullRequest() {
         }
     } catch(e) {
         console.error(e);
-        child_process.spawnSync("REQUEST_CHANGE_MESSAGE=" + requestChangeMessage)
+        child_process.spawnSync("REQUEST_CHANGE_MESSAGE=" + requestChangeMessage, { shell: true, encoding: 'utf-8' });
         return -1;
     }
 
-    process.env["REQUEST_CHANGE_MESSAGE"] = requestChangeMessage;
+    console.log(requestChangeMessage);
+    child_process.spawnSync("REQUEST_CHANGE_MESSAGE=" + requestChangeMessage, { shell: true, encoding: 'utf-8' });
     return 0;
 }
 
