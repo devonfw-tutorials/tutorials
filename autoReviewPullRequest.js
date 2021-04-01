@@ -14,7 +14,7 @@ const options = {
     }
 }
 
-let requestChangeMessage = "";
+var requestChangeMessage = "";
 
 async function autoReviewPullRequest() {
     let env = process.env;
