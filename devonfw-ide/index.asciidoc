@@ -1,14 +1,17 @@
-= Devonfw IDE Setup
+= Bootstrap your devonfw development environment
 ====
-Devon offers complete IDE solution integrated with a lot​ of integrated tooling and initial settings​. 
+devonfw offers complete IDE solution integrated with a lot​ of integrated tooling and initial settings​. 
 It massively speeds up development, reduces risks and helps deliver better results.
 
-More information about DEVONFW IDE on https://devonfw.com/website/pages/docs/devonfw-ide-introduction.asciidoc.html
+More information about devonfw IDE can be found on https://devonfw.com/website/pages/docs/devonfw-ide-introduction.asciidoc.html
 ====
 
-Below steps will guide in the IDE Setup
+Follow the below steps to setup your devonfw development environment.
 [step]
 --
 installDevonfwIde(["java","mvn"])
 --
 
+Now devonfw-ide is installed successfully with Maven and Java too. 
+
+More information on devonfw-ide can be found at https://devonfw.com/website/pages/docs/devonfw-ide-introduction.asciidoc.html
