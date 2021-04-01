@@ -1,7 +1,7 @@
 name: Auto review tutorial description
 
 on:
-  pull_request_target:
+  pull_request:
     
   workflow_dispatch:
 jobs:
@@ -26,6 +26,9 @@ jobs:
       - name: Check tutorial descriptions
         run: node repo/autoReviewPullRequest.js
 
+      - name: Echo
+        run: echo $REQUEST_CHANGE_MESSAGE
+        
       - name: Request changes
         if:  ${{ REQUEST_CHANGE_MESSAGE != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2

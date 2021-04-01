@@ -14,83 +14,12 @@ const options = {
     }
 }
 
-const parserDefinition = 
-`
-start
-  = headline
-    description
-    step+
-
-headline
-  = "=" _ string ___
-  
-description
-  = "====" ___
-    descriptionlines
-  	"====" ___ 
-
-descriptionlines
-  = descriptionline+ { return { "descriptionlines": text()}; }
-  
-descriptionline
-  = !"====" string __ 
-  
-step
-  = (
-      "====" ___
-      stepinner
-      steptextafterlines
-      "====" __
-    )
-  / stepinner
-  
-stepinner
-  = steptextlines?
-    "[step]" ___
-    stepstitle?
-    "--" ___
-    steplines
-    "--" __
-
-stepstitle
-  = "==" _ string __
-
-steptextlines
-  = steptextline* { return { "steptextlines": text()}; }
-
-steptextline
-  = !"[step]" string __
-  
-steptextafterlines
-  = steptextafterline* { return { "steptextafterlines": text()}; }
-
-steptextafterline
-  = !"====" string __
- 
-steplines
-  = stepline+ { return { "steplines": text()}; }
-  
-stepline
-  = !"--" string __
-
-string "string"
-  = [^\r\n]+ { return text(); }
-
-_ "whitespace"
-  = [ \t]*
- 
-__ "linebreak"
-  = [ \t\n\r]*
-  
-___ "linebreak"
-  = [ \t\n\r]+
-`
-
 let requestChangeMessage = "";
 
 async function autoReviewPullRequest() {
     let env = process.env;
     let pr = env.PR_NUMBER;
+    pr = 70;
 
     try {
         let files = JSON.parse(await getJson("https://api.github.com/repos/devonfw-tutorials/tutorials/pulls/" + pr + "/files"));
@@ -159,7 +88,7 @@ function parseFile(file) {
     
     requestChangeMessage = (requestChangeMessage == "")
         ? "The tutorial description in file " + file + " does not meet the desired requirements."
-        : requestChangeMessage += "\n"
+        : requestChangeMessage += "\nThe tutorial description in file " + file + " does not meet the desired requirements.";
 }
 
 autoReviewPullRequest();
