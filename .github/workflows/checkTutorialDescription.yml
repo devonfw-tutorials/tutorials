@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Check tutorial descriptions
-        run: node repo/autoReviewPullRequest.js
+        run: node autoReviewPullRequest.js
 
       - name: Echo
         run: echo "$REQUEST_CHANGE_MESSAGE"
