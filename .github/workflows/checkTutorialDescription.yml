@@ -31,7 +31,7 @@ jobs:
           env
 
       - name: Test
-        run: echo "Test: ${{ steps.check_tutorial_description.outputs.message }}"
+        run: echo "Test ${{ steps.check_tutorial_description.outputs.message }}"
 
       - name: Request changes
         if:  ${{ env.REQUEST_CHANGE_MESSAGE != '' }}
