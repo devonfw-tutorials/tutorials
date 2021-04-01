@@ -28,7 +28,7 @@ jobs:
         run: node repo/autoReviewPullRequest.js
 
       - name: Echo
-        run: echo $REQUEST_CHANGE_MESSAGE
+        run: echo "$REQUEST_CHANGE_MESSAGE"
 
       - name: Request changes
         if:  ${{ REQUEST_CHANGE_MESSAGE != '' }}
