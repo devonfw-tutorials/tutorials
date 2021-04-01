@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PR_NUMBER: ${{github.event.number}}
+      REQUEST_CHANGE_MESSAGE: ''
 
     steps:
       - name: Checkout playbooks
