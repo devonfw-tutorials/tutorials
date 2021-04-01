@@ -82,11 +82,17 @@ function parseFile(file, filename) {
     let parseResult = parser.parse(input);
 
     let description = parseResult[1][2].descriptionlines;
-    console.log(description);
     
-    requestChangeMessage = (requestChangeMessage == "")
-        ? "The tutorial description in file " + filename + " does not meet the desired requirements."
-        : requestChangeMessage += "\nThe tutorial description in file " + filename + " does not meet the desired requirements.";
+    let messageBody = "";
+    if(!description.contains("== Prerequisites")) {
+      messageBody = "The description must describe the prerequisites of a tutorial. It must contain a '== Prerequisites' part.";
+    }
+
+    if(messageBody != "") {
+      requestChangeMessage = (requestChangeMessage == "")
+        ? "The tutorial description in file " + filename + " does not meet the desired requirements.\n" + messageBody
+        : requestChangeMessage += "\n\n" + "The tutorial description in file " + filename + " does not meet the desired requirements.\n" + messageBody;
+    }
 }
 
 autoReviewPullRequest();
