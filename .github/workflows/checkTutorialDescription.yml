@@ -1,0 +1,24 @@
+name: Auto review tutorial description
+
+on:
+  pull_request:
+    branches: [ main ]
+    
+  workflow_dispatch:
+jobs:
+  auto_review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
+        with:
+          repository: devonfw-tutorials/tutorials
+          path: repo
+
+      - name: Install node environment
+        uses: actions/setup-node@v2-beta
+
+      - name: Check tutorial descriptions
+        run: node repo/autoReviewPullRequest.js
+
