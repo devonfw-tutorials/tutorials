@@ -23,18 +23,16 @@ async function autoReviewPullRequest() {
 
     try {
         let files = JSON.parse(await getJson("https://api.github.com/repos/devonfw-tutorials/tutorials/pulls/" + pr + "/files"));
-        console.log(files);
         for(let i = 0; i < files.length; i++) {
             if(path.basename(files[i].filename) == "index.asciidoc") {
                 let contents = JSON.parse(await getJson(files[i].contents_url));
-                console.log(contents);
                 if(contents.download_url) {
                     let playbook = downloadFile(contents.download_url);
                     if(!playbook || playbook == "") {
                         throw new Error("Unable to download file from " + contents.download_url); 
                     }
 
-                    parseFile(playbook);
+                    parseFile(playbook, files[i].filename);
                     rimraf.sync(playbook);
                 }
             }
@@ -77,7 +75,7 @@ function downloadFile(url) {
     return path.join(__dirname, "index.asciidoc");
 }
 
-function parseFile(file) {
+function parseFile(file, filename) {
     let def = fs.readFileSync(path.join(__dirname,"parser.def"), 'utf8');
     let parser = pegjs.generate(def);
     let input = fs.readFileSync(file, 'utf8');
@@ -87,8 +85,8 @@ function parseFile(file) {
     console.log(description);
     
     requestChangeMessage = (requestChangeMessage == "")
-        ? "The tutorial description in file " + file + " does not meet the desired requirements."
-        : requestChangeMessage += "\nThe tutorial description in file " + file + " does not meet the desired requirements.";
+        ? "The tutorial description in file " + filename + " does not meet the desired requirements."
+        : requestChangeMessage += "\nThe tutorial description in file " + filename + " does not meet the desired requirements.";
 }
 
 autoReviewPullRequest();
