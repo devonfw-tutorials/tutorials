@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     env:
       PR_NUMBER: ${{github.event.number}}
-      REQUEST_CHANGE_MESSAGE: ''
 
     steps:
       - name: Checkout playbooks
@@ -29,14 +28,17 @@ jobs:
         run: node autoReviewPullRequest.js
 
       - name: Get message
+        id: get_message
         run: |
           cat message.txt
-          content=`cat message.txt`
-          echo ${content}
+          message=`cat message.txt`
+          echo "1"
+          echo ${message}
+          echo "2"
           echo "::set-output name=message::$content"
 
       - name: Test
-        run: echo "Test ${{ steps.check_tutorial_description.outputs.message }}"
+        run: echo "Test ${{ steps.get_message.outputs.message }}"
 
       - name: Request changes
         if:  ${{ env.REQUEST_CHANGE_MESSAGE != '' }}
