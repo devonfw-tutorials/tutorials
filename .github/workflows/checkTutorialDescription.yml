@@ -25,12 +25,13 @@ jobs:
         run: npm install
 
       - name: Check tutorial descriptions
+        id: check_tutorial_description
         run: |
           node autoReviewPullRequest.js
           env
 
-      - name: Env variables
-        run: env
+      - name: Test
+        run: echo "Test: ${{ steps.check_tutorial_description.outputs.message }}"
 
       - name: Request changes
         if:  ${{ env.REQUEST_CHANGE_MESSAGE != '' }}

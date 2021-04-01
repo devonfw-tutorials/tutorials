@@ -41,12 +41,12 @@ async function autoReviewPullRequest() {
         }
     } catch(e) {
         console.error(e);
-        child_process.spawnSync("REQUEST_CHANGE_MESSAGE=" + requestChangeMessage, { shell: true, encoding: 'utf-8' });
+        child_process.spawnSync("echo '::set-output name=message::" + requestChangeMessage + "'", { shell: true, encoding: 'utf-8' });
         return -1;
     }
 
     console.log(requestChangeMessage);
-    child_process.spawnSync("REQUEST_CHANGE_MESSAGE=" + requestChangeMessage, { shell: true, encoding: 'utf-8' });
+    child_process.spawnSync("echo '::set-output name=message::" + requestChangeMessage + "'", { shell: true, encoding: 'utf-8' });
     return 0;
 }
 
