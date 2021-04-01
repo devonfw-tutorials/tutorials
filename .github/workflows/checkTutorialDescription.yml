@@ -30,8 +30,9 @@ jobs:
 
       - name: Get message
         run: |
+          cat message.txt
           content=`cat message.txt`
-          echo content
+          echo ${content}
           echo "::set-output name=message::$content"
 
       - name: Test
