@@ -1,0 +1,50 @@
+name: Check PR
+
+on:
+  pull_request_target:
+    types: [opened]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{github.event.number}}
+
+    steps:
+      - name: Get PR info
+        id: pr_info
+        run: |
+          content=`curl -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${PR_NUMBER}`
+          # the following lines are only required for multi line json
+          content="${content//'%'/'%25'}"
+          content="${content//$'\n'/'%0A'}"
+          content="${content//$'\r'/'%0D'}"
+          # end of optional handling for multi line json
+          echo "::set-output name=json::$content"
+          
+      - name: Check draft
+        if: "${{!startsWith(fromJson(steps.pr_info.outputs.json).title,'WIP') && !fromJson(steps.pr_info.outputs.json).draft}}"
+        uses: mshick/add-pr-comment@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: |
+            Please mark your pull request as draft until it is finished: https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/changing-the-stage-of-a-pull-request#converting-a-pull-request-to-a-draft
+            
+      - name: Check title
+        if: "${{contains(fromJson(steps.pr_info.outputs.json).title, 'commit')}}"
+        uses: mshick/add-pr-comment@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: |
+            Please add a meaningful title to your pull request.
+            
+      - name: Check body
+        if: "${{fromJson(steps.pr_info.outputs.json).body == null}}"
+        uses: mshick/add-pr-comment@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: |
+            Please add a description to your pull request.

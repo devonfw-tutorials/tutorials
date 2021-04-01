@@ -3,12 +3,10 @@ name: CI
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
     
   workflow_dispatch:
 jobs:
-  build:
+  build_main:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,3 +31,10 @@ jobs:
 
       - name: run buildRun.sh
         run: sh buildRun.sh
+      
+      - name: Repository dispatch
+        uses: peter-evans/repository-dispatch@v1
+        with:
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repository: devonfw-tutorials/katacoda-scenarios
+          event-type: dispatch-katacoda-scenarios
