@@ -41,12 +41,11 @@ async function autoReviewPullRequest() {
         }
     } catch(e) {
         console.error(e);
-        child_process.spawnSync("echo '::set-output name=message::" + requestChangeMessage + "'", { shell: true, encoding: 'utf-8' });
+        fs.writeFileSync(path.join(__dirname, "message.txt"), requestChangeMessage);
         return -1;
     }
 
-    console.log(requestChangeMessage);
-    child_process.spawnSync("echo '::set-output name=message::" + requestChangeMessage + "'", { shell: true, encoding: 'utf-8' });
+    fs.writeFileSync(path.join(__dirname, "message.txt"), requestChangeMessage);
     return 0;
 }
 

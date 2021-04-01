@@ -26,9 +26,13 @@ jobs:
 
       - name: Check tutorial descriptions
         id: check_tutorial_description
+        run: node autoReviewPullRequest.js
+
+      - name: Get message
         run: |
-          node autoReviewPullRequest.js
-          env
+          content=`cat message.txt`
+          echo content
+          echo "::set-output name=message::$content"
 
       - name: Test
         run: echo "Test ${{ steps.check_tutorial_description.outputs.message }}"
