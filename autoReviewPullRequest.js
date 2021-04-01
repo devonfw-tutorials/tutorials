@@ -84,7 +84,7 @@ function parseFile(file, filename) {
     let description = parseResult[1][2].descriptionlines;
     
     let messageBody = "";
-    if(!description.contains("== Prerequisites")) {
+    if(!description.includes("== Prerequisites")) {
       messageBody = "The description must describe the prerequisites of a tutorial. It must contain a '== Prerequisites' part.";
     }
 
