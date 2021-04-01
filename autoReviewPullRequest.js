@@ -19,7 +19,6 @@ var requestChangeMessage = "";
 async function autoReviewPullRequest() {
     let env = process.env;
     let pr = env.PR_NUMBER;
-    pr = 70;
 
     try {
         let files = JSON.parse(await getJson("https://api.github.com/repos/devonfw-tutorials/tutorials/pulls/" + pr + "/files"));
