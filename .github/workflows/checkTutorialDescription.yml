@@ -16,7 +16,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: devonfw-tutorials/tutorials
-          path: repo
 
       - name: Install node environment
         uses: actions/setup-node@v2-beta
