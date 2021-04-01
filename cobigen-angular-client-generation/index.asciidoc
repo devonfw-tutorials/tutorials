@@ -26,5 +26,5 @@ createDevon4jProject("backendServer")
 == Build and run the Java backend server
 --
 buildJava("backendServer")
-runServerJava("backendServer")
+runServerJava("backendServer/server")
 --
