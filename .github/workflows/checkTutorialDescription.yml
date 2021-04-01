@@ -31,10 +31,10 @@ jobs:
         run: echo "$REQUEST_CHANGE_MESSAGE"
 
       - name: Request changes
-        if:  ${{ REQUEST_CHANGE_MESSAGE != '' }}
+        if:  ${{ env.REQUEST_CHANGE_MESSAGE != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: ${{ REQUEST_CHANGE_MESSAGE }}
+          body: ${{ env.REQUEST_CHANGE_MESSAGE }}
 
