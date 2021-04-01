@@ -2,6 +2,7 @@ name: Auto review tutorial description
 
 on:
   pull_request:
+    branches: [ main ]
     
   workflow_dispatch:
 jobs:
@@ -28,7 +29,7 @@ jobs:
 
       - name: Echo
         run: echo $REQUEST_CHANGE_MESSAGE
-        
+
       - name: Request changes
         if:  ${{ REQUEST_CHANGE_MESSAGE != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
