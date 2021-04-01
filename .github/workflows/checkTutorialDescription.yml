@@ -26,8 +26,8 @@ jobs:
       - name: Check tutorial descriptions
         run: node autoReviewPullRequest.js
 
-      - name: Echo
-        run: echo "$REQUEST_CHANGE_MESSAGE"
+      - name: Env variables
+        run: env
 
       - name: Request changes
         if:  ${{ env.REQUEST_CHANGE_MESSAGE != '' }}
