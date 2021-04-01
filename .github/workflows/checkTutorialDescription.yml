@@ -1,13 +1,14 @@
 name: Auto review tutorial description
 
 on:
-  pull_request:
-    branches: [ main ]
+  pull_request_target:
     
   workflow_dispatch:
 jobs:
   auto_review:
     runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{github.event.number}}
 
     steps:
       - name: Checkout playbooks
@@ -19,6 +20,17 @@ jobs:
       - name: Install node environment
         uses: actions/setup-node@v2-beta
 
+      - name: npm install
+        run: npm install
+
       - name: Check tutorial descriptions
         run: node repo/autoReviewPullRequest.js
+
+      - name: Request changes
+        if:  ${{ REQUEST_CHANGE_MESSAGE != '' }}
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          event: REQUEST_CHANGES
+          body: ${{ REQUEST_CHANGE_MESSAGE }}
 
