@@ -19,6 +19,7 @@ var requestChangeMessage = "";
 async function autoReviewPullRequest() {
     let env = process.env;
     let pr = env.PR_NUMBER;
+    pr = 70;
 
     try {
         let files = JSON.parse(await getJson("https://api.github.com/repos/devonfw-tutorials/tutorials/pulls/" + pr + "/files"));
@@ -86,6 +87,12 @@ function parseFile(file, filename) {
     if(!description.includes("== Prerequisites")) {
       messageBody = "The description must describe the prerequisites of a tutorial. It must contain a '== Prerequisites' part.";
     }
+
+    if(!description.includes("== Learning goals")) {
+        messageBody = (messageBody == "")
+           ? "The description should describe what the user will learn in the tutorial. It must contain a '== Learning goals' part."
+           : messageBody + "\nThe description should describe what the user will learn in the tutorial. It must contain a '== Learning goals' part.";
+      }
 
     if(messageBody != "") {
       requestChangeMessage = (requestChangeMessage == "")
