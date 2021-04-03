@@ -1,7 +1,8 @@
 name: Auto review tutorial description
 
 on:
-  pull_request_target:
+  pull_request:
+    branches: [ main ]
     
   workflow_dispatch:
 jobs:
@@ -13,17 +14,22 @@ jobs:
     steps:
       - name: Checkout playbooks
         uses: actions/checkout@v2
+
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorials
+          repository: devonfw-tutorials/tutorial-compiler
 
       - name: Install node environment
         uses: actions/setup-node@v2-beta
+
+      - name: Test
+        run: ls -R
 
       - name: npm install
         run: npm install
 
       - name: Check tutorial descriptions
-        id: check_tutorial_description
         run: node autoReviewPullRequest.js
 
       - name: Get message
