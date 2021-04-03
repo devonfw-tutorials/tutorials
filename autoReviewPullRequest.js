@@ -75,7 +75,7 @@ function downloadFile(url) {
 }
 
 function parseFile(file, filename) {
-    let def = fs.readFileSync(path.join(__dirname, "engine", "parser.def"), 'utf8');
+    let def = fs.readFileSync(path.join(__dirname, "tutorial-compiler", "engine", "parser.def"), 'utf8');
     let parser = pegjs.generate(def);
     let input = fs.readFileSync(file, 'utf8');
     let parseResult = parser.parse(input);
