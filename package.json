@@ -6,10 +6,6 @@
     "pegjs": "^0.10.0",
     "rimraf": "^3.0.2"
   },
-  "devDependencies": {
-    "@types/jasmine": "^3.6.2",
-    "jasmine": "^3.6.2"
-  },
   "author": "",
   "license": "ISC"
 }
