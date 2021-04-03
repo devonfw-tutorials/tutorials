@@ -94,4 +94,4 @@ function parseFile(file, filename) {
     }
 }
 
-await autoReviewPullRequest();
+autoReviewPullRequest();
