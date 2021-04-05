@@ -8,9 +8,9 @@ Cobigen provides eclipse and maven integration. There is command line interface(
 
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 ====
-== Prerequisites
 
-Before we start, the installation of devinfw ide is already done for you.
+Before we start, the installation of devonfw ide is already done for you.
+== Prerequisites
 
 [step]
 --
@@ -40,7 +40,9 @@ nextKatacodaStep("CLI Execution steps", [{ "file": "files/cliExecutionCommands.m
 --
 
 In the next step we will learn about troubleshooting and how we can deal with unwanted files.
+
 ====
+
 To resolve the errors caused by generation some extra files we will do troubleshooting in CLI.
 
 [step]
