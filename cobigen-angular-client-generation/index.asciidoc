@@ -21,9 +21,8 @@ CobiGen uses the backend classes for generating your code used in the angular ap
 --
 createDevon4jProject("backendServer")
 --
-
+Build and run the Java backend server
 [step]
-== Build and run the Java backend server
 --
 buildJava("backendServer")
 runServerJava("backendServer/server")
