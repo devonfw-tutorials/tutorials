@@ -5,14 +5,12 @@ It massively speeds up development, reduces risks and helps deliver better resul
 
 More information about devonfw IDE can be found on https://devonfw.com/website/pages/docs/devonfw-ide-introduction.asciidoc.html
 ====
-
+====
 Follow the below steps to setup your devonfw development environment.
 [step]
 --
 installDevonfwIde(["java","mvn"])
 --
-====
 Now devonfw-ide is installed successfully with Maven and Java too. 
-
 More information on devonfw-ide can be found at https://devonfw.com/website/pages/docs/devonfw-ide-introduction.asciidoc.html
 ====
