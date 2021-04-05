@@ -52,13 +52,36 @@ Now in the next step we will see how to integrate CobiGen in eclipse.
 ====
 
 In this step we will learn about how we can integrate CobiGen in eclipse.
+# Installation
+Remark: CobiGen is preinstalled in the devonfw/devon-ide.
+
+1.1  Preconditions
+    - Eclipse 4.x
+
+    - Java 7 Runtime (for starting eclipse with CobiGen). This is independent from the target version of your developed code
+
 [step]
 --
-nextKatacodaStep("Eclipse Integration", [{ "file": "files/eclipseIntegration.md" }])
+nextKatacodaStep("New software installation", [{"image": "images/01-install-new-software.png"}])
+-- 
+
+In next step we will learn about installation steps in eclipse.
+
+====
+
+1.2. Installation steps
+    1. Open the eclipse installation dialog
+    menu bar → Help → Install new Software
+
+[step]
 --
+nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
+-- 
 
 After installation we will go through the modes of usage of CobiGen.
+
 ====
+
 In this step we will learn about the types of modes for usage of CobiGen.
 [step]
 --
