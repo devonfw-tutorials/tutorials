@@ -8,6 +8,8 @@ CobiGen CLI is installed inside your devonfw distribution. In order to execute i
 
 `devon cobigen`{{execute T1}}
 
+`devon`{{execute T1}}
+
 3. Use a valid CobiGen input file and run cobigen generate <pathToInputFile>. Note: On the first execution of the CLI, CobiGen will download all the needed dependencies, please be patient.
 
 A list of increments will be printed so that you can start the generation.
