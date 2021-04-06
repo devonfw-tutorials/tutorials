@@ -1,4 +1,3 @@
-    2. Open CobiGen’s update site
     Insert the update site of your interest into the filed Work with and press Add
     Stable releases: https://dl.bintray.com/devonfw/cobigen.p2/
 

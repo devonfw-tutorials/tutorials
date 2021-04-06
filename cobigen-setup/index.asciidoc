@@ -1,4 +1,4 @@
-= Tutorial for Cobigen Setup
+= A setup tutorial for devonfw Code-based incremental Generator(i.e. Cobigen)
 ====
 CobiGen is a generic incremental code generator. It allows you to build Java CRUD application based on the devonfw architecture including all software layers. You can generate all necessary classes and services (DAOs, Transfer Objects, simple CRUD use cases with REST services) of the application from one single entity class.
 
@@ -65,25 +65,21 @@ Remark: CobiGen is preinstalled in the devonfw/devon-ide.
 
     - Java 7 Runtime (for starting eclipse with CobiGen). This is independent from the target version of your developed code
 
+1.2. Installation steps
+    1. Open the eclipse installation dialog
+    menu bar → Help → Install new Software
 [step]
 --
 nextKatacodaStep("New software installation", [{"image": "images/01-install-new-software.png"}])
 -- 
 
-In next step we will learn about installation steps in eclipse.
-====
-
-====
-1.2. Installation steps
-    1. Open the eclipse installation dialog
-    menu bar → Help → Install new Software
-
+    Here we can select the updates.
+    2. Open CobiGen’s update site
 [step]
 --
 nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
 -- 
 
-After installation we will go through the modes of usage of CobiGen.
 ====
 
 ====
