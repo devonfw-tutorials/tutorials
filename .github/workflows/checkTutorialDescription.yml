@@ -1,0 +1,46 @@
+name: Auto review tutorial description
+
+on:
+  pull_request_target:
+    
+  workflow_dispatch:
+jobs:
+  auto_review:
+    runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{github.event.number}}
+
+    steps:
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
+
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
+        with:
+          repository: devonfw-tutorials/tutorial-compiler
+          path: tutorial-compiler
+
+      - name: Install node environment
+        uses: actions/setup-node@v2-beta
+
+      - name: npm install
+        run: npm install
+
+      - name: Check tutorial descriptions
+        run: node autoReviewPullRequest.js
+
+      - name: Get message
+        id: get_message
+        run: |
+          message=`cat message.txt`
+          echo ${message}
+          echo "::set-output name=message::$message"
+
+      - name: Request changes
+        if:  ${{ steps.get_message.outputs.message != '' }}
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          event: REQUEST_CHANGES
+          body: ${{ steps.get_message.outputs.message }}
+
