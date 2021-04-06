@@ -1,6 +1,6 @@
 * cobigen, cg: Main entry point of the CLI. If no arguments are passed, man page will be printed.
 
-`cd tutorial-compiler`{{execute T1}}
+`cd devonfw`{{execute T1}}
 
 
 * [generate, g]: Command used for code generation.
