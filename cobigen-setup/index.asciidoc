@@ -89,15 +89,12 @@ CobiGen has two different generation modes depending on the input selected for g
 nextKatacodaStep("Simple mode", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
 --
 
-
 [step]
 --
 nextKatacodaStep("Batch mode", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
 --
 
-====
-Now you know how to use CobiGen in a particular project.
-However there can be some error while using cobigen. There are times where the selected command don't execute as per requirement so for that we do health check for CobiGen templates.
-
-To get more information on Health Check for Cobigen Templates visit on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc_eclipse-integration.html#cobigen-eclipse_usage.asciidoc_health-check
-====
+[step]
+--
+nextKatacodaStep("Conclusion", [{ "file": "files/conclusion.md" }])
+--
