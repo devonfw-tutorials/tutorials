@@ -14,7 +14,8 @@ More information about CobiGen on https://devonfw.com/website/pages/docs/master-
 restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
 
-Prerequisites
+====
+# Prerequisites
 Before we start, the installation of devonfw ide is already done for you.
 Now we will proceed with CobiGen installation.
 [step]
@@ -22,35 +23,24 @@ Now we will proceed with CobiGen installation.
 installCobiGen()
 --
 
-====
-Below are the commands which we can use on CobiGen CLI.
-Using the following command and option you will be able to customize your generation as follows
-[step]
---
-nextKatacodaStep("Commands and Options", [{ "file": "files/commandsAndOptions.md" }])
---
-
-In the next step we will learn about the we can execute various command on CLI.
-====
-
-====
 In order to execute the commands we will have to initialize the CobiGen CLI first.
 
 [step]
 --
 nextKatacodaStep("CLI Execution steps", [{ "file": "files/cliExecutionCommands.md" }])
 --
-
-In the next step we will learn about troubleshooting and how we can deal with unwanted files.
 ====
 
 ====
-To resolve the errors caused by generation some extra files we will do troubleshooting in CLI.
+Below are the commands which we can use on CobiGen CLI.
+Using the following command and option you will be able to customize your generation as follows
 
 [step]
 --
-nextKatacodaStep("Troubleshooting in CLI", [{ "file": "files/cliTroubleshooting.md" }])
+nextKatacodaStep("Commands and Options", [{ "file": "files/commandsAndOptions.md" }])
 --
+
+To get more information about Troubleshooting in CLI visit on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc_cobigen-cli.html#howto_cobigen-cli-generation.asciidoc_troubleshooting
 
 Now in the next step we will see how to integrate CobiGen in eclipse.
 ====
@@ -79,19 +69,17 @@ nextKatacodaStep("New software installation", [{"image": "images/01-install-new-
 --
 nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
 -- 
-
 ====
 
 ====
 In this step we will learn about the types of modes for usage of CobiGen.
+
 [step]
 --
 nextKatacodaStep("Usage mode of CobiGen in eclipse", [{ "file": "files/cobigenUsageMode.md" }])
 --
 
 Now you know how to use CobiGen in a particular project.
-However there can be some error while using cobigen. There are times where the selected command don't run as per requirement so for that we do health check for CobiGen templates.
-[step]
---
-nextKatacodaStep("CobiGen Health Check", [{ "file": "files/cobigenHealthCheck.md" }])
---
+However there can be some error while using cobigen. There are times where the selected command don't execute as per requirement so for that we do health check for CobiGen templates.
+
+To get more information on Health Check for Cobigen Templates visit on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc_eclipse-integration.html#cobigen-eclipse_usage.asciidoc_health-check
