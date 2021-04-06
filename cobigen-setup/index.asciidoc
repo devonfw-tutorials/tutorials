@@ -25,11 +25,12 @@ installCobiGen()
 
 In order to execute the commands we will have to initialize the CobiGen CLI first.
 
+====
+
 [step]
 --
 nextKatacodaStep("CLI Execution steps", [{ "file": "files/cliExecutionCommands.md" }])
 --
-====
 
 ====
 Below are the commands which we can use on CobiGen CLI.
@@ -47,7 +48,7 @@ Now in the next step we will see how to integrate CobiGen in eclipse.
 
 ====
 In this step we will learn about how we can integrate CobiGen in eclipse.
-# Installation
+
 Remark: CobiGen is preinstalled in the devonfw/devon-ide.
 
 1.1  Preconditions
@@ -60,16 +61,18 @@ Remark: CobiGen is preinstalled in the devonfw/devon-ide.
     menu bar → Help → Install new Software
 [step]
 --
-nextKatacodaStep("New software installation", [{"image": "images/01-install-new-software.png"}])
+nextKatacodaStep("Installation", [{"image": "images/01-install-new-software.png"}])
 -- 
 
     Here we can select the updates.
     2. Open CobiGen’s update site
+
+====
+
 [step]
 --
 nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
 -- 
-====
 
 ====
 In this step we will learn about the types of modes for usage of CobiGen.
