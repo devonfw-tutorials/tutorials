@@ -3,14 +3,14 @@ To know more about implementation of this command you can follow https://katacod
 
 * [adapt-templates, a]: Generates a new templates folder next to the cobigen cli and stores its location    inside  a configuration file. After executing this command, the CLI will attempt to use the specified Templates folder.
 
-`cg a`{{execute T1}}
+`devon cg a`{{execute T1}}
 
 {
    what it will do: Downloads the latest CobiGen_Templates and unpacks them next to the CLI. CobiGen will from now on use these unpacked Templates for generation.
 }
     - < --custom-location, -cl > : Allows the user to choose an absolute file path to a custom location where the CobiGen Templates should be stored and read from.
 
-`cg a -cl C:\my\custom\location`{{execute T1}}
+`devon cg a -cl C:\my\custom\location`{{execute T1}}
 
 {
    what it will do: Downloads the latest CobiGen_Templates and unpacks them in C:\my\custom\location. CobiGen will from now on use these unpacked Templates for generation.

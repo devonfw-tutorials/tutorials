@@ -18,13 +18,13 @@ restoreDevonfwIde(["java","mvn"], "2020.08.001")
 # Prerequisites
 Before we start, the installation of devonfw ide is already done for you.
 Now we will proceed with CobiGen installation.
+
 [step]
 --
 installCobiGen()
 --
 
 In order to execute the commands we will have to initialize the CobiGen CLI first.
-
 ====
 
 [step]
@@ -76,13 +76,26 @@ nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.
 Now you can start generating. To get an introduction of CobiGen try the devon4j templates and work on the devon4j sample application.
 ====
 
+# Usage
+
 In this step we will learn about the types of modes for usage of CobiGen.
+
+CobiGen has two different generation modes depending on the input selected for generation. 
+    1. Simple mode
+    2. Batch mode
 
 [step]
 --
-nextKatacodaStep("Usage mode of CobiGen in eclipse", [{ "file": "files/cobigenUsageMode.md" }])
+nextKatacodaStep("Simple mode", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
 --
 
+
+[step]
+--
+nextKatacodaStep("Batch mode", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
+--
+
+====
 Now you know how to use CobiGen in a particular project.
 However there can be some error while using cobigen. There are times where the selected command don't execute as per requirement so for that we do health check for CobiGen templates.
 
