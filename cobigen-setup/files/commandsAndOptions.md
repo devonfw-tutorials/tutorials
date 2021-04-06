@@ -1,24 +1,5 @@
 * [generate, g]: Command used for code generation.
-
-`cobigen generate foo\bar\EmployeeEntity.java`{{execute T1}}
-
-{
-   what it will do:  As no output path has been defined, CobiGen will try to find the pom.xml of the current project in order to set the generation root path.
-}
-   - < --increment, -i > : Specifies an increment ID to be generated. You can also search increments by name and CobiGen will output the resultant list. If an exact match found, code generation will happen.
-
-`cg g foo\bar\webServices.yml --increment TO`{{execute T1}}
-
-{
-   what it will do: Performs a string search using TO and will print the closest increments
-}
-   - < --outputRootPath, -out >: The project file path in which you want to generate your code. If no output path is given, CobiGen will use the project of your input file.
-
-`cobigen generate foo\bar\*.java --out other\project`{{execute T1}}
-
-{
-   what it will do: Will retrieve all the Java files on that input folder and generate the code on the path specified by --out.
-}
+To know more about implementation of this command you can follow https://katacoda.com/devonfw/scenarios/cobigen. Here we have shown the implementation "generate" command for further code generation.
 
 * [adapt-templates, a]: Generates a new templates folder next to the cobigen cli and stores its location    inside  a configuration file. After executing this command, the CLI will attempt to use the specified Templates folder.
 

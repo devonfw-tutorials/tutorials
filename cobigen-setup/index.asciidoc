@@ -46,7 +46,7 @@ To get more information about Troubleshooting in CLI visit on https://devonfw.co
 Now in the next step we will see how to integrate CobiGen in eclipse.
 ====
 
-====
+
 In this step we will learn about how we can integrate CobiGen in eclipse.
 
 Remark: CobiGen is preinstalled in the devonfw/devon-ide.
@@ -64,17 +64,18 @@ Remark: CobiGen is preinstalled in the devonfw/devon-ide.
 nextKatacodaStep("Installation", [{"image": "images/01-install-new-software.png"}])
 -- 
 
-    Here we can select the updates.
-    2. Open CobiGen’s update site
-
 ====
+Here we can select the updates.
+    2. Open CobiGen’s update site
 
 [step]
 --
 nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
 -- 
 
+Now you can start generating. To get an introduction of CobiGen try the devon4j templates and work on the devon4j sample application.
 ====
+
 In this step we will learn about the types of modes for usage of CobiGen.
 
 [step]
