@@ -5,8 +5,6 @@ CobiGen is a generic incremental code generator. It allows you to build Java CRU
 Here in this tutorial we will learn how we can set up the CobiGen environment in our system along with eclipse and maven integration. 
 
 Cobigen provides eclipse and maven integration. There is command line interface(CLI) through which we can proceed with integration.
-
-More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 ====
 
 [step]
@@ -21,16 +19,12 @@ Now we will proceed with CobiGen installation.
 
 [step]
 --
-installCobiGen()
---
-
-In order to execute the commands we will have to initialize the CobiGen CLI first.
-====
-
-[step]
---
 nextKatacodaStep("CLI Execution steps", [{ "file": "files/cliExecutionCommands.md" }])
 --
+
+In next step we will go through some implementaion of commands.
+====
+
 
 ====
 Below are the commands which we can use on CobiGen CLI.
@@ -86,12 +80,12 @@ CobiGen has two different generation modes depending on the input selected for g
 
 [step]
 --
-nextKatacodaStep("Simple mode", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
+nextKatacodaStep("1. Simple mode", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
 --
 
 [step]
 --
-nextKatacodaStep("Batch mode", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
+nextKatacodaStep("2. Batch mode", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
 --
 
 [step]

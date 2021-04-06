@@ -1,4 +1,3 @@
-## 2. Batch mode
 If there are multiple input elements selected, e.g., Java files, CobiGen will be started in batch mode. For the generation wizard dialog this means, that the generation preview will be constrained to the first selected input element. It does not preview the generation for each element of the selection or of a complex input. The selection of the files to be generated will be generated for each input element analogously afterwards.
 
 Thus the color encoding differs also a little bit:
