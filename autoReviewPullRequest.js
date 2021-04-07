@@ -90,13 +90,13 @@ function parseFile(file, filename) {
     if(!description.includes("== Learning goals")) {
         messageBody = (messageBody == "")
            ? "The description should describe what the user will learn in the tutorial. It must contain a '== Learning goals' part."
-           : messageBody + "\nThe description should describe what the user will learn in the tutorial. It must contain a '== Learning goals' part.";
+           : messageBody + " The description should describe what the user will learn in the tutorial. It must contain a '== Learning goals' part.";
       }
 
     if(messageBody != "") {
       requestChangeMessage = (requestChangeMessage == "")
-        ? "The tutorial description in file " + filename + " does not meet the desired requirements.\n" + messageBody
-        : requestChangeMessage += "\n\n" + "The tutorial description in file " + filename + " does not meet the desired requirements.\n" + messageBody;
+        ? "The tutorial description in file " + filename + " does not meet the desired requirements. " + messageBody
+        : requestChangeMessage += " The tutorial description in file " + filename + " does not meet the desired requirements. " + messageBody;
     }
 }
 
