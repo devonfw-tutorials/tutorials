@@ -2,12 +2,12 @@
 ====
 CobiGen is a generic incremental code generator. It allows you to build Java CRUD application based on the devonfw architecture including all software layers. You can generate all necessary classes and services (DAOs, Transfer Objects, simple CRUD use cases with REST services) of the application from one single entity class.
 
-There is Cobigen Command Line Interface( Cobigen CLI) where we can start the setup following the generation of code. There are various commands provided using which we can proceed with code generation.
+There is CobiGen Command Line Interface( CobiGen CLI) where we can start the setup following the generation of code. There are various commands provided using which we can proceed with code generation.
 
 Here in this tutorial we will learn the following:
-* Cobigen setup
+* CobiGen setup
 * CLI Commands 
-* Cobigen with Eclipse integration
+* CobiGen with Eclipse integration
 ====
 
 [step]
@@ -25,7 +25,7 @@ Now we will proceed with CobiGen installation.
 nextKatacodaStep("CLI Execution steps", [{ "file": "files/cliExecutionCommands.md" }])
 --
 
-In next step we will go through some implementaion of commands used in Cobigen CLI.
+In next step we will go through some implementaion of commands used in CobiGen CLI.
 ====
 
 
@@ -53,7 +53,7 @@ Remark: CobiGen is preinstalled in the devonfw/devon-ide.
     - Java 7 Runtime (for starting eclipse with CobiGen). This is independent from the target version of your developed code
 
 1.2. Installation steps
-    1. Open the eclipse installation dialog
+    * Open the eclipse installation dialog
     menu bar → Help → Install new Software
 [step]
 --
