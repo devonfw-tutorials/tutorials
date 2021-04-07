@@ -2,9 +2,12 @@
 ====
 CobiGen is a generic incremental code generator. It allows you to build Java CRUD application based on the devonfw architecture including all software layers. You can generate all necessary classes and services (DAOs, Transfer Objects, simple CRUD use cases with REST services) of the application from one single entity class.
 
-Here in this tutorial we will learn how we can set up the CobiGen environment in our system along with eclipse and maven integration. 
+There is Cobigen Command Line Interface( Cobigen CLI) where we can start the setup following the generation of code. There are various commands provided using which we can proceed with code generation.
 
-Cobigen provides eclipse and maven integration. There is command line interface(CLI) through which we can proceed with integration.
+Here in this tutorial we will learn the following:
+-Cobigen setup
+-CLI Commands 
+-Cobigen with Eclipse integration
 ====
 
 [step]
@@ -22,13 +25,14 @@ Now we will proceed with CobiGen installation.
 nextKatacodaStep("CLI Execution steps", [{ "file": "files/cliExecutionCommands.md" }])
 --
 
-In next step we will go through some implementaion of commands.
+In next step we will go through some implementaion of commands used in Cobigen CLI.
 ====
 
 
 ====
 Below are the commands which we can use on CobiGen CLI.
-Using the following command and option you will be able to customize your generation as follows
+
+Using the following command and option you will be able to customize your generation.
 
 [step]
 --
@@ -37,11 +41,9 @@ nextKatacodaStep("Commands and Options", [{ "file": "files/commandsAndOptions.md
 
 To get more information about Troubleshooting in CLI visit on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc_cobigen-cli.html#howto_cobigen-cli-generation.asciidoc_troubleshooting
 
-Now in the next step we will see how to integrate CobiGen in eclipse.
+Now in the next step we will see how we can integrate CobiGen in eclipse.
 ====
 
-
-In this step we will learn about how we can integrate CobiGen in eclipse.
 
 Remark: CobiGen is preinstalled in the devonfw/devon-ide.
 
@@ -70,8 +72,6 @@ nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.
 Now you can start generating. To get an introduction of CobiGen try the devon4j templates and work on the devon4j sample application.
 ====
 
-# Usage
-
 In this step we will learn about the types of modes for usage of CobiGen.
 
 CobiGen has two different generation modes depending on the input selected for generation. 
@@ -80,12 +80,12 @@ CobiGen has two different generation modes depending on the input selected for g
 
 [step]
 --
-nextKatacodaStep("1. Simple mode", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
+nextKatacodaStep("1. Simple mode usage", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
 --
 
 [step]
 --
-nextKatacodaStep("2. Batch mode", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
+nextKatacodaStep("2. Batch mode usage", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
 --
 
 [step]
