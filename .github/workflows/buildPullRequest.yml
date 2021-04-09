@@ -29,5 +29,5 @@ jobs:
       - name: npm install
         run: npm install
 
-      - name: run buildRun.sh
-        run: sh buildRun.sh
+      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }}
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }}
