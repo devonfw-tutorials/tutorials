@@ -2,7 +2,7 @@
 
 Welcome to the devonfw repository for all devonfw assets. You can find all ready to use tutorials on https://katacoda.com/devonfw[Katacoda].
 
-== How to Contribute
+== How to Create Your Tutorial
 
 Get to know how to write your first tutorial by running your first https://katacoda.com/devonfw/scenarios/tutorial-compiler[katacoda tutorial] on this topic! Additionally, You can find an detailed explanation as well in the wiki https://github.com/devonfw-tutorials/tutorials/wiki/Development[here].
 
