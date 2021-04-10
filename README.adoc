@@ -1,0 +1,17 @@
+= devonfw Tutorials
+
+Welcome to the devonfw repository for all devonfw assets. You can find all ready to use tutorials on https://katacoda.com/devonfw[Katacoda].
+
+== How to Contribute
+
+Get to know how to write your first tutorial by running your first https://katacoda.com/devonfw/scenarios/tutorial-compiler[katacoda tutorial] on this topic! Additionally, You can find an detailed explanation as well in the wiki https://github.com/devonfw-tutorials/tutorials/wiki/Development[here].
+
+An overview of the commands available for tutorial specification out of the box can be found in the https://github.com/devonfw-tutorials/tutorials/wiki/Functions[function reference].
+
+You can view compiled pull requests on our https://katacoda.com/devonfw-dev[development Katacoda space].
+
+== Adapting the Tutorial Generation Process 
+
+In this repository, you write tutorials that are executed by the https://github.com/devonfw-tutorials/tutorial-compiler[tutorial compiler]. The tutorial compiler ensures that the tutorials are automatically tested end-to-end. Out of the tutorial specification maintained in this repsitory, it generates multiple outputs like Katacoda tutorials, website step-by-step tutorial documentation and possibly more.
+
+By adapting the https://github.com/devonfw-tutorials/tutorial-compiler[tutorial compiler], you could also create new commands, which can be cross-compiled to multiple output formats and which will implement its own e2e test execution and assertion.
