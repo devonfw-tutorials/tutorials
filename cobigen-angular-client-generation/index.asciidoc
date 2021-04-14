@@ -25,5 +25,5 @@ Build and run the Java backend server
 [step]
 --
 buildJava("backendServer")
-runServerJava("backendServer/server")
+runServerJava("backendServer/server",{ "startupTime": 40, "port": 8081, "path": "backendServer" })
 --
