@@ -27,7 +27,7 @@ createDevon4jProject("backendServer")
 == Build and Run Java Server
 --
 buildJava("backendServer")
-runServerJava("backendServer/server",{ "startupTime": 40, "port": 8081, "path": "backendServer" })
+runServerJava("backendServer/server",{ "startupTime": 40, "port": 5000, "path": "backendServer" })
 --
 Now the Java Server should be running.
 ====
