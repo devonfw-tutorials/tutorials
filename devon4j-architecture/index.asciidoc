@@ -36,7 +36,6 @@ Once project is created switch to next tab of IDE. In IDE explorer you can see f
 
 ====
 ====
-#### devon4j application structure
 
 [step]
 --
@@ -49,8 +48,3 @@ More details can be found [here](https://github.com/devonfw/devon4j/blob/master/
 we can see different layers such as service layer, logic layer,dataaccess layer. More details can be found [here](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#technical-architecture).
 
 ====
-
-[step]
---
-nextKatacodaStep("Step 3: Understand devon4j application architecture", [{ "file": "devon4j-app-arch.md" }])
---
