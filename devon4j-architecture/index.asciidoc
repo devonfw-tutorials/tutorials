@@ -35,6 +35,9 @@ createDevon4jProject("sampleapp")
 Once project is created switch to next tab of IDE. In IDE explorer you can see folder structure like devonfw-> workspaces->main->sampleapp . In sampleapp modules such as api,core and server will get created.
 
 ====
+====
+#### devon4j application structure
+
 [step]
 --
 nextKatacodaStep("devon4j application architecture", [{ "image": "images/devon4j_proj_structure1.jpg" }])
@@ -44,6 +47,7 @@ As shown above, sampleapp contains 3 modules i.e api, core and server.
 More details can be found [here](https://github.com/devonfw/devon4j/blob/master/documentation/guide-structure.asciidoc#project-structure).
 
 we can see different layers such as service layer, logic layer,dataaccess layer. More details can be found [here](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#technical-architecture).
+
 ====
 
 [step]
