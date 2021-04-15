@@ -36,7 +36,7 @@ createDevon4jProject("cobigenexample")
 == Build and Run Java Server
 --
 buildJava("cobigenexample")
-runServerJava("cobigenexample/server",{ "startupTime": 180, "port": 8081, "path": "cobigenexample" })
+runServerJava("cobigenexample/server",{ "startupTime": 180, "port": 8080, "path": "cobigenexample" })
 --
 Now the Java Server should be running.
 ====
@@ -45,6 +45,7 @@ CobiGen is integrated via plugin in the VS Code IDE. We will use it to generate 
 [step]
 --
 createDevon4ngProject("cobigenexample", "")
+buildNg("cobigenexample")
 runClientNg("cobigenexample/angular", { "startupTime": 200, "port": 4200, "path": "" })
 createFile("cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java", "files/CustomerEntity.java")
 adaptTemplatesCobiGen()
