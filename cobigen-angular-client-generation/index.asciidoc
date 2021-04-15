@@ -3,6 +3,15 @@
 With the CobiGen code generator you can easily generate components for your angular application.
 The following tutorial provides an example for using the CobiGen cli.
 You can find more information on https://github.com/devonfw/cobigen/wiki/howto_angular-client-generation
+== Prerequisites
+* devonfw Ide
+* Install yarn globally
+== Learning goals.
+Here in this tutorial we will learn the following:
+* Create an angular project
+* Cobigen to generate the angular source code out of the java files
+* Change the user interface in the angular project to show the new components
+* Show the newly created components
 ====
 
 [step]
