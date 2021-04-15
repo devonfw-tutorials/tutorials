@@ -1,4 +1,4 @@
-= Tutorial for the devon4j architecture
+= devon4j architecture in practice
 ====
 
 This tutorial aims to explain concepts and principles of devon4j architecture with help of an example.
@@ -44,8 +44,8 @@ As shown above, sampleapp contains 3 modules i.e api, core and server.
 More details can be found [here](https://github.com/devonfw/devon4j/blob/master/documentation/guide-structure.asciidoc#project-structure).
 
 we can see different layers such as service layer, logic layer,dataaccess layer. More details can be found [here](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#technical-architecture).
-
 ====
+
 [step]
 --
 nextKatacodaStep("Step 3: Understand devon4j application architecture", [{ "file": "devon4j-app-arch.md" }])
