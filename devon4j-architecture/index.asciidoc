@@ -48,3 +48,8 @@ More details can be found [here](https://github.com/devonfw/devon4j/blob/master/
 we can see different layers such as service layer, logic layer,dataaccess layer. More details can be found [here](https://github.com/devonfw/devon4j/blob/master/documentation/architecture.asciidoc#technical-architecture).
 
 ====
+
+[step]
+--
+nextKatacodaStep("Understand devon4j application architecture", [{ "file": "devon4j-app-arch.md" }])
+--
