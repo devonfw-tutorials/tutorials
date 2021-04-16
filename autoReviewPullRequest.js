@@ -83,14 +83,14 @@ function parseFile(file, filename) {
     let description = parseResult[1][2].descriptionlines;
     
     let messageBody = "";
-    if(!description.includes("== Prerequisites")) {
-      messageBody = "The description must describe the prerequisites of a tutorial. It must contain a '== Prerequisites' part.";
+    if(!description.includes("## Prerequisites")) {
+      messageBody = "The description must describe the prerequisites of a tutorial. It must contain a '## Prerequisites' part.";
     }
 
-    if(!description.includes("== Learning goals")) {
+    if(!description.includes("## Learning goals")) {
         messageBody = (messageBody == "")
-           ? "The description should describe what the user will learn in the tutorial. It must contain a '== Learning goals' part."
-           : messageBody + " The description should describe what the user will learn in the tutorial. It must contain a '== Learning goals' part.";
+           ? "The description should describe what the user will learn in the tutorial. It must contain a '## Learning goals' part."
+           : messageBody + " The description should describe what the user will learn in the tutorial. It must contain a '## Learning goals' part.";
       }
 
     if(messageBody != "") {
