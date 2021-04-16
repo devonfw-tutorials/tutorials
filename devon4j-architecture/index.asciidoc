@@ -1,5 +1,5 @@
 = devon4j architecture in practice
-====
+
 == Prerequisites
 
 Java programming knowledge
@@ -14,7 +14,6 @@ This tutorial aims to explain concepts and principles of devon4j architecture wi
 
 By end of this tutorial you will have detailed understanding of principles followed by devon4j application as well as its structure and architecture. 
 
-====
 ====
 ### Install devonfw-ide
 
@@ -54,13 +53,13 @@ nextKatacodaStep("devon4j application architecture", [{ "image": "images/devon4j
 
 As shown above, sampleapp contains 3 modules i.e api, core and server.
 
-api: It contains API for sampleapp.The API contains the required artifacts to interact with your application via remote services. This can be REST service interfaces, transfer-objects with their interfaces and datatypes but also OpenAPI or gRPC contracts.
+**api**: It contains API for sampleapp.The API contains the required artifacts to interact with your application via remote services. This can be REST service interfaces, transfer-objects with their interfaces and datatypes but also OpenAPI or gRPC contracts.
 
-core: It is the core of the application.In this module you can write actual business logic with service implementation, as well as entire logic layer and dataaccess layer.
+**core**: It is the core of the application.In this module you can write actual business logic with service implementation, as well as entire logic layer and dataaccess layer.
 
-batch: optional module for batch layer. In this example we have not created it.
+**batch**: optional module for batch layer. In this example we have not created it.
 
-server: This module bundles the entire app (core with optional batch) typically as a bootified WAR file.
+**server**: This module bundles the entire app (core with optional batch) typically as a bootified WAR file.
 
 If you want to know more about modules and project structure refer [here](https://github.com/devonfw/devon4j/blob/master/documentation/guide-structure.asciidoc#project-structure).
 
