@@ -1,4 +1,4 @@
-= Create a tutorial with the Tutorial-Compiler
+= Create your own tutorial with the Tutorial-Compiler
 ==== 
 In this scenario, you will learn how to create your own tutorial using the tutorial compiler.
 

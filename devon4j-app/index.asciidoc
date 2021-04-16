@@ -1,4 +1,11 @@
-= devon4j application generation
+= Generate your Java application with devon4j
+
+== Prerequisities
+1. User should have Java development experience
+
+== Learning goals
+After completing this scenario, users will learn to generate Java application using devon4j.
+
 ====
 devon4j is the Java stack of devonfw. It allows you to build business applications (backends) using Java technology in a highly efficient and standardized way based on established best-practices.
 
