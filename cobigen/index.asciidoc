@@ -1,12 +1,12 @@
 = Generate your code with devonfw
 ====
+CobiGen is a generic incremental code generator for end to end code generation tasks. It allows you to build Java, Angular CRUD application code based on the devonfw architecture including all software layers. 
+
 == Prerequisites
-1. User should have Java development experience
+* User should have Java development experience
 
 == Learning goals
 After completing this scenario, users will be learn to generate an end-to-end Java CRUD application code using devonfw CobiGen.
-
-CobiGen is a generic incremental code generator for end to end code generation tasks. It allows you to build Java, Angular CRUD application code based on the devonfw architecture including all software layers. 
 
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 ====
