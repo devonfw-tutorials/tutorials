@@ -1,5 +1,5 @@
 = devon4j architecture in practice
-
+====
 == Prerequisites
 
 Java programming knowledge
@@ -14,6 +14,7 @@ This tutorial aims to explain concepts and principles of devon4j architecture wi
 
 By end of this tutorial you will have detailed understanding of principles followed by devon4j application as well as its structure and architecture. 
 
+====
 ====
 ### Install devonfw-ide
 
