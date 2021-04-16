@@ -1,12 +1,11 @@
 = Generate your Java application with devon4j
-
+====
 == Prerequisities
 1. User should have Java development experience
 
 == Learning goals
 After completing this scenario, users will learn to generate Java application using devon4j.
 
-====
 devon4j is the Java stack of devonfw. It allows you to build business applications (backends) using Java technology in a highly efficient and standardized way based on established best-practices.
 
 More information about devon4j on https://devonfw.com/website/pages/docs/devon4j.asciidoc.html
@@ -21,7 +20,6 @@ core: maven module containing the core of the application with service implement
 batch: optional module for batch layer
 
 server: module that bundles the entire app (core with optional batch) typically as a bootified WAR file.
-
 ====
 
 To use the devon4j you first have to install the devonfw ide. 
