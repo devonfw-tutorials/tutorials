@@ -2,10 +2,10 @@
 ====
 Jump The Queue is a small application based on the devonfw framework, which you can create yourself by following our simple step-by-step tutorial. By doing so, you will learn about the app development workflow and gain insight into the design of a professional business information system.
 
-== Prerequisites
-1. User should have Java, Angular development experience
+## Prerequisites
+* User should have Java, Angular development experience
 
-== Learning goals
+## Learning goals
 After completing this tutorial, you will learn to know more about a devonfw sample application and its architecture. 
 
 More information about Jump The Queue on https://github.com/devonfw/jump-the-queue
@@ -38,7 +38,7 @@ npmInstall("jump-the-queue/angular")
 --
 
 ====
-Now build and run the Anguar Server.
+Now build and run the Angular Server.
 The following two steps are only needed in this tutorial. Normally you can simply execute "ng serve", open the https://localhost:4200/ and start using the app.
 In the next step you need to change the Base URL for the REST Services. 
 [step]
