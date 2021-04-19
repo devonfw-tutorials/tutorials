@@ -1,4 +1,4 @@
-= CobiGen Angular client generation
+= Generate Angular Client with devonfw
 ====
 With the CobiGen code generator you can easily generate components for your angular application.
 The following tutorial provides an example for using the CobiGen cli.
