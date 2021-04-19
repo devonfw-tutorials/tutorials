@@ -6,7 +6,7 @@ Jump The Queue is a small application based on the devonfw framework, which you 
 * User should have Java, Angular development experience
 
 ## Learning goals
-After completing this tutorial, you will learn to know more about a devonfw sample application and its architecture. 
+After completing this tutorial, you will have learned about a devonfw sample application Jump-The-Queue and its architecture. 
 
 More information about Jump The Queue on https://github.com/devonfw/jump-the-queue
 ====

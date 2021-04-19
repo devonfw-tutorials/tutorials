@@ -6,7 +6,7 @@ CobiGen is a generic incremental code generator for end to end code generation t
 * User should have Java development experience
 
 ## Learning goals
-After completing this scenario, you will learn how to generate an end-to-end Java CRUD application code using devonfw CobiGen.
+After completing this scenario, you will have learned how to generate an end-to-end Java CRUD application code using devonfw CobiGen.
 
 More information about CobiGen on https://devonfw.com/website/pages/docs/master-cobigen.asciidoc.html
 ====
