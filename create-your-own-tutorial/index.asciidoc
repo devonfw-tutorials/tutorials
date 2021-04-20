@@ -2,10 +2,11 @@
 ==== 
 In this scenario, you will learn how to create your own tutorial using the tutorial compiler.
 
-You will learn how to set up the environment and get an introduction to the syntax for writing your own tutorial.
+## Prerequisites
+* GitHub account
 
-Requirements: 
- * GitHub account
+## Learning goals
+* You will learn how to set up the environment and get an introduction to the syntax for writing your own tutorial.
 
 You can find the documentation of the tutorial compiler here:
 
