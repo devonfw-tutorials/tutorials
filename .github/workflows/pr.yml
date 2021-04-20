@@ -15,7 +15,22 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           message: |
-            You can view the generated tutorials of this PR on https://www.katacoda.com/devonfw-dev in a few minutes. You just have to wait for the next run of the deployment action https://github.com/devonfw-tutorials/katacoda-scenarios-dev/actions
+            Thanks for submitting your work on a (new) tutorial!
+            
+            Some suggestions, which might help:
+            
+            -   Title: Focus on what you want to train in a few words. Don't be too generic
+            -   Tutorial:
+                -   Address the user directly.
+                -   Explain why the steps are necessary.
+                -   Explain what are the results and why are they necessary for your next step.
+                -   Forward the user to more elaborate documentation on the website (deep links) for further reading
+            
+            Also please find further help for creating tutorials [here](https://www.katacoda.com/devonfw/scenarios/create-your-own-tutorial) or more help regarding the tutorial syntax [here](https://github.com/devonfw-tutorials/tutorials/wiki/Development).
+            
+            You can view the generated tutorials of this PR [here](https://www.katacoda.com/devonfw-dev) in a few minutes. You just have to wait for the run of the [deployment action](https://github.com/devonfw-tutorials/katacoda-scenarios-dev/actions) to finish.
+            
+            When you think you are done writing the tutorial try the tutorial on the [deveplopment area](https://www.katacoda.com/devonfw-dev) and check if you explained every step in a way someone who is trying to learn what you are teaching can understand. Ideally ask someone to have a look on what you have done and have that part double checked because this is very important.
             
       - name: Repository dispatch
         uses: peter-evans/repository-dispatch@v1

@@ -1,0 +1,4 @@
+# Only process perl / JavaScript / Python files
+\.asciidoc$
+\.adoc$
+\.md$
