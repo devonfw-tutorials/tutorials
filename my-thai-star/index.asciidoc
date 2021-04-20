@@ -1,0 +1,28 @@
+= My Thai Star
+====
+My-Thai-Star is the Open Source reference application for devonfw. This tutorial will walk you through the process of running My-Thai-Star on docker.
+
+## Prerequisites
+* User should have angular and Java development experience.
+
+## Learning goals
+* In this tutorial you will learn to run My-Thai-Star application on docker.
+
+More information about My-Thai-Star can be found at https://devonfw.com/website/pages/docs/master-my-thai-star.asciidoc.html
+====
+
+First you need to clone the My Thai Star repository.
+[step]
+--
+cloneRepository("my-thai-star","https://github.com/devonfw/my-thai-star.git")
+--
+
+Now you need to switch to the folder you just created.
+
+`cd my-thai-star`{{execute T1}}
+
+After that, you can build and run the application using docker-compose. 
+[step]
+--
+dockerCompose("my-thai-star", { "startupTime": 600, "port": 8081, "path": "" })
+--
