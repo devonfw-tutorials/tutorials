@@ -8,7 +8,7 @@ restoreWorkspace({"workspace": "devon4ng"})
 --
 [step]
 --
-addSetupScript("assets/createProjectScript.sh", "assets/createProjectScript.ps1", ["-e katacoda","-e console"])
+addSetupScript("assets/createProjectScript.sh", "assets/createProjectScript.ps1")
 --
 [step]
 --
