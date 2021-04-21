@@ -1,4 +1,4 @@
-package com.example.application.cobigenexample.customermanagement.dataaccess.api;
+package com.example.application.cobigenangularexample.customermanagement.dataaccess.api;
 
 import java.sql.Timestamp;
 
