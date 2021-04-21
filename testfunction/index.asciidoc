@@ -4,13 +4,13 @@ Description
 ====
 [step]
 --
-restoreDevonfwIde(["java","mvn"], "2020.08.001")
---
-[step]
---
 restoreWorkspace({"workspace": "devon4ng"})
 --
 [step]
 --
-createFile("text.txt")
+addSetupScript("assets/createProjectScript.sh", "assets/createProjectScript.ps1", ["-e katacoda","-e console"])
+--
+[step]
+--
+createFile("newnext.txt")
 --
