@@ -24,5 +24,5 @@ Now you need to switch to the folder you just created.
 After that, you can build and run the application using docker-compose. 
 [step]
 --
-dockerCompose("my-thai-star", { "startupTime": 600, "port": 8081, "path": "" })
+dockerCompose("my-thai-star", { "startupTime": 6000, "port": 8082, "path": "" })
 --
