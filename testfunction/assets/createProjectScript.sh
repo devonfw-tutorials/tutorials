@@ -1,6 +1,4 @@
 #!bin/bash
 
-echo Hello World
-mkdir folder 
-cd folder 
-touch input.text
+touch testfile.txt
+echo "This is a text string." >> testfile.txt

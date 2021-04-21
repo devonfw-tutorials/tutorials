@@ -12,5 +12,5 @@ addSetupScript("assets/createProjectScript.sh", "assets/createProjectScript.ps1"
 --
 [step]
 --
-createFile("newnext.txt")
+createFile("new.txt")
 --
