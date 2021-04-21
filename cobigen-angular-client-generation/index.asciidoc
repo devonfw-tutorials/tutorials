@@ -84,3 +84,10 @@ Furthermore, we can change the CustomerEntity afterwards and update our source f
 changeFile("cobigenangularexample/core/src/main/java/com/example/application/cobigenangularexample/customermanagement/dataaccess/api/CustomerEntity.java", { "file": "files/Placeholder.java", "placeholder": "private int age;" })
 cobiGenJava("cobigenangularexample/core/src/main/java/com/example/application/cobigenangularexample/customermanagement/dataaccess/api/CustomerEntity.java",[1,3,5,6,8])
 --
+====
+Conclusion: In this Tutorial we learned the following things below.
+Create an angular project
+Cobigen to generate the angular source code out of the java files
+Change the user interface in the angular project to show the new components
+Show the newly created components
+====
