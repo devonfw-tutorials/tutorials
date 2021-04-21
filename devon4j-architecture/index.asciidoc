@@ -18,7 +18,7 @@ By end of this tutorial you will have detailed understanding of principles follo
 
 ====
 ====
-
+We will start by setting up development environment.
 [step]
 --
 restoreDevonfwIde(["java", "vscode"])
@@ -32,7 +32,7 @@ cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 Once project is cloned switch to next tab of IDE. In IDE explorer you will be able to see folder structure like devonfw-> workspaces->main->jump-the-queue-> java->jtqj 
 ====
 ====
-
+### devon4j application structure
 [step]
 --
 nextKatacodaStep("devon4j application architecture", [{ "image": "images/devon4j_app_structure.JPG" }])
@@ -53,7 +53,7 @@ If you want to know more about modules and project structure refer [here](https:
 devon4j application follows [multilayered architecture](https://en.wikipedia.org/wiki/Multitier_architecture). We will understand more about it in next step.
 ====
 ====
-### devon4j multilayered architecture
+### devon4j layers explained
 
 [step]
 --
@@ -75,9 +75,9 @@ For example, in jtqj-api->queuemangement->logic->api contains ETO(Entity Transfe
 
 * [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).
 For example, in jtqj-api->queuemangement->dataaccess->core contains entities, spring data repositories etc
-
 ====
 ====
+### devon4j application architecture
 
 [step]
 --
@@ -86,7 +86,7 @@ nextKatacodaStep("Understand devon4j application architecture", [{ "file": "devo
 
 ====
 ====
-## Conclusion
+### Conclusion
 
 To summarize, in this tutorial we learned about devon4j architecture and key principle it follows. with help of example we also learned about devon4j different modules such as api, core ,server and its multilayered architecture.
 
