@@ -14,15 +14,10 @@ More information about My-Thai-Star can be found at https://devonfw.com/website/
 First you need to clone the My Thai Star repository.
 [step]
 --
-cloneRepository("my-thai-star","https://github.com/devonfw/my-thai-star.git")
+cloneRepository("","https://github.com/devonfw/my-thai-star.git")
 --
-
-Now you need to switch to the folder you just created.
-
-`cd my-thai-star`{{execute T1}}
-
 After that, you can build and run the application using docker-compose. 
 [step]
 --
-dockerCompose("my-thai-star", { "startupTime": 6000, "port": 8082, "path": "" })
+dockerCompose("my-thai-star", {"port": 8081, "path": "" })
 --
