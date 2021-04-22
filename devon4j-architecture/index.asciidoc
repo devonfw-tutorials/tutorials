@@ -31,7 +31,7 @@ Once project is cloned switch to next tab of IDE. In IDE explorer you will be ab
 ### devon4j application structure
 [step]
 --
-nextKatacodaStep("devon4j application architecture", [{ "image": "images/devon4j_app_structure.jpg" }])
+nextKatacodaStep("devon4j application architecture", [{ "image": "images/jtqj_app_structure.jpg" }])
 --
 
 As shown above, jump-the-queue contains 3 modules i.e api, core and server.
@@ -54,7 +54,7 @@ devon4j application follows [multilayered architecture](https://en.wikipedia.org
 
 [step]
 --
-nextKatacodaStep("devon4j application layers", [{ "image": "images/devon4j_detailed_app_structure.jpg" }])
+nextKatacodaStep("devon4j application layers", [{ "image": "images/jtqj_detailed_app_structure.jpg" }])
 --
 
 Above image display detailed structure of devon4j application. As shown above jump-the-queue application contains different components like queuemanagement, visitormanagement etc
