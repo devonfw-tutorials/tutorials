@@ -71,7 +71,7 @@ Each component is divided into following layers:
 
 * [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).For example, in sampleapp we generated com.example.application.sampleapp.<compoenntname>.dataaccess will contain entity, repositories etc.
 ====
-====
+
 ### Build devon4j sample application
 
 Build the java project
@@ -85,7 +85,7 @@ Once build is successful you will get bootified-war generated in server module t
 --
 runServerJava("devonfw/workspaces/main/sampleapp/server", { "startupTime": 40, "port": 8081, "path": "sampleapp" })
 --
-====
+
 ====
 ## Conclusion
 
