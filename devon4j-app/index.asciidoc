@@ -12,18 +12,7 @@ More information about devon4j on https://devonfw.com/website/pages/docs/devon4j
 
 ====
 ====
-### Install devonfw-ide
-To create devon4j application it is necessary to have devonfw-ide installed on your machine.For this tutorial purpose we will have it installed here.
 
-If you want to try it on local machine you can refer [here](https://devonfw.com/website/pages/docs/devonfw-ide-introduction.asciidoc.html#setup.asciidoc).
-
-[step]
---
-restoreDevonfwIde (["java","mvn","vscode"])
---
-Before proceeding to next steps make sure ide is installed.
-====
-====
 ### Create devon4j sample application
 
 If you want to create devon4j application on your local machine there are two ways to do it:
@@ -34,6 +23,7 @@ Once devonfw-ide is installed , we will create sample devon4j application with n
 
 [step]
 --
+restoreDevonfwIde (["java","mvn","vscode"])
 createDevon4jProject("sampleapp")
 --
 
