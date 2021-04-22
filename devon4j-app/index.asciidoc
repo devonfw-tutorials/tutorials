@@ -42,7 +42,6 @@ sampleapp contains 3 modules i.e api, core and server.
 If you want to know more about modules and project structure refer [here](https://github.com/devonfw/devon4j/blob/master/documentation/guide-structure.asciidoc#project-structure).
 ====
 ====
-
 [step]
 --
 nextKatacodaStep("devon4j application architecture", [{ "image": "images/devon4j_proj_structure1.jpg" }])
@@ -61,21 +60,19 @@ Each component is divided into following layers:
 
 * [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).For example, in sampleapp we generated com.example.application.sampleapp.<compoenntname>.dataaccess will contain entity, repositories etc.
 ====
-
+====
 ### Build devon4j sample application
 
 Build the java project
+
 [step]
 --
 buildJava("sampleapp", false)
 --
+
 Once build is successful you will get bootified-war generated in server module target folder. In sampleapp check for path sampleapp/server/sampleapp-server-bootified.war
 
-[step]
---
-runServerJava("devonfw/workspaces/main/sampleapp/server", { "startupTime": 40, "port": 8081, "path": "sampleapp" })
---
-
+====
 ====
 ## Conclusion
 
@@ -87,4 +84,3 @@ In this tutorial you have learnt how to create devon4j application using command
  * devon4j with Spring JPA
  * devon4j rest services
  ====
-
