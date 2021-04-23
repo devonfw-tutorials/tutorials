@@ -4,7 +4,7 @@ CobiGen CLI is installed inside your devonfw distribution. In order to execute i
 
 `cd devonfw`{{execute T1}}
 
-* To install CobiGen inside devonfw ide execute below command. This command will install CobiGen inside ide.
+* To install CobiGen inside devonfw IDE execute below command. This command will install CobiGen inside IDE.
 
 `devon cobigen`{{execute T1}}
 
