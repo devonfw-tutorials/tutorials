@@ -1,0 +1,23 @@
+= Devon4ng architecture
+== Learn more about devon4ng layered architecture  
+
+====
+
+In this scenario you will learn about the architecture of a devon4ng project.
+
+## Prerequisites
+* basic TypeScript knowledge
+* a Angular project   
+
+## Learning goals
+In this tutorial you will learn about: 
+* devon4ng layered architecture
+* devonfw reference client architecture
+* differente kinds of components and modules
+
+====
+
+[step]
+--
+restoreWorkspace()
+--
