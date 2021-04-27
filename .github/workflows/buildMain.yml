@@ -17,7 +17,8 @@ jobs:
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
-          for dir in playbooks/*/; do MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'; done
+          cd playbooks
+          for dir in */; do MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'${dir::-1}'"},'; done
           echo ::set-output name=matrix-combinations::{\"include\":[$MATRIX_PARAMS_COMBINATIONS]}
     outputs:
       matrix-combinations: ${{ steps.setup-matrix-combinations.outputs.matrix-combinations }}
