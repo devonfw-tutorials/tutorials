@@ -1,5 +1,5 @@
 = Generate Angular Client with devonfw
-== angular client generation with cobigen
+== Angular client generation with CobiGen
 ====
 With the CobiGen code generator you can easily generate components for your angular application.
 The following tutorial provides an example for using the CobiGen cli.
@@ -7,10 +7,11 @@ You can find more information on https://github.com/devonfw/cobigen/wiki/howto_a
 ## Prerequisites
 * devonfw Ide
 * Install yarn globally
+
 ## Learning goals.
 Here in this tutorial we will learn the following:
-* Create an angular project
-* Cobigen to generate the angular source code out of the java files
+* Create an Angular project
+* CobiGen to generate the angular source code out of the java files
 * Change the user interface in the angular project to show the new components
 * Show the newly created components
 ====
@@ -45,9 +46,9 @@ Now the Java Server should be running.
 CobiGen is integrated via plugin in the VS Code IDE. We will use it to generate code from one single java class based on existing templates.
 [step]
 --
-createDevon4ngProject("cobigenangularexample", "")
+createDevon4ngProject("cobigenangularexample", "", ["--style=scss", "--routing=true", "--strict=false"])
 buildNg("cobigenangularexample")
-runClientNg("cobigenangularexample/angular", { "startupTime": 200, "port": 4200, "path": "" })
+runClientNg("cobigenangularexample", { "startupTime": 200, "port": 4200, "path": "" })
 createFile("cobigenangularexample/core/src/main/java/com/example/application/cobigenangularexample/customermanagement/dataaccess/api/CustomerEntity.java", "files/CustomerEntity.java")
 adaptTemplatesCobiGen()
 cobiGenJava("cobigenangularexample/core/src/main/java/com/example/application/cobigenangularexample/customermanagement/dataaccess/api/CustomerEntity.java",[1,3,5,6,8])
@@ -88,8 +89,8 @@ cobiGenJava("cobigenangularexample/core/src/main/java/com/example/application/co
 
 ====
 Conclusion: In this Tutorial we learned the following things below.
-Create an angular project
-Cobigen to generate the angular source code out of the java files
+Create an Angular project
+CobiGen to generate the angular source code out of the java files
 Change the user interface in the angular project to show the new components
 Show the newly created components
 ====
