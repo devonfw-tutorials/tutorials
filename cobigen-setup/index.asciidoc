@@ -1,7 +1,7 @@
 = Setting up devonfw Code Generator(i.e. CobiGen)
 ====
 CobiGen is a generic incremental code generator. It allows you to generate application code based on the devonfw architecture including all software layers. 
-There is also a CobiGen Command Line Interface(CLI) where we can start the setup following the generation of code. 
+There is also a CobiGen Command Line Interface(CLI) where you can start the setup following the generation of code. 
 
 This tutorial mainly focuses on the setup of CobiGen along with various commands to execute the generations.
 ## Prerequisites
@@ -28,7 +28,7 @@ devonfw IDE has been installed for you.
 nextKatacodaStep("CobiGen Setup", [{ "file": "files/cobiGenSetup.md" }])
 --
 
-In next step we will go through some implementation of CLI commands.
+In next step, you will learn about CobiGen CLI commands.
 ====
 
 
@@ -41,7 +41,7 @@ In this step, you will learn CobiGen commands.
 nextKatacodaStep("CobiGen CLI Commands and Options", [{ "file": "files/commandsAndOptions.md" }])
 --
 
-Now in the next step we will see how we can integrate CobiGen with eclipse.
+In next step, you will learn about how to integrate CobiGen with Eclipse.
 ====
 
 
@@ -61,7 +61,7 @@ nextKatacodaStep("Integrate Eclipse with CobiGen", [{"image": "images/01-install
 -- 
 
 ====
-Here we can select the updates.
+Here you can select the updates.
     2. Open CobiGen’s update site
 
 [step]
@@ -69,7 +69,8 @@ Here we can select the updates.
 nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
 -- 
 
-Now you can start generating. To get an introduction of CobiGen try the devon4j templates and work on the devon4j sample application.
+* Checkout (clone) your project’s templates folder or use the current templates released with CobiGen (https://github.com/devonfw/cobigen/tree/master/cobigen-templates) and then choose 
+Import -> General -> Existing Projects into Workspace to import the templates into your workspace.
 ====
 
 
@@ -85,5 +86,5 @@ nextKatacodaStep("CobiGen Usage - Batch Mode", [{ "file": "files/batchModeUsage.
 
 [step]
 --
-nextKatacodaStep("Conclusion", [{ "file": "files/conclusion.md" }])
+nextKatacodaStep("Conclusion", [{ "file": "files/healthCheckTroubleshooting-Conclusion.md" }])
 --

@@ -1,4 +1,6 @@
-    Selecting the menu entry Generate​ the generation wizard will be opened.The left side of the wizard shows all available increments, which can be selected to be generated. Increments are a container like concept encompassing multiple files to be generated, which should result in a semantically closed generation output. On the right side of the wizard all files are shown, which might be effected by the generation - dependent on the increment selection of files on the left side. The type of modification of each file will be encoded into following color scheme if the files are selected for generation:
+    Selecting the menu entry Generate​ the generation wizard will be opened.
+    
+    The left side of the wizard shows all available increments, which can be selected to be generated. Increments are a container like concept encompassing multiple files to be generated, which should result in a semantically closed generation output. The type of modification of each file will be encoded into following color scheme if the files are selected for generation:
 
     - green: files, which are currently non-existent in the file system. These files will be created during generation
 

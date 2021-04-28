@@ -3,9 +3,9 @@
 `cobigen `{{execute T1}}
 
 * [generate, g]: Command used for code generation.
-To know more about implementation of this command you can follow https://katacoda.com/devonfw/scenarios/cobigen. Here we have shown the implementation "generate" command for further code generation.
+To know more about implementation of this command you can follow https://katacoda.com/devonfw/scenarios/cobigen.
 
-* [adapt-templates, a]: Generates a new templates folder next to the Cobigen CLI and stores its location    inside  a configuration file. After executing this command, the CLI will attempt to use the specified Templates folder.
+* [adapt-templates, a]: Generates a new templates folder next to the Cobigen CLI and stores its location inside a configuration file. After executing this command, the CLI will attempt to use the specified Templates folder.
 
 `cobigen a`{{execute T1}}
 
