@@ -86,5 +86,5 @@ nextKatacodaStep("CobiGen Usage - Batch Mode", [{ "file": "files/batchModeUsage.
 
 [step]
 --
-nextKatacodaStep("Conclusion", [{ "file": "files/healthCheckTroubleshooting-Conclusion.md" }])
+nextKatacodaStep("files", [{ "file": "files/healthCheckTroubleshooting-Conclusion.md" }])
 --
