@@ -37,9 +37,8 @@ createDevon4jProject("cobigenjavaexample")
 --
 buildJava("cobigenjavaexample")
 --
-
 ====
-
+====
 CobiGen is integrated via plugin in the VS Code IDE. We will use it to generate code from one single java class based on existing templates.
 [step]
 --
