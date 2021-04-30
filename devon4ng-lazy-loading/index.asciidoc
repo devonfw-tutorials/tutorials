@@ -20,6 +20,10 @@ In this tutorial we will learn how to:
 [step]
 --
 restoreDevonfwIde(["java","mvn", "npm", "ng"])
+--
+
+[step]
+--
 nextKatacodaStep("Introduction", [{ "file": "files/intro.txt" }, { "image": "images/levels-app.png" }])
 --
 
