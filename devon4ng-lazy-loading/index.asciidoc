@@ -27,7 +27,7 @@ restoreDevonfwIde(["java","mvn", "npm", "ng"])
 nextKatacodaStep("Introduction", [{ "file": "files/intro.txt" }, { "image": "images/levels-app.png" }])
 --
 
-Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
+Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.+
 Once you have setup devonfw ide, you are ready to create your devon4ng application.
 [step]
 --
@@ -40,7 +40,7 @@ In the file app.component.html delete all the content and put in the `router-out
 changeFile("level-app/src/app/app.component.html", { "file": "files/app.component.html.txt" })
 --
 
-Next we will create the feature modules and components for the app. We will follow the structure shown in the image in one of the previous steps. You can use the CLI command `devon ng generate module` along with the `--routing` flag to generate the modules, and `devon ng generate component` command to generate the components.
+Next we will create the feature modules and components for the app. We will follow the structure shown in the image in the first step. You can use the CLI command `devon ng generate module` along with the `--routing` flag to generate the modules, and `devon ng generate component` command to generate the components.
 [step]
 --
 createFile("level-app/src/app/first/first-routing.module.ts", "files/first-routing.module.ts.txt")
@@ -58,4 +58,16 @@ createFile("level-app/src/app/first/second-left/content/content.component.ts", "
 createFile("level-app/src/app/first/second-right/content/content.component.html", "files/content-right.component.html.txt")
 createFile("level-app/src/app/first/second-right/content/content.component.scss", "files/empty-file.txt")
 createFile("level-app/src/app/first/second-right/content/content.component.ts", "files/content.component.ts.txt")
+--
+
+To move between the components we will now configure the routes. You can refer the image in the first step to understand how we will configure the routes.+
+In `app-routing.module.ts` we will add a path 'first' to `FirstComponent` and a redirection from '' to 'first'. And then import the `FirstModule` in the main `app.module.ts`+
+Next, for the feature modules, we will add the routes 'first/second-left' and 'first/second-right' pointing to their respective `ContentComponent` in `first-routing.module.ts`. And then import `SecondLeftModule` and `SecondRightModule` in `first.module.ts`
+[step]
+--
+changeFile("level-app/src/app/app-routing.module.ts", { "file": "files/app-routing.module.ts.txt" })
+changeFile("level-app/src/app/app.module.ts", { "file": "files/app.module.ts.txt" })
+changeFile("level-app/src/app/first/first-routing.module.ts", { "file": "files/first-routing.module.update1.ts.txt" })
+changeFile("level-app/src/app/first/first.module.ts", { "file": "files/first.module.ts.update1.ts.txt" })
+runClientNg("level-app", { "startupTime": 200, "port": 4200, "path": "" })
 --
