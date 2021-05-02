@@ -5,6 +5,6 @@ You should have
 
 https://github.com/devonfw-tutorials/workspace-devon4ng.git
 
-forked and listed in 'Your repositories'.
+forked and listed in  'Your repositories'.
 
 Open the forked repository in your GitHub account and copy the repository URL as shown in image below.

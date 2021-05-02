@@ -47,7 +47,11 @@ nextKatacodaStep("Specify a different repository",  [{"file": "files/workspace-p
 createFile("tutorials/devon4ng-architecture/index.asciidoc", "files/devon4ng-as-parameter.asciidoc")
 --
 
-Both ways will clone 'https://github.com/devonfw-tutorials/workspace-devon4ng.git' into our workspace directory. 
+Both ways will clone 
+
+https://github.com/devonfw-tutorials/workspace-devon4ng.git
+
+ into our workspace directory. 
 
 Now you know, which name to choose for your repository and how to use 'restoreWorkspace' inside your tutorials.
 
@@ -55,7 +59,7 @@ A quick summary:
 
 1) naming convention is the concatenation of 'workspace-' and '[name]'
 
-2) 'restoreWorkspace()'' will use the folder name as [name]
+2) 'restoreWorkspace()'' will use the tutorial folder name as [name]
 
 3) 'restoreWorkspace({"workspace": "name"})' will use the parameter as [name]
 ====
@@ -75,7 +79,7 @@ This will create a copy of the repository in your own GitHub account. You will f
 [step]
 == Clone a forked repository as workspace
 --
-nextKatacodaStep("Fork the workspace- repository", [{"image": "images/fork.jpg"}, {"content": "\nNow you can run your tutorial and add your username and your wanted branch to the command.\n"}])
+nextKatacodaStep("Fork the workspace- repository", [{"image": "images/fork.jpg"}, {"content": "\nNow you can run your tutorial and add your username and the right branch to the command.\n"}])
 --
 If you run 
 
