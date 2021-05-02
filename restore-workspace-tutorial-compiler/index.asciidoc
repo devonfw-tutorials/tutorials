@@ -36,7 +36,7 @@ In this tutorial, we will use this repository here:
 
 https://github.com/devonfw-tutorials/workspace-devon4ng
 
-The name is the concatenation of 'workspace-' and 'devon4ng'.
+Its name is the concatenation of 'workspace-' and 'devon4ng'.
 The runners will look for a tutorial folder, which is named 'devon4ng'. 
 
 [step]
@@ -52,11 +52,13 @@ Both ways will clone 'https://github.com/devonfw-tutorials/workspace-devon4ng.gi
 Now you know, which name to choose for your repository and how to use 'restoreWorkspace' inside your tutorials.
 
 A quick summary: 
+
 1) naming convention is the concatenation of 'workspace-' and '[name]'
+
 2) 'restoreWorkspace()'' will use the folder name as [name]
+
 3) 'restoreWorkspace({"workspace": "name"})' will use the parameter as [name]
 ====
-
 ====
 
 If you want to change the workspace repository, it might be useful to choose a forked repository as workspace to test your tutorial. 
@@ -75,39 +77,58 @@ This will create a copy of the repository in your own GitHub account. You will f
 --
 nextKatacodaStep("Fork the workspace- repository", [{"image": "images/fork.jpg"}, {"content": "\nNow you can run your tutorial and add your username and your wanted branch to the command.\n"}])
 --
-If you run 'localBuildRun.sh --user [YOUR_NAME] --branch [YOUR_BRANCH]' in the terminal, it will clone 
+If you run 
+
+'localBuildRun.sh --user [YOUR_NAME] --branch [YOUR_BRANCH]'
+
+in the terminal, it will clone 
 
 https://github.com/[YOUR_NAME]/workspace-devon4ng.git
 
 into the workspace directory and checkout to the branch [YOUR_BRANCH]
 
 A quick summary: 
+
 1. You need to fork the original workspace-repository
+
 2. With the flag '--user' you can specify the GitHub user
+
 3. With the flad '--branch' you can specify the branch
 ====
-
 ====
-
 It might also come in handy to use a local repository instead of the original or forked repository. 
 Choosing a local repository instead of a GitHub repository is a feature only used inside the console runner. 
-
 You should have
-
 https://github.com/devonfw-tutorials/workspace-devon4ng.git
-
 forked and listed in'Your repositories'.
 [step]
 == How to use a local repository as workspace
 --
-nextKatacodaStep("Clone the workspace-repository", [ {"content": "\nOpen the forked repository in your GitHub account and copy the repository URL as shown in image below.\n"}, {"image": "images/clone_code.jpg"}, {"file": "files/clone-repository.md"}
-])
+nextKatacodaStep("Clone the workspace-repository", [ {"content": "\nOpen the forked repository in your GitHub account and copy the repository URL as shown in image below.\n"}, {"image": "images/clone_code.jpg"}, {"file": "files/clone-repository.md"}])
 cloneRepository("", "https://github.com/devonfw-tutorials/workspace-devon4ng.git")
 --
 
 The console runner will always search for local folder first, before cloning a repository. If it doesn't find a folder named 'workspace-devon4ng' next to the folders 'tutorials' and 'tutorial-compiler', it will clone depending on the given arguments the original or the forked repository instead. 
 
 A quick summary: 
+
 1) You need to fork the original workspace directory 
+
 2) clone the repository next to 'tutorials' and 'tutorial-compiler' folder 
+
+====
+
+====
+Finished. 
+You have completed the "restoreWorkspace" tutorial. 
+You have learned, how to: 
+
+* use 'restoreWorkspace' inside your tutorials
+* name the new workspace repository
+* clone a forked repository as workspace
+* use a local folder as workspace 
+
+Learn more about the tutorial compiler, here
+
+https://github.com/devonfw-tutorials/tutorial-compiler/wiki
 ====
