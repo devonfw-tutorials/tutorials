@@ -59,17 +59,6 @@ A quick summary:
 
 ====
 
-If you want to change the workspace repository, it might be useful to choose a forked repository as workspace to test your tutorial. 
-
-Before cloning the repository we have to fork it first.
-
-Go to the workspace repository on GitHub. In our tutorial it would be:
-
-https://github.com/devonfw-tutorials/workspace-devon4ng.git
-
-Fork the repository by clicking on the 'Fork' button.
-This will create a copy of the repository in your own GitHub account. You will find it in 'Your repositories'.
-
 [step]
 == Clone a forked repository as workspace
 --
@@ -104,10 +93,11 @@ nextKatacodaStep("Clone the workspace-repository", [ {"content": "\nOpen the for
 ])
 cloneRepository("", "https://github.com/devonfw-tutorials/workspace-devon4ng.git")
 --
-
-The console runner will always search for local folder first, before cloning a repository. If it doesn't find a folder named 'workspace-devon4ng' next to the folders 'tutorials' and 'tutorial-compiler', it will clone depending on the given arguments the original or the forked repository instead. 
-
-A quick summary: 
-1) You need to fork the original workspace directory 
-2) clone the repository next to 'tutorials' and 'tutorial-compiler' folder 
 ====
+
+[step]
+== Clone a forked repository as workspace
+--
+nextKatacodaStep("Fork the workspace- repository", [{"image": "images/fork.jpg"}, {"content": "\nNow you can run your tutorial and add your username and your wanted branch to the command.\n"}])
+--
+
