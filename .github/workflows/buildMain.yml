@@ -5,10 +5,35 @@ on:
     branches: [ main ]
     
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        default: '--debug'
+        
 jobs:
+  setup-matrix:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
+        with:
+          repository: devonfw-tutorials/tutorials
+          path: playbooks
+      - name: Setup matrix combinations
+        id: setup-matrix-combinations
+        run: |
+          cd playbooks
+          for dir in */; do MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'${dir::-1}'"},'; done
+          echo ::set-output name=matrix-combinations::{\"include\":[$MATRIX_PARAMS_COMBINATIONS]}
+    outputs:
+      matrix-combinations: ${{ steps.setup-matrix-combinations.outputs.matrix-combinations }}
+      
   build_main:
     runs-on: ubuntu-latest
-
+    needs: setup-matrix
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix-combinations) }}
     steps:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
@@ -29,8 +54,8 @@ jobs:
       - name: npm install
         run: npm install
 
-      - name: run buildRun.sh
-        run: sh buildRun.sh
+      - name: run buildRun.sh ${{ github.event.inputs.logLevel }}
+        run: sh buildRun.sh -p ${{ matrix.tutorial }} ${{ github.event.inputs.logLevel }}
       
       - name: Repository dispatch
         uses: peter-evans/repository-dispatch@v1
@@ -38,3 +63,4 @@ jobs:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: devonfw-tutorials/katacoda-scenarios
           event-type: dispatch-katacoda-scenarios
+          client-payload: '{"tutorial": "${{ matrix.tutorial }}"}'
