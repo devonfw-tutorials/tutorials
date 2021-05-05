@@ -29,7 +29,6 @@ After ide setup, clone jump the queue repository. Jump the queue is a sample dev
 ### Clone jump the queue repository
 [step]
 --
-changeWorkspace("devonfw/workspace/main")
 cloneRepository("main", "https://github.com/devonfw/jump-the-queue.git")
 --
 Once project is cloned switch to next tab of IDE. In IDE explorer you will be able to see folder structure like devonfw-> workspaces->main->jump-the-queue-> java->jtqj 
