@@ -5,4 +5,3 @@ git clone https://github.com/devonfw-tutorials/tutorials.git
 
 cd tutorial-compiler
 npm install 
-cd ..
