@@ -19,13 +19,13 @@ Here in this tutorial we will learn the following:
 restoreDevonfwIde(["java", "mvn", "vscode"])
 --
 
-For this tutorial an installation of the devonfw IDE is required, which was already set up for you. The next step is to install the CobiGen CLI.
+For this tutorial an installation of the devonfw IDE is required first time you use it. The next step is to install the CobiGen CLI.
 [step]
 --
 installCobiGen()
 --
 
-CobiGen uses the backend classes for generating your code used in the Angular application. So in the next steps you will create a java project, create a simple java class.
+CobiGen is build as an extensible framework for incremental code generation. It provides extension points for new input readers which allow reading new input types and converting them to an internally processed model.CobiGen uses the backend classes for generating your code used in the Angular application. So in the next steps you will create a java project, create a simple java class.
 [step]
 --
 createDevon4jProject("cobigenjavaexample")
@@ -63,7 +63,9 @@ Now you can go through api module of your java project and use Cobigen again to 
 --
 cobiGenJava("cobigenjavaexample/api/src/main/java/com/example/application/cobigenjavaexample/customermanagement/logic/api/to/CustomerEto.java",[1])
 --
-your Angular client will be generated inside your devon4ng-application-template/src folder.
+Angular client will be generated inside devon4ng-application-template/src folder.
+Client application for displaying your entities within minutes.
+
 ====
 ====
 Conclusion: In this Tutorial we learned the following things below.
