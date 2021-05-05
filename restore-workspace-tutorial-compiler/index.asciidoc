@@ -1,4 +1,4 @@
-= Restore a workspace
+= Clone a workspace into your tutorials
 == Learn how to use restoreWorkspace inside your tutorials
 
 ====
@@ -59,7 +59,7 @@ A quick summary:
 
 1) naming convention is the concatenation of 'workspace-' and '[name]'
 
-2) 'restoreWorkspace()'' will use the tutorial folder name as [name]
+2) 'restoreWorkspace()' will use the tutorial folder name as [name]
 
 3) 'restoreWorkspace({"workspace": "name"})' will use the parameter as [name]
 ====
@@ -83,7 +83,7 @@ nextKatacodaStep("Fork the workspace- repository", [{"image": "images/fork.jpg"}
 --
 If you run 
 
-'localBuildRun.sh --user [YOUR_NAME] --branch [YOUR_BRANCH]'
+'bash localBuildRun.sh --user [YOUR_NAME] --branch [YOUR_BRANCH]'
 
 in the terminal, it will clone 
 
@@ -135,4 +135,5 @@ You have learned, how to:
 Learn more about the tutorial compiler, here
 
 https://github.com/devonfw-tutorials/tutorial-compiler/wiki
+
 ====
