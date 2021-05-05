@@ -16,13 +16,19 @@ This tutorial aims to explain concepts and principles of devon4j architecture wi
 By end of this tutorial you will have detailed understanding of principles followed by devon4j application as well as its structure and architecture. 
 
 ====
-====
 ### setup environment
 We will start by setting up development environment.
-First, clone the Jump-The-Queue Repository.
+
 [step]
 --
 restoreDevonfwIde(["java", "vscode"])
+--
+====
+### Clone jump the queue repository
+
+First, clone the Jump-The-Queue Repository.Jump the queue is a sample devonfw application.
+[step]
+--
 cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 --
 Once project is cloned switch to next tab of IDE. In IDE explorer you will be able to see folder structure like devonfw-> workspaces->main->jump-the-queue-> java->jtqj 
