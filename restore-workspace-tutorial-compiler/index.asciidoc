@@ -118,7 +118,7 @@ A quick summary:
 
 1) You need to fork the original workspace directory 
 
-2) clone the repository next to 'tutorials' and 'tutorial-compiler' folder 
+2) clone the repository next to the 'tutorials' and the 'tutorial-compiler' folder 
 
 ====
 
