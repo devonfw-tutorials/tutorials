@@ -26,10 +26,11 @@ restoreDevonfwIde(["java", "vscode"])
 --
 After ide setup, clone jump the queue repository. Jump the queue is a sample devonfw application.
 ====
+### Clone jump the queue repository
 [step]
 --
 changeWorkspace("devonfw/workspace/main")
-cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
+cloneRepository("main", "https://github.com/devonfw/jump-the-queue.git")
 --
 Once project is cloned switch to next tab of IDE. In IDE explorer you will be able to see folder structure like devonfw-> workspaces->main->jump-the-queue-> java->jtqj 
 ====
