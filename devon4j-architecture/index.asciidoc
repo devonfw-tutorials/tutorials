@@ -34,7 +34,6 @@ cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 Once project is cloned switch to next tab of IDE. In IDE explorer you will be able to see folder structure like devonfw-> workspaces->main->jump-the-queue-> java->jtqj 
 
 ====
-====
 ### devon4j application structure
 [step]
 --
