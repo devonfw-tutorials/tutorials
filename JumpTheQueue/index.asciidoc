@@ -22,7 +22,7 @@ Note: Setup script can take some time for setup.
 First, clone the Jump-The-Queue Repository.
 [step]
 --
-cloneRepository("Clone Jump The Repository", "https://github.com/devonfw/jump-the-queue.git")
+cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 --
 
 ====
@@ -46,7 +46,9 @@ npmInstall("jump-the-queue/angular")
 
 ====
 Now build and run the Angular Server.
-The following two steps are only needed in this tutorial. Normally you can simply execute "ng serve", open the https://localhost:4200/ and start using the app.
+The following two steps are only needed in this tutorial. 
+
+Normally you can simply execute "ng serve", open the https://localhost:4200/ and start using the app.
 
 In the next step you need to change the Base URL for the REST Services. 
 [step]
@@ -57,7 +59,10 @@ runClientNg("jump-the-queue/angular", { "startupTime": 200, "port": 4200, "path"
 --
 Now the Angular Frontend Server should be running.
 ====
-[step]
---
-nextKatacodaStep("Conclusion", [{ "file": "files/conclusion.md" }])
---
+
+====
+## Conclusion
+You have successfully created a Jump the Queue application. You can now proceed with development of another sample application.
+
+For more information related to Jump The Queue sample application visit on https://github.com/devonfw/jump-the-queue/wiki 
+====
