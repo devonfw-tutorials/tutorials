@@ -6,7 +6,8 @@ Jump The Queue is a small application based on the devonfw framework, which you 
 * User should have Java, Angular development experience
 
 ## Learning goals
-After completing this tutorial, you will have learned about a devonfw sample application Jump-The-Queue and its architecture. 
+* How to create devonfw sample application Jump-The-Queue
+* The Architecture of the application. 
 
 More information about Jump The Queue on https://github.com/devonfw/jump-the-queue
 ====
@@ -15,10 +16,13 @@ More information about Jump The Queue on https://github.com/devonfw/jump-the-que
 --
 restoreDevonfwIde(["java", "mvn", "node", "ng", "npm"])
 --
+
+Note: Setup script can take some time for setup.
+
 First, clone the Jump-The-Queue Repository.
 [step]
 --
-cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
+cloneRepository("Clone Jump The Repository", "https://github.com/devonfw/jump-the-queue.git")
 --
 
 ====
@@ -28,10 +32,13 @@ cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 buildJava("jump-the-queue/java/jtqj", true)
 runServerJava("jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
 --
+This will take some time
+
 Now the Java Server should be running.
 ====
 
-In the next steps we want build and run the Angular Frontend Server. For that you need to install the dependencies first.
+Install dependencies before you build and run frontend server.
+
 [step]
 --
 npmInstall("jump-the-queue/angular")
@@ -40,6 +47,7 @@ npmInstall("jump-the-queue/angular")
 ====
 Now build and run the Angular Server.
 The following two steps are only needed in this tutorial. Normally you can simply execute "ng serve", open the https://localhost:4200/ and start using the app.
+
 In the next step you need to change the Base URL for the REST Services. 
 [step]
 == Serve the Frontend Server
@@ -48,5 +56,10 @@ changeFile("jump-the-queue/angular/src/environments/environment.ts", {"content":
 runClientNg("jump-the-queue/angular", { "startupTime": 200, "port": 4200, "path": "" })
 --
 Now the Angular Frontend Server should be running.
+
+== Conclusion
+You have successfully created a Jump the Queue application. You can now proceed with development of another sample application.
+
+For more information related to Jump The Queue sample application visit on https://github.com/devonfw/jump-the-queue/wiki .
 ====
 
