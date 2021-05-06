@@ -1,20 +1,17 @@
 = Understand the concept of lazyloading in Angular with devon4ng
 == Learn how to defer initialization of modules in Angular until it is needed
 ====
-In single-page-applications as the application size increases its loading speed decreases (since typically the entire application is loaded at once). Lazy loading is a dessign pattern that defers initialization of objects until it is needed. Angular handles lazy loading through the routing module which redirects to requested pages. Those pages can be loaded at start or on demand. In this tutorial we will build a simple app to understand how lazyloading is implemented in Angular.
+In single-page-applications as the application size increases its loading speed decreases (since typically the entire application is loaded at once). Lazy loading is a dessign pattern that defers initialization of objects until it is needed. Angular handles lazy loading through the routing module which redirects to requested pages. Those pages can be loaded at start or on demand. In this tutorial you will build a simple app to understand how lazyloading is implemented in Angular.
 
 ## Prerequisites
 * devonfw-ide installed
 * Basic Angular knowledge
 
 ## Learning goals
-In this tutorial we will learn how to:
+In this tutorial you will learn how to:
 * create an Angular application using the devon command
-* add Angular Material to the application
-* import Angular Material components into our modules
-* use Material icons in the application
-* use a prebulit theme to style the application
-* create layout (conataining a header with menu along with a sidenav with navigational links) with the Angular Material components
+* look how all modules are loaded by an application at the begining (eager loading)
+* implement lazy loading and understand its concept and advantages
 ====
 
 [step]
@@ -28,7 +25,7 @@ nextKatacodaStep("Introduction", [{ "file": "files/intro.txt" }, { "image": "ima
 --
 
 Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
-Once you have setup devonfw ide, you are ready to create your devon4ng application.
+Once you have setup devonfw ide, you are ready to create your devon4ng application. (Please wait until the devon setup completes and the command prompt appears in the integrated terminal here).
 [step]
 --
 createDevon4ngProject("level-app", "", ["--style=scss", "--routing=true", "--strict=false"])
@@ -40,7 +37,7 @@ In the file app.component.html delete all the content and put in the `router-out
 changeFile("level-app/src/app/app.component.html", { "file": "files/app.component.html.txt" })
 --
 
-Next we will create the feature modules and components for the app. We will follow the structure shown in the image in the first step. You can use the CLI command `devon ng generate module` along with the `--routing` flag to generate the modules, and `devon ng generate component` command to generate the components.
+Next you will create the feature modules and components for the app. You will follow the structure shown in the image in the first step. You can use the CLI command `devon ng generate module` along with the `--routing` flag to generate the modules, and `devon ng generate component` command to generate the components.
 [step]
 --
 createFile("level-app/src/app/first/first-routing.module.ts", "files/first-routing.module.ts.txt")
@@ -60,9 +57,10 @@ createFile("level-app/src/app/first/second-right/content/content.component.scss"
 createFile("level-app/src/app/first/second-right/content/content.component.ts", "files/content.component.ts.txt")
 --
 
-To move between the components we will now configure the routes. You can refer the image in the first step to understand how we will configure the routes.
-In `app-routing.module.ts` we will add a path 'first' to `FirstComponent` and a redirection from '' to 'first'. And then import the `FirstModule` in the main `app.module.ts`
-Next, for the feature modules, we will add the routes 'first/second-left' and 'first/second-right' pointing to their respective `ContentComponent` in `first-routing.module.ts`. And then import `SecondLeftModule` and `SecondRightModule` in `first.module.ts`
+To move between the components you will now configure the routes. You can refer the image in the first step to understand how you will configure the routes.
+In `app-routing.module.ts` you will add a path 'first' to `FirstComponent` and a redirection from '' to 'first'. And then import the `FirstModule` in the main `app.module.ts`
+
+Next, for the feature modules, you will add the routes 'first/second-left' and 'first/second-right' pointing to their respective `ContentComponent` in `first-routing.module.ts`. And then import `SecondLeftModule` and `SecondRightModule` in `first.module.ts`
 [step]
 --
 changeFile("level-app/src/app/app-routing.module.ts", { "file": "files/app-routing.module.ts.txt" })
@@ -74,5 +72,37 @@ runClientNg("level-app", { "startupTime": 200, "port": 4200, "path": "" })
 
 [step]
 --
-nextKatacodaStep("Introduction", [{ "file": "files/eager-loading.txt" }, { "image": "images/compile-eager.png" }, { "image": "images/second-lvl-right-eager.png" }])
+nextKatacodaStep("Eager loading", [{ "file": "files/eager-loading.txt" }, { "image": "images/compile-eager.png" }, { "image": "images/second-lvl-right-eager.png" }])
 --
+
+Modifying an angular application to load its modules lazily is easy, you have to change the routing configuration of the desired module (for example `FirstModule`). Instead of loading a component, you dynamically import it in a `loadChildren` attribute because modules acts as gates to access components "inside" them. Updating this app to load lazily has four consecuences: no component attribute, no import of `FirstComponent`, `FirstModule` import has to be removed from the imports array at `app.module.ts`, and change of context.
+
+Also, in `first-routing.module.ts` you can change the path for the `ContentComponent`s from `first/second-left` and `first/second-right` to simply `second-left` and `second-right` respectively,  because it aquires the context set by AppRoutingModule.
+[step]
+--
+changeFile("level-app/src/app/app-routing.module.ts", { "file": "files/app-routing.module.update2.ts.txt" })
+changeFile("level-app/src/app/app.module.ts", { "file": "files/app.module.ts.update2.txt" })
+changeFile("level-app/src/app/first/first-routing.module.ts", { "file": "files/first-routing.module.update2.ts.txt" })
+--
+
+[step]
+--
+nextKatacodaStep("Lazy loading First module", [{ "file": "files/lazy-loading.txt" }, { "image": "images/compile-first-lazy.png" }, { "image": "images/first-lvl-lazy.png" }])
+--
+
+Now, lets make the SecondLeftModule load lazily. For this, you need to change `component` to `loadChildren` and refer `SecondLeftModule` in the file `first-routing.module.ts`. Next, you need to remove `SecondLeftModule` from the `imports` array of `first.module.ts`. After that you need to route the `ContentComponent` within the `second-left-routing.module.ts`.
+[step]
+--
+changeFile("level-app/src/app/first/first-routing.module.ts", { "file": "files/first-routing.module.update3.ts.txt" })
+changeFile("level-app/src/app/first/first.module.ts", { "file": "files/first.module.update3.ts.txt" })
+changeFile("level-app/src/app/first/second-left/second-left-routing.module.ts", { "file": "files/second-left-routing.module.update3.ts.txt" })
+--
+
+[step]
+--
+nextKatacodaStep("Lazy loading SecondLeftModule", [{ "file": "files/lazy-loading2.txt" }, { "image": "images/second-lvl-lazy.png" }, { "image": "images/second-lvl-left-lazy.png" }])
+--
+
+====
+Lazy loading is a pattern useful when new features are added, these features are usually identified as modules which can be loaded only if needed as shown in this tutorial, reducing the time spent loading an application.
+====
