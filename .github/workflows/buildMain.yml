@@ -5,6 +5,11 @@ on:
     branches: [ main ]
     
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        default: '--debug'
+        
 jobs:
   setup-matrix:
     runs-on: ubuntu-latest
@@ -49,8 +54,8 @@ jobs:
       - name: npm install
         run: npm install
 
-      - name: run buildRun.sh 
-        run: sh buildRun.sh -p ${{ matrix.tutorial }}
+      - name: run buildRun.sh ${{ github.event.inputs.logLevel }}
+        run: sh buildRun.sh -p ${{ matrix.tutorial }} ${{ github.event.inputs.logLevel }}
       
       - name: Repository dispatch
         uses: peter-evans/repository-dispatch@v1
