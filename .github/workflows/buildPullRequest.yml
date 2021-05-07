@@ -19,9 +19,13 @@ jobs:
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
+          dirs=()
           for changed_file in ${{ steps.changedfiles.outputs.all }}; do
             dir="$(echo $changed_file | cut -d/ -f1)"
-            MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
+            if [[ ! " ${dirs[@]} " =~ " ${dir} " ]]; then
+              MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
+            fi
+            dirs+=($dir)
           done
           echo ::set-output name=matrix-combinations::{\"include\":[$MATRIX_PARAMS_COMBINATIONS]}
     outputs:
