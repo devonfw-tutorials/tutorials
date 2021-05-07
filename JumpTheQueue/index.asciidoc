@@ -32,7 +32,6 @@ cloneRepository("", "https://github.com/devonfw/jump-the-queue.git")
 buildJava("jump-the-queue/java/jtqj", true)
 runServerJava("jump-the-queue/java/jtqj/server", { "startupTime": 40, "port": 8081, "path": "jumpthequeue" })
 --
-This will take some time
 
 Now the Java Server should be running.
 ====
