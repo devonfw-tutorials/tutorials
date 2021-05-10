@@ -76,7 +76,7 @@ ng serve
 runClientNg("devon4ng-application-template", { "startupTime": 200, "port": 4200, "path": "" })
 --
 ====
-Conclusion: In this Tutorial we learned the following things below.
-How to create a java project
-How to generate the Angular source code using CobiGen
+Conclusion: In this Tutorial we learned the following things.
+* How to create a java project.
+* How to generate the Angular source code using CobiGen.
 ====
