@@ -70,7 +70,7 @@ Build the java project
 
 [step]
 --
-buildJavan("sampleapp", false)
+buildJava("sampleapp", false)
 --
 
 Once build is successful you will get bootified-war generated in server module target folder. In sampleapp check for path sampleapp/server/sampleapp-server-bootified.war
