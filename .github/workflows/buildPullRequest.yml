@@ -14,15 +14,18 @@ jobs:
         with:
           repository: devonfw-tutorials/tutorials
           path: playbooks
+      - id: changedfiles
+        uses: jitterbit/get-changed-files@v1
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
-          cd playbooks
-          DIFF_FILES="$(git diff --name-only origin/main | xargs)"
-          IFS=$'\n'
-          for i in $DIFF_FILES; do
-            dir="$(echo $i | cut -d/ -f1)"
-            MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
+          dirs=()
+          for changed_file in ${{ steps.changedfiles.outputs.all }}; do
+            dir="$(echo $changed_file | cut -d/ -f1)"
+            if [[ ! " ${dirs[@]} " =~ " ${dir} " ]]; then
+              MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
+            fi
+            dirs+=($dir)
           done
           echo ::set-output name=matrix-combinations::{\"include\":[$MATRIX_PARAMS_COMBINATIONS]}
     outputs:
