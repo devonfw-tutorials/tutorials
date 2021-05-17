@@ -29,15 +29,19 @@ jobs:
           for dir in */; do 
             playbook_list+=("${dir::-1}"); 
           done
-            echo ${playbook_list[@]}
+          echo ${playbook_list[@]}
+          message = ""
           for changed_file in ${{ steps.changedfiles.outputs.all }}; do
             echo $changed_file
             if [[ $changed_file = *"pathway"* ]]; then
               course_name=${changed_file/%-pathway.json}
               echo "$course_name"
+              if [[ " ${playbook_list[@]} " =~ " $course_name "]]; then
+                message += $course_name + " exist already as a playbook. \n"
+              fi
             fi
           done
-
+          echo message
       - name: Request changes 
         if:  ${{ steps.check-name.outputs.eq_name_message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
