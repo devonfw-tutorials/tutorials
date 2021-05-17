@@ -30,14 +30,14 @@ jobs:
             playbook_list+=("${dir::-1}"); 
           done
           echo ${playbook_list[@]}
-          message = ""
+          message=""
           for changed_file in ${{ steps.changedfiles.outputs.all }}; do
             echo $changed_file
             if [[ $changed_file = *"pathway"* ]]; then
               course_name=${changed_file/%-pathway.json}
               echo "$course_name"
               if [[ " ${playbook_list[@]} " =~ " $course_name "]]; then
-                message += $course_name + " exist already as a playbook. \n"
+                $message+=$course_name + " exist already as a playbook. \n"
               fi
             fi
           done
