@@ -24,18 +24,16 @@ jobs:
       - name: Check name 
         id: check-name
         run: |
-          playbook-list=()
+          playbook-list=() 
           cd playbooks
-          for dir in */; do
-            playbook-list+=($dir)
-          done
+          for dir in */; do playbook-list+=(${dir::-1}); done
           
           eq_name_message=""
-          for changed_file in ${{ steps.changed-files.output.all}}; do
+          for changed_file in ${{ steps.changed-files.outputs.all }}; do
             file = "$(echo $changed_file | cut -d/ -f1)"
-            if [[ $file == *"pathway.json"]]; then
+            if [[ $file =~ *"pathway.json"]]; then
               course_name= ${file%"-pathway.json"}
-              if[["${playbooks[@]} =~ " ${course_name}"]]; then
+              if[["${playbook-list[@]} =~ " ${course_name} "]]; then
               eq_name_message+="\n" + ${course_name} + " exist already. \n"
               fi
             fi
