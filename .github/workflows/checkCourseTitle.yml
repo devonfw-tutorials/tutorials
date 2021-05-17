@@ -28,10 +28,11 @@ jobs:
           cd playbooks
           for dir in */; do
             playbooks += ($dir)
+          done
           
           eq_name_message = ""
           for changed_file in ${{ steps.changed-files.output.all}}; do
-            file = "$(echo $changed_file | cut -d / -f 1)"
+            file = "$(echo $changed_file | cut -d/ -f1)"
             if [[ $file == *"pathway.json"]]; then
               course_name = ${file%"-pathway.json"}
               if[["${playbooks[@]} =~ " ${course_name}"]]; then
