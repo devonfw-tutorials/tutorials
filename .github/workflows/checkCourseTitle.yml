@@ -35,6 +35,7 @@ jobs:
             if [[$changed_file == *"pathway.json"*]]; then 
               $course_name = course_name=${file%"-pathway.json"}
               echo $course_name
+            fi
           done
 
       - name: Request changes 
