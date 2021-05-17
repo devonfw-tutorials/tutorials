@@ -49,4 +49,4 @@ jobs:
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: ${{ steps.check-name.outputs.message}} + " You just tried to name a course after a playbook.\n Please change the course name. \n"
+          body: "${{ steps.check-name.outputs.message}} You just tried to name a course after a playbook.\n Please change the course name. \n"
