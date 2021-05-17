@@ -41,7 +41,7 @@ jobs:
               fi
             fi
           done
-          echo message
+          echo $message
       - name: Request changes 
         if:  ${{ steps.check-name.outputs.eq_name_message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
