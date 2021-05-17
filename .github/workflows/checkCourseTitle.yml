@@ -18,7 +18,7 @@ jobs:
           repository: devonfw-tutorials/tutorials 
           path: playbooks 
 
-      - id: changed-files
+      - id: changedfiles
         uses: jitterbit/get-changed-files@v1
 
       - name: Check name 
