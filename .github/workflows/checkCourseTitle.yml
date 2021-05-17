@@ -3,10 +3,11 @@ name: Auto review course name
 on: 
   pull_request:
     branches: [ main ]
+
   workflow_dispatch: 
 jobs: 
   auto-review: 
-    runs-on: ubunto-latest 
+    runs-on: ubuntu-latest 
     steps: 
       - name: Checkout playbooks
         uses: actions/checkout@v2 
