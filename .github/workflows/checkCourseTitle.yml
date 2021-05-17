@@ -32,6 +32,9 @@ jobs:
             echo ${playbook_list[@]}
           for changed_file in ${{ steps.changedfiles.outputs.all }}; do
             echo $changed_file
+            if [[$changed_file == *"pathway.json"*]]; then 
+              $course_name = course_name=${file%"-pathway.json"}
+              echo $course_name
           done
 
       - name: Request changes 
