@@ -44,6 +44,7 @@ jobs:
           done
           if [[ message != "" ]]; then
             message = "${message} You just tried to name a course after a playbook.\n Please change the name. \n"
+          fi
           echo "::set-output name=message::$message"
       - name: Request changes 
         if:  ${{ steps.check_name.outputs.message != '' }}
