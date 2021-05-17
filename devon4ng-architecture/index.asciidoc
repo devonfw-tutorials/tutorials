@@ -1,0 +1,45 @@
+= Understanding the architecture principles followed by devon4ng
+====
+## Prerequisites
+
+Basic Angular knowledge
+
+## Learning goals
+
+This tutorial aims to explain concepts and principles of devon4ng architecture by refering an Angular application template. Below are the steps we will go through to understand it clearly.
+
+* Clone devon4ng-application-template repository
+* Understand devon4ng application structure 
+* Understand Key and architectural principles followed by devon4j
+* Understand devon4j application architecture
+
+By end of this tutorial you will have detailed understanding of principles followed by devon4j application as well as its structure and architecture. 
+
+====
+
+[step]
+--
+restoreDevonfwIde(["npm", "ng", "vscode"])
+--
+
+devon4ng-application-template is a simple application containing a home page (with some dummy text) and a data page (with some CRUD operations).
+[step]
+== First lets clone the reference application
+--
+cloneRepository("", "https://github.com/devonfw/devon4ng-application-template.git")
+--
+
+[step]
+--
+nextKatacodaStep("Overview", [{ "file": "files/overview.md" }])
+--
+
+[step]
+--
+nextKatacodaStep("Layers", [{ "image": "images/architecture-layers.svg" }, { "file": "files/layers.md" }])
+--
+
+[step]
+--
+nextKatacodaStep("Modules", [{ "image": "images/architecture-modules.svg" }, { "file": "files/modules.md" }])
+--
