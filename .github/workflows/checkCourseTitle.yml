@@ -26,15 +26,15 @@ jobs:
         run: |
           cd playbooks
           playbook_list=() 
-          for dir in */; do playbook_list+=("$dir"); done
+          for dir in */; do playbook_list+=("${dir::-1}"); done
 
           eq_name_message=""
           for changed_file in ${{ steps.changed-files.outputs.all }}; do
             file = "$(echo $changed_file | cut -d/ -f1)"
-            if [[ $file =~ *"pathway.json"]]; then
+            if [[ $file =~ *"pathway.json" ]]; then
               course_name= ${file%"-pathway.json"}
-              if[["${playbook_list[@]} =~ " ${course_name} "]]; then
-              eq_name_message+="\n" + ${course_name} + " exist already. \n"
+              if[[" ${playbook_list[@]} " =~ " ${course_name} "]]; then
+                eq_name_message+="\n" + ${course_name} + " exist already. \n"
               fi
             fi
           done
