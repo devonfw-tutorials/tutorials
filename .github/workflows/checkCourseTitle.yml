@@ -44,9 +44,9 @@ jobs:
           done
           echo "::set-output name=message::$message"
       - name: Request changes 
-        if:  ${{ steps.check-name.outputs.eq_name_message != '' }}
+        if:  ${{ steps.check-name.outputs.message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: ${{ steps.get_message.outputs.message}} + " You just tried to name a course after a playbook.\n Please change the course name. \n"
+          body: ${{ steps.check-name.outputs.message}} + " You just tried to name a course after a playbook.\n Please change the course name. \n"
