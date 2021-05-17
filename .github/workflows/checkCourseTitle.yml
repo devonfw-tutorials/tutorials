@@ -26,7 +26,8 @@ jobs:
         run: |
           cd playbooks
           playbook-list=() 
-          for dir in */; do playbook-list+=("$dir::-1"); done
+          for dir in */; do playbook-list+=("$dir"); done
+
           eq_name_message=""
           for changed_file in ${{ steps.changed-files.outputs.all }}; do
             file = "$(echo $changed_file | cut -d/ -f1)"
