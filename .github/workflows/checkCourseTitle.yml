@@ -31,7 +31,7 @@ jobs:
           done
             echo ${playbook_list[@]}
           for changed_file in ${{ steps.changedfiles.outputs.all }}; do
-            echo changed_file
+            echo $changed_file
           done
 
       - name: Request changes 
