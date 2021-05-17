@@ -14,8 +14,10 @@ jobs:
         with: 
           repository: devonfw-tutorials/tutorials 
           path: playbooks 
-      - id: changedfiles
+
+      - id: changed-files
         uses: jitterbit/get-changed-files@v1
+
       - name: Check name 
         id: check-name
         run: |
@@ -25,7 +27,7 @@ jobs:
             playbooks += ($dir)
           
           eq_name_message = ""
-          for changed_file in ${{ steps.changedfiles.output.all}}; do
+          for changed_file in ${{ steps.changed-files.output.all}}; do
             file = "$(echo $changed_file | cut -d / -f 1)"
             if [[ $file == *"pathway.json"]]; then
               course_name = ${file%"-pathway.json"}
@@ -38,7 +40,7 @@ jobs:
           echo "::set-output name=eq_name_message::$eq_name_message"
 
       - name: Request changes 
-        if:  ${{ steps.get_message.outputs.eq_name_message != '' }}
+        if:  ${{ steps.check-name.outputs.eq_name_message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
