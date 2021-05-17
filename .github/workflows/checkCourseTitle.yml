@@ -29,7 +29,9 @@ jobs:
           for dir in */; do 
             playbook_list+=("${dir::-1}"); 
           done
-          echo ${playbook_list[@]}
+            echo ${playbook_list[@]}
+          for changed_file in ${{ steps.changedfiles.outputs.all }}; do
+            echo changed_file
 
       - name: Request changes 
         if:  ${{ steps.check-name.outputs.eq_name_message != '' }}
