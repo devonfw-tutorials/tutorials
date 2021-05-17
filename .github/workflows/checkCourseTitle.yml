@@ -27,6 +27,7 @@ jobs:
           cd playbooks
           playbook_list=()
           for dir in */; do 
+
             playbook_list+=("${dir::-1}"); 
           done
           echo ${playbook_list[@]}
@@ -41,7 +42,7 @@ jobs:
               fi
             fi
           done
-          echo $message
+          echo "::set-output name=message::$message"
       - name: Request changes 
         if:  ${{ steps.check-name.outputs.eq_name_message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
