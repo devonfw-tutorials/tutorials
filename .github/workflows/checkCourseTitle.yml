@@ -32,7 +32,7 @@ jobs:
             echo ${playbook_list[@]}
           for changed_file in ${{ steps.changedfiles.outputs.all }}; do
             echo $changed_file
-            if [[ $changed_file =~ *"pathway"* ]]; then
+            if [[ $changed_file =~ "pathway" ]]; then
               $course_name = ${changed_file/-pathway.json}
               echo "$course_name"
             fi
