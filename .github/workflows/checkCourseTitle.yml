@@ -22,7 +22,7 @@ jobs:
         uses: jitterbit/get-changed-files@v1
 
       - name: Check name 
-        id: check-name
+        id: check_name
         run: |
           cd playbooks
           playbook_list=()
@@ -42,11 +42,13 @@ jobs:
               fi
             fi
           done
+          if [[ message != "" ]]; then
+            message = "${message} You just tried to name a course after a playbook.\n Please change the name. \n"
           echo "::set-output name=message::$message"
       - name: Request changes 
-        if:  ${{ steps.check-name.outputs.message != '' }}
+        if:  ${{ steps.check_name.outputs.message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: "${{ steps.check-name.outputs.message}} You just tried to name a course after a playbook.\n Please change the course name. \n"
+          body: ${{ steps.check_name.outputs.message }}
