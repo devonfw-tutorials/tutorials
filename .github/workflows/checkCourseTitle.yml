@@ -9,7 +9,7 @@ jobs:
   auto-review: 
     runs-on: ubuntu-latest 
     env:
-      PR_NUMBER: ${{github.event.number}
+      PR_NUMBER: ${{github.event.number}}
 
     steps: 
       - name: Checkout playbooks
