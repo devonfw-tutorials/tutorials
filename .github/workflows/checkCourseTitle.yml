@@ -8,6 +8,9 @@ on:
 jobs: 
   auto-review: 
     runs-on: ubuntu-latest 
+    env:
+      PR_NUMBER: ${{github.event.number}
+
     steps: 
       - name: Checkout playbooks
         uses: actions/checkout@v2 
@@ -32,7 +35,7 @@ jobs:
             if [[ $file == *"pathway.json"]]; then
               course_name = ${file%"-pathway.json"}
               if[["${playbooks[@]} =~ " ${course_name}"]]; then
-              eq_name += "\n" + ${course_name} + " exist already. \n"
+              eq_name_message += "\n" + ${course_name} + " exist already. \n"
               fi
             fi
           done
