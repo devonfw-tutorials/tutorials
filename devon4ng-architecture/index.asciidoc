@@ -8,12 +8,11 @@ Basic Angular knowledge
 
 This tutorial aims to explain concepts and principles of devon4ng architecture by refering an Angular application template. Below are the steps we will go through to understand it clearly.
 
-* Clone devon4ng-application-template repository
-* Understand devon4ng application structure 
-* Understand Key and architectural principles followed by devon4j
-* Understand devon4j application architecture
+* Understand Angular architectural terminology (components and modules)
+* Different layers of an Angular application
+* Clone and understand devon4ng application structure 
 
-By end of this tutorial you will have detailed understanding of principles followed by devon4j application as well as its structure and architecture. 
+By end of this tutorial you will have detailed understanding of principles followed by devon4ng application as well as its structure and architecture. 
 
 ====
 
@@ -43,3 +42,19 @@ devon4ng-application-template is a simple application containing a home page (wi
 --
 cloneRepository("", "https://github.com/devonfw/devon4ng-application-template.git")
 --
+
+[step]
+--
+nextKatacodaStep("Core module and Shared module", [{ "file": "files/core-shared-modules.md" }])
+--
+
+====
+Conclusion
+
+To conclude, in this tutorial you learned 
+* the concepts of modules and components
+* the layers of the architecture - components and services
+* the different types of modules - core, shared and feature
+
+Then we referred a devon4ng application by cloning it and traversing through its files. You can study in more detail about Angular architecture by following [this document](https://devonfw.com/website/pages/docs/master-devon4ng.asciidoc_architecture.html#meta-architecture.asciidoc_devonfw-reference-client-architecture).
+====
