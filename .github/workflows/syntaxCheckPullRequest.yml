@@ -29,7 +29,12 @@ jobs:
       - name: npm install
         run: npm install
 
-      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
+      - if:  ${{ github.event.pull_request.head.ref == '' }}
+        name: run buildRun.sh --user ${{ github.actor }} --checkSyntax
+        run: sh buildRun.sh --user ${{ github.actor }} --checkSyntax
+
+      - if:  ${{ github.event.pull_request.head.ref != '' }} 
+        name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
         run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
 
       - name: Get message
