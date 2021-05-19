@@ -2,7 +2,8 @@ name: Check PR Katacoda Syntax
 
 on:
   pull_request_target:
-    
+    branches: [ main ]
+
   workflow_dispatch:
 jobs:
   build_pullRequest:
