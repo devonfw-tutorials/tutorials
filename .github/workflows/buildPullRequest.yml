@@ -57,19 +57,4 @@ jobs:
         run: npm install
 
       - name: run buildRun.sh
-        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax -p ${{ matrix.tutorial }}
-      
-      - name: Get message
-        id: get_message
-        run: |
-          message=`cat ../tutorial-compiler/build/errors/syntaxErrors.md`
-          echo ${message}
-          echo "::set-output name=message::$message"
-
-      - name: Request changes
-        if:  ${{ steps.get_message.outputs.message != '' }}
-        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
-        with:
-          repo-token: '${{ secrets.GITHUB_TOKEN }}'
-          event: REQUEST_CHANGES
-          body: ${{ steps.get_message.outputs.message }}
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} -p ${{ matrix.tutorial }}

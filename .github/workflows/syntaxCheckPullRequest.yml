@@ -1,0 +1,48 @@
+name: Check PR Katacoda Syntax
+
+on:
+  pull_request_target:
+    branches: [ main ]
+
+  workflow_dispatch:
+jobs:
+  build_pullRequest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout tutorial-compiler
+        uses: actions/checkout@v2
+        with:
+          repository: devonfw-tutorials/tutorial-compiler
+      
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
+        with:
+          repository: devonfw-tutorials/tutorials
+          path: playbooks
+      
+      - uses: actions/setup-node@v2-beta
+      
+      - name: install TS
+        run: npm install typescript
+      
+      - name: npm install
+        run: npm install
+
+      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
+
+      - name: Get message
+        id: get_message
+        run: |
+          message=`cat ../tutorial-compiler/build/errors/syntaxErrors.md`
+          echo ${message}
+          echo "::set-output name=message::$message"
+
+      - name: Request changes
+        if:  ${{ steps.get_message.outputs.message != '' }}
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          event: REQUEST_CHANGES
+          body: ${{ steps.get_message.outputs.message }}
