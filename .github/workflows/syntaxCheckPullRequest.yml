@@ -3,8 +3,6 @@ name: Check PR Katacoda Syntax
 on:
   pull_request_target:
     branches: [ main ]
-
-  workflow_dispatch:
 jobs:
   build_pullRequest:
     runs-on: ubuntu-latest
@@ -29,12 +27,7 @@ jobs:
       - name: npm install
         run: npm install
 
-      - if:  ${{ github.event.pull_request.head.ref == '' }}
-        name: run buildRun.sh --user ${{ github.actor }} --checkSyntax
-        run: sh buildRun.sh --user ${{ github.actor }} --checkSyntax
-
-      - if:  ${{ github.event.pull_request.head.ref != '' }} 
-        name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
+      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
         run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
 
       - name: Get message
