@@ -1,4 +1,4 @@
-Angular requires a module called app which is the main entrance to an application at runtime - this module gets bootstrapped. Angular Styleguide defines feature modules and two special modules - core and shared.
+Every Angular application requires a module called app which is the main entrance to an application at runtime - this module gets bootstrapped. Angular Styleguide defines feature modules and two special modules - core and shared.
 
 * A **feature** module is basically a vertical cut through both layers.
 

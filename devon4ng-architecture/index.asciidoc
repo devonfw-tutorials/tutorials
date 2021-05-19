@@ -10,7 +10,7 @@ This tutorial aims to explain concepts and principles of devon4ng architecture b
 
 * Understand Angular architectural terminology (components and modules)
 * Different layers of an Angular application
-* Clone and understand devon4ng application structure 
+* Clone and understand a devon4ng application structure 
 
 By end of this tutorial you will have detailed understanding of principles followed by devon4ng application as well as its structure and architecture. 
 
