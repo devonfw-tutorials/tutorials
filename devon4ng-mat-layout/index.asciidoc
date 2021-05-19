@@ -17,7 +17,7 @@ In this tutorial you will learn how to:
 
 [step]
 --
-restoreDevonfwIde(["java","mvn", "npm", "ng"])
+restoreDevonfwIde(["npm", "ng", "vscode"])
 --
 
 Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
