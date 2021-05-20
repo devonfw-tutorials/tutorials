@@ -5,12 +5,9 @@ In this section you can write the description of the tutorial. This can consist 
 The description should explain the tutorial in a few words and explain what is to be learned.
 ====
 
-===
 Before the '[step]' keyword the explanation is written.
 The explanation can consist of multiple lines.
 [step]
 --
 createFile("pathToTheFile/fileName.txt")
 --
-You have successfully created a new file
-===
