@@ -1,0 +1,52 @@
+name: Auto review course name 
+
+on: 
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch: 
+jobs: 
+  auto-review: 
+    runs-on: ubuntu-latest 
+    env:
+      PR_NUMBER: ${{github.event.number}}
+
+    steps: 
+      - name: Checkout playbooks
+        uses: actions/checkout@v2 
+        with: 
+          repository: devonfw-tutorials/tutorials 
+          path: playbooks 
+
+      - id: changedfiles
+        uses: jitterbit/get-changed-files@v1
+
+      - name: Check name 
+        id: check_name
+        run: | 
+          cd playbooks
+          playbook_list=()
+          for dir in */; do 
+            playbook_list+=("${dir::-1}"); 
+          done
+          message=""
+          for course_file in ./*; do
+            if [[ $course_file = *"pathway"* ]]; then
+              coursefile=${course_file/#.\/}
+              course_name=${coursefile/%-pathway.json}
+              if [[ " ${playbook_list[@]} " =~ " ${course_name} " ]]; then
+                message="${message} ${course_name} exist already\n"
+              fi
+            fi
+          done
+          if [[ message != "" ]]; then
+            message="${message} You just tried to name a course that is already a playbook.\n Please change the name. \n"
+          fi
+          echo "::set-output name=message::$message"
+      - name: Request changes 
+        if:  ${{ steps.check_name.outputs.message != '' }}
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          event: REQUEST_CHANGES
+          body: ${{ steps.check_name.outputs.message }}
