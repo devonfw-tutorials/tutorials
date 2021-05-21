@@ -24,15 +24,10 @@ jobs:
       - name: Check name 
         id: check_name
         run: |
-        playbook_list=()
-          for coursefile in `ls ./*.json`s; do
-            if [[ $coursefile = *"pathway"* ]]; then
-              echo $coursefile
-              playbook_list+=(${changed_file/%-pathway.json})
-            fi
-          done
           cd playbooks
+          playbook_list=()
           for dir in */; do 
+
             playbook_list+=("${dir::-1}"); 
           done
           echo ${playbook_list[@]}
