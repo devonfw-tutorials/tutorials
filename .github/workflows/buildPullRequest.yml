@@ -22,7 +22,7 @@ jobs:
           dirs=()
           for changed_file in ${{ steps.changedfiles.outputs.all }}; do
             dir="$(echo $changed_file | cut -d/ -f1)"
-            if [[ ! $changed_file = *"pathway"* ]]; then
+            if [[ ! ${dir} = *"pathway"* ]]; then
               if [[ ! " ${dirs[@]} " =~ " ${dir} " ]]; then
                 MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
               fi
