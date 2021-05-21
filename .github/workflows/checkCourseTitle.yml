@@ -24,7 +24,7 @@ jobs:
       - name: Check name 
         id: check_name
         run: | 
-          for course_name in ./*; do 
+          for course_name in playbooks/*; do 
             echo $course_name
           done 
           cd playbooks
