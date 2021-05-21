@@ -25,7 +25,7 @@ jobs:
         id: check_name
         run: | 
           for course_name in ./*; do 
-            echo course_name
+            echo $course_name
           done 
           cd playbooks
           playbook_list=()
