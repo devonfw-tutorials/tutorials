@@ -31,7 +31,6 @@ jobs:
               playbook_list+=(${changed_file/%-pathway.json})
             fi
           done
-
           cd playbooks
           for dir in */; do 
             playbook_list+=("${dir::-1}"); 
