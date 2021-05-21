@@ -28,7 +28,7 @@ jobs:
         run: npm install
 
       - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
-        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax -e katacoda
 
       - name: Get message
         id: get_message
