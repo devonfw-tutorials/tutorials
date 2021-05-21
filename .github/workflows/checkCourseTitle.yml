@@ -31,7 +31,7 @@ jobs:
           done
           echo ${playbook_list[@]}
           message=""
-          for course_files in /*; do
+          for course_files in ./*; do
             echo $course_files
             if [[ $course_files = *"pathway"* ]]; then
               course_name=${course_files/%-pathway.json}
