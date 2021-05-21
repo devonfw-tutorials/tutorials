@@ -24,21 +24,17 @@ jobs:
       - name: Check name 
         id: check_name
         run: | 
-          for course_name in playbooks/*; do 
-            echo $course_name
-          done 
           cd playbooks
           playbook_list=()
           for dir in */; do 
-
             playbook_list+=("${dir::-1}"); 
           done
           echo ${playbook_list[@]}
           message=""
-          for changed_file in ${{ steps.changedfiles.outputs.all }}; do
-            echo $changed_file
-            if [[ $changed_file = *"pathway"* ]]; then
-              course_name=${changed_file/%-pathway.json}
+          for course_files in /*; do
+            echo $course_files
+            if [[ $course_files = *"pathway"* ]]; then
+              course_name=${course_files/%-pathway.json}
               echo "$course_name"
               if [[ " ${playbook_list[@]} " =~ " ${course_name} " ]]; then
                 message="${message} ${course_name} exist already\n"
@@ -46,7 +42,7 @@ jobs:
             fi
           done
           if [[ message != "" ]]; then
-            message="${message} You just tried to name a course after a playbook.\n Please change the name. \n"
+            message="${message} You just tried to name a course that is already a playbook.\n Please change the name. \n"
           fi
           echo "::set-output name=message::$message"
       - name: Request changes 
