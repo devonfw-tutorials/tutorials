@@ -33,7 +33,7 @@ jobs:
       - name: Get message
         id: get_message
         run: |
-          message=`cat ../tutorial-compiler/build/errors/syntaxErrors.md`
+          message=`cat ./build/errors/syntaxErrors.md`
           echo ${message}
           echo "::set-output name=message::$message"
 
