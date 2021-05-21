@@ -34,7 +34,7 @@ jobs:
           for course_file in ./*; do
             echo $course_file
             if [[ $course_file = *"pathway"* ]]; then
-              coursefile=${course_file/#./}
+              coursefile=${course_file/#.\/}
               course_name=${coursefile/%-pathway.json}
               echo "$course_name"
               if [[ " ${playbook_list[@]} " =~ " ${course_name} " ]]; then
