@@ -1,0 +1,24 @@
+= Working of http rest client inside devon4j
+====
+REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. Therefore we define best practices here to guide you.
+
+## Prerequisites
+* devonfw IDE
+* User should have development experience in JAVA.
+* Basic knowledge of REST Services
+
+## Learning Goal
+Here in this tutorial you will learn the following things proposed by devonfw:
+* REST urls format
+* HTTP methods
+* HTTP status codes 
+* Metadata invoked in REST services
+* JAX-RS standard for REST service implementation
+* REST Exception Handling
+* Recommendations for REST requests and responses: a deviation from common REST pattern		
+* REST media types
+* REST testing
+* Security 
+
+we give best practices that lead to simple, easy and pragmatic "HTTP APIs".
+====
