@@ -1,7 +1,7 @@
 = Learn new pattern of REST APIs proposed by devonfw
 == Different, new and easiest way to learn various methods and protocols of REST APIs proposed by devonfw. Which includes Exception handling, Testing, Security, etc.
 ====
-REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. Therefore we define best practices here to guide you.
+REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. We give best practices that lead to simple, easy and pragmatic "HTTP APIs".
 
 ## Prerequisites
 * devonfw IDE
@@ -21,5 +21,12 @@ Here in this tutorial you will learn the following things proposed by devonfw:
 * REST testing
 * Security 
 
-we give best practices that lead to simple, easy and pragmatic "HTTP APIs".
+Let's get started
 ====
+
+devonfw IDE has been installed for you.
+
+[step]
+--
+restoreDevonfwIde(["java","mvn"], "2020.08.001")
+--
