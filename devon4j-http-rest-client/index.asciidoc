@@ -1,4 +1,5 @@
-= Working of http rest client inside devon4j
+= Learn new pattern of REST APIs proposed by devonfw
+== Different, new and easiest way to learn various methods and protocols of REST APIs proposed by devonfw. Which includes Exception handling, Testing, Security, etc.
 ====
 REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. Therefore we define best practices here to guide you.
 
