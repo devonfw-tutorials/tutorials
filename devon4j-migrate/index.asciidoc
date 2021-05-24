@@ -12,10 +12,10 @@ Here in this tutorial you will learn
 * How to migrate an older version of devon4j project to the latest version.
 
 ====
-
+Install older version of devonfw ( "2020.08.001")
 [step]
 --
-installDevonfwIde(["java","mvn"], "2020.08.001")
+restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
 ====
 Now, we will create sample devon4j application with name *sampleapp*. 
@@ -24,9 +24,9 @@ Now, we will create sample devon4j application with name *sampleapp*.
 --
 createDevon4jProject("sampleapp")
 --
-
-Example for migrating a devon4j application. In command promt just type "devon java migrate".
-This will migrate current devon4j application to the latest version available.
+cd sampleapp
+In command prompt just type "devon java migrate".
+This will migrate current devon4j application from "2020.08.001" to the latest version available.
 
 ====
 
