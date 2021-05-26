@@ -2,10 +2,11 @@ name: Auto review course name
 
 on: 
   pull_request_target:
+    branches: [ main ]
 
   workflow_dispatch: 
 jobs: 
-  auto-review: 
+  auto_review: 
     runs-on: ubuntu-latest 
     env:
       PR_NUMBER: ${{github.event.number}}
