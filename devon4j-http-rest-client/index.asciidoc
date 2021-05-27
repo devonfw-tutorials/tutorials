@@ -23,7 +23,6 @@ restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
 
 [step]
-# Create a devon4j REST Client
 --
 createDevon4jProject("HttpRestAPIdevon4j")
 buildJava("HttpRestAPIdevon4j", true)
