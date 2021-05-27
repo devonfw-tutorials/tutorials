@@ -28,7 +28,7 @@ createDevon4jProject("sampleapp")
 In the below step it will execute "devon java migrate".
 [step]
 --
-executeCommand("devon java", "devon java" ,{"args": ["migrate"]})
+executeCommand("java", "java" ,{"args": ["migrate"]})
 --
 
 This will migrate current devon4j application from "2020.08.001" to the latest version available.
