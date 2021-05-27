@@ -1,0 +1,21 @@
+{
+    "title": "CobiGen Course",
+    "description": "Learn how to use CobiGen",
+    "icon": "fa-katacoda",
+    "courses": 
+    [
+      {
+        "course_id": "cobigen-setup",
+        "title": "CobiGen Setup",
+        "description": "Setup CobiGen"
+      },
+      {
+        "title": "Devon4j App",
+        "course_id": "devon4j-app"
+      },
+      {
+        "course_id": "devon4j-architecture",
+        "title": "Devon4j Architecture"
+      }
+    ]
+  }
