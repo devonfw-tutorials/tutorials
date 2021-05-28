@@ -4,7 +4,7 @@ on:
   pull_request_target:
     branches: [ main ]
 jobs:
-  build_pullRequest:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,13 +27,14 @@ jobs:
       - name: npm install
         run: npm install
 
-      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
-        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} --checkSyntax
+      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax -e katacoda
 
       - name: Get message
         id: get_message
         run: |
-          message=`cat ../tutorial-compiler/build/errors/syntaxErrors.md`
+          tree
+          message=`cat ./build/errors/syntaxErrors.md`
           echo ${message}
           echo "::set-output name=message::$message"
 
