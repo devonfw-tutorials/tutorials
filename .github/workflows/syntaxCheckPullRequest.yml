@@ -1,12 +1,10 @@
 name: Check PR Katacoda Syntax
 
 on:
-  pull_request:
+  pull_request_target:
     branches: [ main ]
-    
-  workflow_dispatch:
 jobs:
-  build_pullRequest:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,5 +27,20 @@ jobs:
       - name: npm install
         run: npm install
 
-      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }}
-        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} -e katacoda
+      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax -e katacoda
+
+      - name: Get message
+        id: get_message
+        run: |
+          message=`cat ./build/errors/syntaxErrors.md`
+          echo ${message}
+          echo "::set-output name=message::$message"
+
+      - name: Request changes
+        if:  ${{ steps.get_message.outputs.message != '' }}
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          event: REQUEST_CHANGES
+          body: ${{ steps.get_message.outputs.message }}
