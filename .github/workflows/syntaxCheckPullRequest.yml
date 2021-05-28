@@ -29,9 +29,16 @@ jobs:
 
       - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax
         run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax -e katacoda
+      
+      - name: Check error file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "./build/errors/syntaxErrors.md"
 
       - name: Get message
         id: get_message
+        if: steps.check_files.outputs.files_exists == 'true'
         run: |
           message=`cat ./build/errors/syntaxErrors.md`
           echo ${message}
