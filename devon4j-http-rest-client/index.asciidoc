@@ -79,14 +79,11 @@ Then, You need to add (at least one of) these dependencies to your application. 
 Note: With devonfw we have already added the required dependency.
 ====
 
-
 [step]
 --
 createFile("HttpRestClientdevon4j/api/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClient", "files/Devon4jRestClient.java")
 createFile("HttpRestClientdevon4j/core/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClientImpl", "files/Devon4jRestClientImpl.java")
 --
-
-
 
 ====
 You already have a Java interface inside REST-API(which was initiated at beginning of the tutorial) of the service you want to invoke. After modifying start the server.
