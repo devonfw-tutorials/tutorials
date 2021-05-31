@@ -46,6 +46,7 @@ cloneRepository("", "https://github.com/devonfw/devon4ng-application-template.gi
 [step]
 --
 nextKatacodaStep("Core module and Shared module", [{ "file": "files/core-shared-modules.md" }])
+openFile("devon4ng-application-template/src/app/core/core.module.ts")
 --
 
 ====
