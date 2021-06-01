@@ -8,4 +8,6 @@ Every Angular application requires a module called app which is the main entranc
 
 So core module is a module only having a services layer and shared module is a module only having a components layer.
 
-Let us refer the application again to get a better clarity on the concepts.
+The `SampleDataModule` which we visitied earlier is a typical example of a **feature** module
+
+Let us refer the application again for examples on **core** module and **shared** module.
