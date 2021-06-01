@@ -29,13 +29,6 @@ addSetupScript("files/cloneProject.sh", "files/cloneProject.ps1")
 nextKatacodaStep("Overview", [{ "file": "files/overview.md" }])
 --
 
-devon4ng-application-template is a simple application containing a home page (with some dummy text) and a data page (with CRUD operations). After cloning you can checkout the file structure and understand the concepts better.
-[step]
-== Cloning the reference application
---
-cloneRepository("", "https://github.com/devonfw/devon4ng-application-template.git")
---
-
 [step]
 --
 nextKatacodaStep("Architectural Layers", [{ "image": "images/architecture-layers.png" }, { "file": "files/layers.md" }])
