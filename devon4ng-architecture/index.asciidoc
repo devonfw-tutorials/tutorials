@@ -21,6 +21,7 @@ By end of this tutorial you will have detailed understanding of principles follo
 [step]
 --
 restoreDevonfwIde(["npm", "ng", "vscode"])
+addSetupScript("files/cloneProject.sh", "files/cloneProject.ps1")
 --
 
 [step]
