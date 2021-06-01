@@ -6,3 +6,5 @@ To clarify this:
 * A **module** describes an applications feature area. The application flight-app may have a module called booking.
 
 An application developed using Angular consists of multiple modules. There are feature modules and special modules - *core* and *shared*. Angular or Angular Styleguide give no guidance on how to structure a module internally. This is where this architecture comes in.
+
+Let us clone and refer a devon4ng application for better understanding.

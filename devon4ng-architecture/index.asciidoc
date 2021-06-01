@@ -26,17 +26,7 @@ restoreDevonfwIde(["npm", "ng", "vscode"])
 nextKatacodaStep("Overview", [{ "file": "files/overview.md" }])
 --
 
-[step]
---
-nextKatacodaStep("Architectural Layers", [{ "image": "images/architecture-layers.png" }, { "file": "files/layers.md" }])
---
-
-[step]
---
-nextKatacodaStep("Modules", [{ "image": "images/architecture-modules.png" }, { "file": "files/modules.md" }])
---
-
-devon4ng-application-template is a simple application containing a home page (with some dummy text) and a data page (with CRUD operations). After cloning you can checkout the file structure and understand the concepts explained earlier.
+devon4ng-application-template is a simple application containing a home page (with some dummy text) and a data page (with CRUD operations). After cloning you can checkout the file structure and understand the concepts better.
 [step]
 == Cloning the reference application
 --
@@ -45,6 +35,24 @@ cloneRepository("", "https://github.com/devonfw/devon4ng-application-template.gi
 
 [step]
 --
+nextKatacodaStep("Architectural Layers", [{ "image": "images/architecture-layers.png" }, { "file": "files/layers.md" }])
+--
+
+[step]
+--
+openFile("devon4ng-application-template/src/app/sampledata/sampledata.module.ts")
+nextKatacodaStep("Architectural Layers explained", [{ "file": "files/layers-explained.md" }])
+openFile("devon4ng-application-template/src/app/sampledata/services/sampledata.service.ts")
+--
+
+[step]
+--
+nextKatacodaStep("Modules", [{ "image": "images/architecture-modules.png" }, { "file": "files/modules.md" }])
+--
+
+[step]
+--
+openFile("devon4ng-application-template/src/app/core/core.module.ts")
 nextKatacodaStep("Core module and Shared module", [{ "file": "files/core-shared-modules.md" }])
 openFile("devon4ng-application-template/src/app/core/core.module.ts")
 --
