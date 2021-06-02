@@ -11,13 +11,13 @@ jobs:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
-          ref: 'refs/pull/${{ github.event.number }}/merge'
+          ref: 'feature/syntaxChecking'
           repository: ${{ github.actor }}/tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          ref: 'refs/pull/${{ github.event.number }}/merge'
+          ref: 'feature/syntaxChecking'
           repository: ${{ github.actor }}/tutorials
           path: playbooks
       
