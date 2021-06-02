@@ -11,11 +11,13 @@ jobs:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
+          ref: 'refs/pull/${{ github.event.number }}/merge'
           repository: ${{ github.actor }}/tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
+          ref: 'refs/pull/${{ github.event.number }}/merge'
           repository: ${{ github.actor }}/tutorials
           path: playbooks
       
@@ -36,10 +38,10 @@ jobs:
         with:
           files: "./build/errors/syntaxErrors.md"
 
-      - name: test Tree
-        id: tree
+      - name: Find file
+        id: find_file
         run:
-          tree
+          find / -name syntaxErrors.md
           
       - name: Get message
         id: get_message
