@@ -11,12 +11,12 @@ jobs:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorial-compiler
+          repository: ${{ github.actor }}/tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorials
+          repository: ${{ github.actor }}/tutorials
           path: playbooks
       
       - uses: actions/setup-node@v2-beta
