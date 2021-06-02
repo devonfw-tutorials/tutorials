@@ -37,11 +37,6 @@ jobs:
         uses: andstor/file-existence-action@v1
         with:
           files: "./build/errors/syntaxErrors.md"
-
-      - name: Find file
-        id: find_file
-        run:
-          find / -name syntaxErrors.md
           
       - name: Get message
         id: get_message
