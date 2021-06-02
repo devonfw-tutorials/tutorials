@@ -36,6 +36,11 @@ jobs:
         with:
           files: "./build/errors/syntaxErrors.md"
 
+      - name: test Tree
+        id: tree
+        run:
+          tree
+          
       - name: Get message
         id: get_message
         if: steps.check_files.outputs.files_exists == 'true'
