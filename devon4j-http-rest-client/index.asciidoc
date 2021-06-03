@@ -13,12 +13,17 @@ Here in this tutorial you will learn the following things:
 * JAX-RS standard for REST service implementation proposed by devonfw
 * Recommendations for REST requests and responses: a deviation from common REST pattern	
 
-Let's get started
+Let's get started!!
 ====
 
 [step]
 --
 restoreDevonfwIde(["java","mvn"], "2020.08.001")
+--
+
+[step]
+--
+nextKatacodaStep("REST", [{ "file": "files/RestDescription.md" }])
 --
 
 ====
@@ -35,6 +40,8 @@ createFile("HttpRestAPIdevon4j/core/src/main/resources/db/migration/1.0/V0006__M
 createFolder("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api")
 createFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
 cobiGenJava("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
+changeFile("HttpRestAPIdevon4j/api/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.java" })
+changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.java" })
 runServerJava("devonfw/workspaces\main\restapi\server", { "startupTime": 40, "port": 8080, "path": "HttpRestAPIdevon4j" })
 --
 
