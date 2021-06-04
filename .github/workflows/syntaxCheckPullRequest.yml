@@ -44,7 +44,11 @@ jobs:
         run: |
           message=`cat ./build/errors/syntaxErrors.md`
           echo "${message}"
-          echo "::set-output name=message::$(echo "${message}")"
+          message="${message//'%'/'%25'}"
+          message="${message//$'\n'/'%0A'}"
+          message="${message//$'\r'/'%0D'}"
+          echo "${message}"
+          echo "::set-output name=message::$message"
 
       - name: Comment Syntax Errors
         if:  ${{ steps.get_message.outputs.message != '' }}
