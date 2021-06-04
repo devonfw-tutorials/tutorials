@@ -51,7 +51,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           message: |
-            ${{ env.MESSAGE }}
+            "${{ env.MESSAGE }}"
 
       - name: Request changes
         if:  ${{ env.MESSAGE != '' }}
@@ -59,4 +59,4 @@ jobs:
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: ${{ env.MESSAGE }}
+          body: "${{ env.MESSAGE }}"
