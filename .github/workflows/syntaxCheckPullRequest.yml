@@ -53,5 +53,5 @@ jobs:
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
-          event: REQUEST_CHANGES
+          event: COMMENT
           body: ${{ steps.get_message.outputs.message }}
