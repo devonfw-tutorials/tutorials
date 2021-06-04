@@ -42,7 +42,7 @@ jobs:
         id: get_message
         if: steps.check_files.outputs.files_exists == 'true'
         run: |
-          echo "MESSAGE"="$(echo '$(cat ./build/errors/syntaxErrors.md)')" >> $GITHUB_ENV
+          echo "MESSAGE=$(echo '$(cat ./build/errors/syntaxErrors.md)')" >> $GITHUB_ENV
 
       - name: Comment Syntax Errors
         if:  ${{ env.MESSAGE != '' }}
@@ -51,7 +51,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           message: |
-            "${{ env.MESSAGE }}"
+            "$MESSAGE"
 
       - name: Request changes
         if:  ${{ env.MESSAGE != '' }}
@@ -59,4 +59,4 @@ jobs:
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: "${{ env.MESSAGE }}"
+          body: "$MESSAGE"
