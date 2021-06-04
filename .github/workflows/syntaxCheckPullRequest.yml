@@ -43,7 +43,7 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: |
           message=`cat ./build/errors/syntaxErrors.md`
-          echo "MESSAGE"="$(echo '${message}'" >> $GITHUB_ENV
+          echo "MESSAGE"="$(echo '${message}')" >> $GITHUB_ENV
 
       - name: Comment Syntax Errors
         if:  ${{ env.MESSAGE != '' }}
