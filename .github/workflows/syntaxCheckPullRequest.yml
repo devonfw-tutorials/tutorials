@@ -11,12 +11,14 @@ jobs:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorial-compiler
+          ref: feature/syntaxChecking
+          repository: MarcelDiessner/tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorials
+          ref: feature/syntaxChecking
+          repository: MarcelDiessner/tutorials
           path: playbooks
       
       - uses: actions/setup-node@v2-beta
