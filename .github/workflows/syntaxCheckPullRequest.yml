@@ -44,7 +44,7 @@ jobs:
         run: |
           message=`cat ./build/errors/syntaxErrors.md`
           echo "${message}"
-          echo "MESSAGE=$(echo "${message}")" >> $GITHUB_ENV
+          echo "MESSAGE=$(echo '${message}')" >> $GITHUB_ENV
 
       - name: Comment Syntax Errors
         if:  ${{ env.MESSAGE != '' }}
