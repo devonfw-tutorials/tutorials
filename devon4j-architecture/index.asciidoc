@@ -60,7 +60,7 @@ devon4j application follows [multilayered architecture](https://en.wikipedia.org
 
 [step]
 --
-nextKatacodaXStep("devon4j application layers", [{ "image": "images/jtqj_detailed_app_structure.jpg" }])
+nextKatacodaXXStep("devon4j application layers", [{ "image": "images/jtqj_detailed_app_structure.jpg" }])
 --
 
 Above image display detailed structure of devon4j application. As shown above jump-the-queue application contains different components like queuemanagement, visitormanagement etc
