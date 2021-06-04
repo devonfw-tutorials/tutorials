@@ -44,6 +44,13 @@ jobs:
           echo ${message}
           echo "::set-output name=message::$message"
 
+       - uses: mshick/add-pr-comment@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: |
+            ${{ steps.get_message.outputs.message }}
+
       - name: Request changes
         if:  ${{ steps.get_message.outputs.message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
