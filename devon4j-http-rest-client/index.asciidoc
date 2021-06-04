@@ -53,11 +53,11 @@ You have to create devon4j service Client.
 ====
 
 ====
+
 Why Should you prefer devon4j client over other clients??
 Various solutions already exist for calling services such as RestTemplate from spring or the JAX-RS client API. Further each and every service framework offers its own API as well. These solutions might be suitable for very small and simple projects (with one or two such invocations). However, with the trend of micro-services the invocation of a service becomes a very common use-case that occurs all over the place. You typically need a solution that is very easy to use but supports flexible configuration, adding headers for authentication, mapping of errors from server, logging success/errors with duration for performance analysis, support for synchronous and asynchronous invocations, etc. This is exactly what this devon4j service-client solution brings for you.
 
-To create devon4j service Client. First You need to create a sample devon4j project and build it.
-
+* To create devon4j service Client. First You need to create a sample devon4j project and build it.
 [step]
 == Create devon4j service Client
 --
@@ -65,45 +65,45 @@ createDevon4jProject("HttpRestClientdevon4j")
 buildJava("HttpRestClientdevon4j", true)
 --
 
-Then, You need to add (at least one of) these dependencies to your application. Since in this tutorial you will build client on Synchronous call so, you have to add dependency for synchronous consuming REST services via Apache CXF (Java8+):
-
-<!-- Starter for asynchronous consuming REST services via Jaca HTTP Client (Java11+) -->
-<dependency>
-  <groupId>com.devonfw.java.starters</groupId>
-  <artifactId>devon4j-starter-http-client-rest-async</artifactId>
-</dependency>
-<!-- Starter for synchronous consuming REST services via Apache CXF (Java8+) -->
-<dependency>
-  <groupId>com.devonfw.java.starters</groupId>
-  <artifactId>devon4j-starter-cxf-client-rest</artifactId>
-</dependency>
-<!-- Starter for synchronous consuming SOAP services via Apache CXF (Java8+) -->
-<dependency>
-  <groupId>com.devonfw.java.starters</groupId>
-  <artifactId>devon4j-starter-cxf-client-ws</artifactId>
-</dependency>
-
-Note: With devonfw we have already added the required dependency.
+Then, You need to add (at least one of) these dependencies to your application. 
 ====
 
+
 [step]
+--
+nextKatacodaStep("  ", [{ "file": "files/dependency.md" }])
+--
+
+
+
+You have to create rest client (i.e. Devon4jRestClient.java) and it's implementation class.
+[step]
+== Create devon4j rest client
 --
 createFile("HttpRestClientdevon4j/api/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClient", "files/Devon4jRestClient.java")
 createFile("HttpRestClientdevon4j/core/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClientImpl", "files/Devon4jRestClientImpl.java")
 --
 
+
 ====
-You already have a Java interface inside REST-API(which was initiated at beginning of the tutorial) of the service you want to invoke. After modifying start the server.
+## Configuration 
+The server for client has already started. To modify properties, add configuration for rest server url in it.
 [step]
 --
 changeFile("HttpRestClientdevon4j/core/src/main/resources/config/application.properties", { "file": "files/config-application.properties" })
 changeFile("HttpRestClientdevon4j/core/src/main/resources/application.properties", { "file": "files/application.properties" })
+--
+
+You have to start the application.
+This might take same time for application to start.
+====
+
+
+[step]
+--
 runServerJava("devonfw/workspaces\main\HttpRestClientdevon4j\server", { "startupTime": 40, "port": 8081, "path": "HttpRestClientdevon4j" })
 --
 
-This might take same time.
-Once Rest Service runs successfully, you can now go to Postman and test the RESTful services.
-====
 
 ====
 You have successfully created the Client application with devon4j. For more details on RESTful webservices follow https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-rest.asciidoc
