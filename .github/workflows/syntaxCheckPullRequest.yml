@@ -11,14 +11,12 @@ jobs:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
-          ref: 'feature/syntaxChecking'
-          repository: ${{ github.actor }}/tutorial-compiler
+          repository: devonfw-tutorials/tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          ref: 'feature/syntaxChecking'
-          repository: ${{ github.actor }}/tutorials
+          repository: devonfw-tutorials/tutorials
           path: playbooks
       
       - uses: actions/setup-node@v2-beta
@@ -45,6 +43,13 @@ jobs:
           message=`cat ./build/errors/syntaxErrors.md`
           echo ${message}
           echo "::set-output name=message::$message"
+
+       - uses: mshick/add-pr-comment@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]'
+          message: |
+            ${{ steps.get_message.outputs.message }}
 
       - name: Request changes
         if:  ${{ steps.get_message.outputs.message != '' }}
