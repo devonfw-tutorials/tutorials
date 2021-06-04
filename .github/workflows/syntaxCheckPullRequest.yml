@@ -43,7 +43,7 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: |
           message=`cat ./build/errors/syntaxErrors.md`
-          echo ${message}
+          echo "${message}"
           echo "::set-output name=message::$message"
 
       - name: Comment Syntax Errors
