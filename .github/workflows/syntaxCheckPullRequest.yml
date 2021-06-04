@@ -44,21 +44,21 @@ jobs:
         run: |
           message=`cat ./build/errors/syntaxErrors.md`
           echo "${message}"
-          (echo "MESSAGE=$(echo "${message}")") >> $GITHUB_ENV
+          echo "::set-output name=message::$(echo "${message}")"
 
       - name: Comment Syntax Errors
-        if:  ${{ env.MESSAGE != '' }}
+        if:  ${{ steps.get_message.outputs.message != '' }}
         uses: mshick/add-pr-comment@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
           message: |
-            ${{ env.MESSAGE }}
+            ${{ steps.get_message.outputs.message }}
 
       - name: Request changes
-        if:  ${{ env.MESSAGE != '' }}
+        if:  ${{ steps.get_message.outputs.message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
           event: REQUEST_CHANGES
-          body: ${{ env.MESSAGE }}
+          body: ${{ steps.get_message.outputs.message }}
