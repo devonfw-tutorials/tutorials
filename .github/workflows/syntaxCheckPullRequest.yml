@@ -46,7 +46,8 @@ jobs:
           echo ${message}
           echo "::set-output name=message::$message"
 
-       - uses: mshick/add-pr-comment@v1
+      - name: Comment Syntax Errors
+        uses: mshick/add-pr-comment@v1
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           repo-token-user-login: 'github-actions[bot]'
