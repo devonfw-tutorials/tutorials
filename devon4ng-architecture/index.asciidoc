@@ -1,4 +1,5 @@
-= Understanding the architecture principles followed by devon4ng
+= devon4ng architecture
+== Understand the architecture principles followed by devon4ng (the angular asset of devonfw)
 ====
 ## Prerequisites
 
