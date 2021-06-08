@@ -10,10 +10,7 @@ Based on Angular Styleguide we will go through the following steps:
 At the end of this tutorial you will be able to understand the main principles followed by devon4ng
 application, its architecture and structure.
 ====
-
-Before the '[step]' keyword the explanation is written.
-The explanation can consist of multiple lines.
 [step]
 --
-createFile("pathToTheFile/fileName.txt")
+test
 --
