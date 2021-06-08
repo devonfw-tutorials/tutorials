@@ -1,5 +1,5 @@
 = Tutorial For Devon4ng Architecture
-===
+====
 In this tutorial you will learn about the devon4ng architecture.
 Based on Angular Styleguide we will go through the following steps:
 
