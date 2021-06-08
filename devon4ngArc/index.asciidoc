@@ -17,4 +17,3 @@ The explanation can consist of multiple lines.
 --
 createFile("pathToTheFile/fileName.txt")
 --
-===
