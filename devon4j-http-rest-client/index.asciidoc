@@ -3,9 +3,8 @@
 REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. We give best practices that lead to simple, easy and pragmatic "HTTP APIs".
 
 ## Prerequisites
-* devonfw IDE
 * User should have development experience in JAVA.
-* Basic knowledge of REST-api and REST-client services.
+* Basic knowledge of REST.
 
 ## Learning Goal
 Here in this tutorial you will learn the following things:
