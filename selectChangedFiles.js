@@ -12,18 +12,17 @@ async function selectChangedFiles() {
             pull_number: pr
         });
         let files = get.data;
-        for(let i = 0; i < files.length; i++) {
-            let changedTutorial = files[i].filename.substring(0, files[i].filename.indexOf("/"));
-            if(!arr.includes(changedTutorial)) {
-                arr.push(changedTutorial);
-            }
-            
-        }
+        files.forEach(file => {
+            arr.push(file.filename)
+        });
     } catch(e) {
-        console.error(e);
+        throw e;
     }
     return arr;
 }
 
-selectChangedFiles();
+selectChangedFiles().catch(err => {
+    console.log(err);
+    process.exit(1); 
+});
 
