@@ -12,8 +12,11 @@ jobs:
         with:
           repository: devonfw-tutorials/tutorials
           path: playbooks
-      - id: changedfiles
-        uses: jitterbit/get-changed-files@v1
+      - name: Select Changed Files
+        id: changedfiles
+        run: 
+          changedFiles = `node selectChangedFiles.js`
+          echo ::set-output name=all::$changedFiles
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |

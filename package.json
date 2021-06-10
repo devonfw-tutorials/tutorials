@@ -4,7 +4,8 @@
   "description": "",
   "dependencies": {
     "pegjs": "^0.10.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "@octokit/core": "^3.2.3"
   },
   "author": "",
   "license": "ISC"
