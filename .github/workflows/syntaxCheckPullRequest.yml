@@ -27,10 +27,8 @@ jobs:
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
-          echo "${{ steps.changedfiles.outputs.changedFiles }}"
-          echo "${{ fromJson(steps.changedfiles.outputs.changedFiles) }}"
           dirs=()
-          for changed_file in ${{ fromJson(steps.changedfiles.outputs.changedFiles) }}; do
+          for changed_file in ${{ steps.changedfiles.outputs.changedFiles }}; do
             dir="$(echo $changed_file | cut -d/ -f1)"
             if [[ ! " ${dirs[@]} " =~ " ${dir} " ]]; then
               MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
