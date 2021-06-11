@@ -27,7 +27,6 @@ jobs:
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
-          echo ${{ steps.changedfiles.outputs.changedFiles }}
           dirs=()
           for changed_file in ${{ fromJson(steps.changedfiles.outputs.changedFiles) }}; do
             dir="$(echo $changed_file | cut -d/ -f1)"
