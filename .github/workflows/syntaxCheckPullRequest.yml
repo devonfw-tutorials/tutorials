@@ -19,14 +19,12 @@ jobs:
       - name: Select Changed Files
         id: changedfiles
         run: |
-          changedFiles=`node selectChangedFiles.js`
-          echo "${changedFiles}"
-          echo "::set-output name=all::$changedFiles"
+          node selectChangedFiles.js
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
           dirs=()
-          for changed_file in ${{ steps.changedfiles.outputs.all }}; do
+          for changed_file in ${{ steps.changedfiles.outputs.changedFiles }}; do
             dir="$(echo $changed_file | cut -d/ -f1)"
             if [[ ! " ${dirs[@]} " =~ " ${dir} " ]]; then
               MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
@@ -47,7 +45,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: devonfw-tutorials/tutorial-compiler
-          path: tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
@@ -64,7 +61,8 @@ jobs:
         run: npm install
 
       - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax
-        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax -p ${{ matrix.tutorial }} -e test_console
+        run: |
+          sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax -p ${{ matrix.tutorial }} -e test_console
       
       - name: Check error file existence
         id: check_files
