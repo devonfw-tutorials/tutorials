@@ -1,5 +1,4 @@
-import * as core from '@actions/core'
-const path = require("path");
+const core = require("@actions/core");
 const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
