@@ -21,12 +21,12 @@ jobs:
         run: |
           changedFiles=`node selectChangedFiles.js`
           echo "${changedFiles}"
-          echo "::set-output name=all::$changedFiles"
+          echo "::set-output name=changedFiles::$changedFiles"
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
           dirs=()
-          for changed_file in ${{ steps.changedfiles.outputs.all }}; do
+          for changed_file in ${{ steps.changedfiles.outputs.changedFiles }}; do
             dir="$(echo $changed_file | cut -d/ -f1)"
             if [[ ! " ${dirs[@]} " =~ " ${dir} " ]]; then
               MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
