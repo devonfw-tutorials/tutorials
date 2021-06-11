@@ -20,6 +20,9 @@ jobs:
         id: changedfiles
         run: |
           changedFiles=`node selectChangedFiles.js`
+          changedFiles="${changedFiles//'%'/'%25'}"
+          changedFiles="${changedFiles//$'\n'/'%0A'}"
+          changedFiles="${changedFiles//$'\r'/'%0D'}"
           echo "::set-output name=changedFiles::$changedFiles"
       - name: Setup matrix combinations
         id: setup-matrix-combinations
