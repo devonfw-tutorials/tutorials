@@ -10,7 +10,7 @@ async function selectChangedFiles() {
             //owner: 'devonfw-tutorials',
             owner: 'MarcelDiessner',
             repo: 'tutorials',
-            pull_number: pr
+            pull_number: 41
         });
         let files = get.data;
         files.forEach(file => {
@@ -20,7 +20,8 @@ async function selectChangedFiles() {
     } catch(e) {
         throw e;
     }
-    let output = JSON.stringify(arr);
+    let output = arr.join(' ');
+    console.log(output);
     core.info(`Changed Files: ${output}`);
     core.setOutput('changedFiles', output);
 }
