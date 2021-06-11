@@ -20,7 +20,7 @@ async function selectChangedFiles() {
     } catch(e) {
         throw e;
     }
-    return arr;
+    return JSON.stringify(arr);
 }
 
 selectChangedFiles().catch(err => {
