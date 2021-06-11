@@ -56,8 +56,6 @@ jobs:
       - uses: actions/setup-node@v2-beta
       - name: install TS
         run: npm install typescript
-      - name: Install node environment
-        uses: actions/setup-node@v2-beta
       - name: npm install
         run: npm install
       - name: run buildRun.sh --user ${{ github.actor }} --branch ${{needs.setup-matrix.outputs.head_ref}} --checkSyntax
