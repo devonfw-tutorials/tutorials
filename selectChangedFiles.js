@@ -10,7 +10,7 @@ async function selectChangedFiles() {
             //owner: 'devonfw-tutorials',
             owner: 'MarcelDiessner',
             repo: 'tutorials',
-            pull_number: 41
+            pull_number: pr
         });
         let files = get.data;
         files.forEach(file => {
