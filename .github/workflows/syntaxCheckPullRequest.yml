@@ -46,7 +46,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: devonfw-tutorials/tutorial-compiler
-          path: tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
