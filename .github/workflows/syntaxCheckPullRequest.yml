@@ -27,6 +27,8 @@ jobs:
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
+          echo "${{ steps.changedfiles.outputs.changedFiles }}"
+          echo "${{ fromJson(steps.changedfiles.outputs.changedFiles) }}"
           dirs=()
           for changed_file in ${{ fromJson(steps.changedfiles.outputs.changedFiles) }}; do
             dir="$(echo $changed_file | cut -d/ -f1)"
@@ -66,7 +68,7 @@ jobs:
 
       - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax
         run: |
-          echo ${{ matrix.tutorial }}
+          echo "${{ matrix.tutorial }}"
           sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request_target.head.ref }} --checkSyntax -p ${{ matrix.tutorial }} -e test_console
       
       - name: Check error file existence
