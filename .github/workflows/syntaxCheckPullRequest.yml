@@ -46,7 +46,8 @@ jobs:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorial-compiler
+          repository: MarcelDiessner/tutorial-compiler
+          ref: feature/syntaxChecking
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
