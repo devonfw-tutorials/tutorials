@@ -20,7 +20,6 @@ jobs:
         id: changedfiles
         run: |
           changedFiles=`node selectChangedFiles.js`
-          echo "${changedFiles}"
           echo "::set-output name=changedFiles::$changedFiles"
       - name: Setup matrix combinations
         id: setup-matrix-combinations
