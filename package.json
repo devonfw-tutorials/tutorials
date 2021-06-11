@@ -5,7 +5,8 @@
   "dependencies": {
     "pegjs": "^0.10.0",
     "rimraf": "^3.0.2",
-    "@octokit/core": "^3.2.3"
+    "@octokit/core": "^3.2.3",
+    "@actions/core": "^1.2.2"
   },
   "author": "",
   "license": "ISC"

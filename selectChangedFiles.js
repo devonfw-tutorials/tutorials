@@ -1,3 +1,4 @@
+import * as core from '@actions/core'
 const path = require("path");
 const { Octokit } = require("@octokit/core");
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
@@ -20,7 +21,9 @@ async function selectChangedFiles() {
     } catch(e) {
         throw e;
     }
-    return JSON.stringify(arr);
+    let output = JSON.stringify(arr);
+    core.info(`Changed Files: ${output}`);
+    core.setOutput('changedFiles', output);
 }
 
 selectChangedFiles().catch(err => {
