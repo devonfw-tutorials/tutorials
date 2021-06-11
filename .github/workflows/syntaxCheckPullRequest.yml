@@ -18,7 +18,7 @@ jobs:
         run: npm install
       - name: Select Changed Files
         id: changedfiles
-        run: 
+        run: |
           changedFiles = `node selectChangedFiles.js`
           echo "::set-output name=all::$changedFiles"
       - name: Setup matrix combinations
