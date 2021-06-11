@@ -47,7 +47,7 @@ jobs:
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorials
+          repository: MarcelDiessner/tutorials
           path: playbooks
       
       - uses: actions/setup-node@v2-beta
@@ -56,11 +56,16 @@ jobs:
         run: npm install typescript
       - name: Install node environment
         uses: actions/setup-node@v2-beta
-      - name: npm install
-        run: npm install
+      
       - name: Get branch
         id: get_branch
-        run: node getHeadRef.js
+        run: |
+          cd playbooks
+          npm install
+          node getHeadRef.js
+          cd ..
+      - name: npm install
+        run: npm install
       - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ steps.get_branch.outputs.head_ref }} --checkSyntax
         run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ steps.get_branch.outputs.head_ref }} --checkSyntax -p ${{ matrix.tutorial }} -e test_console
       
