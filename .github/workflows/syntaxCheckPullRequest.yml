@@ -2,12 +2,13 @@ name: Check PR Katacoda Syntax
 
 on:
   pull_request_target:
-    branches: [ main ]
+
 jobs:
   setup-matrix:
     runs-on: ubuntu-latest
     env:
       PR_NUMBER: ${{github.event.number}}
+      
     steps:
       - name: Checkout playbooks
         uses: actions/checkout@v2
