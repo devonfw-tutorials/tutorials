@@ -52,7 +52,6 @@ jobs:
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorials
           path: playbooks
       
       - uses: actions/setup-node@v2-beta
