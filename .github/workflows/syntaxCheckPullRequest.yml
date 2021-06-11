@@ -49,6 +49,8 @@ jobs:
         with:
           repository: MarcelDiessner/tutorials
           path: playbooks
+      - name: tree
+        run: tree .
       - uses: actions/setup-node@v2-beta
       
       - name: install TS
