@@ -7,7 +7,7 @@ async function getHeadRef() {
     let ref ="";
     try {
         let get = await octokit.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', {
-            owner: 'MarcelDiessner',
+            owner: 'devonfw-tutorials',
             repo: 'tutorials',
             pull_number: pr
         });

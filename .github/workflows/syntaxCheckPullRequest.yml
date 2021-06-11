@@ -46,12 +46,11 @@ jobs:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
-          repository: MarcelDiessner/tutorial-compiler
-          ref: feature/syntaxChecking
+          repository: devonfw-tutorials/tutorial-compiler
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: MarcelDiessner/tutorials
+          repository: devonfw-tutorials/tutorials
           ref: ${{needs.setup-matrix.outputs.head_ref}}
           path: playbooks
       - uses: actions/setup-node@v2-beta
