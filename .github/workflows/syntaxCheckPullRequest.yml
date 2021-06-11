@@ -6,12 +6,11 @@ on:
 jobs:
   setup-matrix:
     runs-on: ubuntu-latest
+    env:
+      PR_NUMBER: ${{github.event.number}}
     steps:
       - name: Checkout playbooks
         uses: actions/checkout@v2
-        with:
-          repository: devonfw-tutorials/tutorials
-          path: playbooks
       - name: Install node environment
         uses: actions/setup-node@v2-beta
       - name: npm install
@@ -46,6 +45,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: devonfw-tutorials/tutorial-compiler
+          path: tutorial-compiler
       
       - name: Checkout playbooks
         uses: actions/checkout@v2
