@@ -62,7 +62,7 @@ nextKatacodaStep("Integrate Eclipse with CobiGen", [{"image": "images/01-install
 
 ====
 Here you can select the updates.
-    2. Open CobiGen’s update site
+    2. Open CobiGen’s update site bla
 
 [step]
 --
