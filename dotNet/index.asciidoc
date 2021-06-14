@@ -1,1 +1,10 @@
-Tutorial for the .NET templates
+== TEMPLATES DOTNET TUTORIAL
+====
+Description
+====
+
+This is the first step
+[step]
+--
+createFile("tutorials/dotNet/firstStep.txt")
+--
