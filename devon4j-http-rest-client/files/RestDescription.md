@@ -1,3 +1,6 @@
-* ATTENTION: REST and RESTful often implies very strict and specific rules and conventions. However different people will often have different opinions of such rules. 
-* We learned that this leads to "religious discussions" (starting from PUT vs. POST and IDs in path vs. payload up to Hypermedia and HATEOAS). These "religious discussions" waste a lot of time and money without adding real value in case of common business applications (if you publish your API on the internet to billions of users this is a different story). 
-* Therefore we give best practices that lead to simple, easy and pragmatic "HTTP APIs" (to avoid the term "REST services" and end "religious discussions").
+* For implementing REST services we use the JAX-RS standard. As an implementation we recommend CXF. For JSON bindings we use Jackson while XML binding works out-of-the-box with JAXB. To implement a service you write an interface with JAX-RS annotations for the API and a regular implementation class annotated with @Named to make it a spring-bean.
+
+* The REST service implementation is a regular CDI bean that can use dependency injection. The separation of the API as a Java interface allows to use it for service client calls.
+
+* Why Should you prefer devon4j client over other clients?
+devon4j supports flexible configuration, adding headers for authentication, mapping of errors from server, logging success/errors with duration for performance analysis, support for synchronous and asynchronous invocations. Easy invocation of service inside a micro-service.

@@ -33,37 +33,4 @@ public interface VisitormanagementRestService {
   @Path("/clientrequest")
   public String returnResponseToClient(String args);
 
-  @GET
-  @Path("/visitor/{id}/")
-  public VisitorEto getVisitor(@PathParam("id") long id);
-
-  /**
-   * Delegates to {@link Visitormanagement#saveVisitor}.
-   *
-   * @param visitor the {@link VisitorEto} to be saved
-   * @return the recently created {@link VisitorEto}
-   */
-  @POST
-  @Path("/visitor/")
-  public VisitorEto saveVisitor(VisitorEto visitor);
-
-  /**
-   * Delegates to {@link Visitormanagement#deleteVisitor}.
-   *
-   * @param id ID of the {@link VisitorEto} to be deleted
-   */
-  @DELETE
-  @Path("/visitor/{id}/")
-  public void deleteVisitor(@PathParam("id") long id);
-
-  /**
-   * Delegates to {@link Visitormanagement#findVisitorEtos}.
-   *
-   * @param searchCriteriaTo the pagination and search criteria to be used for finding visitors.
-   * @return the {@link Page list} of matching {@link VisitorEto}s.
-   */
-  @Path("/visitor/search")
-  @POST
-  public Page<VisitorEto> findVisitors(VisitorSearchCriteriaTo searchCriteriaTo);
-
 }
