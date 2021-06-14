@@ -1,0 +1,14 @@
+## Service Discovery
+* service.client.default.url :- It is used to set the default url of server and it is added for service discovery.
+* service.client.app.restapi.url :- This property provide base url of REST in your application. It follows format such as "service.client.app.«application».url". Here, «application» refers to the technical name of the application providing the service.
+
+## Timeouts
+* service.client.default.timeout.connection:- It is used to set the default timeout for particular connection.
+* service.client.default.timeout.response:- It is used to set the default timeout for particular response.
+
+## Headers
+* service.client.app.restapi.auth:- It is used for customization of Service Header. Here it is used for basic authentication.
+
+## Authentication
+* service.client.app.restapi.user.login:- It is used to set username of server for authentication
+* service.client.app.restapi.user.password:- It is used to set password.
