@@ -14,9 +14,4 @@ public interface Devon4jRestClient {
   @GET
   @Path("/response/")
   public String showResponse();
-
-  @GET
-  @Path("/verification")
-  public String verifyServiceWork();
-
 }

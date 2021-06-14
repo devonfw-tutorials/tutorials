@@ -23,7 +23,7 @@ restoreDevonfwIde(["java","mvn"], "2020.08.001")
 * REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP.
 [step]
 --
-nextKatacodaStep("REST", [{ "file": "files/RestDescription.md" }])
+nextKatacodaStep("REST", [{ "file": "files/RestDescription.txt" }])
 --
 For more details on REST visit https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-rest.asciidoc
 
@@ -39,14 +39,14 @@ Let's create devon4j server.
 --
 createDevon4jProject("HttpRestAPIdevon4j")
 buildJava("HttpRestAPIdevon4j", true)
-createFile("HttpRestAPIdevon4j/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.sql")
-createFile("HttpRestAPIdevon4j/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.sql")
+createFile("HttpRestAPIdevon4j/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.txt")
+createFile("HttpRestAPIdevon4j/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.txt")
 createFolder("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api")
-createFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
+createFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.txt")
 cobiGenJava("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
-changeFile("HttpRestAPIdevon4j/api/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.java" })
-changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.java" })
-changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.java" })
+changeFile("HttpRestAPIdevon4j/api/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.txt" })
+changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.txt" })
+changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
 runServerJava("devonfw/workspaces\main\restapi\server", { "startupTime": 40, "port": 8080, "path": "HttpRestAPIdevon4j" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
@@ -72,7 +72,7 @@ Then, You need to add required dependency to your application.
 
 [step]
 --
-nextKatacodaStep("  ", [{ "file": "files/dependency.md" }])
+nextKatacodaStep("  ", [{ "file": "files/dependency.txt" }])
 --
 
 ====
@@ -81,9 +81,9 @@ You have to create rest client (i.e. Devon4jRestClient.java) and it's implementa
 [step]
 == Create devon4j rest client
 --
-createFile("HttpRestClientdevon4j/api/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClient", "files/Devon4jRestClient.java")
-createFile("HttpRestClientdevon4j/core/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClientImpl", "files/Devon4jRestClientImpl.java")
-nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.md" }])
+createFile("HttpRestClientdevon4j/api/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClient", "files/Devon4jRestClient.txt")
+createFile("HttpRestClientdevon4j/core/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClientImpl", "files/Devon4jRestClientImpl.txt")
+nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
 --
 After getting response, you can handle the response in your implementation. Here you can see that response is getting handled in "showResponse" method.
 ====
@@ -94,8 +94,8 @@ After getting response, you can handle the response in your implementation. Here
 An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
 [step]
 --
-changeFile("HttpRestClientdevon4j/core/src/main/resources/config/application.properties", { "file": "files/config-application.properties" })
-nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.md" }])
+changeFile("HttpRestClientdevon4j/core/src/main/resources/config/application.properties", { "file": "files/config_application.txt" })
+nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 --
 
 Now, after configuration you have to start the client application.

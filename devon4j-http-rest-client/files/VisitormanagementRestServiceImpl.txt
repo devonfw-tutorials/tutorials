@@ -3,11 +3,7 @@ package com.devonfw.httprestapi.restapi.visitormanagement.service.impl.rest;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.springframework.data.domain.Page;
-
 import com.devonfw.httprestapi.restapi.visitormanagement.logic.api.Visitormanagement;
-import com.devonfw.httprestapi.restapi.visitormanagement.logic.api.to.VisitorEto;
-import com.devonfw.httprestapi.restapi.visitormanagement.logic.api.to.VisitorSearchCriteriaTo;
 import com.devonfw.httprestapi.restapi.visitormanagement.service.api.rest.VisitormanagementRestService;
 
 /**
