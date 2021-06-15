@@ -31,7 +31,7 @@ For more details on devon4j Service Client https://devonfw.com/website/pages/doc
 ====
 
 ====
-As explained in REST document, With JAX-RS it is important to make sure that each service method is annotated with the proper HTTP method (@GET,@POST,etc.).
+As explained in REST document, With JAX-RS it is important to make sure that each service method is annotated with the proper HTTP method.
 
 Let's create devon4j server.
 [step]
@@ -105,7 +105,7 @@ Now, after configuration you have to start the client application.
 This might take some time for application to start.
 [step]
 --
-runServerJava("devonfw/workspaces\main\HttpRestClientdevon4j\server", { "startupTime": 40, "port": 8081, "path": "HttpRestClientdevon4j" })
+runServerJava("devonfw/workspaces/main/HttpRestClientdevon4j/server", { "startupTime": 40, "port": 8081, "path": "HttpRestClientdevon4j" })
 --
 Once the REST-server started running,
 Open http://localhost:8080/client/services/rest/testrest/v1/response, Enter username as "admin" and password as "admin"
