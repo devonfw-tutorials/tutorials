@@ -102,7 +102,7 @@ Now, after configuration you have to start the client application.
 This might take some time for application to start.
 [step]
 --
-runServerJava("devonfw/workspaces/main/httprestclient/server", { "startupTime": 40, "port": 8081, "path": "httprestclient" })
+runServerJava("devonfw/workspaces/main/httprestclient/server", { "startupTime": 40, "port": 8081, "path": "client" })
 --
 Once the REST-server started running,
 Open http://localhost:8080/client/services/rest/testrest/v1/response, Enter username as "admin" and password as "admin"
