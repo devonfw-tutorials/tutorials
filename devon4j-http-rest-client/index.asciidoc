@@ -37,17 +37,17 @@ Let's create devon4j server.
 [step]
 == Create the devon4j-HTTP-REST-SERVER
 --
-createDevon4jProject("HttpRestAPIdevon4j")
-buildJava("HttpRestAPIdevon4j", true)
-createFile("HttpRestAPIdevon4j/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.sql")
-createFile("HttpRestAPIdevon4j/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.sql")
-createFolder("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api")
-createFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
-cobiGenJava("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
-changeFile("HttpRestAPIdevon4j/api/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.txt" })
-changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.txt" })
-changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
-runServerJava("devonfw/workspaces/main/HttpRestAPIdevon4j/server", { "startupTime": 40, "port": 8080, "path": "HttpRestAPIdevon4j" })
+createDevon4jProject("com.example.application.httprestserver")
+buildJava("httprestserver", false)
+createFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.sql")
+createFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.sql")
+createFolder("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api")
+createFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
+cobiGenJava("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
+changeFile("/root/devonfw/workspaces/main/httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.txt" })
+changeFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.txt" })
+changeFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
+runServerJava("devonfw/workspaces/main/httprestserver/server", { "startupTime": 40, "port": 8080, "path": "httprestserver" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
 * Here, "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
@@ -62,8 +62,8 @@ Now, You have to create devon4j service Client.
 [step]
 == Create devon4j service Client
 --
-createDevon4jProject("HttpRestClientdevon4j")
-buildJava("HttpRestClientdevon4j", true)
+createDevon4jProject("com.sample.application.httprestclient")
+buildJava("httprestclient", false)
 --
 
 Then, You need to add required dependency to your application. 
@@ -81,8 +81,8 @@ You have to create rest client i.e. Devon4jRestClient.java and it's implementati
 [step]
 == Create devon4j rest client
 --
-createFile("HttpRestClientdevon4j/api/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClient", "files/Devon4jRestClient.java")
-createFile("HttpRestClientdevon4j/core/src/main/java/com/devonfw/httpclient/httpRestClientdevon4j/Devon4jRestClientImpl", "files/Devon4jRestClientImpl.java")
+createFile("/root/devonfw/workspaces/main/httprestclient/api/src/main/java/com/sample/application/httprestclient/Devon4jRestClient.java", "files/Devon4jRestClient.java")
+createFile("/root/devonfw/workspaces/main/httprestclient/core/src/main/java/com/sample/application/httprestclient/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
 nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
 --
 After getting response, you can handle the response in your implementation. Here you can see that response is getting handled in "showResponse" method.
@@ -94,7 +94,7 @@ After getting response, you can handle the response in your implementation. Here
 An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
 [step]
 --
-changeFile("HttpRestClientdevon4j/core/src/main/resources/config/application.properties", { "file": "files/config_application.txt" })
+changeFile("/root/devonfw/workspaces/main/httprestclient/core/src/main/resources/config/application.properties", { "file": "files/config_application.txt" })
 nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 --
 
@@ -105,7 +105,7 @@ Now, after configuration you have to start the client application.
 This might take some time for application to start.
 [step]
 --
-runServerJava("devonfw/workspaces/main/HttpRestClientdevon4j/server", { "startupTime": 40, "port": 8081, "path": "HttpRestClientdevon4j" })
+runServerJava("devonfw/workspaces/main/httprestclient/server", { "startupTime": 40, "port": 8081, "path": "httprestclient" })
 --
 Once the REST-server started running,
 Open http://localhost:8080/client/services/rest/testrest/v1/response, Enter username as "admin" and password as "admin"
