@@ -40,8 +40,8 @@ Let's create devon4j server.
 createDevon4jProject("com.example.application.httprestserver")
 buildJava("httprestserver", false)
 createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/api/rest")
-createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/general/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.java" })
-createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.java" })
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/general/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
