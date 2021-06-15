@@ -37,19 +37,13 @@ Let's create devon4j server.
 [step]
 == Create the devon4j-HTTP-REST-SERVER
 --
-installCobiGen()
 createDevon4jProject("com.example.application.httprestserver")
 buildJava("httprestserver", false)
-createFile("httprestserver/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.sql")
-createFile("httprestserver/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.sql")
-createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api")
-createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
-adaptTemplatesCobiGen()
-cobiGenJava("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
-changeFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.txt" })
-changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.txt" })
+createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest")
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.java" })
+createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest")
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.java" })
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
-runServerJava("devonfw/workspaces/main/httprestserver/server", { "startupTime": 40, "port": 8080, "path": "httprestserver" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
 * Here, "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
