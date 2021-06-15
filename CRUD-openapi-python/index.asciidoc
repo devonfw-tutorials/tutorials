@@ -1,0 +1,215 @@
+= Create a CRUD Python Flask application using CobiGen's OpenAPI plugin
+====
+
+The aim of this tutorial is to create a basic CRUD Python Flask application from a single OpenAPI .yml file declaring an entity. 
+
+The code will be generated using devonfw's CobiGen. This will result in a basic application layout, the declaration of a Flask-SQLAlchemy table with the entity's attributes as columns, and a service returning JSON objects for the GET, POST, PUT and DELETE methods.
+
+### Prerequisites:
+
+* devonfw workspace set up, including the CobiGen code generator and the corresponding `CobiGen_Templates` folder.
+* Python 3 
+
+### CobiGen_Templates
+
+The templates folder is typically found at:
+----
+C:\Users\[yourName]\.cobigen\templates\CobiGen_Templates\src\main\templates
+----
+Open the command line in this location and clone the `CRUD-openapi-python` project using:
+
+[step]
+--
+git clone 
+--
+
+You should now find the `CRUD-openapi-python` folder in your templates directory. Let's briefly explore its contents:
+
+* *templates.xml*: a file for code generation purposes detailing the increments that will be available for selection from the CobiGen CLI.
+* templates: the folder containing the basic application structure including all the files that will be generated.
+** *requirements.txt*: a list of all packages required to run the application and the database. Encoded in UTF-8.
+** *config.py*: declares the "Config" class which represents the Flask-SQLAlchemy database configuration.
+** app:
+*** *__init__.py.ftl*: FreeMarker template declaring the application and the database.
+*** *${variables.entityName#cap_first}Model.py.ftl*: FreeMarker template delcaring the table with the entity's attributes as columns
+*** *${variables.entityName#cap_first}Routes.py.ftl*: FreeMarker template declaring the service returning JSON objeccts for the GET, POST, PUT and DELETE methods.
+
+
+We shall now return to:
+----
+C:\Users\[yourName]\.cobigen\templates\CobiGen_Templates\src\main\templates
+----
+Inspect the `context.xml` file. For code generation purposes, this lists a trigger for each template folder available to CobiGen. 
+
+We need to edit this file by adding another trigger refering to our new `CRUD-openapi-python` folder. On Visual Studio, for instance, paste at the top of the list:
+
+----
+  <trigger id="crud_openapi_python" type="openapi" templateFolder="crud_openapi_python">
+    <containerMatcher type="element" value="openAPIFile"/>
+    <matcher type="element" value="EntityDef">
+      <variableAssignment type="extension" key="rootPackage" value="x-rootpackage"/>
+      <variableAssignment type="property" key="component" value="componentName"/>
+      <variableAssignment type="property" key="entityName" value="name"/>
+    </matcher>
+</trigger>
+----
+
+### Source file
+
+We now have our `CobiGen_Templates` folder all set up. Next, head to the `\workspaces\main` folder in the devonfw environment. Create and name a new folder for this project, and then open it. 
+
+The only thing we are missing now is a .yml input in v3.0.0 format declaring an entity and its attributes. For a simple example, save the following text into a new `user.yaml` file in this location.
+
+----
+openapi: 3.0.0
+servers:
+  - url: 'https://localhost:8081/server/services/rest'
+    description: Just some data
+info:
+  title: devonfw Example
+  description: Example of a API definition
+  version: 1.0.0
+  x-rootpackage: com.devonfw.poc.jwtsample
+paths:
+  /:
+    post:
+      responses:
+        '200':
+          description: Any
+components:
+    schemas:
+        User:
+          x-component: usermanagement
+          description: Entity definiton of User
+          type: object
+          properties:      
+            name:
+              type: string
+	maxLength: 100
+	uniqueItems: true
+            age:
+              type: integer      
+            phone:
+              type: string   
+	maxLength: 100
+	uniqueItems: true
+            email:
+              type: string   
+	maxLength: 100      
+	uniqueItems: true
+            required:
+              - name
+	          - email
+----
+
+Note that the entity is declared under the `components: schemas:` section. In this case, we declared four typed attributes. Check the full list of types available for Flask-SQLAlchemy here.
+
+Properties called `id` will be ignored, since the code generator automatically sets `id` as the table's primary key.
+
+Besides the type, the project considers the following constraints:
+
+* *maxLength*
+* *uniqueItems*: sets `unique=True` for the column declaration.
+* *required*: sets `nullable=False` for the column declaration.
+
+### Code generation
+
+Now open the command line at your project folder. You can check whether the CobiGen CLI is properly set up by running `devon cobigen`.
+====
+Let's generate the code now. Type:
+
+[step]
+
+--
+cobigen generate user.yml
+--
+
+====
+If the command is not working properly you might want to run `cobigen update` or `cobigen adapt-templates` first. 
+
+Otherwise the command line should return a full list of the available increments. Assuming that the "context.xml" and "templates.xml" files were properly set up, this should include the "CRUD Python Flask" option. Select this option. The command line should print out "Successful generation" shortly.
+
+### Virtual environment
+
+Now open the folder containing the .yml input on Visual Studio, for instance. Observe that Cobigen has generated and named the five files mentioned above. We are now set to run the application.
+
+The safest way to install the required packages is to do so locally, by setting up a virtual environment. 
+Open the integrated terminal. You might need to install the "virtualenv" package if you haven't already:
+[step]
+--
+python -m pip install virtualenv
+--
+Create your virtual environment. Name it "venv", for instance:
+[step]
+--
+python -m virtualenv venv
+--
+You should now see a new "venv" folder in your package explorer. On Windows, activate the virtual environment by running:
+[step]
+--
+.\venv\Scripts\activate
+--
+To check whether the virtual environment activated properly make sure the terminal is printing "(venv)", followed by your directory.
+
+We can now install the required packages safely. Run:
+[step]
+--
+pip install -r requirements.txt
+--
+If any packages failed to install automatically, try to do so manually. 
+
+### Database
+
+Let's initialize the detabase now by running:
+[step]
+--
+flask db init
+--
+This should create the "migrations" folder and the respective "__pycache__" folders in your directory. 
+
+In order to upload the table declared in our "Model.py" we need a migration script. This command requires an attached message whenever it runs, for instance:
+[step]
+--
+flask db migrate -m "first migration"
+--
+In this case, the terminal should print in return "Detected added table 'user'", among others.
+
+We can now upload the migration script by running:
+[step]
+--
+flask db upgrade
+--
+This way our database is all set up. 
+
+### Running and testing
+Run the application on your local host:
+[step]
+--
+flask run
+--
+We can test our application using Postman. Paste the main path on a new Postman tab, for instance:
+
+http://127.0.0.1:5000/user
+
+Our table is empty for the moment, so we will select the POST method to add new data. We can submit JSON requests by clicking on the "Body" tab and selecting "raw". For example, submit:
+
+----
+{
+    "name":"elena",
+    "age":26,
+    "phone":"555123",
+    "email": "elena@devon.com"
+}
+----
+Our new user should now be accessible from the database under "id" number 1. Check this by submiting a GET request to the following path:
+
+http://127.0.0.1:5000/user/1
+
+We will now edit our entry by sending a PUT request. Submit the following body to http://127.0.0.1:5000/user/1:
+
+----
+{ "phone":"777123" }
+----
+Now send another GET request and check whether the column was properly updated.
+
+Lastly, you can check the DELETE method by sending this request to http://127.0.0.1:5000/user/1. Then send a GET request to http://127.0.0.1:5000/user. The application returns "User list is empty".
