@@ -1,4 +1,4 @@
-package com.devonfw.httpclient.httpdevon4jclient;
+package com.sample.application.httprestclient;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;

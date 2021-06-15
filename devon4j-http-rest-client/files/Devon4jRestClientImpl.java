@@ -1,9 +1,9 @@
-package com.devonfw.httpclient.httpdevon4jclient;
+package com.sample.application.httprestclient;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.devonfw.httprestapi.restapi.visitormanagement.service.api.rest.VisitormanagementRestService;
+import com.example.application.httprestserver.visitormanagement.service.api.rest.VisitormanagementRestService;
 import com.devonfw.module.service.common.api.client.ServiceClientFactory;
 
 @Named("RestClientService")
