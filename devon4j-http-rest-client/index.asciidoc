@@ -39,14 +39,14 @@ Let's create devon4j server.
 --
 createDevon4jProject("com.example.application.httprestserver")
 buildJava("httprestserver", false)
-createFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.sql")
-createFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.sql")
-createFolder("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api")
-createFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
-cobiGenJava("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
-changeFile("/root/devonfw/workspaces/main/httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.txt" })
-changeFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.txt" })
-changeFile("/root/devonfw/workspaces/main/httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
+createFile("httprestserver/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.sql")
+createFile("httprestserver/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.sql")
+createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api")
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
+cobiGenJava("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
+changeFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.txt" })
+changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.txt" })
+changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
 runServerJava("devonfw/workspaces/main/httprestserver/server", { "startupTime": 40, "port": 8080, "path": "httprestserver" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
@@ -81,8 +81,8 @@ You have to create rest client i.e. Devon4jRestClient.java and it's implementati
 [step]
 == Create devon4j rest client
 --
-createFile("/root/devonfw/workspaces/main/httprestclient/api/src/main/java/com/sample/application/httprestclient/Devon4jRestClient.java", "files/Devon4jRestClient.java")
-createFile("/root/devonfw/workspaces/main/httprestclient/core/src/main/java/com/sample/application/httprestclient/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
+createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/Devon4jRestClient.java", "files/Devon4jRestClient.java")
+createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
 nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
 --
 After getting response, you can handle the response in your implementation. Here you can see that response is getting handled in "showResponse" method.
@@ -94,7 +94,7 @@ After getting response, you can handle the response in your implementation. Here
 An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
 [step]
 --
-changeFile("/root/devonfw/workspaces/main/httprestclient/core/src/main/resources/config/application.properties", { "file": "files/config_application.txt" })
+changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/config_application.txt" })
 nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 --
 
