@@ -39,10 +39,9 @@ Let's create devon4j server.
 --
 createDevon4jProject("com.example.application.httprestserver")
 buildJava("httprestserver", false)
-createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest")
-createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.java" })
-createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest")
-createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.java" })
+createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/api/rest")
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/general/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.java" })
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.java" })
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
@@ -59,6 +58,7 @@ Now, You have to create devon4j service Client.
 == Create devon4j service Client
 --
 createDevon4jProject("com.sample.application.httprestclient")
+buildJava("httprestclient", false)
 --
 
 Then, You need to add required dependency to your application. 
@@ -76,8 +76,9 @@ You have to create rest client i.e. Devon4jRestClient.java and it's implementati
 [step]
 == Create devon4j rest client
 --
-createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/Devon4jRestClient.java", "files/Devon4jRestClient.java")
-createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
+createFolder("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest")
+createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
+createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
 nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
 --
 After getting response, you can handle the response in your implementation. Here you can see that response is getting handled in "showResponse" method.
@@ -90,7 +91,6 @@ An application needs to be configurable in order to allow internal setup but als
 [step]
 --
 changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/config_application.txt" })
-buildJava("httprestclient", false)
 nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 --
 
