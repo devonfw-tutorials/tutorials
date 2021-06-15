@@ -1,10 +1,10 @@
-package com.devonfw.httprestapi.restapi.visitormanagement.dataaccess.api;
+package com.example.application.httprestserver.visitormanagement.dataaccess.api;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-import com.devonfw.httprestapi.restapi.general.dataaccess.api.ApplicationPersistenceEntity;
-import com.devonfw.httprestapi.restapi.visitormanagement.common.api.Visitor;
+import com.example.application.httprestserver.general.dataaccess.api.ApplicationPersistenceEntity;
+import com.example.application.httprestserver.visitormanagement.common.api.Visitor;
 
 @Entity
 @Table(name = "Visitor")
