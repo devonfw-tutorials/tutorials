@@ -47,7 +47,7 @@ cobiGenJava("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/resta
 changeFile("HttpRestAPIdevon4j/api/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/api/rest/VisitormanagementRestService.java", { "file": "files/VisitormanagementRestService.txt" })
 changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", { "file": "files/VisitormanagementRestServiceImpl.txt" })
 changeFile("HttpRestAPIdevon4j/core/src/main/java/com/devonfw/httprestapi/restapi/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
-runServerJava("devonfw/workspaces\main\restapi\server", { "startupTime": 40, "port": 8080, "path": "HttpRestAPIdevon4j" })
+runServerJava("devonfw/workspaces/main/HttpRestAPIdevon4j/server", { "startupTime": 40, "port": 8080, "path": "HttpRestAPIdevon4j" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
 * Here, "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
@@ -77,7 +77,7 @@ nextKatacodaStep("  ", [{ "file": "files/dependency.txt" }])
 
 ====
 You already have a Java interface VisitormanagementRestService to invoke.
-You have to create rest client (i.e. Devon4jRestClient.java) and it's implementation class.
+You have to create rest client i.e. Devon4jRestClient.java and it's implementation class.
 [step]
 == Create devon4j rest client
 --
