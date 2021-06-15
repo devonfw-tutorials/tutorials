@@ -1,4 +1,4 @@
-= Develop a devon4j HTTP REST Client service using Synchronous call
+= Develop HTTP REST Client with devon4js
 ====
 REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. We give best practices that lead to simple, easy and pragmatic "HTTP APIs".
 
@@ -53,12 +53,12 @@ runServerJava("devonfw/workspaces\main\restapi\server", { "startupTime": 40, "po
 * Here, "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
 * To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService). 
 
-Now, Java server should be running.
-Now, You have to create devon4j service Client.
+Now, devon4j server should be running.
+In next step, you will create devon4j service Client.
 ====
 
 ====
-* To create devon4j service Client. First You need to create a sample devon4j project and build the project.
+* To create devon4j service Client. First, You need to create a sample devon4j project and build the project.
 [step]
 == Create devon4j service Client
 --
@@ -77,7 +77,7 @@ nextKatacodaStep("  ", [{ "file": "files/dependency.txt" }])
 
 ====
 You already have a Java interface VisitormanagementRestService to invoke.
-You have to create rest client (i.e. Devon4jRestClient.java) and it's implementation class.
+You have to create devon4j service client (i.e. Devon4jRestClient.java) and it's implementation class.
 [step]
 == Create devon4j rest client
 --
