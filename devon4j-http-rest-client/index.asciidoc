@@ -38,9 +38,8 @@ Let's create devon4j server.
 == Create the devon4j-HTTP-REST-SERVER
 --
 createDevon4jProject("com.example.application.httprestserver")
-createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/api/rest")
-createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/general/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
-createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
 buildJava("httprestserver", false)
 runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })

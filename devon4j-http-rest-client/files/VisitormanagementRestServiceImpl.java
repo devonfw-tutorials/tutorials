@@ -1,9 +1,9 @@
-package com.example.application.httprestserver.general.service.impl.rest;
+package com.example.application.httprestserver.visitormanagement.service.impl.rest;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import com.example.application.httprestserver.general.service.api.rest.VisitormanagementRestService;
+import com.example.application.httprestserver.visitormanagement.service.api.rest.VisitormanagementRestService;
 
 @Named("VisitormanagementRestService")
 public class VisitormanagementRestServiceImpl implements VisitormanagementRestService {
