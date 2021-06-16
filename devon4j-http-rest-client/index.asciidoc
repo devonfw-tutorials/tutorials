@@ -43,6 +43,7 @@ createFolder("httprestserver/core/src/main/java/com/example/application/httprest
 createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/general/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
 createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
+changeWorkspace("devonfw/workspaces/main/httprestserver/server")
 runServerJava("devonfw/workspaces/main/httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
@@ -102,6 +103,7 @@ Now, after configuration you have to start the client application.
 This might take some time for application to start.
 [step]
 --
+changeWorkspace("devonfw/workspaces/main/httprestserver/server")
 runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8081, "path": "httprestclient" })
 --
 Once the REST-server started running,
