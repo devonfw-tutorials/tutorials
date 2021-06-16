@@ -43,7 +43,7 @@ createFile("httprestserver/api/src/main/java/com/example/application/httprestser
 createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
 buildJava("httprestserver", false)
-runServerJava("devonfw/workspaces/main/httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
+runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
 --
 * In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
 * Here, "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
