@@ -16,7 +16,7 @@ Let's get started!!
 
 [step]
 --
-restoreDevonfwIde(["java","mvn"], "2020.08.001")
+restoreDevonfwIde(["java", "vscode"])
 --
 
 ====
