@@ -1,4 +1,4 @@
-package com.devonfw.httprestapi.restapi.general.service.impl.config;
+package com.example.application.httprestserver.general.service.impl.config;
 
 import javax.inject.Inject;
 import javax.servlet.Filter;
