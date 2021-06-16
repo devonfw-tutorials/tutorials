@@ -3,10 +3,10 @@ package com.sample.application.httprestclient.general.service.impl.rest;
 import javax.inject.Inject;
 import javax.inject.Named;
 import com.sample.application.httprestclient.general.service.api.rest.Devon4jRestClient;
-import com.example.application.httprestserver.general.service.api.rest.VisitormanagementRestService;
+import com.example.application.httprestserver.visitormanagement.service.api.rest.VisitormanagementRestService;
 import com.devonfw.module.service.common.api.client.ServiceClientFactory;
 
-@Named("RestClientService")
+@Named("Devon4jRestClient")
 public class Devon4jRestClientImpl implements Devon4jRestClient {
 
   @Inject
