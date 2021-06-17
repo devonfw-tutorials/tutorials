@@ -31,28 +31,39 @@ For more details on devon4j Service Client https://devonfw.com/website/pages/doc
 ====
 
 ====
-As explained in REST document, With JAX-RS it is important to make sure that each service method is annotated with the proper HTTP method.
-
+As explained in REST document, With JAX-RS it is important to make sure that each service method is annotated with the proper HTTP annotation(@GET, @POST, etc).
+* In below example you have to create VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
 Let's create devon4j server.
 [step]
 == Create the devon4j-HTTP-REST-SERVER
 --
-
 createDevon4jProject("com.example.application.httprestserver")
-createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
-createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
-changeFile("httprestserver/core/src/main/resources/application.properties", { "file": "files/config_server_application.txt" })
-changeFile("httprestserver/core/src/main/resources/config/application.properties", { "file": "files/config_server_application.txt" })
+nextKatacodaStep(" ", [{ "file": "files/changeFile.txt" }])
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
+nextKatacodaStep(" ", [{ "file": "files/createFolderStructure.txt" }])
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
+nextKatacodaStep(" ", [{ "file": "files/createFolderStructure.txt" }])
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
+nextKatacodaStep(" ", [{ "file": "files/changeFile.txt" }])
+changeFile("httprestserver/core/src/main/resources/application.properties", { "file": "files/server_application.txt" })
+nextKatacodaStep(" ", [{ "file": "files/changeFile.txt" }])
+changeFile("httprestserver/core/src/main/resources/config/application.properties", { "file": "files/server_config_application.txt" })
+
+--
+* Here , you can see "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
+* To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService).
+====
+
+
+====
+You have successfully built the REST-server. Now, you have to start the build and start thr server.
+[step]
+--
 buildJava("httprestserver", false)
 runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
+nextKatacodaStep(" ", [{ "file": "files/viewPort.txt" }])
 --
-* In above example we have created VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
-* Here, "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
-* To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService). 
-
-Now, Java server should be running.
-Now, You have to create devon4j service Client.
+In next step, You have to create devon4j service Client.
 ====
 
 ====
@@ -62,7 +73,6 @@ Now, You have to create devon4j service Client.
 --
 createDevon4jProject("com.sample.application.httprestclient")
 --
-
 Then, You need to add required dependency to your application. 
 ====
 
@@ -78,8 +88,11 @@ You have to create rest client i.e. Devon4jRestClient.java and it's implementati
 [step]
 == Create devon4j rest client
 --
+nextKatacodaStep(" ", [{ "file": "files/createFolderStructure.txt" }])
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
+nextKatacodaStep(" ", [{ "file": "files/createFolderStructure.txt" }])
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
+nextKatacodaStep(" ", [{ "file": "files/createFolderStructure.txt" }])
 createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
 nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
 --
@@ -92,8 +105,10 @@ After getting response, you can handle the response in your implementation. Here
 An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
 [step]
 --
-changeFile("httprestclient/core/src/main/resources/application.properties", { "file": "files/config_application.txt" })
-changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/config_application.txt" })
+nextKatacodaStep(" ", [{ "file": "files/changeFile.txt" }])
+changeFile("httprestclient/core/src/main/resources/application.properties", { "file": "files/client_application.txt" })
+nextKatacodaStep(" ", [{ "file": "files/changeFile.txt" }])
+changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/client_config_application.txt" })
 nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 --
 
@@ -106,7 +121,8 @@ This might take some time for application to start.
 --
 buildJava("httprestclient", false)
 runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8081, "path": "httprestclient" })
+nextKatacodaStep(" ", [{ "file": "files/viewPort.txt" }])
 --
-Now the Java Server should be running.
+You have successfully built the devon4j rest client.
 ====
 

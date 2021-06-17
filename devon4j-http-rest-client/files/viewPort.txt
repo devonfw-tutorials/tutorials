@@ -1,0 +1,8 @@
+Once, Java server starts running. 
+* Click on "+" next to terminal tab
+* Select "select port to view host"
+* Enter the port of current server 
+* Enter username as "admin" and password as "admin"
+* In the url, append "/appName/services/rest"
+* You will see the link, click on the link and you will get the list of services present in your application
+* append the url with following path mentioned for services
