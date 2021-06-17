@@ -43,7 +43,6 @@ createFile("httprestserver/api/src/main/java/com/example/application/httprestser
 createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
 changeFile("httprestserver/core/src/main/resources/application.properties", { "file": "files/server_application.txt" })
 changeFile("httprestserver/core/src/main/resources/config/application.properties", { "file": "files/server_config_application.txt" })
-
 --
 * Here , you can see "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean.
 * To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService).
@@ -64,6 +63,7 @@ In next step, You have to create devon4j service Client.
 
 ====
 * To create devon4j service Client. First You need to create a sample devon4j project and build the project.
+
 [step]
 == Create devon4j service Client
 --
