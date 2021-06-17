@@ -1,4 +1,4 @@
-Once, Java server starts running. 
+Once, Java server starts running. To test REST-server follow below steps:
 * Click on "+" next to terminal tab
 * Select "select port to view host"
 * Enter the port number "8080" 
