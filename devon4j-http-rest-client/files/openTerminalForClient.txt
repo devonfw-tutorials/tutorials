@@ -1,3 +1,3 @@
 Once, application builds successfully. Open new terminal by clicking "+".
 Now, execute below command to navigate into client server.
-cd devonfw/workspaces/main/httprestclient/server {{execute T1}} 
+`cd devonfw/workspaces/main/httprestclient/server` {{execute T1}} 
