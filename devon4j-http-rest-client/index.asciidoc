@@ -78,7 +78,7 @@ You have to create rest client i.e. Devon4jRestClient.java and it's implementati
 [step]
 == Create devon4j rest client
 --
-createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementServiceClient.txt")
+createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
 createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
 nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
