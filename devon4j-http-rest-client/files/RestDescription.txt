@@ -2,5 +2,5 @@ For implementing REST services we use the JAX-RS standard. As an implementation 
 
 The REST service implementation is a regular CDI bean that can use dependency injection. The separation of the API as a Java interface allows to use it for service client calls.
 
-* Why Should you prefer devon4j client over other clients?
-    -devon4j supports flexible configuration, adding headers for authentication, mapping of errors from server, logging success/errors with duration for performance analysis, support for synchronous and asynchronous invocations. Easy invocation of service inside a micro-service.
+**Why** **Should** **you** **prefer** **devon4j** **client** **over** **other** **clients?**
+devon4j supports flexible configuration, adding headers for authentication, mapping of errors from server, logging success/errors with duration for performance analysis, support for synchronous and asynchronous invocations. Easy invocation of service inside a micro-service.
