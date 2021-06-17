@@ -3,7 +3,7 @@ package com.sample.application.httprestclient.general.service.impl.rest;
 import javax.inject.Inject;
 import javax.inject.Named;
 import com.sample.application.httprestclient.general.service.api.rest.Devon4jRestClient;
-import com.example.application.httprestserver.visitormanagement.service.api.rest.VisitormanagementRestService;
+import com.sample.application.httprestclient.general.service.api.rest.VisitormanagementRestService;
 import com.devonfw.module.service.common.api.client.ServiceClientFactory;
 
 @Named("Devon4jRestClient")
