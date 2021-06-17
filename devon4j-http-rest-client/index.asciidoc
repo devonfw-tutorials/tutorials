@@ -55,7 +55,7 @@ You have successfully built the REST-server. Now, you have to start the build an
 --
 buildJava("httprestserver", false)
 runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
-nextKatacodaStep(" ", [{ "file":nextKatacodaStep "files/viewPort.txt" }])
+nextKatacodaStep(" ", [{ "file": "files/viewPort.txt" }])
 --
 In next step, You have to create devon4j service Client.
 ====
@@ -85,9 +85,7 @@ You have to create rest client i.e. Devon4jRestClient.java and it's implementati
 == Create devon4j rest client
 --
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
-nextKatacodaStep(" ", [{ "file": "files/createFolderStructure.txt" }])
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
-nextKatacodaStep(" ", [{ "file": "files/createFolderStructure.txt" }])
 createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
 nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
 --
