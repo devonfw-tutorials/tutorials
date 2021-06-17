@@ -1,2 +1,0 @@
-INSERT INTO Visitor (id, modificationCounter, username, password) VALUES (0, 1, 'mike@mail.com', 'mike@123');
-INSERT INTO Visitor (id, modificationCounter, username, password) VALUES (1, 1, 'tanya@mail.com', 'tanya@123');

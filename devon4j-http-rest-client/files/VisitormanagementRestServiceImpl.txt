@@ -9,8 +9,8 @@ import com.example.application.httprestserver.visitormanagement.service.api.rest
 public class VisitormanagementRestServiceImpl implements VisitormanagementRestService {
 
   @Override
-  public String returnResponseToClient(String args) {
-    args = "welcome to rest api";
-    return args;
+  public String returnResponseToClient() {
+   String args = "welcome to rest api";
+   return args;
   }
 }

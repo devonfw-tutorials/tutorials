@@ -37,16 +37,11 @@ Let's create devon4j server.
 [step]
 == Create the devon4j-HTTP-REST-SERVER
 --
-installCobiGen()
+
 createDevon4jProject("com.example.application.httprestserver")
-createFile("httprestserver/core/src/main/resources/db/migration/1.0/V0005__Create_Visitor.sql", "files/V0005__Create_Visitor.sql")
-createFile("httprestserver/core/src/main/resources/db/migration/1.0/V0006__Master_data.sql", "files/V0006__Master_data.sql")
-createFolder("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api")
-createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java", "files/VisitorEntity.java")
-adaptTemplatesCobiGen()
-cobiGenJava("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/dataaccess/api/VisitorEntity.java",[1,3,5,6,8])
-changeFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.txt")
-changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.txt")
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.txt")
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.txt")
+changeFile("httprestserver/core/src/main/resources/config/application.properties", { "file": "files/config_server_application.txt" })
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
 buildJava("httprestserver", false)
 runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
@@ -110,7 +105,6 @@ This might take some time for application to start.
 buildJava("httprestclient", false)
 runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8081, "path": "httprestclient" })
 --
-Once the REST-server started running,
-Open http://localhost:8080/client/services/rest/testrest/v1/response
+Now the Java Server should be running.
 ====
 

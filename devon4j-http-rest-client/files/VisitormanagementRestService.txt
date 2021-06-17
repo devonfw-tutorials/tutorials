@@ -14,6 +14,6 @@ public interface VisitormanagementRestService {
 
   @GET
   @Path("/clientrequest")
-  public String returnResponseToClient(String args);
+  public String returnResponseToClient();
 
 }
