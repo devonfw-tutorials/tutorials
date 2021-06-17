@@ -25,7 +25,7 @@ public class Devon4jRestClientImpl implements Devon4jRestClient {
     VisitormanagementRestService visitormanagementRestService = this.serviceClientFactory
         .create(VisitormanagementRestService.class);
     // call of service over the wire, synchronously blocking until result is received or error occurred
-    String resultFromAPICall = visitormanagementRestService.returnResponseToClient("Request sent to API");
+    String resultFromAPICall = visitormanagementRestService.returnResponseToClient();
     return resultFromAPICall;
   }
 
