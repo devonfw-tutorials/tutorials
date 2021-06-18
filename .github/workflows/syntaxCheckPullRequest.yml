@@ -50,7 +50,6 @@ jobs:
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorials
           ref: ${{needs.setup-matrix.outputs.head_ref}}
           path: playbooks
       - uses: actions/setup-node@v2-beta
