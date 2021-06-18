@@ -18,9 +18,9 @@ jobs:
       - name: Select Changed Files
         id: changedfiles
         run: node selectChangedFiles.js
-      - name: Get branch
-        id: get_branch
-        run: node getHeadRef.js
+      - name: Get Playbook Checkout
+        id: get_checkout
+        run: node getPlaybookCheckout.js
       - name: Setup matrix combinations
         id: setup-matrix-combinations
         run: |
@@ -35,7 +35,8 @@ jobs:
           echo ::set-output name=matrix-combinations::{\"include\":[$MATRIX_PARAMS_COMBINATIONS]}
     outputs:
       matrix-combinations: ${{ steps.setup-matrix-combinations.outputs.matrix-combinations }}
-      head_ref: ${{ steps.get_branch.outputs.head_ref}}
+      checkout_ref: ${{ steps.get_branch.outputs.ref}}
+      checkout_name: ${{ steps.get_branch.outputs.name}}
 
   build:
     runs-on: ubuntu-latest
@@ -50,7 +51,8 @@ jobs:
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          ref: ${{needs.setup-matrix.outputs.head_ref}}
+          repository: ${{needs.setup-matrix.output.checkout_name}}/tutorials
+          ref: ${{needs.setup-matrix.outputs.checkout_ref}}
           path: playbooks
       - uses: actions/setup-node@v2-beta
       - name: install TS
