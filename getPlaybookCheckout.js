@@ -17,8 +17,8 @@ async function getPlaybookCheckout() {
     }
     core.info(`ref: ${head.ref}`);
     core.setOutput('ref', head.ref);
-    core.info(`name : ${head.ref}`);
-    core.setOutput('name', head.ref);
+    core.info(`name : ${head.user.login}`);
+    core.setOutput('name', head.user.login);
 }
 
 getPlaybookCheckout().catch(err => {
