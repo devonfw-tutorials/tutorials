@@ -4,7 +4,7 @@ const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 async function getPlaybookCheckout() {
     let pr = process.env.PR_NUMBER;
-    let ref ="";
+    let head = "";
     try {
         let get = await octokit.request('GET /repos/{owner}/{repo}/pulls/{pull_number}', {
             owner: 'devonfw-tutorials',
@@ -19,6 +19,7 @@ async function getPlaybookCheckout() {
     core.setOutput('ref', head.ref);
     core.info(`name : ${head.user.login}`);
     core.setOutput('name', head.user.login);
+    
 }
 
 getPlaybookCheckout().catch(err => {
