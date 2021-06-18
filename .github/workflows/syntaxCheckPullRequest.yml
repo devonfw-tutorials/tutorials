@@ -35,8 +35,8 @@ jobs:
           echo ::set-output name=matrix-combinations::{\"include\":[$MATRIX_PARAMS_COMBINATIONS]}
     outputs:
       matrix-combinations: ${{ steps.setup-matrix-combinations.outputs.matrix-combinations }}
-      checkout_ref: ${{ steps.get_branch.outputs.ref}}
-      checkout_name: ${{ steps.get_branch.outputs.name}}
+      checkout_ref: ${{ steps.get_checkout.outputs.ref}}
+      checkout_name: ${{ steps.get_checkout.outputs.name}}
 
   build:
     runs-on: ubuntu-latest
@@ -59,8 +59,8 @@ jobs:
         run: npm install typescript
       - name: npm install
         run: npm install
-      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{needs.setup-matrix.outputs.head_ref}} --checkSyntax
-        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{needs.setup-matrix.outputs.head_ref}} --checkSyntax -p ${{ matrix.tutorial }} -e test_console
+      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{needs.setup-matrix.outputs.checkout_ref}} --checkSyntax
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{needs.setup-matrix.outputs.checkout_ref}} --checkSyntax -p ${{ matrix.tutorial }} -e test_console
       - name: Check error file existence
         id: check_files
         uses: andstor/file-existence-action@v1
