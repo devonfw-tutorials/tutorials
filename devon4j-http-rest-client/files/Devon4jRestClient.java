@@ -12,6 +12,10 @@ import javax.ws.rs.core.MediaType;
 public interface Devon4jRestClient {
 
   @GET
-  @Path("/response/")
+  @Path("/response")
   public String showResponse();
+
+  @GET
+  @Path("/clientService")
+  public String returnServiceDetail();
 }

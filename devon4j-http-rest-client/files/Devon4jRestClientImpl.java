@@ -29,4 +29,10 @@ public class Devon4jRestClientImpl implements Devon4jRestClient {
     return resultFromAPICall;
   }
 
+  @Override
+  public String returnServiceDetail() {
+
+    String result = "This is devon4j rest service client";
+    return result;
+  }
 }

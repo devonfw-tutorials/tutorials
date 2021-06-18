@@ -1,3 +1,5 @@
-Once, application builds successfully. Open new terminal by clicking "+".
-Now, execute below command to navigate into client server.
-`cd devonfw/workspaces/main/httprestclient/server`{{execute T1}}
+* Once, application builds successfully. Open new terminal by clicking "+".
+* Now, copy below command and paste it in terminal and press enter to navigate into client server.
+"cd devonfw/workspaces/main/httprestclient/server" 
+* Now, Copy below command and paste it in terminal and press enter to start the application.
+"devon mvn spring-boot:run"

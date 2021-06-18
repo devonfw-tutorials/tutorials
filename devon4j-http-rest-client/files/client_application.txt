@@ -4,8 +4,8 @@
 # want to touch the WAR file.
 
 server.port=8081
-spring.application.name=httprestserver
-server.servlet.context-path=/httprestserver
+spring.application.name=httprestclient
+server.servlet.context-path=/httprestclient
 
 security.expose.error.details=false
 
