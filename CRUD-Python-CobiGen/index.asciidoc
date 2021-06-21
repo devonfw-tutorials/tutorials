@@ -1,0 +1,79 @@
+= Create a CRUD Python Flask application using CobiGen's OpenAPI plugin
+====
+
+The aim of this tutorial is to create a basic CRUD Python Flask application from a single OpenAPI .yml file declaring an entity. 
+
+The code will be generated using devonfw's CobiGen. This will result in a basic application layout, the declaration of a Flask-SQLAlchemy table with the entity's attributes as columns, and a service returning JSON objects for the GET, POST, PUT and DELETE methods.
+
+### Prerequisites:
+
+* devonfw workspace set up, including the CobiGen code generator and the corresponding `CobiGen_Templates` folder.
+* Python 3 
+
+====
+
+[step]
+--
+nextKatacodaStep("Clone the templates folder", [{ "file": "files/clonetemplatesfolder.md" }])
+--
+[step]
+--
+nextKatacodaStep("Add a new trigger to context.xml", [{ "file": "files/editcontext.md" }])
+--
+
+### Source file
+
+We now have our `CobiGen_Templates` folder all set up. Next, head to the `\workspaces\main` folder in the devonfw environment. Create and name a new folder for this project, and then open it. 
+
+[step]
+--
+createFolder("main/cobigen-python-example")
+--
+
+The only thing we are missing now is a .yml input in v3.0.0 format declaring a component and its properties. Take `user.yaml` as an example.
+
+[step]
+--
+createFile("main/cobigen-python-example/user.yml", "files/user.yml")
+--
+
+
+Inspect `user.yml`. Note that the entity is declared under the `components: schemas:` section. In this case, we declared four typed attributes. 
+
+Properties called `id` will be ignored, since the code generator automatically sets `id` as the table's primary key.
+
+Besides the type, the project considers the following constraints:
+
+* *maxLength*
+* *uniqueItems*: sets `unique=True` for the column declaration.
+* *required*: sets `nullable=False` for the column declaration.
+
+
+### Code generation
+
+[step]
+--
+nextKatacodaStep("Generate code", [{ "file": "files/generatecode.md" }])
+-- 
+
+### Virtual environment
+
+[step]
+--
+nextKatacodaStep("Virtual environment", [{ "file": "files/virtualenvironment.md" }])
+--  
+
+### Database
+
+[step]
+--
+nextKatacodaStep("Start database", [{ "file": "files/startdatabase.md" }])
+--  
+
+
+### Running and testing
+
+[step]
+--
+nextKatacodaStep("Test on Postman", [{ "file": "files/postmantest.md" }])
+--
