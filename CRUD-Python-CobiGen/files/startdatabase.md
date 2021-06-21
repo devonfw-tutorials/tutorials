@@ -10,7 +10,7 @@ In order to upload the table declared in our "Model.py" we need a migration scri
 
 `flask db migrate -m 'first migration'`
 
-In this case, the terminal should print in return `Detected added table "user"`, among others.
+In this case, the terminal should print in return `Detected added table user`, among others.
 
 We can now upload the migration script by running:
 

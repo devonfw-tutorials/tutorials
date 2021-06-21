@@ -16,5 +16,5 @@ You should now find the `CRUD-openapi-python` folder in your templates directory
    * `config.py`: declares the `Config` class which represents the Flask-SQLAlchemy database configuration.
    * app:
       * `__init__.py.ftl`: FreeMarker template declaring the application and the database.
-      * `${variables.entityName#cap_first}Model.py.ftl`: FreeMarker template delcaring the table with the entity&#39;s attributes as columns
-      * `${variables.entityName#cap_first}Routes.py.ftl`: FreeMarker template declaring the service returning JSON objeccts for the GET, POST, PUT and DELETE methods.
+      * `${variables.entityName#cap_first}Model.py.ftl`: FreeMarker template declarating the table with the entity's attributes as columns
+      * `${variables.entityName#cap_first}Routes.py.ftl`: FreeMarker template declaring the service returning JSON objects for the GET, POST, PUT and DELETE methods.
