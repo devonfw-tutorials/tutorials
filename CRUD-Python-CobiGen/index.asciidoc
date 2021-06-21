@@ -21,14 +21,7 @@ nextKatacodaStep("Clone the templates folder", [{ "file": "files/clonetemplatesf
 nextKatacodaStep("Add a new trigger to context.xml", [{ "file": "files/editcontext.md" }])
 --
 
-### Source file
-
-We now have our `CobiGen_Templates` folder all set up. Next, head to the `\workspaces\main` folder in the devonfw environment. Create and name a new folder for this project, and then open it. 
-
-[step]
---
-createFolder("main/cobigen-python-example")
---
+We now have our `CobiGen_Templates` folder all set up. Next, head to the `\workspaces\main` folder in the devonfw environment. 
 
 The only thing we are missing now is a .yml input in v3.0.0 format declaring a component and its properties. Take `user.yaml` as an example.
 
@@ -48,30 +41,22 @@ Besides the type, the project considers the following constraints:
 * *uniqueItems*: sets `unique=True` for the column declaration.
 * *required*: sets `nullable=False` for the column declaration.
 
-
-### Code generation
+====
 
 [step]
 --
 nextKatacodaStep("Generate code", [{ "file": "files/generatecode.md" }])
 -- 
 
-### Virtual environment
-
 [step]
 --
 nextKatacodaStep("Virtual environment", [{ "file": "files/virtualenvironment.md" }])
 --  
 
-### Database
-
 [step]
 --
 nextKatacodaStep("Start database", [{ "file": "files/startdatabase.md" }])
 --  
-
-
-### Running and testing
 
 [step]
 --

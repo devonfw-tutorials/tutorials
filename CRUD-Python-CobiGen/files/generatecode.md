@@ -9,4 +9,4 @@ If the command is not working properly you might want to run `cobigen update` or
 
 Otherwise the command line should return a full list of the available increments. 
 
-Assuming that the "context.xml" and "templates.xml" files were properly set up, this should include the "CRUD Python Flask" option. Select this option. The command line should print out "Successful generation" shortly.
+Assuming that the `context.xml` and `templates.xml` files were properly set up, this should include the "CRUD Python Flask" option. Select this option. The command line should print out "Successful generation" shortly.
