@@ -16,12 +16,20 @@ The code will be generated using devonfw's CobiGen. This will result in a basic 
 --
 nextKatacodaStep("Clone the templates folder", [{ "file": "files/clonetemplatesfolder.md" }])
 --
-[step]
---
-nextKatacodaStep("Add a new trigger to context.xml", [{ "file": "files/editcontext.md" }])
---
 
-====
+
+We shall now return to:
+
+`C:\Users\[yourName]\.cobigen\templates\CobiGen_Templates\src\main\templates`
+
+Inspect the `context.xml` file. For code generation purposes, this lists a trigger for each template folder available to CobiGen. 
+
+We need to edit this file by adding another trigger referring to our new `CRUD-openapi-python` folder. On Visual Studio, for instance, paste at the top of the trigger list the contents from `pythonTrigger.xml`:
+[step]
+
+--
+createFile("main/pythonTrigger.xml", "files/pythonTrigger.xml")
+--
 
 We now have our `CobiGen_Templates` folder all set up. Next, head to the `\workspaces\main` folder in the devonfw environment. 
 
