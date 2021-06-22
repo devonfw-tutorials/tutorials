@@ -35,7 +35,7 @@ As explained in REST document, With JAX-RS it is important to make sure that eac
 Let's create devon4j server. You have to modify BaseWebSecurityConfig file to allow application for basic authentication.
 In below example you will create VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
 [step]
-== Create the devon4j-HTTP-REST-SERVER
+== Create the devon4j REST SERVER
 --
 createDevon4jProject("com.example.application.httprestserver")
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
@@ -54,7 +54,7 @@ You have successfully built the REST-server. Now, you have to start the build an
 --
 buildJava("httprestserver", false)
 runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
-nextKatacodaStep(" ", [{ "file": "files/viewPort.txt" }])
+nextKatacodaStep("Build and start the httprestserver application ", [{ "file": "files/viewPort.txt" }])
 --
 In next step, You have to create devon4j service Client.
 ====
@@ -74,26 +74,25 @@ Then, You need to add required dependency to your application.
 
 [step]
 --
-nextKatacodaStep("Dependency Setup ", [{ "file": "files/dependency.txt" }])
+nextKatacodaStep("Dependency Setup", [{ "file": "files/dependency.txt" }])
 --
 
 ====
 You have to create a Java interface VisitormanagementRestService to invoke.
 You have to create rest client i.e. Devon4jRestClient.java and it's implementation class i.e. Devon4jRestClientImpl.java.
 [step]
-== Create devon4j rest client
 --
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
 createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
-nextKatacodaStep(" ", [{ "file": "files/explainSynchronousCall.txt" }])
+nextKatacodaStep("Create devon4j Rest Client", [{ "file": "files/explainSynchronousCall.txt" }])
 --
 After getting response, you can handle the response further in your implementation. Here, you can see that response is getting handled in "showResponse" method.
 ====
 
 
 ====
-# Configuration 
+== Configuration 
 An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
 Now, You need to modifiy the content of existing properties files and add configuration for Server.
 [step]
@@ -112,7 +111,7 @@ This might take some time for application to start.
 [step]
 --
 buildJava("httprestclient", false)
-nextKatacodaStep(" ", [{ "file": "files/openTerminalForClient.txt" }])
+nextKatacodaStep("Build and start httprestclient application", [{ "file": "files/openTerminalForClient.txt" }])
 runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8081, "path": "httprestclient" })
 --
 
