@@ -6,7 +6,7 @@ Inspect the `context.xml` file. For code generation purposes, this lists a trigg
 
 We need to edit this file by adding another trigger referring to our new `CRUD-openapi-python` folder. On Visual Studio, for instance, paste at the top of the list:
 
-```
+``` html
 <trigger id="crud_openapi_python" type="openapi" templateFolder="crud_openapi_python">
     <containerMatcher type="element" value="openAPIFile"/>
     <matcher type="element" value="EntityDef">
