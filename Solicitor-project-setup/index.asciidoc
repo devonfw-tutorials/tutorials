@@ -1,0 +1,31 @@
+= Tutorial for solicitor project setup
+Description of the tutorial
+
+Solicitor is a tool which helps managing Open Source Software used within projects. Solicitor is a tool for technically supporting the management of OSS licenses within your project.
+
+Prerequisites
+Solicitor executable JAR
+Learning goals
+This Tutorial shows how to setup solicitor for your project .
+
+====
+
+====
+Starting a new project
+[step]
+executeCommand("java","java", {"args":["-jar solicitor.jar -wiz"]})
+Besides the necessary configuration file this includes also empty XLS files for defining project specific rules which amend the builtin rules. Furtheron a sample license.xml file is provided to directly enable execution of solicitor and check functionality.
+====
+Exporting the builtin configuration
+[step]
+executeCommand("java","java", {"args":["-jar solicitor.jar -ec"]})
+will export all internal configuration to the given directory.
+Besides the project configuration done via the above described file there are a set of technical settings in Solicitor which are done via properties. Solicitor is implemented as a Spring Boot Application and makes use of the standard configuration mechanism provided by the Spring Boot Platform which provides several ways to define/override properties.
+[step]
+executeCommand("java","java", {"args":["-Dsome.property.name1=value -Dsome.property.name2=another_value -jar solicitor.jar "])
+====
+
+Conclusion of the tutorial
+In this tutorial you have learnt how to start and configure a new project with solicitor.
+
+====

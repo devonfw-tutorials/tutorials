@@ -1,4 +1,4 @@
-=devon4j migrate
+= devon4j migrate
 
 ====
 devon4j is the Java stack of devonfw.The java commandlet allows to install and setup Java. Also it supports devon4j.
