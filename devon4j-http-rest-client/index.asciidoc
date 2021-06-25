@@ -1,4 +1,4 @@
-= Develop a devon4j HTTP REST Client service using Synchronous call
+= Develop a devon4j CXF REST Client using Synchronous call
 ====
 REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. We give best practices that lead to simple, easy and pragmatic "HTTP APIs".
 
@@ -97,9 +97,9 @@ An application needs to be configurable in order to allow internal setup but als
 Now, You need to modifiy the content of existing properties files and add configuration for Server.
 [step]
 --
+nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 changeFile("httprestclient/core/src/main/resources/application.properties", { "file": "files/client_application.txt" })
 changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/client_config_application.txt" })
-nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 --
 Now, after configuration you have to build and then start the client application.
 ====
