@@ -1,0 +1,69 @@
+= Getting started with devon4j
+====
+This tutorial starts with an empty folder and will show you how to start your project. You will be setting up the complete IDE and will be writing your first business logic with devon4j.
+
+## Prerequisites
+Basic java skills
+
+## Learning goals
+After this tutorial you will be able to start your project and write your first business logic with devon4j.
+====
+
+This is a getting started tutorial. You will be guided through the necessary steps, with short explanations on what you are doing. You do not need to understand everything at this point - you get it later.
+
+Before you can start writing your fist business logic you will have to setup your development environment. We will do this with devon IDE. devon IDE is a tool that sets up your environment according to settings stored in a repository. This settings are usually provided by your project.
+[step]
+--
+installDevonfwIde(["java","mvn", "vscode"])
+--
+
+For this tutorial we will use a tool called CobiGen which is included in devon IDE. CobiGen will be used later to generate most of your code. To use it we have to prepare it, once.
+[step]
+--
+installCobiGen()
+--
+
+====
+Great, now we can start developing.
+
+The first step is to create a devon4j project. We will use devon IDE for that so we do not have to do it by hand.
+[step]
+--
+createDevon4jProject("com.example.friendexample")
+--
+Now you have an empty project.
+====
+
+In the next step we want to generate an API to store some information about our friends. We start by creating an database entity called FriendEntity.
+[step]
+--
+createFile("friendexample/core/src/main/java/com/example/friendexample/friendmanagement/dataaccess/api/FriendEntity.java", "files/FriendEntity.java")
+--
+
+Before we start generating code we need to build the application once to ensure that all dependencies are downloaded.
+[step]
+--
+buildJava("friendexample", false)
+--
+
+CobiGen is integrated via plugin in the VS Code IDE. We will use it to generate code from one single java class based on existing templates.
+[step]
+--
+adaptTemplatesCobiGen()
+cobiGenJava("friendexample/core/src/main/java/com/example/friendexample/friendmanagement/dataaccess/api/FriendEntity.java",[1,3,5,6,8])
+--
+
+====
+devonfw supports the automatic migration of databases with flyway. We will use this feature to create a database table for our friends entity.
+[step]
+--
+createFile("friendexample/core/src/main/resources/db/type/h2/V0001__CreateFriendTable.sql", "files/V0001__CreateFriendTable.sql")
+--
+devonfw will use this file to migrate the database to the state we want when we start the application.
+====
+
+Now, we will start the server.
+[step]
+--
+runServerJava("devonfw/workspaces/main/friendexample/server", { "startupTime": 40, "port": 8080, "path": "friend" })
+--
