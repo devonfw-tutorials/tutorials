@@ -1,0 +1,125 @@
+= Develop a devon4j HTTP REST Client service using Synchronous call
+====
+REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. We give best practices that lead to simple, easy and pragmatic "HTTP APIs".
+
+## Prerequisites
+* User should have development experience in JAVA.
+* Basic knowledge of REST.
+
+## Learning Goal
+Here in this tutorial you will learn the following things:
+* JAX-RS standard for REST service implementation proposed by devonfw.
+* How to create REST client with devon4j using Synchronous call.
+
+Let's get started!!
+====
+
+[step]
+--
+restoreDevonfwIde(["java", "vscode"])
+--
+
+====
+REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP.
+[step]
+--
+nextKatacodaStep("REST", [{ "file": "files/RestDescription.txt" }])
+--
+For more details on REST visit https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-rest.asciidoc
+
+For more details on devon4j Service Client https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-service-client.asciidoc
+====
+
+====
+As explained in REST document, With JAX-RS it is important to make sure that each service method is annotated with the proper HTTP annotation(@GET, @POST, etc).
+Let's create devon4j server. You have to modify BaseWebSecurityConfig file to allow application for basic authentication.
+In below example you will create VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
+[step]
+== Create the devon4j REST SERVER
+--
+createDevon4jProject("com.example.application.httprestserver")
+changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
+changeFile("httprestserver/core/src/main/resources/application.properties", { "file": "files/server_application.txt" })
+changeFile("httprestserver/core/src/main/resources/config/application.properties", { "file": "files/server_config_application.txt" })
+--
+Here , you can see "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean. To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService).
+====
+
+
+====
+You have successfully built the REST-server. Now, you have to start the build and then, start the server as mentioned below.
+[step]
+--
+buildJava("httprestserver", false)
+runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
+nextKatacodaStep("Build and start the httprestserver application ", [{ "file": "files/viewPort.txt" }])
+--
+In next step, You have to create devon4j service Client.
+====
+
+
+====
+To create devon4j service Client. First, You need to create a sample devon4j project.
+
+[step]
+== Create devon4j service Client
+--
+createDevon4jProject("com.sample.application.httprestclient")
+--
+Then, You need to add required dependency to your application. 
+====
+
+
+[step]
+--
+nextKatacodaStep("Dependency Setup", [{ "file": "files/dependency.txt" }])
+--
+
+====
+You have to create a Java interface VisitormanagementRestService to invoke.
+You have to create rest client i.e. Devon4jRestClient.java and it's implementation class i.e. Devon4jRestClientImpl.java.
+[step]
+--
+createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
+createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
+createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
+nextKatacodaStep("Create devon4j Rest Client", [{ "file": "files/explainSynchronousCall.txt" }])
+--
+After getting response, you can handle the response further in your implementation. Here, you can see that response is getting handled in "showResponse" method.
+====
+
+
+====
+## Configuration 
+An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
+Now, You need to modifiy the content of existing properties files and add configuration for Server.
+[step]
+--
+changeFile("httprestclient/core/src/main/resources/application.properties", { "file": "files/client_application.txt" })
+changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/client_config_application.txt" })
+nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
+--
+Now, after configuration you have to build and then start the client application.
+====
+
+====
+You have successfully built the devon4j rest client.
+Let's build and start the service client application.
+This might take some time for application to start.
+[step]
+--
+buildJava("httprestclient", false)
+nextKatacodaStep("Build and start httprestclient application", [{ "file": "files/openTerminalForClient.txt" }])
+runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8081, "path": "httprestclient" })
+--
+
+To test Synchronous method, follow below steps.
+* Click on "+" next to terminal tab
+* Select "select port to view host"
+* Enter the port number "8081" 
+* Enter username as "admin" and password as "admin"
+* In the url, append "/httprestclient/services/rest/devon4jrestclient/response/"
+* You will be able to see response "Welcome to rest api"
+====
