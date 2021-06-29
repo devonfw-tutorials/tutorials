@@ -149,6 +149,9 @@ buildJava("httprestclient", false)
 * Once, application builds successfully. Open new terminal by clicking "+".
 * Now, Execute below command to navigate into client server.
 `cd devonfw/workspaces/main/httprestclient/server` {{execute T1}}
+====
+
+====
 * Now, Execute below command to start the application.
 `devon mvn spring-boot:run` {{execute T1}}
 
