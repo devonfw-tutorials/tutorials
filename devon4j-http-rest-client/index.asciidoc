@@ -32,14 +32,13 @@ devon4j supports flexible configuration, adding headers for authentication, mapp
 For more details on REST visit https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-rest.asciidoc
 
 For more details on devon4j Service Client https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-service-client.asciidoc
-====
 
-====
+## Create the devon4j REST SERVER
+
 As explained in REST document, With JAX-RS it is important to make sure that each service method is annotated with the proper HTTP annotation(@GET, @POST, etc).
 Let's create devon4j server. You have to modify BaseWebSecurityConfig file to allow application for basic authentication.
 In below example you will create VisitormanagementRestService and it's implementation i.e. VisitormanagementRestServiceImpl using JAX-RS standard.
 [step]
-== Create the devon4j REST SERVER
 --
 createDevon4jProject("com.example.application.httprestserver")
 changeFile("httprestserver/core/src/main/java/com/example/application/httprestserver/general/service/impl/config/BaseWebSecurityConfig.java", { "file": "files/BaseWebSecurityConfig.txt" })
@@ -74,7 +73,7 @@ In next step, You have to create devon4j service Client.
 To create devon4j service Client. First, You need to create a sample devon4j project.
 
 [step]
-== Create devon4j service Client
+== Create devon4j REST Client
 --
 createDevon4jProject("com.sample.application.httprestclient")
 --
@@ -112,7 +111,6 @@ After getting response, you can handle the response further in your implementati
 
 
 ====
-## Configuration
 An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
 Now, You need to modify the content of existing properties files and add configuration for Server.
 [step]
@@ -143,6 +141,7 @@ You have successfully built the devon4j rest client.
 Let's build and start the service client application.
 This might take some time for application to start.
 [step]
+== Build and Start devon4j REST Client
 --
 buildJava("httprestclient", false)
 --
@@ -165,4 +164,9 @@ To test Synchronous method, follow below steps.
 * Enter username as "admin" and password as "admin"
 * In the url, append "/httprestclient/services/rest/devon4jrestclient/response/"
 * You will be able to see response "Welcome to rest api"
+====
+
+====
+You have successfully created devon4j CXF REST Client.
+For more details on devon4j follow https://devonfw.com/website/pages/docs/devon4j.asciidoc.html
 ====
