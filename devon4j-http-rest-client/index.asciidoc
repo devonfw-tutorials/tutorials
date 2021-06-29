@@ -21,10 +21,14 @@ restoreDevonfwIde(["java", "vscode"])
 
 ====
 REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP.
-[step]
---
-nextKatacodaStep("REST", [{ "file": "files/RestDescription.txt" }])
---
+
+For implementing REST services we use the JAX-RS standard. As an implementation we recommend CXF. For JSON bindings we use Jackson while XML binding works out-of-the-box with JAXB. To implement a service you write an interface with JAX-RS annotations for the API and a regular implementation class annotated with @Named to make it a spring-bean.
+
+The REST service implementation is a regular CDI bean that can use dependency injection. The separation of the API as a Java interface allows to use it for service client calls.
+
+**Why** **Should** **you** **prefer** **devon4j** **client** **over** **other** **clients?**
+
+devon4j supports flexible configuration, adding headers for authentication, mapping of errors from server, logging success/errors with duration for performance analysis, support for synchronous and asynchronous invocations. Easy invocation of service inside a micro-service.
 For more details on REST visit https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-rest.asciidoc
 
 For more details on devon4j Service Client https://devonfw.com/website/pages/docs/devon4j.asciidoc_guides.html#guide-service-client.asciidoc
@@ -54,8 +58,14 @@ You have successfully built the REST-server. Now, you have to start the build an
 --
 buildJava("httprestserver", false)
 runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
-nextKatacodaStep("Build and start the httprestserver application ", [{ "file": "files/viewPort.txt" }])
 --
+Once, Java server starts running. To test REST-server follow below steps:
+* Click on "+" next to terminal tab
+* Select "select port to view host"
+* Enter the port number "8080" 
+* Enter username as "admin" and password as "admin"
+* In the url, append "/httprestserver/services/rest/visitormanagement/clientrequest"
+* You will be able to see response "Welcome to rest api"
 In next step, You have to create devon4j service Client.
 ====
 
@@ -68,14 +78,19 @@ To create devon4j service Client. First, You need to create a sample devon4j pro
 --
 createDevon4jProject("com.sample.application.httprestclient")
 --
-Then, You need to add required dependency to your application. 
+Then, You need to add required dependency to your application.
+
+Since in this tutorial you will build client on Synchronous call so, you have to add dependency for synchronous consuming REST services via Apache CXF (Java8+)
+
+----
+<dependency>
+  <groupId>com.devonfw.java.starters</groupId>
+  <artifactId>devon4j-starter-cxf-client-rest</artifactId>
+</dependency>
+
+----
+Note: With devonfw we have already added the required dependency in pom.xml
 ====
-
-
-[step]
---
-nextKatacodaStep("Dependency Setup", [{ "file": "files/dependency.txt" }])
---
 
 ====
 You have to create a Java interface VisitormanagementRestService to invoke.
@@ -85,21 +100,41 @@ You have to create rest client i.e. Devon4jRestClient.java and it's implementati
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
 createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
 createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
-nextKatacodaStep("Create devon4j Rest Client", [{ "file": "files/explainSynchronousCall.txt" }])
 --
+
+As you can see synchronous invocation of a service is very simple and type-safe. The actual call of showResponse will technically call the remote service(i.e. VisitormanagementRestService) over the wire ( via HTTP) including marshaling the arguments (converting String to JSON) and un-marshalling the result (e.g. converting the received JSON to String).
+Here in Devon4jRestClientImpl, there is a method "callSynchronous" which will call the VisitormanagementRestService and return the object of VisitormanagementRestService to visitormanagementRestService.
+With visitormanagementRestService, it is calling the method "returnResponseToClient(String)" of server.
+The response from server will be stored in "resultFromAPICall" as the return type of result is String.
+
 After getting response, you can handle the response further in your implementation. Here, you can see that response is getting handled in "showResponse" method.
 ====
 
 
 ====
+## Configuration
 An application needs to be configurable in order to allow internal setup but also to allow externalized configuration of a deployed package (e.g. integration into runtime environment). 
-Now, You need to modifiy the content of existing properties files and add configuration for Server.
+Now, You need to modify the content of existing properties files and add configuration for Server.
 [step]
 --
-nextKatacodaStep("Properties Configuration", [{ "file": "files/configurationProperties.txt" }])
 changeFile("httprestclient/core/src/main/resources/application.properties", { "file": "files/client_application.txt" })
 changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/client_config_application.txt" })
 --
+
+## Service Discovery
+* service.client.default.url :- It is used to set the default url of server and it is added for service discovery.
+* service.client.app.httprestserver.url :- This property provide base url of REST in your application. It follows format such as "service.client.app.«application».url". Here, «application» refers to the technical name of the application providing the service.
+
+## Timeouts
+* service.client.default.timeout.connection:- It is used to set the default timeout for particular connection.
+* service.client.default.timeout.response:- It is used to set the default timeout for particular response.
+
+## Headers
+* service.client.app.httprestserver.auth:- It is used for customization of Service Header. Here it is used for basic authentication.
+
+## Authentication
+* service.client.app.httprestserver.user.login:- It is used to set username of server for authentication
+* service.client.app.httprestserver.user.password:- It is used to set password.
 Now, after configuration you have to build and then start the client application.
 ====
 
@@ -110,7 +145,16 @@ This might take some time for application to start.
 [step]
 --
 buildJava("httprestclient", false)
-nextKatacodaStep("Build and start httprestclient application", [{ "file": "files/openTerminalForClient.txt" }])
+--
+
+* Once, application builds successfully. Open new terminal by clicking "+".
+* Now, Execute below command to navigate into client server.
+`cd devonfw/workspaces/main/httprestclient/server` {{execute T1}}
+* Now, Execute below command to start the application.
+`devon mvn spring-boot:run` {{execute T1}}
+
+[step]
+--
 runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8081, "path": "httprestclient" })
 --
 
