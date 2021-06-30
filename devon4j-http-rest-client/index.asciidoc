@@ -116,7 +116,11 @@ Now, You need to modify the content of existing properties files and add configu
 [step]
 --
 changeFile("httprestclient/core/src/main/resources/application.properties", { "file": "files/client_application.txt" })
+changeFile("httprestclient/core/src/main/resources/application.properties", {"content": "service.client.default.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest", "placeholder": "service.client.default.url=http://localhost:8080/httprestserver/services/rest"})
+changeFile("httprestclient/core/src/main/resources/application.properties", {"content": "service.client.app.httprestserver.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest", "placeholder": "service.client.default.url=http://localhost:8080/httprestserver/services/rest"})
 changeFile("httprestclient/core/src/main/resources/config/application.properties", { "file": "files/client_config_application.txt" })
+changeFile("httprestclient/core/src/main/resources/config/application.properties", {"content": "service.client.default.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest", "placeholder": "service.client.default.url=http://localhost:8080/httprestserver/services/rest"})
+changeFile("httprestclient/core/src/main/resources/config/application.properties", {"content": "service.client.app.httprestserver.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest", "placeholder": "service.client.default.url=http://localhost:8080/httprestserver/services/rest"})
 --
 
 ## Service Discovery
