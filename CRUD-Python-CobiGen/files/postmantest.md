@@ -12,7 +12,7 @@ Our table is empty for the moment, so we will select the POST method to add new 
   { "name" : "elena", "age" : 26, "phone" : "555123", "email" : "elena@devon.com" }
 
 
-Our new user should now be accessible from the database under "id" number 1. Check this by submiting a GET request to the following path:
+Our new user should now be accessible from the database under "id" number 1. Check this by submitting a GET request to the following path:
 
 http://127.0.0.1:5000/user/1
 

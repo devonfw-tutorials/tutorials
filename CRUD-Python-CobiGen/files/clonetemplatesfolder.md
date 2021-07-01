@@ -1,5 +1,3 @@
-### CobiGen_Templates
-
 The templates folder is typically found at:
 
 `C:\Users\[yourName]\.cobigen\templates\CobiGen_Templates\src\main\templates`

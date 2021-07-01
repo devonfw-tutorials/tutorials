@@ -25,6 +25,7 @@ We shall now return to:
 Inspect the `context.xml` file. For code generation purposes, this lists a trigger for each template folder available to CobiGen. 
 
 We need to edit this file by adding another trigger referring to our new `CRUD-openapi-python` folder. On Visual Studio, for instance, paste at the top of the trigger list the contents from `pythonTrigger.xml`:
+
 [step]
 
 --
@@ -53,22 +54,64 @@ Besides the type, the project considers the following constraints:
 
 ====
 
-[step]
---
-nextKatacodaStep("Generate code", [{ "file": "files/generatecode.md" }])
--- 
+Now open the command line at your project folder. You can check whether the CobiGen CLI is properly set up by running `devon cobigen`.
+
+Let's generate the code now. Type:
 
 [step]
 --
-nextKatacodaStep("Virtual environment", [{ "file": "files/virtualenvironment.md" }])
+executeCommand("cobigen generate user.yml","cobigen generate user.yml")
+installCobiGen()
 --  
 
-[step]
---
-nextKatacodaStep("Start database", [{ "file": "files/startdatabase.md" }])
---  
+
+If the command is not working properly you might want to run `cobigen update` or `cobigen adapt-templates` first. 
+
+Otherwise the command line should return a full list of the available increments. 
+
+Assuming that the `context.xml` and `templates.xml` files were properly set up, this should include the "CRUD Python Flask" option. Select this option. The command line should print out "Successful generation" shortly.
+
+
+Now open the folder containing the .yml input on Visual Studio, for instance. Observe that Cobigen has generated and named the five files mentioned above. We are now set to run the application.
+
+The safest way to install the required packages is to do so locally, by setting up a virtual environment. 
+
+executeCommand(".\venv\Scripts\activate",".\venv\Scripts\activate")
 
 [step]
 --
+executeCommand("python -m pip install virtualenv","python -m pip install virtualenv")
+
+executeCommand("pip install -r requirements.txt","pip install -r requirements.txt")
+--  
+
+
+You should now see a new "venv" folder in your package explorer. To check whether the virtual environment activated properly make sure the terminal is printing "(venv)", followed by your directory.
+
+If any packages failed to install automatically, try to do so manually. 
+
+
+Let's initialize the database now.
+
+[step]
+--
+executeCommand("flask db init","flask db init")
+executeCommand("flask db migrate -m 'first migration'","flask db migrate -m 'first migration'")
+executeCommand("flask db upgrade","flask db upgrade")
+--  
+
+This should create the `migrations` folder and the respective `__pycache__` folders in your directory. 
+
+In order to upload the table declared in our "Model.py" we need a migration script. This command requires an attached message whenever it runs.
+
+In this case, the terminal should print in return `Detected added table user`, among others.
+
+The migration script can be then uploaded. This way our database is all set up. 
+
+
+
+[step]
+--
+executeCommand("flask run","flask run")
 nextKatacodaStep("Test on Postman", [{ "file": "files/postmantest.md" }])
 --
