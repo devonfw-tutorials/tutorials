@@ -14,6 +14,6 @@ The code will be generated using devonfw's CobiGen. This will result in a basic 
 
 [step]
 --
-restoreDevonfwIde(["java","mvn"])
+installDevonfwIde(["java","mvn"])
 installCobiGen()
 --  
