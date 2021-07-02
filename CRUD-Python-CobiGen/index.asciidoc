@@ -16,4 +16,21 @@ The code will be generated using devonfw's CobiGen. This will result in a basic 
 --
 installDevonfwIde(["java","mvn"])
 installCobiGen()
+executeCommand("devon","devon")
+adaptTemplatesCobiGen()
+cloneRepository("/root/.cobigen/templates/CobiGen_Templates/src/main/templates", "https://github.com/devonfw-tutorials/tutorial-compiler.git")
+changeFile("/root/.cobigen/templates/CobiGen_Templates/src/main/templates/context.xml", {"file": "files/context.xml"})
+createFolder("/root/devonfw/workspaces/main/cobigen-python-example")
+createFile("/root/devonfw/workspaces/main/cobigen-python-example/user.yml", "files/user.yml")
+executeCommand("cd /root/devonfw/workspaces/main/cobigen-python-example","cd /root/devonfw/workspaces/main/cobigen-python-example")
+executeCommand("cobigen","cobigen", {"args": ["-g user.yml","-i 1"] } )
+executeCommand("python3","python3", {"args": ["-m pip install virtualenv"] } )
+executeCommand("python3","python3", {"args": ["-m virtualenv env"] } )
+executeCommand("activate.ps1","source activate", {"dir":"venv/bin"} )
+executeCommand("pip install","pip install",{"args": ["-r requirements.txt"]})
+executeCommand("flask db init","flask db init")
+executeCommand("flask db migrate","flask db migrate",{"args": ["-m 'initial migration'"]})
+executeCommand("flask db upgrade","flask db upgrade")
+executeCommand("flask run","flask run")
 --  
+
