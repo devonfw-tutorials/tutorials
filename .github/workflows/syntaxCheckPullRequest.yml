@@ -1,33 +1,85 @@
 name: Check PR Katacoda Syntax
-
+env:
+  PR_NUMBER: ${{github.event.number}}
 on:
-  pull_request:
+  pull_request_target:
     branches: [ main ]
-    
-  workflow_dispatch:
 jobs:
-  build_pullRequest:
+  setup-matrix:
     runs-on: ubuntu-latest
+      
+    steps:
+      - name: Checkout playbooks
+        uses: actions/checkout@v2
+      - name: Install node environment
+        uses: actions/setup-node@v2-beta
+      - name: npm install
+        run: npm install
+      - name: Select Changed Files
+        id: changedfiles
+        run: node selectChangedFiles.js
+      - name: Get Playbook Checkout
+        id: get_checkout
+        run: node getPlaybookCheckout.js
+      - name: Setup matrix combinations
+        id: setup-matrix-combinations
+        run: |
+          dirs=()
+          for changed_file in ${{ steps.changedfiles.outputs.changedFiles }}; do
+            dir="$(echo $changed_file | cut -d/ -f1)"
+            if [[ ! " ${dirs[@]} " =~ " ${dir} " ]]; then
+              MATRIX_PARAMS_COMBINATIONS=$MATRIX_PARAMS_COMBINATIONS'{"tutorial": "'$dir'"},'
+            fi
+            dirs+=($dir)
+          done
+          echo ::set-output name=matrix-combinations::{\"include\":[$MATRIX_PARAMS_COMBINATIONS]}
+    outputs:
+      matrix-combinations: ${{ steps.setup-matrix-combinations.outputs.matrix-combinations }}
+      checkout_ref: ${{ steps.get_checkout.outputs.ref}}
+      checkout_name: ${{ steps.get_checkout.outputs.name}}
 
+  build:
+    runs-on: ubuntu-latest
+    needs: setup-matrix
+    strategy:
+      matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix-combinations) }}
     steps:
       - name: Checkout tutorial-compiler
         uses: actions/checkout@v2
         with:
           repository: devonfw-tutorials/tutorial-compiler
-      
       - name: Checkout playbooks
         uses: actions/checkout@v2
         with:
-          repository: devonfw-tutorials/tutorials
+          repository: ${{needs.setup-matrix.outputs.checkout_name}}/tutorials
+          ref: ${{needs.setup-matrix.outputs.checkout_ref}}
           path: playbooks
-      
       - uses: actions/setup-node@v2-beta
-      
       - name: install TS
         run: npm install typescript
-      
       - name: npm install
         run: npm install
-
-      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }}
-        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{ github.event.pull_request.head.ref }} -e katacoda
+      - name: run buildRun.sh --user ${{ github.actor }} --branch ${{needs.setup-matrix.outputs.checkout_ref}} --checkSyntax
+        run: sh buildRun.sh --user ${{ github.actor }} --branch ${{needs.setup-matrix.outputs.checkout_ref}} --checkSyntax -p ${{ matrix.tutorial }} -e test_console
+      - name: Check error file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "./build/errors/syntaxErrors.md"
+      - name: Get message
+        id: get_message
+        if: steps.check_files.outputs.files_exists == 'true'
+        run: |
+          message=`cat ./build/errors/syntaxErrors.md`
+          message="${message//'%'/'%25'}"
+          message="${message//$'\n'/'%0A'}"
+          message="${message//$'\r'/'%0D'}"
+          echo "${message}"
+          echo "::set-output name=message::$message"
+      - name: Request changes
+        if:  ${{ steps.get_message.outputs.message != '' }}
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          event: COMMENT
+          body: ${{ steps.get_message.outputs.message }}
