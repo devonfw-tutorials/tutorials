@@ -39,6 +39,7 @@ jobs:
             message="${message} The name of your course is already used on a playbook. Please change the name. "
             echo "after ${message}"
           fi
+          message="hello world"
           echo "::set-output name=message::$message"
       - name: Request changes 
         if:  ${{ steps.check_name.outputs.message != '' }}
