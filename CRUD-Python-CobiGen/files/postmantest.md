@@ -1,7 +1,3 @@
-Run the application on your local host:
-
-`flask run`
-
 We can test our application using Postman. Paste the main path on a new Postman tab, for instance:
 
 http://127.0.0.1:5000/user

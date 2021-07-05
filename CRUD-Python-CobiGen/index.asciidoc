@@ -17,20 +17,49 @@ The code will be generated using devonfw's CobiGen. This will result in a basic 
 installDevonfwIde(["java","mvn"])
 installCobiGen()
 executeCommand("devon","devon")
+-- 
+
+[step]
+--
 adaptTemplatesCobiGen()
-cloneRepository("/root/.cobigen/templates/CobiGen_Templates/src/main/templates", "https://github.com/devonfw-tutorials/tutorial-compiler.git")
+cloneRepository("/root/.cobigen/templates/CobiGen_Templates/src/main/templates", "https://github.com/devonfw-forge/cobigen-python-templates.git")
+--
+
+[step]
+--
 changeFile("/root/.cobigen/templates/CobiGen_Templates/src/main/templates/context.xml", {"file": "files/context.xml"})
-createFolder("/root/devonfw/workspaces/main/cobigen-python-example")
-createFile("/root/devonfw/workspaces/main/cobigen-python-example/user.yml", "files/user.yml")
-executeCommand("cd /root/devonfw/workspaces/main/cobigen-python-example","cd /root/devonfw/workspaces/main/cobigen-python-example")
-executeCommand("cobigen generate user.yml -i 1","cobigen generate user.yml -i 1")
-executeCommand("python3 -m pip install virtualenv","python3 -m pip install virtualenv")
-executeCommand("python3 -m virtualenv env","python3 -m virtualenv env")
+--
+
+[step]
+--
+executeCommand("cd /root/devonfw/workspaces/main","cd /root/devonfw/workspaces/main")
+createFile("cobigen-python-example/user.yml", "files/user.yml")
+--
+
+[step]
+--
+executeCommand("cobigen generate user.yml -i 1","cobigen generate user.yml -i 1",{"dir":"cobigen-python-example"})
+--
+
+[step]
+--
+executeCommand("python3 -m pip install virtualenv","python3 -m pip install virtualenv",{"dir":"cobigen-python-example"})
+executeCommand("python3 -m virtualenv venv","python3 -m virtualenv venv",{"dir":"cobigen-python-example"})
 executeCommand("activate.ps1","source activate", {"dir":"venv/bin"} )
+executeCommand("cd /root/devonfw/workspaces/main/cobigen-python-example","cd /root/devonfw/workspaces/main/cobigen-python-example")
 executeCommand("pip install -r requirements.txt","pip install -r requirements.txt")
+--
+
+[step]
+--
 executeCommand("flask db init","flask db init")
-executeCommand("flask db migrate -m 'initial migration'","flask db migrate -m 'initial migration'")
+nextKatacodaStep("Initial commit", [{ "file": "files/initialCommit.md" }])
 executeCommand("flask db upgrade","flask db upgrade")
+--
+
+[step]
+--
 executeCommand("flask run","flask run")
+nextKatacodaStep("Postman test", [{ "file": "files/postmanTest.md" }])
 --  
 
