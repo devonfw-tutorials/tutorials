@@ -40,3 +40,7 @@ jobs:
             echo "after ${message}"
           fi
           echo "::set-output name=message::$message"
+      - name: Request changes 
+        if:  ${{ steps.check_name.outputs.message != '' }}
+        run: | 
+          echo "${steps.check_name.outputs.message}"
