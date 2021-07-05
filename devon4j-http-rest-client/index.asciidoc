@@ -185,7 +185,7 @@ changeFile("httprestclient/core/src/main/resources/config/application.properties
 **service.client.app.httprestserver.user.password** :- It is used to set password.
 ====
 
-
+====
 Now, Let's build and start the service client application.
 This might take some time for application to start.
 [step]
@@ -194,12 +194,20 @@ This might take some time for application to start.
 buildJava("httprestclient", false)
 --
 
+* Once, application builds successfully. Open new terminal by clicking "+" and wait for it to load.
+* Now, Copy and execute below command to navigate into client server.
+  `cd devonfw/workspaces/main/httprestclient/server`
+* Now, Copy and execute below command to start the application.
+  `devon mvn spring-boot:run`
 
-[step]
---
-nextKatacodaStep("Start the CXF CLient Server", [{ "file": "files/startServer.md" }])
---
-
+To test Synchronous method, follow below steps.
+* Click on "+" next to terminal tab
+* Select "select port to view host"
+* Enter the port number "8081" 
+* In the url, append "/httprestclient/services/rest/devon4jrestclient/response/"
+* Enter username as "admin" and password as "admin"
+* You will be able to see response "Welcome to rest api"
+====
 
 ====
 You have successfully created devon4j CXF REST Client.
