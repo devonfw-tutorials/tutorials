@@ -34,7 +34,9 @@ jobs:
               fi
             fi
           done
+          echo "before ${message}"
           if [[ message != "" ]]; then
             message="${message} The name of your course is already used on a playbook. Please change the name. "
+            echo "after ${message}"
           fi
           echo "::set-output name=message::$message"
