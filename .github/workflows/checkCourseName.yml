@@ -32,12 +32,12 @@ jobs:
               fi
             fi
           done
-          if [[ -z "$message" ]]; then
+          if [[ -z "$var" ]]; then
             message="${message} The name of your course is already used on a playbook. Please change the name. "
           fi
           echo "::set-output name=message::$message"
       - name: Request changes 
-        if:  ${{ -z "$steps.check_name.outputs.message"  }}
+        if:  ${{ steps.check_name.outputs.message != '' }}
         uses: andrewmusgrave/automatic-pull-request-review@0.0.2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
