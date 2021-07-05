@@ -1,0 +1,52 @@
+= Tutorial for devon4j kafka
+====
+Messaging Services provide an asynchronous communication mechanism between applications. Technically this is implemented using Apache Kafka .
+
+## Prerequisites
+* User should have Java development experience
+
+## Learning goals
+How Spring kafka is used in devonfw applications. It focuses on aspects which are special to devonfw if you want to learn about spring-kafka you should adhere to springs references documentation..
+
+More information about devon4j-kafka [here] https://github.com/devonfw/devon4j/blob/master/documentation/guide-kafka.asciidoc
+
+====
+
+[step]
+--
+restoreDevonfwIde (["java","mvn","vscode"])
+--
+
+[step]
+--
+cloneRepository("", "https://github.com/devonfw-sample/devon4j-kafka-employeeapp.git")
+--
+
+====
+== Build devon4j devon4j-kafka-employeeapp application
+
+[step]
+--
+buildJava("devon4j-kafka-employeeapp", false)
+--
+
+[step]
+--
+cloneRepository("", "https://github.com/wurstmeister/kafka-docker.git")
+--
+In order to run the test method in the sample application its required to have ZooKeeper & kafka running on your system. use below commands
+cd kafka-docker
+docker-compose up -d
+[step]
+--
+dockerCompose("kafka-docker", { "startupTime": 600, "port": 8081, "path": "" })
+--
+Update the port number in the application.properties messaging.kafka.common.bootstrapServers=localhost:9092. For docker use docker ps to find out the mapped port number for the kafka container.
+
+===Conclusion
+ This application shows how devon4j-kafka works with the test method saveAndDeleteEmployeeViaKafkaService. This test menthod has 2 checks:
+
+  * sends an employee information to kafka using MessageSender of devon4j-kafka and consuming it with the Listener service classes implemented as part of this application and saves it in Db(using MessageProcessor). Its validated using another service findEmployeeByCriteria.
+
+  * Send an employeeId information to kakfa using MessageSender of devon4j-kafka and consuming it with the listener service classes implemented as part of this application and deletes the employee corresponding to the employeeId consumed(using MessageProcessor). Its validated using another service findEmployeeByCriteria
+====
