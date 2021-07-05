@@ -44,4 +44,4 @@ jobs:
       - name: Request changes 
         if:  ${{ steps.check_name.outputs.message != '' }}
         run: | 
-          echo "${steps.check_name.outputs.message}"
+          echo "${{steps.check_name.outputs.message}}"
