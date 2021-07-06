@@ -26,7 +26,7 @@ changeFile("context.xml", { "file": "files/context.xml"})
 
 [step]
 --
-changeWorkspace("devonfw/workspaces/main") 
+restoreWorkspace("devonfw/workspaces/main") 
 createFile("cobigen-python-example/user.yml", "files/user.yml")
 --
 
