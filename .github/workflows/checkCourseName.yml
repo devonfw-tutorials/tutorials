@@ -15,9 +15,6 @@ jobs:
       - name: Checkout playbooks
         uses: actions/checkout@v2  
 
-      - id: changedfiles
-        uses: jitterbit/get-changed-files@v1
-
       - name: Check name 
         id: check_name
         run: | 
@@ -35,7 +32,7 @@ jobs:
               fi
             fi
           done
-          if [[ message != "" ]]; then
+          if [[ ! -z "$message" ]]; then
             message="${message} The name of your course is already used on a playbook. Please change the name. "
           fi
           echo "::set-output name=message::$message"
