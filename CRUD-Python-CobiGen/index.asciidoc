@@ -1,17 +1,6 @@
 = Create a CRUD Python Flask application using CobiGen's OpenAPI plugin
 ====
 
-The aim of this tutorial is to create a basic CRUD Python Flask application from a single OpenAPI .yml file declaring an entity. 
-
-The code will be generated using devonfw's CobiGen. This will result in a basic application layout, the declaration of a Flask-SQLAlchemy table with the entity's attributes as columns, and a service returning JSON objects for the GET, POST, PUT and DELETE methods.
-
-### Prerequisites:
-
-* devonfw workspace set up, including the CobiGen code generator and the corresponding `CobiGen_Templates` folder.
-* Python 3 
-
-====
-
 [step]
 --
 installDevonfwIde(["java","mvn"])
@@ -22,12 +11,13 @@ executeCommand("devon","devon")
 [step]
 --
 adaptTemplatesCobiGen()
-cloneRepository("/root/.cobigen/templates/CobiGen_Templates/src/main/templates", "https://github.com/devonfw-forge/cobigen-python-templates.git")
+executeCommand("cd /root/.cobigen/templates/CobiGen_Templates/src/main/templates","cd /root/.cobigen/templates/CobiGen_Templates/src/main/templates")
+cloneRepository("", "https://github.com/devonfw-forge/cobigen-python-templates.git")
 --
 
 [step]
 --
-changeFile("/root/.cobigen/templates/CobiGen_Templates/src/main/templates/context.xml", {"file": "files/context.xml"})
+createFile("context.xml", {"file": "files/context.xml"})
 --
 
 [step]
@@ -43,8 +33,8 @@ executeCommand("cobigen generate user.yml -i 1","cobigen generate user.yml -i 1"
 
 [step]
 --
-executeCommand("python3 -m pip install virtualenv","python3 -m pip install virtualenv",{"dir":"cobigen-python-example"})
-executeCommand("python3 -m virtualenv venv","python3 -m virtualenv venv",{"dir":"cobigen-python-example"})
+executeCommand("python3 -m pip install virtualenv","python3 -m pip install virtualenv")
+executeCommand("python3 -m virtualenv venv","python3 -m virtualenv venv")
 executeCommand("activate.ps1","source activate", {"dir":"venv/bin"} )
 executeCommand("cd /root/devonfw/workspaces/main/cobigen-python-example","cd /root/devonfw/workspaces/main/cobigen-python-example")
 executeCommand("pip install -r requirements.txt","pip install -r requirements.txt")
