@@ -15,18 +15,18 @@ executeCommand("devon","devon")
 [step]
 --
 adaptTemplatesCobiGen()
-executeCommand("cd /root/.cobigen/templates/CobiGen_Templates/src/main/templates","cd /root/.cobigen/templates/CobiGen_Templates/src/main/templates")
+changeWorkspace(".cobigen/templates/CobiGen_Templates/src/main/templates") 
 cloneRepository("", "https://github.com/devonfw-forge/cobigen-python-templates.git")
 --
 
 [step]
 --
-createFile("context.xml", "files/context.xml")
+changeFile("context.xml", { "file": "files/context.xml"})
 --
 
 [step]
 --
-executeCommand("cd /root/devonfw/workspaces/main","cd /root/devonfw/workspaces/main")
+changeWorkspace("devonfw/workspaces/main") 
 createFile("cobigen-python-example/user.yml", "files/user.yml")
 --
 
