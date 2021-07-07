@@ -29,6 +29,7 @@ Now, we will create a sample devon4j application with the name *sampleapp* and b
 --
 createDevon4jProject("com.example.application.sampleapp")
 buildJava("sampleapp", false)
+changeFile("sampleapp/core/pom.xml", {"file": "files/pom.txt"})
 --
 
 
