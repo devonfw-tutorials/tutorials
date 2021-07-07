@@ -27,7 +27,7 @@ createDevon4jProject("com.example.application.sampleapp")
 
 [step]
 --
-cd("devonfw/workspaces/main/sampleapp")
+changeWorkspace("devonfw/workspaces/main/sampleapp")
 --
 
 
