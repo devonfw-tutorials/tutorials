@@ -23,11 +23,8 @@ Now, we will create a sample devon4j application with the name *sampleapp* and b
 [step]
 --
 createDevon4jProject("com.example.application.sampleapp")
---
-
-[step]
---
-changeWorkspace("devonfw/workspaces/main/sampleapp")
+buildJava("sampleapp", false)
+changeFile("sampleapp/core/pom.xml", {"content": "<?xml version="1.0" encoding="UTF-8"?>", "placeholder": "<?xml version="1.0" encoding="UTF-8"?>"})
 --
 
 
