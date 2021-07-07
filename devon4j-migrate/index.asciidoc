@@ -12,19 +12,23 @@ Here in this tutorial you will learn
 * How to migrate an older version of devon4j project to the latest version.
 
 ====
-Install older version of devonfw ( "2020.08.001")
+
+====
+Install devonfw IDE.
 [step]
 --
 installDevonfwIde(["java","mvn"], "2020.08.001")
 --
+It will install the devonfw IDE with version "2020.08.001".
+====
 
 
 Now, we will create a sample devon4j application with the name *sampleapp* and build it.
 [step]
+== Create and build devon4j project
 --
 createDevon4jProject("com.example.application.sampleapp")
 buildJava("sampleapp", false)
-changeFile("sampleapp/core/pom.xml", {"file": "files/pom.xml"})
 --
 
 
