@@ -13,18 +13,21 @@ Here in this tutorial you will learn
 
 ====
 
+====
+Install devonfw IDE.
 [step]
 --
 restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
+It will install the devonfw IDE with version "2020.08.001".
+====
 
-Note: devonfw IDE is already installed.
+
 Now, we will create a sample devon4j application with the name *sampleapp* and build it.
-Now, Copy below command and press enter to create devon4j project with older version i.e. "2020.08.001":
-`devon mvn archetype:generate -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server -DinteractiveMode=false -Dpackage=olderversion -DartifactId=olderversionapp -DgroupId=olderversion -Dversion=1.0.0-SNAPSHOT -DarchetypeVersion=2020.08.001`
 [step]
 == Create and build devon4j project
 --
+createDevon4jProject("com.example.application.sampleapp")
 changeFile("sampleapp/core/pom.xml", {"file": "files/pom.xml"})
 --
 
@@ -33,7 +36,7 @@ In the below step it will execute "devon java migrate". This command will migrat
 [step]
 == Migrate devon4j to latest version
 --
-executeCommand("devon java migrate", "devon java migrate", {})
+executeCommand("devon java migrate", "devon java migrate", {"dir": "sampleapp"})
 --
 
 
