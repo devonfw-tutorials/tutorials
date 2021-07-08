@@ -17,7 +17,7 @@ Here in this tutorial you will learn
 Install devonfw IDE.
 [step]
 --
-installDevonfwIde(["java","mvn"], "2020.08.001")
+restoreDevonfwIde(["java","mvn"], "2020.08.001")
 --
 It will install the devonfw IDE with version "2020.08.001".
 ====
@@ -29,7 +29,7 @@ Now, we will create a sample devon4j application with the name *sampleapp* and b
 --
 createDevon4jProject("com.example.application.sampleapp")
 buildJava("sampleapp", false)
-changeFile("sampleapp/core/pom.xml", {"file": "files/pom.txt"})
+changeFile("sampleapp/core/pom.xml", {"file": "files/pom.xml"})
 --
 
 
