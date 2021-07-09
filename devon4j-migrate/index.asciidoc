@@ -20,27 +20,24 @@ Here in this tutorial you will learn
 restoreDevonfwIde(["java","vscode"], "2020.08.001")
 --
 
-
+====
+Now, To navigate inside devonfw-ide installations execute below command.
 [step]
+== Create devon4j sample project
 --
 changeWorkspace("devonfw/workspaces/main") 
 --
-
-
 Now, we will create a sample devon4j application with the name *migrateSampleApp* and build it.
 Now, Copy below command and execute it in the terminal.
 `devon mvn archetype:generate -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server -DinteractiveMode=false -Dpackage=com.devonfw.example -DartifactId=migrateSampleApp -DgroupId=com.devonfw.example -Dversion=1.0.0-SNAPSHOT -DarchetypeVersion=2020.08.001`
-[step]
-== Create devon4j sample
---
-changeWorkspace("migrateSampleApp")
---
+====
 
 
 Now, you have to change properties files inside core to remove special character which might give the error while migration.
 [step]
 == Change properties file
 --
+changeWorkspace("migrateSampleApp")
 changeFile("migrateSampleApp/core/pom.xml", { "file": "files/pom.xml" })
 --
 
@@ -48,7 +45,7 @@ In the below step it will execute "devon java migrate". This command will migrat
 [step]
 == Migrate devon4j to latest version
 --
-executeCommand("devon java migrate", {"dir": "migrateSampleApp"})
+executeCommand("devon java migrate", "devon java migrate", {})
 --
 
 
