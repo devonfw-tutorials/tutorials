@@ -26,10 +26,10 @@ restoreDevonfwIde(["java","mvn"])
 Now, we will create a sample devon4j application with the name *sampleapp*.
 [step]
 --
-executeCommand("mvn archetype:generate ", "mvn archetype:generate", {"args":["-DarchetypeVersion=3.0.1", "-DarchetypeGroupId=com.devonfw.java.templates", "-DarchetypeArtifactId=devon4j-template-server", "-DgroupId=com.example.application", "-DartifactId=sampleapp", "-Dversion=1.0.0-SNAPSHOT", "-Dpackage=com.devonfw.application.sampleapp", "-DinteractiveMode=false", "-DarchetypeVersion=2020.08.001"] })
+executeCommand("mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", "mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", {"args":["-DgroupId=com.example.application", "-DartifactId=sampleapp", "-Dversion=1.0.0-SNAPSHOT", "-Dpackage=com.devonfw.application.sampleapp", "-DinteractiveMode=false", "-DarchetypeVersion=2020.08.001"] })
 --
 
-Now, you have to change properties files inside core to remove special character which might give the error while migration.
+Now, you have to change properties files inside core to remove special character which might give error while migration.
 [step]
 == Change properties file
 --
