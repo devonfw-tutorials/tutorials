@@ -3,19 +3,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>sampleapp</groupId>
-    <artifactId>sampleapp</artifactId>
+    <groupId>migrateSampleApp</groupId>
+    <artifactId>migrateSampleApp</artifactId>
     <version>${revision}</version>
   </parent>
-  <artifactId>sampleapp-core</artifactId>
+  <artifactId>migrateSampleApp-core</artifactId>
   <packaging>jar</packaging>
   <name>${project.artifactId}</name>
-  <description>Core of the server for the sampleapp application - a simple example based on devon4j.</description>
+  <description>Core of the server for the migrateSampleApp application - a simple example based on devon4j.</description>
 
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>sampleapp-api</artifactId>
+      <artifactId>migrateSampleApp-api</artifactId>
       <version>${project.version}</version>
     </dependency>
 
