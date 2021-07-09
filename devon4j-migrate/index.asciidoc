@@ -16,11 +16,17 @@ Here in this tutorial you will learn
 
 ====
 
+[step]
+--
+restoreDevonfwIde(["java","vscode"])
+--
+
+
+
 Now, we will create a sample devon4j application with the name *sampleapp*.
 [step]
 == Create devon4j Sample Project
 --
-restoreDevonfwIde(["java","vscode"])
 executeCommand("mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", "mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", {"args":["-DgroupId=com.example.application", "-DartifactId=sampleapp", "-Dversion=1.0.0-SNAPSHOT", "-Dpackage=com.devonfw.application.sampleapp", "-DinteractiveMode=false", "-DarchetypeVersion=2020.08.001"] })
 --
 
