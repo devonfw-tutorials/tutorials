@@ -35,8 +35,8 @@ spring.batch.job.enabled=false
 spring.flyway.locations=classpath:db/migration
 
 # rest client setup
-service.client.default.url=http://localhost:8081/httprestserver/services/rest
-service.client.app.httprestserver.url=http://localhost:8081/httprestserver/services/rest
+service.client.default.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
+service.client.app.httprestserver.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
 service.client.default.timeout.connection=120
 service.client.default.timeout.response=3600
 service.client.app.httprestserver.auth=basic
