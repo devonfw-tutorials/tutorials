@@ -1,9 +1,10 @@
 = Migrate a devon4j project to the latest version
 ====
-The java commandlet allows to setup Java. Also it supports devon4j. The arguments (devon java «args») are explained by the below details: 
+This tutorial mainly focuses on migrating an old version of devon4j project to the latest version.
+The devonfw provides various commandlet allowing user to setup Java environment. It supports devon4j. The arguments (devon java «args») are explained by the below details: 
 https://devonfw.com/website/pages/docs/devonfw-ide-usage.asciidoc.html#java.asciidoc
 
-This tutorial mainly focuses on to migrate an old version of devon4j project to the latest version.
+
 ## Prerequisites
 * devonfw IDE
 
@@ -13,24 +14,25 @@ Here in this tutorial you will learn
 
 ====
 
-====
-Install devonfw IDE.
+
 [step]
 --
-restoreDevonfwIde(["java","mvn"], "2020.08.001")
+restoreDevonfwIde(["java","vscode"], "2020.08.001")
 --
-It will install the devonfw IDE with version "2020.08.001".
+
+
 ====
-
-
-Now, we will create a sample devon4j application with the name *sampleapp* and build it.
+Now, we will create a sample devon4j application with the name *migrateSampleApp* and build it.
+Now, Copy below command.
+`devon mvn archetype:generate -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server -DinteractiveMode=false -Dpackage=com.devonfw.example -DartifactId=migrateSampleApp -DgroupId=com.devonfw.example -Dversion=1.0.0-SNAPSHOT -DarchetypeVersion=2020.08.001`
+Paste it in the terminal and press enter to execute it.
 [step]
-== Create and build devon4j project
+== Create devon4j sample
 --
-createDevon4jProject("com.example.application.sampleapp")
 changeFile("sampleapp/core/pom.xml", {"file": "files/pom.xml"})
 --
-
+devon4j sample project created successfully!!
+====
 
 In the below step it will execute "devon java migrate". This command will migrate devon4j project to latest version.
 [step]
