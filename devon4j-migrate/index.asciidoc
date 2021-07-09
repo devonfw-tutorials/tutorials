@@ -33,7 +33,7 @@ Now, you have to change properties files inside core to remove special character
 [step]
 == Change properties file
 --
-changeFile("sampleApp/core/pom.xml", { "file": "files/pom.xml" })
+changeFile("sampleapp/core/pom.xml", { "file": "files/pom.xml" })
 --
 
 In the below step it will execute "devon java migrate".
