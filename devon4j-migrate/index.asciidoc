@@ -3,17 +3,12 @@
 This tutorial mainly focuses on migrating an old version of devon4j project to the latest version.
 The devonfw provides various commandlet allowing user to setup Java environment. It supports devon4j.
 
-The arguments (devon java «args») are explained by the below details: 
-https://devonfw.com/website/pages/docs/devonfw-ide-usage.asciidoc.html#java.asciidoc
-
-
 ## Prerequisites
 * devonfw IDE
 
 ## Learning goals.
 Here in this tutorial you will learn 
 * How to migrate an older version of devon4j project to the latest version.
-
 ====
 
 [step]
@@ -22,34 +17,36 @@ restoreDevonfwIde(["java","vscode"])
 --
 
 
-Before creating sample, Copy and execute below command to navigate to main directory.
-`cd devonfw/workspaces/main`
-Now, we will create a sample devon4j application with the name *sampleapp*.
+
+Now, we will create a sample devon4j project with the name *migrateSampleApp*.
+Before creating sample project, Execute below command to navigate to main directory.
 [step]
 == Create devon4j Sample Project
 --
-executeCommand("below command", "mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", {"args":["-DgroupId=com.example.application", "-DartifactId=sampleapp", "-Dversion=1.0.0-SNAPSHOT", "-Dpackage=com.devonfw.application.sampleapp", "-DinteractiveMode=false", "-DarchetypeVersion=2020.08.001"] })
+executeCommand("cd devonfw/workspaces/main", "cd devonfw/workspaces/main")
+executeCommand("mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", "mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", {"args":["-DgroupId=com.example.application", "-DartifactId=migrateSampleApp", "-Dversion=1.0.0-SNAPSHOT", "-Dpackage=com.devonfw.application.migrateSampleApp", "-DinteractiveMode=false", "-DarchetypeVersion=2020.08.001"] })
 --
 
 Now, you have to change properties files inside core to remove special character which might give error while migration.
 [step]
 == Change properties file
 --
-executeCommand("below command", "cd sampleapp")
-changeFile("sampleapp/core/pom.xml", { "file": "files/pom.xml" })
+executeCommand("cd migrateSampleApp", "cd migrateSampleApp")
+changeFile("migrateSampleApp/core/pom.xml", { "file": "files/pom.xml" })
 --
 
-In the below step it will execute "devon java migrate".
+Execute below command for project migration from  an older version to the latest version.
 [step]
 == Execute Migrate Command
 --
-executeCommand("below command", "devon java migrate")
+executeCommand("devon java migrate", "devon java migrate")
 --
 
 
 ====
 ## Conclusion
+You have successfully migrated the sample project from an older version to the lates version using command line!!
 
-In this tutorial you have learnt How to migrate an older version of devon4j project to the latest version using command line.
-
+For more details on devon4j java commands for various functionalities and the arguments (devon java «args») follow 
+https://devonfw.com/website/pages/docs/devonfw-ide-usage.asciidoc.html#java.asciidoc
 ====
