@@ -2,11 +2,11 @@
 ====
 The purpose of this tutorial is to get a basic understanding of creating layouts using Angular Material in a devon4ng application. We will create an application with a header containing some menu links and a sidenav with some navigation links.
 
-## Prerequisites
+### Prerequisites
 * devonfw-ide installed
 * Basic Angular knowledge
 
-## Learning goals
+### Learning goals
 In this tutorial we will learn how to:
 * create an Angular application using the devon command
 * add Angular Material to the application
