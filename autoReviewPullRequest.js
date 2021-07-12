@@ -87,7 +87,7 @@ function parseFile(file, filename) {
       messageBody = "The description must describe the prerequisites of a tutorial. It must contain a '### Prerequisites' part.";
     }
 
-    if(!description.includes("###S Learning goals")) {
+    if(!description.includes("### Learning goals")) {
         messageBody = (messageBody == "")
            ? "The description should describe what the user will learn in the tutorial. It must contain a '### Learning goals' part."
            : messageBody + " The description should describe what the user will learn in the tutorial. It must contain a '## Learning goals' part.";
