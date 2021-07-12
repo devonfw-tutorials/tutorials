@@ -1,7 +1,7 @@
 = Migrate a devon4j project to the latest version
 ====
-This tutorial mainly focuses on migrating an old version of devon4j project to the latest version.
-The devonfw provides various commandlet allowing user to setup Java environment. It supports devon4j.
+This tutorial mainly focuses on migrating an older version of devon4j project to the latest version using devon4j migrate command.
+
 
 ## Prerequisites
 * devonfw IDE
@@ -16,29 +16,22 @@ Here in this tutorial you will learn
 restoreDevonfwIde(["java","vscode"])
 --
 
+To demonstrate devon4j migrate we would need a sample devon4j project with an older version, which is already created for you. You just need to clone the repository.
 
-
-Now, we will create a sample devon4j project with the name *migrateSampleApp*.
-Before creating sample project, Execute below command to navigate to main directory.
+To clone repository you should be inside devonfw-ide installed directory. 
+Execute below command, to navigate inside devonfw-ide installed directory.
 [step]
-== Create devon4j Sample Project
+== 
 --
 executeCommand("cd devonfw/workspaces/main", "cd devonfw/workspaces/main")
-executeCommand("mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", "mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", {"args":["-DgroupId=com.example.application", "-DartifactId=migrateSampleApp", "-Dversion=1.0.0-SNAPSHOT", "-Dpackage=com.devonfw.application.migrateSampleApp", "-DinteractiveMode=false", "-DarchetypeVersion=2020.08.001"] })
---
-
-Now, you have to change properties files inside core to remove special character which might give error while migration.
-[step]
-== Change properties file
---
-executeCommand("cd migrateSampleApp", "cd migrateSampleApp")
-changeFile("migrateSampleApp/core/pom.xml", { "file": "files/pom.xml" })
+cloneRepository("Clone the sample application", "https://github.com/devonfw-sample/devon4j-app-4tutorial.git")
 --
 
 Execute below command for project migration from  an older version to the latest version.
 [step]
 == Execute Migrate Command
 --
+executeCommand("cd devon4j-app-4tutorial", "cd devon4j-app-4tutorial")
 executeCommand("devon java migrate", "devon java migrate")
 --
 
