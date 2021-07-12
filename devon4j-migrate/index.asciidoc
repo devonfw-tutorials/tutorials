@@ -27,6 +27,7 @@ Now, we will create a sample devon4j application with the name *sampleapp*.
 [step]
 == Create devon4j Sample Project
 --
+executeCommand("cd devonfw/workspaces/main", "cd devonfw/workspaces/main")
 executeCommand("mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", "mvn -DarchetypeVersion=3.0.1 -DarchetypeGroupId=com.devonfw.java.templates -DarchetypeArtifactId=devon4j-template-server archetype:generate", {"args":["-DgroupId=com.example.application", "-DartifactId=sampleapp", "-Dversion=1.0.0-SNAPSHOT", "-Dpackage=com.devonfw.application.sampleapp", "-DinteractiveMode=false", "-DarchetypeVersion=2020.08.001"] })
 --
 
@@ -34,8 +35,8 @@ Now, you have to change properties files inside core to remove special character
 [step]
 == Change properties file
 --
-executeCommand("cd sampleapp", "cd sampleapp")
-changeFile("core/pom.xml", { "file": "files/pom.xml" })
+executeCommand("below command", "cd sampleapp")
+changeFile("sampleapp/core/pom.xml", { "file": "files/pom.xml" })
 --
 
 In the below step it will execute "devon java migrate".
