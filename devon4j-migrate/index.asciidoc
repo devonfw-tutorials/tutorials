@@ -35,7 +35,7 @@ Execute below command for project migration from  an older version to the latest
 executeCommand("cd devon4j-app-4tutorial", "cd devon4j-app-4tutorial")
 executeCommand("devon java migrate", "devon java migrate")
 --
-You will see the message similar to the one below if project migrated successfully.
+You will see the message similar to the one below in command line along with different series of versions migrated, if project migrated successfully.
 `Successfully applied 4 migrations to migrate project from version devon4j:2020.08.001 to devon4j:2021.04.002.`
 ====
 
@@ -43,7 +43,7 @@ You will see the message similar to the one below if project migrated successful
 
 ====
 ## Conclusion
-You have successfully migrated the sample project from an older version to the lates version using command line!!
+You have successfully migrated the sample project from an older version to the latest version using command line!!
 
 For more details on devon4j java commands for various functionalities and the arguments (devon java «args») follow 
 https://devonfw.com/website/pages/docs/devonfw-ide-usage.asciidoc.html#java.asciidoc
