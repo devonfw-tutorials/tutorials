@@ -21,9 +21,9 @@ To demonstrate devon4j migrate we would need a sample devon4j project with an ol
 To clone repository you should be inside devonfw-ide installed directory. 
 Execute below command, to navigate inside devonfw-ide installed directory.
 [step]
+== Clone the sample application
 --
-executeCommand("cd devonfw/workspaces/main", "cd devonfw/workspaces/main")
-cloneRepository("Clone the sample application", "https://github.com/devonfw-sample/devon4j-app-4tutorial.git")
+cloneRepository("", "https://github.com/devonfw-sample/devon4j-app-4tutorial.git")
 --
 
 Execute below command for project migration from  an older version to the latest version.
