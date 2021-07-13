@@ -22,7 +22,7 @@ Follow below step to do so.
 [step]
 == Clone the sample application
 --
-restoreWorkspace({"workspace": workspace-devon4j-migrate})
+restoreWorkspace({"workspace": "workspace-devon4j-migrate"})
 --
 
 ====
