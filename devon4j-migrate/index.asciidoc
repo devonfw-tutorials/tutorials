@@ -36,7 +36,6 @@ You will see the message similar to the one below, if project migrated successfu
 `Successfully applied 4 migrations to migrate project from version devon4j:2020.08.001 to devon4j:2021.04.002.`
 
 Here, 2020.08.001 is the devon4j's older version and 2021.04.002 is devon4j's latest version.
-//short explanation on migrate
 ====
 
 
