@@ -48,13 +48,13 @@ executeCommand("pip install -r requirements.txt","pip install -r requirements.tx
 [step]
 --
 executeCommand("flask db init","flask db init")
-nextKatacodaStep("Initial commit", [{ "file": "files/initialCommit.md" }])
+display("Initial commit", [{ "file": "files/initialCommit.md" }])
 executeCommand("flask db upgrade","flask db upgrade")
 --
 
 [step]
 --
 executeCommand("flask run","flask run")
-nextKatacodaStep("Postman test", [{ "file": "files/postmanTest.md" }])
+display("Postman test", [{ "file": "files/postmanTest.md" }])
 --  
 
