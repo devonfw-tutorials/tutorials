@@ -22,7 +22,7 @@ Follow below step to do so.
 [step]
 == Clone the sample application
 --
-buildRun.sh --user devonfw-sample/devon4j-app-4tutorial restoreWorkspace()
+restoreWorkspace(buildRun.sh --user devonfw-sample/devon4j-app-4tutorial)
 --
 
 ====
