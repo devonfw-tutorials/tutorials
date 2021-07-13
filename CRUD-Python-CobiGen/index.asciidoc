@@ -48,13 +48,13 @@ executeCommand("pip install -r requirements.txt","pip install -r requirements.tx
 [step]
 --
 executeCommand("flask db init","flask db init")
-display("Initial commit", [{ "file": "files/initialCommit.md" }])
+displayContent("Initial commit", [{ "file": "files/initialCommit.md" }])
 executeCommand("flask db upgrade","flask db upgrade")
 --
 
 [step]
 --
 executeCommand("flask run","flask run")
-display("Postman test", [{ "file": "files/postmanTest.md" }])
+displayContent("Postman test", [{ "file": "files/postmanTest.md" }])
 --  
 
