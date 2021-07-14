@@ -25,14 +25,13 @@ restoreWorkspace({"workspace": "devon4j-migrate"})
 ====
 To demonstrate devon4j migrate you would need a sample devon4j project with any older version. Here, we have already created a project with an older version i.e. 2020.08.001 for you. 
 
-It is already cloned in workspace.
+It is already cloned in workspace using restoreWorkspace.
 
 Execute below command for project migration from an older version to the latest version.
 [step]
 == Execute Migrate Command
 --
-executeCommand("cd devonfw/workspaces/main", "cd devonfw/workspaces/main")
-executeCommand("devon java migrate", "devon java migrate")
+executeCommand("devon java migrate", "devon java migrate", {"dir" : devonfw/workspaces/main})
 --
 You will see the message similar to the one below, if project migrated successfully.
 `Successfully applied 4 migrations to migrate project from version devon4j:2020.08.001 to devon4j:2021.04.002.`
