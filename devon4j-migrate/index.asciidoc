@@ -31,7 +31,7 @@ Execute below command for project migration from an older version to the latest 
 [step]
 == Execute Migrate Command
 --
-executeCommand("devon java migrate", "devon java migrate", {"dir" : "devonfw/workspaces/main"})
+executeCommand("devon java migrate", "devon java migrate", {"dir" : "devon4j-app-4tutorial"})
 --
 You will see the message similar to the one below, if project migrated successfully.
 `Successfully applied 4 migrations to migrate project from version devon4j:2020.08.001 to devon4j:2021.04.002.`
