@@ -1,6 +1,6 @@
 We can test our application using Postman. Paste the main path on a new Postman tab, for instance:
 
-http://127.0.0.1:5000/user
+Render port 80: <pre>https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/user</pre>
 
 Our table is empty for the moment, so we will select the POST method to add new data. We can submit JSON requests by clicking on the "Body" tab and selecting "raw". For example, submit:
 
