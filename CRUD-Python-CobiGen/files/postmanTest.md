@@ -10,6 +10,8 @@ Our table is empty for the moment, so we will select the POST method to add new 
 
 Our new user should now be accessible from the database under "id" number 1. Check this by submitting a GET request to the following path:
 
+Render port 80: <pre>https://[[HOST_SUBDOMAIN]]-80-[[KATACODA_HOST]].environments.katacoda.com/user/1</pre>
+
 http://127.0.0.1:5000/user/1
 
 We will now edit our entry by sending a PUT request. Submit the following body to http://127.0.0.1:5000/user/1:
