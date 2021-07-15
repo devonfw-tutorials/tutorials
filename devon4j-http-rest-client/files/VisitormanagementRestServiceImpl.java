@@ -1,4 +1,4 @@
-package com.example.application.visitormanagement.service.impl.rest;
+package com.example.application.httprestserver.visitormanagement.service.impl.rest;
 
 import javax.inject.Named;
 

@@ -57,7 +57,7 @@ Now, you will create VisitormanagementRestService to provide functionality using
 [step]
 == Create service for REST server
 --
-createFile("httprestserver/api/src/main/java/com/example/application/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
+createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
 --
 
 
@@ -66,7 +66,7 @@ Now, you will create VisitormanagementRestServiceImpl, the implementation class 
 [step]
 == Create implementation class for Service
 --
-createFile("httprestserver/core/src/main/java/com/example/application/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
+createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
 --
 Here , you can see "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean. To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService).
 ====

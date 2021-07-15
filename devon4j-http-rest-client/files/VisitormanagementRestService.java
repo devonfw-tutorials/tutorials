@@ -1,4 +1,4 @@
-package com.example.application.visitormanagement.service.api.rest;
+package com.example.application.httprestserver.visitormanagement.service.api.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
