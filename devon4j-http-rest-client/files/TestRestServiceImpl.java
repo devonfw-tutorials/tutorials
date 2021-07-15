@@ -1,12 +1,12 @@
-package com.example.application.general.service.impl.rest;
+package com.example.application.httprestclient.general.service.impl.rest;
 
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.devonfw.module.service.common.api.client.ServiceClientFactory;
 import com.devonfw.module.service.common.api.client.config.ServiceClientConfigBuilder;
-import com.example.application.general.service.api.rest.TestRestService;
-import com.example.application.general.service.api.rest.VisitormanagementRestService;
+import com.example.application.httprestclient.general.service.api.rest.TestRestService;
+import com.example.application.httprestclient.general.service.api.rest.VisitormanagementRestService;
 
 @Named("TestRestService")
 public class TestRestServiceImpl implements TestRestService {

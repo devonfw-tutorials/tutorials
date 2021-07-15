@@ -93,7 +93,7 @@ runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "pat
 Once, Java server starts running. To test REST-server follow below steps:
 * Click on "+" next to terminal tab
 * Select "select port to view host"
-* Enter the port number "8080" 
+* Enter the port number "8081" 
 * In the url, append "/httprestserver/services/rest/visitormanagement/v1/clientrequest/"
 * Enter username as "admin" and password as "admin"
 * You will be able to see response "Welcome to REST API world"
@@ -128,7 +128,7 @@ Now, You will create a Java interface VisitormanagementRestService to invoke ins
 [step]
 == Create service to invoke server
 --
-createFile("httprestclient/api/src/main/java/com/example/application/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
+createFile("httprestclient/api/src/main/java/com/example/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
 --
 
 
@@ -136,7 +136,7 @@ Now, you will create service for client i.e. TestRestService.java to provide fun
 [step]
 == Create service for CXF REST Client
 --
-createFile("httprestclient/api/src/main/java/com/example/application/general/service/api/rest/TestRestService.java", "files/TestRestService.java")
+createFile("httprestclient/api/src/main/java/com/example/application/httprestclient/general/service/api/rest/TestRestService.java", "files/TestRestService.java")
 --
 
 
@@ -146,12 +146,12 @@ Now, you will create TestRestServiceImpl, the implementation class of TestRestSe
 [step]
 == Create implementation class for client's service
 --
-createFile("httprestclient/core/src/main/java/com/example/application/general/service/impl/rest/TestRestServiceImpl.java", "files/TestRestServiceImpl.java")
+createFile("httprestclient/core/src/main/java/com/example/application/httprestclient/general/service/impl/rest/TestRestServiceImpl.java", "files/TestRestServiceImpl.java")
 --
 
 As you can see synchronous invocation of a service is very simple and type-safe. The actual call of showResponse will technically call the remote service(i.e. VisitormanagementRestService) over the wire ( via HTTP) including marshaling the arguments (converting String to JSON) and un-marshalling the result (e.g. converting the received JSON to String).
 Here in TestRestServiceImpl, there is a method "callSynchronous" which will call the VisitormanagementRestService and return the object of VisitormanagementRestService to visitormanagementRestService.
-With visitormanagementRestService, it is calling the method "returnResponseToClient(String)" of server.
+With visitormanagementRestService, it is calling the method "returnResponseToClient()" of server.
 The response from server will be stored in "resultFromAPICall" as the return type of result is String.
 After getting response, you can handle the response further in your implementation. Here, you can see that response is getting handled in "showResponse" method.
 ====
@@ -203,7 +203,7 @@ buildJava("httprestclient", false)
 To test Synchronous method, follow below steps.
 * Click on "+" next to terminal tab
 * Select "select port to view host"
-* Enter the port number "8081" 
+* Enter the port number "8080" 
 * In the url, append "/httprestclient/services/rest/testrest/v1/response/"
 * Enter username as "admin" and password as "admin"
 * You will be able to see response "Welcome to REST API world"

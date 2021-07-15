@@ -1,4 +1,4 @@
-package com.example.application.general.service.api.rest;
+package com.example.application.httprestclient.general.service.api.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;

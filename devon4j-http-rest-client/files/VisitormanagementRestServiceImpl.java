@@ -2,7 +2,7 @@ package com.example.application.httprestserver.visitormanagement.service.impl.re
 
 import javax.inject.Named;
 
-import com.example.application.visitormanagement.service.api.rest.VisitormanagementRestService;
+import com.example.application.httprestserver.visitormanagement.service.api.rest.VisitormanagementRestService;
 
 @Named("VisitormanagementRestService")
 public class VisitormanagementRestServiceImpl implements VisitormanagementRestService {
