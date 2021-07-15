@@ -57,7 +57,7 @@ Now, you will create VisitormanagementRestService to provide functionality using
 [step]
 == Create service for REST server
 --
-createFile("httprestserver/api/src/main/java/com/example/application/httprestserver/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
+createFile("httprestserver/api/src/main/java/com/example/application/visitormanagement/service/api/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
 --
 
 
@@ -66,7 +66,7 @@ Now, you will create VisitormanagementRestServiceImpl, the implementation class 
 [step]
 == Create implementation class for Service
 --
-createFile("httprestserver/core/src/main/java/com/example/application/httprestserver/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
+createFile("httprestserver/core/src/main/java/com/example/application/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
 --
 Here , you can see "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean. To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService).
 ====
@@ -94,9 +94,9 @@ Once, Java server starts running. To test REST-server follow below steps:
 * Click on "+" next to terminal tab
 * Select "select port to view host"
 * Enter the port number "8080" 
-* In the url, append "/httprestserver/services/rest/visitormanagement/clientrequest"
+* In the url, append "/httprestserver/services/rest/visitormanagement/v1/clientrequest/"
 * Enter username as "admin" and password as "admin"
-* You will be able to see response "Welcome to rest api"
+* You will be able to see response "Welcome to REST API world"
 In next step, You have to create devon4j service Client.
 ====
 
@@ -107,12 +107,12 @@ To create devon4j service Client. First, You need to create a sample devon4j pro
 [step]
 == Create devon4j REST Client
 --
-createDevon4jProject("com.sample.application.httprestclient")
+createDevon4jProject("com.example.application.httprestclient")
 --
 Then, You need to add required dependency to your application.
 
 Since in this tutorial you will build client on Synchronous call so, you have to add dependency for synchronous consuming REST services via Apache CXF (Java8+)
-
+Go to folder devonfw->workspace->main ->httrestclient/core/pom.xml and add below dependency in pom.xml
 ----
 <dependency>
   <groupId>com.devonfw.java.starters</groupId>
@@ -120,7 +120,7 @@ Since in this tutorial you will build client on Synchronous call so, you have to
 </dependency>
 
 ----
-Note: With devon4j we have already added the required dependency in pom.xml
+
 ====
 
 
@@ -128,29 +128,29 @@ Now, You will create a Java interface VisitormanagementRestService to invoke ins
 [step]
 == Create service to invoke server
 --
-createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
+createFile("httprestclient/api/src/main/java/com/example/application/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
 --
 
 
-Now, you will create service for client i.e. Devon4jRestClient.java to provide functionality using JAX-RS standard.
+Now, you will create service for client i.e. TestRestService.java to provide functionality using JAX-RS standard.
 [step]
 == Create service for CXF REST Client
 --
-createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
+createFile("httprestclient/api/src/main/java/com/example/application/general/service/api/rest/TestRestService.java", "files/TestRestService.java")
 --
 
 
 ====
-Now, you will create Devon4jRestClientImpl, the implementation class of Devon4jRestClient using JAX-RS standard.
+Now, you will create TestRestServiceImpl, the implementation class of TestRestService using JAX-RS standard.
 
 [step]
 == Create implementation class for client's service
 --
-createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
+createFile("httprestclient/core/src/main/java/com/example/application/general/service/impl/rest/TestRestServiceImpl.java", "files/TestRestServiceImpl.java")
 --
 
 As you can see synchronous invocation of a service is very simple and type-safe. The actual call of showResponse will technically call the remote service(i.e. VisitormanagementRestService) over the wire ( via HTTP) including marshaling the arguments (converting String to JSON) and un-marshalling the result (e.g. converting the received JSON to String).
-Here in Devon4jRestClientImpl, there is a method "callSynchronous" which will call the VisitormanagementRestService and return the object of VisitormanagementRestService to visitormanagementRestService.
+Here in TestRestServiceImpl, there is a method "callSynchronous" which will call the VisitormanagementRestService and return the object of VisitormanagementRestService to visitormanagementRestService.
 With visitormanagementRestService, it is calling the method "returnResponseToClient(String)" of server.
 The response from server will be stored in "resultFromAPICall" as the return type of result is String.
 After getting response, you can handle the response further in your implementation. Here, you can see that response is getting handled in "showResponse" method.
@@ -204,9 +204,9 @@ To test Synchronous method, follow below steps.
 * Click on "+" next to terminal tab
 * Select "select port to view host"
 * Enter the port number "8081" 
-* In the url, append "/httprestclient/services/rest/devon4jrestclient/response/"
+* In the url, append "/httprestclient/services/rest/testrest/v1/response/"
 * Enter username as "admin" and password as "admin"
-* You will be able to see response "Welcome to rest api"
+* You will be able to see response "Welcome to REST API world"
 ====
 
 ====

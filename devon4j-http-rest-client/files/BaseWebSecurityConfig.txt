@@ -1,4 +1,4 @@
-package com.example.application.httprestserver.general.service.impl.config;
+package com.example.application.general.service.impl.config;
 
 import javax.inject.Inject;
 import javax.servlet.Filter;
@@ -37,6 +37,8 @@ public abstract class BaseWebSecurityConfig extends WebSecurityConfigurerAdapter
   @Inject
   private WebSecurityConfigurer webSecurityConfigurer;
 
+
+
   /**
    * Configure spring security to enable a simple webform-login + a simple rest login.
    */
@@ -51,7 +53,7 @@ public abstract class BaseWebSecurityConfig extends WebSecurityConfigurerAdapter
     // load starters as pluggins.
     http = this.webSecurityConfigurer.configure(http);
 
-    http.httpBasic().and()
+    http
         //
         .userDetailsService(this.userDetailsService)
         // define all urls that are not to be secured
@@ -109,8 +111,7 @@ public abstract class BaseWebSecurityConfig extends WebSecurityConfigurerAdapter
   @SuppressWarnings("javadoc")
   @Inject
   public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-
-    auth.inMemoryAuthentication().withUser("admin").password(this.passwordEncoder.encode("admin")).roles("Admin");
+    auth.inMemoryAuthentication().withUser("admin").password(this.passwordEncoder.encode("admin")).authorities("Admin");
   }
 
 }
