@@ -121,13 +121,13 @@ You will add below dependency in core folder pom.xml
 </dependency>
 
 ----
+====
+
 Modify pom.xml as below:
+[step]
 --
 changeFile("httprestclient/core/pom.xml", { "file": "files/dependency.txt", "placeholder": "<!-- Starter for asynchronous consuming REST services via Jaca HTTP Client (Java11+) -->" })
 --
-
-====
-
 
 Now, You will create a Java interface VisitormanagementRestService to invoke inside client.
 [step]
