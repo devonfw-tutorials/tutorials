@@ -126,8 +126,7 @@ You will add below dependency in core folder pom.xml
 Modify pom.xml as below:
 [step]
 --
-changeFile("httprestclient/core/pom.xml", { "file": "files/dependency.txt", "placeholder": "    <dependency>
-      <groupId>com.devonfw.java.starters</groupId>" })
+changeFile("httprestclient/core/pom.xml", { "file": "files/dependency.txt", "placeholder": "<dependencies>" })
 --
 
 Now, You will create a Java interface VisitormanagementRestService to invoke inside client.
