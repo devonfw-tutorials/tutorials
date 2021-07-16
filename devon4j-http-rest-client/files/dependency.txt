@@ -2,4 +2,3 @@
   <groupId>com.devonfw.java.starters</groupId>
   <artifactId>devon4j-starter-cxf-client-rest</artifactId>
 </dependency>
-<!-- Starter for asynchronous consuming REST services via Jaca HTTP Client (Java11+) -->
