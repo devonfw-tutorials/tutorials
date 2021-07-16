@@ -112,7 +112,8 @@ createDevon4jProject("com.example.application.httprestclient")
 Then, You need to add required dependency to your application.
 
 Since in this tutorial you will build client on Synchronous call so, you have to add dependency for synchronous consuming REST services via Apache CXF (Java8+)
-Go to folder devonfw->workspace->main ->httrestclient/core/pom.xml and add below dependency in pom.xml
+Add below dependency in core folder pom.xml
+
 ----
 <dependency>
   <groupId>com.devonfw.java.starters</groupId>
@@ -120,7 +121,7 @@ Go to folder devonfw->workspace->main ->httrestclient/core/pom.xml and add below
 </dependency>
 
 ----
-
+changeFile("httprestclient/core/pom.xml", { "file": "files/dependency.txt", "placeholder": "<!-- Starter for asynchronous consuming REST services via Jaca HTTP Client (Java11+) -->" })
 ====
 
 
