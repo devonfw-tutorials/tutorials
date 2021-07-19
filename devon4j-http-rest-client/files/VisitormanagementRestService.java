@@ -6,14 +6,15 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-
-@Path("/visitormanagement")
+@Path("/visitormanagement/v1")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public interface VisitormanagementRestService {
 
   @GET
-  @Path("/clientrequest")
+  @Path("/clientrequest/")
+  @Consumes(MediaType.APPLICATION_JSON)
+  @Produces(MediaType.APPLICATION_JSON)
   public String returnResponseToClient();
 
 }

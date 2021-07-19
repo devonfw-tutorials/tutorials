@@ -88,15 +88,15 @@ You have successfully built the REST-server. Now, you have to start the build an
 == Build and Start devon4j REST Server
 --
 buildJava("httprestserver", false)
-runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8080, "path": "httprestserver" })
+runServerJava("httprestserver/server", { "startupTime": 1000, "port": 8081, "path": "httprestserver" })
 --
 Once, Java server starts running. To test REST-server follow below steps:
 * Click on "+" next to terminal tab
 * Select "select port to view host"
-* Enter the port number "8080" 
-* In the url, append "/httprestserver/services/rest/visitormanagement/clientrequest"
+* Enter the port number "8081" 
+* In the url, append "/httprestserver/services/rest/visitormanagement/v1/clientrequest/"
 * Enter username as "admin" and password as "admin"
-* You will be able to see response "Welcome to rest api"
+* You will be able to see response "Welcome to REST API world"
 In next step, You have to create devon4j service Client.
 ====
 
@@ -107,11 +107,12 @@ To create devon4j service Client. First, You need to create a sample devon4j pro
 [step]
 == Create devon4j REST Client
 --
-createDevon4jProject("com.sample.application.httprestclient")
+createDevon4jProject("com.example.application.httprestclient")
 --
 Then, You need to add required dependency to your application.
 
 Since in this tutorial you will build client on Synchronous call so, you have to add dependency for synchronous consuming REST services via Apache CXF (Java8+)
+You will add below dependency in core folder pom.xml
 
 ----
 <dependency>
@@ -120,38 +121,42 @@ Since in this tutorial you will build client on Synchronous call so, you have to
 </dependency>
 
 ----
-Note: With devon4j we have already added the required dependency in pom.xml
 ====
 
+Modify pom.xml as below:
+[step]
+--
+changeFile("httprestclient/core/pom.xml", { "file": "files/dependency.txt", "placeholder": "<dependencies>" })
+--
 
 Now, You will create a Java interface VisitormanagementRestService to invoke inside client.
 [step]
 == Create service to invoke server
 --
-createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
+createFile("httprestclient/api/src/main/java/com/example/application/httprestclient/general/service/api/rest/VisitormanagementRestService.java", "files/VisitorManagementRestServiceClient.txt")
 --
 
 
-Now, you will create service for client i.e. Devon4jRestClient.java to provide functionality using JAX-RS standard.
+Now, you will create service for client i.e. TestRestService.java to provide functionality using JAX-RS standard.
 [step]
 == Create service for CXF REST Client
 --
-createFile("httprestclient/api/src/main/java/com/sample/application/httprestclient/general/service/api/rest/Devon4jRestClient.java", "files/Devon4jRestClient.java")
+createFile("httprestclient/api/src/main/java/com/example/application/httprestclient/general/service/api/rest/TestRestService.java", "files/TestRestService.java")
 --
 
 
 ====
-Now, you will create Devon4jRestClientImpl, the implementation class of Devon4jRestClient using JAX-RS standard.
+Now, you will create TestRestServiceImpl, the implementation class of TestRestService using JAX-RS standard.
 
 [step]
 == Create implementation class for client's service
 --
-createFile("httprestclient/core/src/main/java/com/sample/application/httprestclient/general/service/impl/rest/Devon4jRestClientImpl.java", "files/Devon4jRestClientImpl.java")
+createFile("httprestclient/core/src/main/java/com/example/application/httprestclient/general/service/impl/rest/TestRestServiceImpl.java", "files/TestRestServiceImpl.java")
 --
 
 As you can see synchronous invocation of a service is very simple and type-safe. The actual call of showResponse will technically call the remote service(i.e. VisitormanagementRestService) over the wire ( via HTTP) including marshaling the arguments (converting String to JSON) and un-marshalling the result (e.g. converting the received JSON to String).
-Here in Devon4jRestClientImpl, there is a method "callSynchronous" which will call the VisitormanagementRestService and return the object of VisitormanagementRestService to visitormanagementRestService.
-With visitormanagementRestService, it is calling the method "returnResponseToClient(String)" of server.
+Here in TestRestServiceImpl, there is a method "callSynchronous" which will call the VisitormanagementRestService and return the object of VisitormanagementRestService to visitormanagementRestService.
+With visitormanagementRestService, it is calling the method "returnResponseToClient()" of server.
 The response from server will be stored in "resultFromAPICall" as the return type of result is String.
 After getting response, you can handle the response further in your implementation. Here, you can see that response is getting handled in "showResponse" method.
 ====
@@ -192,6 +197,7 @@ This might take some time for application to start.
 == Build devon4j CXF REST Client
 --
 buildJava("httprestclient", false)
+runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8080, "path": "httprestclient" })
 --
 
 * Once, application builds successfully. Open new terminal by clicking "+" and wait for it to load.
@@ -203,10 +209,10 @@ buildJava("httprestclient", false)
 To test Synchronous method, follow below steps.
 * Click on "+" next to terminal tab
 * Select "select port to view host"
-* Enter the port number "8081" 
-* In the url, append "/httprestclient/services/rest/devon4jrestclient/response/"
+* Enter the port number "8080" 
+* In the url, append "/httprestclient/services/rest/testrest/v1/response/"
 * Enter username as "admin" and password as "admin"
-* You will be able to see response "Welcome to rest api"
+* You will be able to see response "Welcome to REST API world"
 ====
 
 ====
