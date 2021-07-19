@@ -125,6 +125,7 @@ You will add below dependency in core folder pom.xml
 
 Modify pom.xml as below:
 [step]
+== Modify POM file
 --
 changeFile("httprestclient/core/pom.xml", { "file": "files/dependency.txt", "placeholder": "<dependencies>" })
 --
@@ -197,7 +198,6 @@ This might take some time for application to start.
 == Build devon4j CXF REST Client
 --
 buildJava("httprestclient", false)
-runServerJava("httprestclient/server", { "startupTime": 1000, "port": 8080, "path": "httprestclient" })
 --
 
 * Once, application builds successfully. Open new terminal by clicking "+" and wait for it to load.
