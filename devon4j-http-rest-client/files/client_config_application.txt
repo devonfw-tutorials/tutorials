@@ -5,7 +5,7 @@
 # the same container (not recommended by default) you need to ensure the WARs are extracted in webapps folder and locate
 # the config folder inside the WEB-INF/classes folder of the webapplication.
 
-server.port=8081
+server.port=8080
 server.servlet.context-path=/httprestclient
 
 # Datasource for accessing the database
@@ -27,8 +27,8 @@ spring.flyway.enabled=true
 spring.flyway.clean-on-validation-error=true
 
 # rest client setup
-service.client.default.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
-service.client.app.httprestserver.url=https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
+service.client.default.url=https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
+service.client.app.httprestserver.url=https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
 service.client.default.timeout.connection=120
 service.client.default.timeout.response=3600
 service.client.app.httprestserver.auth=basic
