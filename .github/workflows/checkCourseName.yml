@@ -1,0 +1,45 @@
+name: Auto review course name 
+
+on: 
+  pull_request_target:
+    branches: [ main ]
+
+  workflow_dispatch: 
+jobs: 
+  auto_review: 
+    runs-on: ubuntu-latest 
+    env:
+      PR_NUMBER: ${{github.event.number}}
+
+    steps: 
+      - name: Checkout playbooks
+        uses: actions/checkout@v2  
+
+      - name: Check name 
+        id: check_name
+        run: | 
+          playbook_list=()
+          for dir in */; do 
+            playbook_list+=("${dir::-1}"); 
+          done
+          message=""
+          for course_file in ./*; do
+            if [[ $course_file = *"pathway"* ]]; then
+              coursefile=${course_file/#.\/}
+              course_name=${coursefile/%-pathway.json}
+              if [[ " ${playbook_list[@]} " =~ " ${course_name} " ]]; then
+                message="${message} ${course_name} exist already. "
+              fi
+            fi
+          done
+          if [[ ! -z "$message" ]]; then
+            message="${message} The name of your course is already used on a playbook. Please change the name. "
+          fi
+          echo "::set-output name=message::$message"
+      - name: Request changes 
+        if:  ${{ steps.check_name.outputs.message != '' }}
+        uses: andrewmusgrave/automatic-pull-request-review@0.0.2
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          event: REQUEST_CHANGES
+          body: ${{ steps.check_name.outputs.message }}
