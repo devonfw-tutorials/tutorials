@@ -3,7 +3,7 @@
 # If you are running in a servlet container you may add this to lib/config/application.properties in case you do not
 # want to touch the WAR file.
 
-server.port=8081
+server.port=8080
 spring.application.name=httprestclient
 server.servlet.context-path=/httprestclient
 
@@ -35,8 +35,8 @@ spring.batch.job.enabled=false
 spring.flyway.locations=classpath:db/migration
 
 # rest client setup
-service.client.default.url=http://localhost:8081/httprestserver/services/rest
-service.client.app.httprestserver.url=http://localhost:8081/httprestserver/services/rest
+service.client.default.url=https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
+service.client.app.httprestserver.url=https://[[HOST_SUBDOMAIN]]-8081-[[KATACODA_HOST]].environments.katacoda.com/httprestserver/services/rest
 service.client.default.timeout.connection=120
 service.client.default.timeout.response=3600
 service.client.app.httprestserver.auth=basic

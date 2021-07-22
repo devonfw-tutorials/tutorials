@@ -3,9 +3,9 @@
 # If you are running in a servlet container you may add this to lib/config/application.properties in case you do not
 # want to touch the WAR file.
 
-server.port=8080
-spring.application.name=httprestserver
+server.port=8081
 server.servlet.context-path=/httprestserver
+spring.application.name=httprestserver
 
 security.expose.error.details=false
 
