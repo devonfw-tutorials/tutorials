@@ -5,7 +5,7 @@
 # the same container (not recommended by default) you need to ensure the WARs are extracted in webapps folder and locate
 # the config folder inside the WEB-INF/classes folder of the webapplication.
 
-server.port=8080
+server.port=8081
 server.servlet.context-path=/httprestserver
 
 # Datasource for accessing the database
