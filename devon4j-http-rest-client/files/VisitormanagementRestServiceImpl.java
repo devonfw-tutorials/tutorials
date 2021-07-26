@@ -1,6 +1,5 @@
 package com.example.application.httprestserver.visitormanagement.service.impl.rest;
 
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import com.example.application.httprestserver.visitormanagement.service.api.rest.VisitormanagementRestService;
@@ -10,7 +9,8 @@ public class VisitormanagementRestServiceImpl implements VisitormanagementRestSe
 
   @Override
   public String returnResponseToClient() {
-   String args = "welcome to rest api";
-   return args;
+
+    return "Welcome to REST API world";
   }
+
 }
