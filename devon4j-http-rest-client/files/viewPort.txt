@@ -1,7 +1,0 @@
-Once, Java server starts running. To test REST-server follow below steps:
-* Click on "+" next to terminal tab
-* Select "select port to view host"
-* Enter the port number "8080" 
-* Enter username as "admin" and password as "admin"
-* In the url, append "/httprestserver/services/rest/visitormanagement/clientrequest"
-* You will be able to see response "Welcome to rest api"
