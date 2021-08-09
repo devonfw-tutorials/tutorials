@@ -25,7 +25,7 @@ devonfw IDE has been installed for you.
 
 [step]
 --
-nextKatacodaStep("CobiGen Setup", [{ "file": "files/cobiGenSetup.md" }])
+displayContent("CobiGen Setup", [{ "file": "files/cobiGenSetup.md" }])
 --
 
 In next step, you will learn about CobiGen CLI commands.
@@ -38,7 +38,7 @@ In this step, you will learn CobiGen commands.
 
 [step]
 --
-nextKatacodaStep("CobiGen CLI Commands and Options", [{ "file": "files/commandsAndOptions.md" }])
+displayContent("CobiGen CLI Commands and Options", [{ "file": "files/commandsAndOptions.md" }])
 --
 
 In next step, you will learn about how to integrate CobiGen with Eclipse.
@@ -57,7 +57,7 @@ Note: CobiGen comes preinstalled with devonfw IDE.
     menu bar → Help → Install new Software
 [step]
 --
-nextKatacodaStep("Integrate Eclipse with CobiGen", [{"image": "images/01-install-new-software.png"}])
+displayContent("Integrate Eclipse with CobiGen", [{"image": "images/01-install-new-software.png"}])
 -- 
 
 ====
@@ -66,7 +66,7 @@ Here you can select the updates.
 
 [step]
 --
-nextKatacodaStep("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
+displayContent("Select Update Site", [{"image": "images/02-select-update-site.png"}, { "file": "files/eclipseIntegration.md" }])
 -- 
 
 * Checkout (clone) your project’s templates folder or use the current templates released with CobiGen (https://github.com/devonfw/cobigen/tree/master/cobigen-templates) and then choose 
@@ -76,15 +76,15 @@ Import -> General -> Existing Projects into Workspace to import the templates in
 
 [step]
 --
-nextKatacodaStep("CobiGen Usage - Simple Mode", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
+displayContent("CobiGen Usage - Simple Mode", [{ "file": "files/simpleModeUsage.md" }, {"image": "images/03-simple-mode-usage.png"}])
 --
 
 [step]
 --
-nextKatacodaStep("CobiGen Usage - Batch Mode", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
+displayContent("CobiGen Usage - Batch Mode", [{ "file": "files/batchModeUsage.md" }, {"image": "images/04-batch-mode-usage.png"}])
 --
 
 [step]
 --
-nextKatacodaStep(" ", [{ "file": "files/healthCheckTroubleshooting-Conclusion.md" }])
+displayContent(" ", [{ "file": "files/healthCheckTroubleshooting-Conclusion.md" }])
 --
