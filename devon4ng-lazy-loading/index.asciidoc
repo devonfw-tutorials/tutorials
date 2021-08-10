@@ -25,7 +25,7 @@ restoreDevonfwIde(["npm", "ng", "vscode"])
 
 [step]
 --
-nextKatacodaStep("Introduction", [{ "file": "files/intro.txt" }, { "image": "images/levels-app.png" }])
+displayContent("Introduction", [{ "file": "files/intro.txt" }, { "image": "images/levels-app.png" }])
 --
 
 Before creating a devon4ng application, you first have to install the devonfw ide. You will find more information about devonfw on https://devonfw.com/website/pages/welcome/welcome.html.
@@ -79,7 +79,7 @@ runClientNg("level-app", { "startupTime": 200, "port": 4200, "path": "" })
 
 [step]
 --
-nextKatacodaStep("Eager loading", [{ "file": "files/eager-loading.txt" }, { "image": "images/compile-eager.png" }, { "image": "images/second-lvl-right-eager.png" }])
+displayContent("Eager loading", [{ "file": "files/eager-loading.txt" }, { "image": "images/compile-eager.png" }, { "image": "images/second-lvl-right-eager.png" }])
 --
 
 Modifying an angular application to load its modules lazily is easy, you have to change the routing configuration of the desired module (for example `FirstModule`). Instead of loading a component, you dynamically import it in a `loadChildren` attribute because modules acts as gates to access components "inside" them. Updating this app to load lazily has four consecuences: no component attribute, no import of `FirstComponent`, `FirstModule` import has to be removed from the imports array at `app.module.ts`, and change of context.
@@ -95,7 +95,7 @@ changeFile("level-app/src/app/first/first-routing.module.ts", { "file": "files/f
 
 [step]
 --
-nextKatacodaStep("Lazy loading First module", [{ "file": "files/lazy-loading.txt" }, { "image": "images/compile-first-lazy.png" }, { "image": "images/first-lvl-lazy.png" }])
+displayContent("Lazy loading First module", [{ "file": "files/lazy-loading.txt" }, { "image": "images/compile-first-lazy.png" }, { "image": "images/first-lvl-lazy.png" }])
 --
 
 Now, lets make the SecondLeftModule load lazily. For this, you need to change `component` to `loadChildren` and refer `SecondLeftModule` in the file `first-routing.module.ts`. Next, you need to remove `SecondLeftModule` from the `imports` array of `first.module.ts`. After that you need to route the `ContentComponent` within the `second-left-routing.module.ts`.
@@ -109,7 +109,7 @@ changeFile("level-app/src/app/first/second-left/second-left-routing.module.ts", 
 
 [step]
 --
-nextKatacodaStep("Lazy loading SecondLeftModule", [{ "file": "files/lazy-loading2.txt" }, { "image": "images/second-lvl-lazy.png" }, { "image": "images/second-lvl-left-lazy.png" }])
+displayContent("Lazy loading SecondLeftModule", [{ "file": "files/lazy-loading2.txt" }, { "image": "images/second-lvl-lazy.png" }, { "image": "images/second-lvl-left-lazy.png" }])
 --
 
 ====
