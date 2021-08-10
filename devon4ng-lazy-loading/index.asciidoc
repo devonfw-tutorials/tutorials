@@ -31,7 +31,7 @@ Once you have setup devonfw ide, you are ready to create your devon4ng applicati
 [step]
 == Introduction
 --
-createDevon4ngProject("level-app", "", ["--style=scss", "--routing=true", "--strict=false"])
+createDevon4ngProject("level-app", "", ["--style=scss", "--routing=true", "--strict=false", "--skip-git=true"])
 --
 
 In the file app.component.html delete all the content and put in the `router-outlet` tag.
