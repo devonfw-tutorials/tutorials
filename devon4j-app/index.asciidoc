@@ -47,7 +47,7 @@ If you want to know more about modules and project structure refer [here](https:
 ====
 [step]
 --
-nextKatacodaStep("devon4j multilayer architecture", [{ "image": "images/devon4j_proj_structure1.jpg" }])
+displayContent("devon4j multilayer architecture", [{ "image": "images/devon4j_proj_structure1.jpg" }])
 --
 
 As shown in above image,devon4j application follows [multilayered architecture](https://en.wikipedia.org/wiki/Multitier_architecture).

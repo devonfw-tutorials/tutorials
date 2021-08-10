@@ -26,7 +26,7 @@ This will create a copy of the repository in your own GitHub account. You will f
 
 [step]
 --
-nextKatacodaStep("Fork the tutorials repository", [{"image": "images/fork.jpg"}, {"content": "\nOpen the forked repository in your GitHub account and copy the repository URL as shown in image below.\n"}, {"image": "images/clone_code.jpg"}])
+displayContent("Fork the tutorials repository", [{"image": "images/fork.jpg"}, {"content": "\nOpen the forked repository in your GitHub account and copy the repository URL as shown in image below.\n"}, {"image": "images/clone_code.jpg"}])
 --
 ====
 
@@ -43,7 +43,7 @@ cloneRepository("", "https://github.com/devonfw-tutorials/tutorials.git")
 ====
 [step]
 --
-nextKatacodaStep("Create a new branch", [{ "file": "files/createNewBranch.md" }])
+displayContent("Create a new branch", [{ "file": "files/createNewBranch.md" }])
 --
 Now you can start to create the tutorial. This will be shown in the next steps.
 ====
@@ -60,7 +60,7 @@ createFile("tutorials/myTutorial/index.asciidoc")
 
 [step]
 --
-nextKatacodaStep("Create a pull request", [{ "file": "files/createPullRequest1.md" }, {"image": "images/pull_request.jpg"}, {"content": "\nYou might have to click on 'compare across forks'.\n"}, {"image": "images/compare.jpg"}, { "file": "files/createPullRequest2.md" }])
+displayContent("Create a pull request", [{ "file": "files/createPullRequest1.md" }, {"image": "images/pull_request.jpg"}, {"content": "\nYou might have to click on 'compare across forks'.\n"}, {"image": "images/compare.jpg"}, { "file": "files/createPullRequest2.md" }])
 --
 
 The syntax in which the tutorial is written can be found at https://github.com/devonfw-tutorials/tutorials/wiki/Development.
@@ -99,15 +99,15 @@ This is the syntax without additional text after the step. There is an alternati
 
 [step]
 --
-nextKatacodaStep("Alternative syntax", [{ "file": "files/alternativeSyntax.md" }])
+displayContent("Alternative syntax", [{ "file": "files/alternativeSyntax.md" }])
 --
 
 [step]
 --
-nextKatacodaStep("Push tutorial", [{ "file": "files/pushTutorial.md" }])
+displayContent("Push tutorial", [{ "file": "files/pushTutorial.md" }])
 --
 
 [step]
 --
-nextKatacodaStep("Local testing", [{ "file": "files/localTesting.md" }])
+displayContent("Local testing", [{ "file": "files/localTesting.md" }])
 --
