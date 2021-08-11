@@ -20,7 +20,7 @@ restoreDevonfwIde(["npm", "ng", "vscode"])
 
 To explain how lazy loading is implemented using angular, a basic sample app is going to be developed. This app will consist in a window named "level 1" that contains two buttons that redirects to other windows in a "second level". It is a simple example, but useful to understand the relation between angular modules and lazy loading.
 
-image::images/levels-app.png
+![levels-app](./assets/levels-app.png)
 
 This graphic shows that modules acts as gates to access components "inside" them.
 
@@ -77,10 +77,10 @@ runClientNg("level-app", { "startupTime": 200, "port": 4200, "path": "" })
 --
 
 If you run the project at this point you can see in the terminal that just the main file is built.
-image::images/compile-eager.png
+![compile-eager](./assets/compile-eager.png)
 
 Go to port 4200 and check the Network tab in the Developer Tools. We can see a document named "first" is loaded. If you click on [Go to right module] a second level module opens, but there is no 'second-right' document.
-image::images/second-lvl-right-eager.png
+![second-lvl-right-eager](./assets/second-lvl-right-eager.png)
 
 Now we will modify the app to lazily load the modules. Modifying an angular application to load its modules lazily is easy, you have to change the routing configuration of the desired module (for example `FirstModule`). Instead of loading a component, you dynamically import it in a `loadChildren` attribute because modules acts as gates to access components "inside" them. Updating this app to load lazily has four consecuences: no component attribute, no import of `FirstComponent`, `FirstModule` import has to be removed from the imports array at `app.module.ts`, and change of context.
 
@@ -95,8 +95,8 @@ changeFile("level-app/src/app/first/first-routing.module.ts", { "file": "files/f
 
 ====
 Now when you check the terminal running the app, you could see the lazy loaded modules getting generated along with the main bundle. Also, if you check the Network tab in the developer tools, you could see the (lazy) modules getting loaded when needed. Since, `FirstModule` is the first path we visit, it is getting loaded at first only.
-image::images/compile-first-lazy.png
-image::images/first-lvl-lazy.png
+![compile-first-lazy](./assets/compile-first-lazy.png)
+![first-lvl-lazy](./assets/first-lvl-lazy.png)
 
 Now, lets make the SecondLeftModule load lazily. For this, you need to change `component` to `loadChildren` and refer `SecondLeftModule` in the file `first-routing.module.ts`. Next, you need to remove `SecondLeftModule` from the `imports` array of `first.module.ts`. After that you need to route the `ContentComponent` within the `second-left-routing.module.ts`.
 [step]
@@ -107,10 +107,10 @@ changeFile("level-app/src/app/first/first.module.ts", { "file": "files/first.mod
 changeFile("level-app/src/app/first/second-left/second-left-routing.module.ts", { "file": "files/second-left-routing.module.update3.ts.txt" })
 --
 If you now check the terminal, you could also see `second-left-second-left-module` along with the `first-first-module` and the `main` bundle getting generated. 
-image::images/second-lvl-lazy.png
+![second-lvl-lazy](./assets/second-lvl-lazy.png)
 
 Also, in the Network tab of the developer tools, you could see the `second-left-second-left-module.js` is only loading when we click on the [Go to left module] button
-image::images/second-lvl-left-lazy.png
+![second-lvl-left-lazy](./assets/second-lvl-left-lazy.png)
 ====
 
 ====
