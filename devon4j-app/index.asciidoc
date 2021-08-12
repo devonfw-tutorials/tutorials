@@ -2,10 +2,10 @@
 ====
 devon4j is the Java stack of devonfw. It allows you to build business applications (backends) using Java technology in a highly efficient and standardized way based on established best-practices.
 
-## Prerequisites
+=== Prerequisites
 * User should have Java development experience
 
-## Learning goals
+=== Learning goals
 After completing this scenario, you will have learned how to generate Java application using devon4j.
 
 More information about devon4j on https://devonfw.com/website/pages/docs/devon4j.asciidoc.html
@@ -17,7 +17,8 @@ More information about devon4j on https://devonfw.com/website/pages/docs/devon4j
 restoreDevonfwIde (["java","mvn","vscode"])
 --
 ====
-### Create devon4j sample application
+== Create devon4j sample application
+
 
 If you want to create devon4j application on your local machine there are two ways to do it:
 * In eclipse as shown [here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-eclipse)
@@ -64,7 +65,7 @@ Each component is divided into following layers:
 * [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).For example, in sampleapp we generated com.example.application.sampleapp.<compoenntname>.dataaccess will contain entity, repositories etc.
 ====
 ====
-### Build devon4j sample application
+== Build devon4j sample application
 
 Build the java project
 
@@ -77,7 +78,8 @@ Once build is successful you will get bootified-war generated in server module t
 
 ====
 ====
-## Conclusion
+== Conclusion
+
 
 In this tutorial you have learnt how to create devon4j application using command line or via Eclipse. Next you can check for other tutorials such as:
  * Java backend code generation using CobiGen (Code Generator)
