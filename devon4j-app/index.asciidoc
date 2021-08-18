@@ -43,7 +43,7 @@ Sampleapp contains 3 modules i.e api, core and server.
 
 **core**: It is the core of the application.In this module you can write actual business logic with service implementation, as well as entire logic layer and dataaccess layer.
 
-**batch**: optional module for batch layer. In this example we have not created it. To add batch module while generating from commandline use -Dbatch=batch parameter. And to generate it from eclipse using mave archetype enter batch variable value as batch in project creation page.
+**batch**: Optional module for batch layer. In this example we have not created it. To add batch module while generating from commandline use -Dbatch=batch parameter. And to generate it from eclipse using maven archetype, enter batch variable value as batch in project creation page.
 
 **server**: This module bundles the entire app (core with optional batch) typically as a bootified WAR file.
 
@@ -57,7 +57,7 @@ If you want to know more about modules and project structure refer [here](#https
 displayContent("devon4j multilayer architecture", [{ "image": "images/devon4j_proj_structure1.jpg" }])
 --
 
-As shown in above image,devon4j application follows [multilayered architecture](https://en.wikipedia.org/wiki/Multitier_architecture).
+As shown in above image, devon4j application follows [multilayered architecture](https://en.wikipedia.org/wiki/Multitier_architecture).
 
 Each component is divided into following layers:
 
@@ -74,7 +74,7 @@ Each component is divided into following layers:
 
 
 ====
-Now. you have to build a devon4j sample application i.e. sampleapp.
+Now you have to build a devon4j sample application i.e. sampleapp.
 
 [step]
 --
@@ -90,8 +90,6 @@ Once build is successful you will get bootified-war generated in server module t
 ## Conclusion
 
 In this tutorial you have learnt how to create devon4j application using command line or via Eclipse. Next you can check for other tutorials such as:
-
- * Java backend code generation using CobiGen (Code Generator)
  
  * devon4j- contract first code generation
  
