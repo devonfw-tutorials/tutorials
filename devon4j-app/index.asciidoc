@@ -6,7 +6,7 @@ devon4j is the Java stack of devonfw. It allows you to build business applicatio
 * User should have Java development experience
 
 # Learning goals
-After completing this scenario, you will have learned how to generate Java application using devon4j.
+* After completing this scenario, you will have learned how to generate Java application using devon4j.
 
 More information about devon4j on https://devonfw.com/website/pages/docs/devon4j.asciidoc.html
 
@@ -17,14 +17,18 @@ More information about devon4j on https://devonfw.com/website/pages/docs/devon4j
 restoreDevonfwIde (["java","mvn","vscode"])
 --
 ====
-### a devon4j Sample Application
+### A devon4j Sample Application
+
+Note: Startup script will take some time for set up. After that you can proceed further.
+
 If you want to create devon4j application on your local machine there are two ways to do it:
 
 * In eclipse as shown [here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-eclipse)
 
 * Using command line as shown [here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-command-line)
 
-Now, we will create sample devon4j application with name *sampleapp*. This step will guide you on how to do it.
+Now, you will create sample devon4j application with name *sampleapp*. This step will guide you on how to do it.
+
 
 [step]
 --
@@ -56,6 +60,7 @@ displayContent("devon4j multilayer architecture", [{ "image": "images/devon4j_pr
 As shown in above image,devon4j application follows [multilayered architecture](https://en.wikipedia.org/wiki/Multitier_architecture).
 
 Each component is divided into following layers:
+
 * [client layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-client-layer.asciidoc) for the front-end (GUI).
 
 * [service layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-service-layer.asciidoc) for the services used to expose functionality of the back-end to the client or other consumers. For example, in sampleapp we generated com.example.application.sampleapp.<componentname>.service.impl will have all rest service implementation.
