@@ -17,9 +17,7 @@ More information about devon4j on https://devonfw.com/website/pages/docs/devon4j
 restoreDevonfwIde (["java","mvn","vscode"])
 --
 ====
-### create devon4j sample application
-
-
+### a devon4j Sample Application
 If you want to create devon4j application on your local machine there are two ways to do it:
 
 * In eclipse as shown [here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-eclipse)
@@ -35,7 +33,7 @@ createDevon4jProject("com.example.application.sampleapp")
 
 Once sampleapp is created switch to next tab of IDE. In IDE explorer you can see folder structure like devonfw-> workspaces->main->sampleapp . 
 
-sampleapp contains 3 modules i.e api, core and server.
+Sampleapp contains 3 modules i.e api, core and server.
 
 **api**: It contains API for sampleapp.The API contains the required artifacts to interact with your application via remote services. This can be REST service interfaces, transfer-objects with their interfaces and datatypes but also OpenAPI or gRPC contracts.
 
@@ -66,14 +64,12 @@ Each component is divided into following layers:
 
 * [logic layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-logic-layer.asciidoc) for the business logic. For example, in sampleapp we generated com.example.application.sampleapp.<componentname>.logic will contain business logic or usecase implementation.
 
-* [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).For example, in sampleapp we generated com.example.application.sampleapp.<compoenntname>.dataaccess will contain entity, repositories etc.
+* [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).For example, in sampleapp we generated com.example.application.sampleapp.<componentname>.dataaccess will contain entity, repositories etc.
 ====
 
 
 ====
-== Build devon4j sample application
-
-Build the java project
+Now. you have to build a devon4j sample application i.e. sampleapp.
 
 [step]
 --
@@ -86,7 +82,7 @@ Once build is successful you will get bootified-war generated in server module t
 
 
 ====
-== Conclusion
+## Conclusion
 
 In this tutorial you have learnt how to create devon4j application using command line or via Eclipse. Next you can check for other tutorials such as:
 
