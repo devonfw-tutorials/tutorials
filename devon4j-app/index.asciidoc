@@ -2,10 +2,10 @@
 ====
 devon4j is the Java stack of devonfw. It allows you to build business applications (backends) using Java technology in a highly efficient and standardized way based on established best-practices.
 
-=== Prerequisites
+# Prerequisites
 * User should have Java development experience
 
-=== Learning goals
+# Learning goals
 After completing this scenario, you will have learned how to generate Java application using devon4j.
 
 More information about devon4j on https://devonfw.com/website/pages/docs/devon4j.asciidoc.html
@@ -17,11 +17,13 @@ More information about devon4j on https://devonfw.com/website/pages/docs/devon4j
 restoreDevonfwIde (["java","mvn","vscode"])
 --
 ====
-== Create devon4j sample application
+### create devon4j sample application
 
 
 If you want to create devon4j application on your local machine there are two ways to do it:
+
 * In eclipse as shown [here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-eclipse)
+
 * Using command line as shown [here](https://devonfw.com/website/pages/docs/devon4j.asciidoc_tutorials.html#tutorial-newapp.asciidoc_from-command-line)
 
 Now, we will create sample devon4j application with name *sampleapp*. This step will guide you on how to do it.
@@ -43,8 +45,10 @@ sampleapp contains 3 modules i.e api, core and server.
 
 **server**: This module bundles the entire app (core with optional batch) typically as a bootified WAR file.
 
-If you want to know more about modules and project structure refer [here](https://github.com/devonfw/devon4j/blob/master/documentation/guide-structure.asciidoc#project-structure).
+If you want to know more about modules and project structure refer [here](#https://github.com/devonfw/devon4j/blob/master/documentation/guide-structure.asciidoc#project-structure).
 ====
+
+
 ====
 [step]
 --
@@ -64,6 +68,8 @@ Each component is divided into following layers:
 
 * [data-access layer](https://github.com/devonfw/devon4j/blob/master/documentation/guide-dataaccess-layer.asciidoc) for the data access (esp. persistence).For example, in sampleapp we generated com.example.application.sampleapp.<compoenntname>.dataaccess will contain entity, repositories etc.
 ====
+
+
 ====
 == Build devon4j sample application
 
@@ -77,15 +83,22 @@ buildJava("sampleapp", false)
 Once build is successful you will get bootified-war generated in server module target folder. In sampleapp check for path sampleapp/server/sampleapp-server-bootified.war
 
 ====
+
+
 ====
 == Conclusion
 
-
 In this tutorial you have learnt how to create devon4j application using command line or via Eclipse. Next you can check for other tutorials such as:
+
  * Java backend code generation using CobiGen (Code Generator)
+ 
  * devon4j- contract first code generation
+ 
  * devon4j-Kafka
+ 
  * devon4j-security
+ 
  * devon4j with Spring JPA
+ 
  * devon4j rest services
  ====
