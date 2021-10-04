@@ -1,0 +1,61 @@
+= Angular Mock Service
+====
+In this scenario, you will learn how to write a simple mock service that helps us by feeding data into our components. 
+
+### Prerequisites
+* GitHub account
+* Basic Angular knowledge
+ 
+### Learning goals
+* After completing this scenario, You will learn how to test classes which have dependencies in isolation by using Mocks.
+
+More information about Angular Mock Service on https://github.com/devonfw/devon4ng/wiki/guide-angular-mock-service
+====
+
+[step]
+--
+restoreDevonfwIde(["ng", "npm", "vscode"])
+--
+First, clone the Devon4ng repository for Angular Mock Service Sample.
+[step]
+--
+cloneRepository("", "https://github.com/devonfw/devon4ng.git")
+--
+
+====
+[step]
+== Open Data-table component file
+--
+openFile("devon4ng/samples/AngularMockService/src/app/components/data-table/data-table.component.spec.ts")
+--
+
+Components are the building blocks of our application. Their main role is to enable fragments of user interfaces. They will either display data (a list, a table, a chart, etc.), or 'collect' user interaction (e.g: a form, a menu, etc.)
+
+Components stay at the forefront of the application. They should also be reusable (as much as possible). Reusability is key for what we are trying to achieve - a stable, maintainable frontend where multiple people can contribute and collaborate.
+
+In our project, we are at the beginning. That means we may have more ideas than plans. We are exploring possibilites. In order to code eficiently:
+1) We will not store mock data in the components.
+2) We will not fetch or save data directly in the components.
+====
+
+====
+[step]
+--
+openFile("devon4ng/samples/AngularMockService/src/app/models/periodicElement.ts")
+displayContent("Open Model file", [{ "file": "files/model.md" }, {"image": "images/data-box.png"}])
+--
+====
+
+====
+[step]
+--
+openFile("devon4ng/samples/AngularMockService/src/app/services/chemical-elements.service.ts")
+displayContent("Open Service.ts file", [{ "file": "files/services.md" }, {"image": "images/architecture.png"}])
+displayContent("Open Service.ts file", [{ "file": "files/structure.md" }, {"image": "images/project-structure.png"}])
+--
+====
+
+====
+## Conclusion
+You have successfully cloned the sample angular mock service and learnt how a mock service works.
+====

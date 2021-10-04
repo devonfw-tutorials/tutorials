@@ -1,0 +1,3 @@
+Let’s consider a 'box of data' represented in JSON. Phisicly this means a folder with some JSON/TS files in it. They are located in the app/mock folder. The example uses only one mock data file. The file is typed according to our data model.
+
+Separate your files based on purpose. In your source code, put the mock files in the mock folder, components in the components folder, services in the services folder and data models in the models folder.m
