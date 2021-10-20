@@ -1,11 +1,11 @@
-= Angular Mock Service
+= Angular Data Mocking and Service: A way to test the untestables
 ====
 In this scenario, you will learn how to write a simple mock service that helps us by feeding data into our components. 
 
 ### Prerequisites
 * GitHub account
 * Basic Angular knowledge
- 
+
 ### Learning goals
 * After completing this scenario, You will learn how to test classes which have dependencies in isolation by using Mocks.
 
@@ -16,7 +16,34 @@ More information about Angular Mock Service on https://github.com/devonfw/devon4
 --
 restoreDevonfwIde(["ng", "npm", "vscode"])
 --
-First, clone the Devon4ng repository for Angular Mock Service Sample.
+== Mock data
+Mock data is fake data which is artificially inserted into a piece of software. Mocking is essentially simulating the behaviour of real data in controlled ways. So in order to use mock data effectively, it is essential to have a good understanding of the software under test and more importantly how it uses its data. As with most things, there are both advantages and disadvantages to doing this.
+
+One of the big advantages with mock data is that it makes it possible to simulate errors and circumstances that would otherwise be very difficult to create in a real world environment. A disadvantage however is that without good understanding of the software, it will be possible to manipulate data in ways which would never actually happen in the real world.
+
+== Mock Service
+
+Services are often the smoothest files to unit test. A mock service imitates a real REST or SOAP API – it contains definitions for operations that clients call, receives requests, and returns simulated responses. Note: In the SoapUI documentation, mocking can also be called isolation, virtualization, or simulation. All these terms refer to the same SoapUI feature.
+
+When testing a component with service dependencies, the best practice is mocking them, in order to test the component in an isolated environment. In fact, our purpose is testing the component, not the services, that can be trouble, especially if they try to interact with a server.
+
+Here, we will go through a angular-mock-service sample app.
+
+The app presents 3 pages as follows:
+
+A leader bord with the top 3 elements
+
+A data table with all the elements
+
+A details page that reads a route paramenter and displays the details of the element.
+
+There are a lot of business cases which have these requirements:
+
+A leader board can be understood as "the most popular items in a set", "the latest updated items", "you favorite items" etc.
+
+A data table with CRUD operations is very useful (in our case we only view details or delete an item, but they illustrate two important things: the details view shows how to navigate and consume a parametric route, the delete action shows how to invoke service operations over the loaded data - this means that the component is reusable and when the data comes with and API, only the service will need it’s implementation changed)
+
+First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
 [step]
 --
 cloneRepository("", "https://github.com/devonfw/devon4ng.git")
@@ -24,38 +51,43 @@ cloneRepository("", "https://github.com/devonfw/devon4ng.git")
 
 ====
 [step]
-== Open Data-table component file
+// == Open Data-table component file
 --
-openFile("devon4ng/samples/AngularMockService/src/app/components/data-table/data-table.component.spec.ts")
---
+//'
+// openFile("devon4ng/samples/AngularMockService/src/app/components/data-table/data-table.component.spec.ts")
 
-Components are the building blocks of our application. Their main role is to enable fragments of user interfaces. They will either display data (a list, a table, a chart, etc.), or 'collect' user interaction (e.g: a form, a menu, etc.)
+// Components are the building blocks of our application. Their main role is to enable fragments of user interfaces. They will either display data (a list, sdxza table, a chart, etc.), or 'collect' user interaction (e.g: a form, a menu, etc.)
 
-Components stay at the forefront of the application. They should also be reusable (as much as possible). Reusability is key for what we are trying to achieve - a stable, maintainable frontend where multiple people can contribute and collaborate.
+// Components stay at the forefront of the application. They should also be reusable (as much as possible). Reusability is key for what we are trying to achieve - a stable, maintainable frontend where multiple people can contribute and collaborate.
 
-In our project, we are at the beginning. That means we may have more ideas than plans. We are exploring possibilites. In order to code eficiently:
-1) We will not store mock data in the components.
-2) We will not fetch or save data directly in the components.
+// In our project, we are at the beginning. That means we may have more ideas than plans. We are exploring possibilites. In order to code eficiently:
+// 1) We will not store mock data in the components.
+// 2) We will not fetch or save data directly in the components.
 ====
 
 ====
 [step]
 --
-openFile("devon4ng/samples/AngularMockService/src/app/models/periodicElement.ts")
 displayContent("Open Model file", [{ "file": "files/model.md" }, {"image": "images/data-box.png"}])
+openFile("devon4ng/samples/AngularMockService/src/app/models/periodicElement.ts")
+
 --
 ====
 
 ====
 [step]
 --
-openFile("devon4ng/samples/AngularMockService/src/app/services/chemical-elements.service.ts")
 displayContent("Open Service.ts file", [{ "file": "files/services.md" }, {"image": "images/architecture.png"}])
-displayContent("Open Service.ts file", [{ "file": "files/structure.md" }, {"image": "images/project-structure.png"}])
+
+openFile("devon4ng/samples/AngularMockService/src/app/services/chemical-elements.service.ts")
+
 --
 ====
 
 ====
 ## Conclusion
-You have successfully cloned the sample angular mock service and learnt how a mock service works.
+To conclude, in this tutorial you learned 
+* the concepts of mock data and services
+* the mock architecture witrh the help of sample app
+
 ====
