@@ -39,9 +39,8 @@ displayContent("A data table with all the elements", [{ "file": "files/datatable
 displayContent("A details page", [{ "file": "files/datdetailsatable.md" }, {"image": "images/detail.png"}])
 --
 
-[step]
 First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
-
+[step]
 --
 cloneRepository("", "https://github.com/devonfw/devon4ng.git")
 
