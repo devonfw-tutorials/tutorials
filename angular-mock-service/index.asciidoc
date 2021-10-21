@@ -29,14 +29,11 @@ When testing a component with service dependencies, the best practice is mocking
 
 Here, we will go through a angular-mock-service sample app.
 
-The app presents 3 pages as follows:
+
 [step]
 --
-displayContent("A leader board with the top 3 elements", [{ "file": "files/leaderboard.md" }, {"image": "images/leaderboard.png"}])
+displayContent("The app presents 3 pages as follows: ", [{ "file": "files/leaderboard.md" }, {"image": "images/leaderboard.png"}, { "file": "files/datatable.md" }, {"image": "images/data-table.png"}, { "file": "files/details.md" }, {"image": "images/detail.png"}])
 
-displayContent("A data table with all the elements", [{ "file": "files/datatable.md" }, {"image": "images/data-table.png"}])
-
-displayContent("A details page", [{ "file": "files/details.md" }, {"image": "images/detail.png"}])
 --
 
 First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
