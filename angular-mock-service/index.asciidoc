@@ -32,7 +32,7 @@ Here, we will go through a angular-mock-service sample app.
 
 [step]
 --
-displayContent("The app presents 3 pages as follows: ", [{ "file": "files/leaderboard.md" }, {"image": "images/leaderboard.png"}, { "file": "files/datatable.md" }, {"image": "images/data-table.png"}, { "file": "files/details.md" }, {"image": "images/detail.png"}])
+displayContent("What is mock data and service?", [{"image": "images/leaderboard.png"}, { "file": "files/leaderboard.md" }, {"image": "images/data-table.png"}, { "file": "files/datatable.md" }, {"image": "images/detail.png"}, { "file": "files/details.md" }])
 
 --
 
