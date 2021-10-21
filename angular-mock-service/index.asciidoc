@@ -44,9 +44,8 @@ A leader board can be understood as "the most popular items in a set", "the late
 A data table with CRUD operations is very useful (in our case we only view details or delete an item, but they illustrate two important things: the details view shows how to navigate and consume a parametric route, the delete action shows how to invoke service operations over the loaded data - this means that the component is reusable and when the data comes with an API, only the service will need it’s implementation changed)
 
 First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
---
 
-====
+
 [step]
 --
 cloneRepository("", "https://github.com/devonfw/devon4ng.git")
@@ -56,14 +55,14 @@ openFile("devon4ng/samples/AngularMockService/src/app/models/periodicElement.ts"
 displayContent("Implementing Mock Data", [{ "file": "files/model.md" }, {"image": "images/data-box.jpg"}])
 --
 
-====
+
 [step]
 --
 openFile("devon4ng/samples/AngularMockService/src/app/services/chemical-elements.service.ts")
 
 displayContent("Implementing Mock Service", [{ "file": "files/services.md" }, {"image": "images/architecture.png"}])
 --
-====
+
 
 ====
 ## Conclusion
