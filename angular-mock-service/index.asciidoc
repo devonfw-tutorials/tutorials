@@ -55,7 +55,6 @@ openFile("devon4ng/samples/AngularMockService/src/app/models/periodicElement.ts"
 
 displayContent("Implementing Mock Data", [{ "file": "files/model.md" }, {"image": "images/data-box.jpg"}])
 --
-====
 
 ====
 [step]
