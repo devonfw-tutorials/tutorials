@@ -1,0 +1,66 @@
+= Angular Data Mocking and Service: A way to test the untestables
+====
+In this scenario, you will learn how to write a simple mock service that helps us by feeding data into our components. 
+
+## Prerequisites
+* GitHub account
+* Basic Angular knowledge
+
+## Learning goals
+* After completing this scenario, You will learn how to test classes which have dependencies in isolation by using Mocks.
+
+More information about Angular Mock Service on https://github.com/devonfw/devon4ng/wiki/guide-angular-mock-service
+====
+
+[step]
+--
+restoreDevonfwIde(["ng", "npm", "vscode"])
+--
+
+
+## Mock Data
+Mock data is fake data which is artificially inserted into a piece of software. Mocking is essentially simulating the behaviour of real data in controlled ways. So in order to use mock data effectively, it is essential to have a good understanding of the software under test and more importantly how it uses its data. As with most things, there are both advantages and disadvantages to doing this.
+
+One of the big advantages with mock data is that it makes it possible to simulate errors and circumstances that would otherwise be very difficult to create in a real world environment. A disadvantage however is that without good understanding of the software, it will be possible to manipulate data in ways which would never actually happen in the real world.
+
+## Mock Service
+
+Services are often the smoothest files to unit test. A mock service imitates a real REST or SOAP API – it contains definitions for operations that clients call, receives requests, and returns simulated responses.
+
+When testing a component with service dependencies, the best practice is mocking them, in order to test the component in an isolated environment. In fact, our purpose is testing the component, not the services, that can be trouble, especially if they try to interact with a server.
+
+Here, we will go through a angular-mock-service sample app.
+
+
+[step]
+--
+displayContent("What is mock data and service?", [{"image": "images/leaderboard.png"}, { "file": "files/leaderboard.md" }, {"image": "images/data-table.png"}, { "file": "files/datatable.md" }, {"image": "images/detail.png"}, { "file": "files/details.md" }])
+
+--
+
+First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
+[step]
+--
+cloneRepository("", "https://github.com/devonfw/devon4ng.git")
+
+openFile("devon4ng/samples/AngularMockService/src/app/models/periodicElement.ts")
+
+displayContent("Implementing Mock Data", [{ "file": "files/model.md" }, {"image": "images/data-box.jpg"}])
+--
+
+
+[step]
+--
+openFile("devon4ng/samples/AngularMockService/src/app/services/chemical-elements.service.ts")
+
+displayContent("Implementing Mock Service", [{ "file": "files/services.md" }, {"image": "images/architecture.png"}])
+--
+
+
+====
+## Conclusion
+To conclude, in this tutorial you learned 
+* the concepts of mock data and services
+* the mock architecture with the help of sample app
+
+====
