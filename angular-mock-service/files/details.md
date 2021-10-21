@@ -1,1 +1,1 @@
-3. A details page that reads a route paramenter and displays the details of the element.
+* A details page that reads a route parameter and displays the details of the element.
