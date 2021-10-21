@@ -16,12 +16,12 @@ More information about Angular Mock Service on https://github.com/devonfw/devon4
 --
 restoreDevonfwIde(["ng", "npm", "vscode"])
 --
-== Mock data
+## Mock data
 Mock data is fake data which is artificially inserted into a piece of software. Mocking is essentially simulating the behaviour of real data in controlled ways. So in order to use mock data effectively, it is essential to have a good understanding of the software under test and more importantly how it uses its data. As with most things, there are both advantages and disadvantages to doing this.
 
 One of the big advantages with mock data is that it makes it possible to simulate errors and circumstances that would otherwise be very difficult to create in a real world environment. A disadvantage however is that without good understanding of the software, it will be possible to manipulate data in ways which would never actually happen in the real world.
 
-== Mock Service
+## Mock Service
 
 Services are often the smoothest files to unit test. A mock service imitates a real REST or SOAP API – it contains definitions for operations that clients call, receives requests, and returns simulated responses.
 
@@ -44,27 +44,25 @@ A leader board can be understood as "the most popular items in a set", "the late
 A data table with CRUD operations is very useful (in our case we only view details or delete an item, but they illustrate two important things: the details view shows how to navigate and consume a parametric route, the delete action shows how to invoke service operations over the loaded data - this means that the component is reusable and when the data comes with an API, only the service will need it’s implementation changed)
 
 First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
+
+
+====
 [step]
 --
 cloneRepository("", "https://github.com/devonfw/devon4ng.git")
---
 
-====
-[step]
---
-displayContent("Implementing Mock Data", [{ "file": "files/model.md" }, {"image": "images/data-box.jpg"}])
 openFile("devon4ng/samples/AngularMockService/src/app/models/periodicElement.ts")
 
+displayContent("Implementing Mock Data", [{ "file": "files/model.md" }, {"image": "images/data-box.jpg"}])
 --
 ====
 
 ====
 [step]
 --
-displayContent("Implementing Mock Service", [{ "file": "files/services.md" }, {"image": "images/architecture.png"}])
-
 openFile("devon4ng/samples/AngularMockService/src/app/services/chemical-elements.service.ts")
 
+displayContent("Implementing Mock Service", [{ "file": "files/services.md" }, {"image": "images/architecture.png"}])
 --
 ====
 
