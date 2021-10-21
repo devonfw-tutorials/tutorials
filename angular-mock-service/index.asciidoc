@@ -36,7 +36,7 @@ displayContent("A leader board with the top 3 elements", [{ "file": "files/leade
 
 displayContent("A data table with all the elements", [{ "file": "files/datatable.md" }, {"image": "images/data-table.png"}])
 
-displayContent("A details page", [{ "file": "files/datdetailsatable.md" }, {"image": "images/detail.png"}])
+displayContent("A details page", [{ "file": "files/details.md" }, {"image": "images/detail.png"}])
 --
 
 First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
