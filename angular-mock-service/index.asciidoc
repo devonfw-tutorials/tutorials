@@ -16,6 +16,8 @@ More information about Angular Mock Service on https://github.com/devonfw/devon4
 --
 restoreDevonfwIde(["ng", "npm", "vscode"])
 --
+
+
 ## Mock Data
 Mock data is fake data which is artificially inserted into a piece of software. Mocking is essentially simulating the behaviour of real data in controlled ways. So in order to use mock data effectively, it is essential to have a good understanding of the software under test and more importantly how it uses its data. As with most things, there are both advantages and disadvantages to doing this.
 
