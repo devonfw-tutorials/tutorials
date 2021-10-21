@@ -27,26 +27,22 @@ Services are often the smoothest files to unit test. A mock service imitates a r
 
 When testing a component with service dependencies, the best practice is mocking them, in order to test the component in an isolated environment. In fact, our purpose is testing the component, not the services, that can be trouble, especially if they try to interact with a server.
 
+[step]
 Here, we will go through a angular-mock-service sample app.
 
 The app presents 3 pages as follows:
 
-A leader board with the top 3 elements
+--
+displayContent("A leader board with the top 3 elements", [{ "file": "files/leaderboard.md" }, {"image": "images/leaderboard.png"}])
 
-A data table with all the elements
+displayContent("A data table with all the elements", [{ "file": "files/datatable.md" }, {"image": "images/data-table.png"}])
 
-A details page that reads a route paramenter and displays the details of the element.
-
-There are a lot of business cases which have these requirements:
-
-A leader board can be understood as "the most popular items in a set", "the latest updated items", "you favorite items" etc.
-
-A data table with CRUD operations is very useful (in our case we only view details or delete an item, but they illustrate two important things: the details view shows how to navigate and consume a parametric route, the delete action shows how to invoke service operations over the loaded data - this means that the component is reusable and when the data comes with an API, only the service will need it’s implementation changed)
-
-First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
-
+displayContent("A details page", [{ "file": "files/datdetailsatable.md" }, {"image": "images/detail.png"}])
+--
 
 [step]
+First, we have to clone the Devon4ng repository to access Angular Mock Service Sample.
+
 --
 cloneRepository("", "https://github.com/devonfw/devon4ng.git")
 
