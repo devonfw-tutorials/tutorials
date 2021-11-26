@@ -60,9 +60,11 @@ jobs:
         run: sh buildRun.sh -p ${{ matrix.tutorial }} ${{ github.event.inputs.logLevel }}
       
       - name: Repository dispatch
-        uses: peter-evans/repository-dispatch@v1
+        uses: guilouro/multiple-repositories-dispatch@v1
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
-          repository: devonfw-tutorials/katacoda-scenarios
+          repositories: |
+            devonfw-tutorials/wiki-tutorials
+            devonfw-tutorials/katacoda-scenarios
           event-type: dispatch-katacoda-scenarios
           client-payload: '{"tutorial": "${{ matrix.tutorial }}"}'
