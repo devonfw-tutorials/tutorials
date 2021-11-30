@@ -59,8 +59,8 @@ jobs:
       - name: run buildRun.sh ${{ github.event.inputs.logLevel }}
         run: sh buildRun.sh -p ${{ matrix.tutorial }} ${{ github.event.inputs.logLevel }}
       
-      - name: Repository dispatch
-        uses: peter-evans/repository-dispatch@v1
+      - name: Multiple Repositories Dispatcher
+        uses: guilouro/multiple-repositories-dispatch@v1.0.0
         with:
           token: ${{ secrets.REPO_ACCESS_TOKEN }}
           repository: devonfw-tutorials/katacoda-scenarios
