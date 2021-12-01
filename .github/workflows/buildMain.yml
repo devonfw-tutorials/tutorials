@@ -62,7 +62,7 @@ jobs:
       - name: Multiple Repositories Dispatcher
         uses: guilouro/multiple-repositories-dispatch@v1.0.0
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repo_token: ${{ secrets.REPO_TOKEN }}
           repositories: |
             devonfw-tutorials/wiki-tutorials
             devonfw-tutorials/katacoda-scenarios
