@@ -62,9 +62,9 @@ jobs:
       - name: Multiple Repositories Dispatcher
         uses: guilouro/multiple-repositories-dispatch@v1.0.0
         with:
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          repo_token: ${{ secrets.REPO_ACCESS_TOKEN }}
+          event_type: dispatch-katacoda-scenarios
           repositories: |
             devonfw-tutorials/wiki-tutorials
             devonfw-tutorials/katacoda-scenarios
-          event-type: dispatch-katacoda-scenarios
-          client-payload: '{"tutorial": "${{ matrix.tutorial }}"}'
+          client_payload: '{"tutorial": "${{ matrix.tutorial }}"}'
