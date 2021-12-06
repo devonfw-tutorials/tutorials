@@ -1,0 +1,53 @@
+= OpenAPI and Swagger UI generation with Quarkus Smallrye extension
+====
+This tutorial will show you how to include the Quarkus Smallrye OpenAPI extension in Quarkus projects to automatically generate OpenAPI specifications and Swagger UI from your REST APIs.
+For more information about OpenAPI and the Smallrye OpenAPI extension, see the [devon4j documentation](https://github.com/devonfw/devon4j/blob/master/documentation/guide-openapi.asciidoc) or the [official Quarkus guide](https://quarkus.io/guides/openapi-swaggerui).
+
+### Prerequisites
+* Installed devonfw-ide (or at least Java and Maven installed)
+
+### Learning goals
+* You will learn how to generate OpenAPI specifications and Swagger UI from REST services
+
+====
+
+[step]
+--
+restoreDevonfwIde(["java", "mvn"])
+--
+
+First, clone the `quarkus-quickstarts` repository from GitHub. It contains several sample applications for many extensions to Quarkus. We will use a simple REST service for this tutorial and customize the application accordingly.
+[step]
+== Clone quarkus-quickstarts repository
+--
+cloneRepository("", "https://github.com/quarkusio/quarkus-quickstarts.git")
+--
+
+The next step is to add the Smallrye OpenAPI extension to the project. Open the `pom.xml` file of project in the folder `rest-json-quickstart`. Add the extension `quarkus-smallrye-openapi` to the list of dependencies.
+[step]
+== Add the extension
+--
+changeFile("quarkus-quickstarts/rest-json-quickstart/pom.xml", { "file": "files/pom.xml" })
+--
+
+By default, the Swagger UI is enabled only in development mode. To enable it in all cases, set the property `quarkus.swagger-ui.always-include=true` in the application.properties file of the Quarkus project.
+[step]
+--
+createFile("quarkus-quickstarts/rest-json-quickstart/src/main/resources/application.properties", "files/application.properties")
+--
+
+====
+This was all to include the extension in the project. Now build and run the application.
+[step]
+== Build and run the application
+--
+executeCommand("mvn clean package","mvn clean package", { "dir": "quarkus-quickstarts/rest-json-quickstart" })
+executeCommand("java -jar quarkus-run.jar","java -jar quarkus-run.jar", { "dir": "quarkus-quickstarts/rest-json-quickstart/target/quarkus-app", "asynchronous": true }, {"port":8080 , "startupTime": 120, "path": "fruits", "interval": 2})
+--
+
+After executing `java -jar quarkus-run.jar`, the application should be running. It provides a simple REST service that can be accessed by opening the following URL: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/fruits
+
+You can access the OpenAPI specification of this REST API at https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/q/openapi
+
+The Swagger UI is accessible at https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/q/swagger-ui
+====

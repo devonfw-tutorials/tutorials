@@ -1,0 +1,77 @@
+= OpenAPI and Swagger UI generation with ServicedocGen plugin
+====
+This tutorial will teach you how to use the [ServicedocGen maven plugin](http://www.mojohaus.org/servicedocgen-maven-plugin/) to generate the OpenAPI specification and Swagger UI from your REST APIs.
+
+The plugin analysis the REST APIs and the associated JavaDoc and then generates the OpenAPI specification as a static file. It is also able to create an HTML file that represents the Swagger UI and can be served by Quarkus to provide the Swagger UI in the browser.
+
+For more information about OpenAPI and the ServicedocGen plugin, see the [devon4j documentation](https://github.com/devonfw/devon4j/blob/master/documentation/guide-openapi.asciidoc).
+
+### Prerequisites
+* Installed devonfw-ide (or at least Java and Maven installed)
+
+### Learning goals
+* You will learn how to generate OpenAPI specifications and Swagger UI from REST services using ServicedocGen maven plugin
+
+====
+
+[step]
+--
+restoreDevonfwIde(["java", "mvn"])
+--
+
+First, clone the `quarkus-quickstarts` repository from GitHub. It contains several sample applications for many extensions to Quarkus. For this tutorial, we will use an application with a simple REST service contained in the `rest-json-quickstart` subfolder.
+[step]
+== Clone quarkus-quickstarts repository
+--
+cloneRepository("", "https://github.com/quarkusio/quarkus-quickstarts.git")
+--
+
+====
+Next step is to add the ServicedocGen plugin to the project's pom.xml 
+[step]
+== Add the ServicedocGen maven plugin
+--
+changeFile("quarkus-quickstarts/rest-json-quickstart/pom.xml", { "file": "files/pom.xml" })
+--
+Take a look at the `configuration` section of the plugin. In this section you can configure the behavior of the plugin. Not all options are necessary, such as the `info` section. This one is only used to add additional information to the OpenAPI file.
+
+Some other parts are necessary. The `classnameRegex` parameter is used to configure which name pattern the REST service classes must match.
+
+The `templates` section is used to configure what is created by the plugin. In this case, the OpenAPI specification is created in yaml format and the Swagger UI file is also created.
+====
+
+In this step we will buid the application. This will cause the ServicedocGen plugin to create the configured files.
+[step]
+== Build the application
+--
+executeCommand("mvn clean package","mvn clean package", { "dir": "quarkus-quickstarts/rest-json-quickstart" })
+--
+
+The files are created in the `target/site/servicedoc` folder. To serve them automatically when running the application, move the files to the `src/main/resources/META-INF/resources/` folder. Static files located in this folder are automatically served by Quarkus.
+[step]
+== Move generated file to META-INF/resources
+--
+executeCommand("copy target\\site\\servicedoc\\*.* src\\main\\resources\\META-INF\\resources","mv target/site/servicedoc/* src/main/resources/META-INF/resources/", { "dir": "quarkus-quickstarts/rest-json-quickstart" })
+--
+
+Now build the application again so that the static files are also included in the resulting jar file.
+[step]
+== Build the application again
+--
+executeCommand("mvn clean package","mvn clean package", { "dir": "quarkus-quickstarts/rest-json-quickstart" })
+--
+
+====
+Now run the application.
+[step]
+== Run the application
+--
+executeCommand("java -jar quarkus-run.jar","java -jar quarkus-run.jar", { "dir": "quarkus-quickstarts/rest-json-quickstart/target/quarkus-app", "asynchronous": true }, {"port":8080 , "startupTime": 120, "path": "fruits", "interval": 2})
+--
+
+After executing `java -jar quarkus-run.jar` you can access the REST service by opening the following URL: https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/fruits
+
+You can access the OpenAPI specification of this REST API at https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/OpenApi.yaml
+
+The Swagger UI is accessible at https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/SwaggerUI.html
+====
