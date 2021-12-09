@@ -57,6 +57,8 @@ jobs:
           ref: ${{needs.setup-matrix.outputs.checkout_ref}}
           path: playbooks
       - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
       - name: install TS
         run: npm install typescript
       - name: npm install
