@@ -49,6 +49,8 @@ jobs:
           path: playbooks
       
       - uses: actions/setup-node@v2
+        with:
+          node-version: '12'
       
       - name: install TS
         run: npm install typescript
