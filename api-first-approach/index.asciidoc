@@ -1,0 +1,90 @@
+= API first approach with OpenAPI generator
+====
+This tutorial will show you how to use an API first approach to create a RESTful web service in Quarkus from an OpenAPI specification using the OpenAPI generator plugin.
+
+For more information about the API fist approach, see the [devon4j documentation](https://github.com/devonfw/devon4j/blob/master/documentation/guide-api-first.asciidoc).
+For more details on the OpenAPI generator, have a look at the [official webpage](https://openapi-generator.tech/).
+
+### Prerequisites
+* Installed devonfw-ide (or at least Java and Maven installed)
+
+### Learning goals
+* You will learn how to generate REST services from OpenAPI specifications using OpenAPI generator
+
+====
+
+[step]
+--
+restoreDevonfwIde(["java", "mvn"])
+--
+
+====
+In the first step, create the initial Quarkus project using the quarkus-maven-plugin on the command line.
+
+When using this plugin, you need to pass the groupId and the artifactId. We additionally add the Quarkus resteasy-jackson extension, because we need it later.
+
+[step]
+== Create the Quarkus project
+--
+executeCommand("mvn io.quarkus.platform:quarkus-maven-plugin:2.6.1.Final:create \"-DprojectGroupId=com.devonfw.quarkus\" \"-DprojectArtifactId=api-first-tutorial\" \"-Dextensions=resteasy-jackson\"","mvn io.quarkus.platform:quarkus-maven-plugin:2.6.1.Final:create -DprojectGroupId=com.devonfw.quarkus -DprojectArtifactId=api-first-tutorial -Dextensions=resteasy-jackson")
+--
+
+This command will create a folder `api-first-tutorial` in the workspace of the devonfw-ide.
+====
+
+====
+To create the REST service with the OpenAPI generator, you need the OpenAPI specification for the service. When developing with the "API first" strategy, the API specification is planned before developing the actual REST service.
+
+For this tutorial we will use a predefined API called 'Petstore'. You can find this and some more examples on the [GitHub repository of OpenAPI-Specification](https://github.com/OAI/OpenAPI-Specification/tree/main/schemas).
+
+So create a file `petstore-api.yaml` in the folder `src/main/resources` of the Quarkus project.
+[step]
+== Create the REST API specification
+--
+createFile("api-first-tutorial/src/main/resources/petstore-api.yaml", "files/petstore-api.yaml")
+--
+====
+
+====
+The next step is to add the OpenAPI generator maven plugin to the project. Open the `pom.xml` file of your project and add the `openapi-generator-maven-plugin` as shown in the snippet below.
+
+[step]
+== Add the OpenAPI generator
+--
+changeFile("api-first-tutorial/pom.xml", { "file": "files/pom.xml" })
+--
+
+Now every time you build the project, the plugin will generate the correspong Java code for this API in the `target` folder of the project.
+====
+
+====
+The OpenAPI generator is able to generate full REST services. Since we used the option `<interfaceOnly>true</interfaceOnly>`, only the interface for this API is generated.
+This allows us to create the REST service and implement the logic in it ourselves.
+
+So create a class `PetstoreRestService` which implements the API generated from the generator plugin. Use the code shown below.
+
+[step]
+== Create the REST service
+--
+createFile("api-first-tutorial/src/main/java/com/devonfw/quarkus/petstore/rest/v1/PetstoreRestService.java", "files/PetstoreRestService.java")
+--
+
+This code uses a simple list to store the entities. You can, of course, use more complex logic and store the data in a database, for example.
+====
+
+====
+Now build and run the application.
+
+We pass the option `quarkus.http.host=0.0.0.0` here so that the service is available in Katacoda from outside. For local testing you do not need this.
+
+[step]
+== Build and run the application
+--
+executeCommand("mvn clean compile quarkus:dev \"-Dquarkus.http.host=0.0.0.0\"", "mvn clean compile quarkus:dev -Dquarkus.http.host=0.0.0.0", { "dir": "api-first-tutorial", "asynchronous": true }, {"port":8080 , "startupTime": 120, "path": "/", "interval": 4})
+--
+====
+
+[step]
+--
+displayContent("Test the application", [{ "file": "files/create_pet.md" }])
+--
