@@ -5,10 +5,10 @@ This tutorial will show you how to use an API first approach to create a RESTful
 For more information about the API fist approach, see the [devon4j documentation](https://github.com/devonfw/devon4j/blob/master/documentation/guide-api-first.asciidoc).
 For more details on the OpenAPI generator, have a look at the [official webpage](https://openapi-generator.tech/).
 
-### Prerequisites
+## Prerequisites
 * Installed devonfw-ide (or at least Java and Maven installed)
 
-### Learning goals
+## Learning goals
 * You will learn how to generate REST services from OpenAPI specifications using OpenAPI generator
 
 ====
@@ -58,7 +58,7 @@ Now every time you build the project, the plugin will generate the correspong Ja
 ====
 
 ====
-The OpenAPI generator is able to generate full REST services. Since we used the option `<interfaceOnly>true</interfaceOnly>`, only the interface for this API is generated.
+The OpenAPI generator is able to generate full REST services. Since we used the option '<interfaceOnly>true</interfaceOnly>', only the interface for this API is generated.
 This allows us to create the REST service and implement the logic in it ourselves.
 
 So create a class `PetstoreRestService` which implements the API generated from the generator plugin. Use the code shown below.
