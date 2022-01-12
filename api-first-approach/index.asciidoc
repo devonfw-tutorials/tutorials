@@ -1,6 +1,13 @@
 = API first approach with OpenAPI generator
+[tags]
+--
+Framework=Quarkus;Spring
+Category=REST;OpenAPI
+Tools=devonfw;OpenAPI generator
+Difficulty=Medium
+--
 ====
-This tutorial will show you how to use an API first approach to create a RESTful web service in Quarkus from an OpenAPI specification using the OpenAPI generator plugin.
+This tutorial will show you how to use an API first approach to create a RESTful web service from an OpenAPI specification using the OpenAPI generator plugin. We will use a [Quarkus](https://quarkus.io/) project to demonstrate the use case. However, you can also use the OpenAPI generator in the same way for Spring.
 
 For more information about the API fist approach, see the [devon4j documentation](https://github.com/devonfw/devon4j/blob/master/documentation/guide-api-first.asciidoc).
 For more details on the OpenAPI generator, have a look at the [official webpage](https://openapi-generator.tech/).
