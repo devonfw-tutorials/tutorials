@@ -1,0 +1,93 @@
+= Querydsl Tutorial
+====
+This tutorial will teach you how to integrate link:https://querydsl.com/[Querydsl] into a Spring or Quarkus project and how to build Querydsl queries.
+## Prerequisites
+* Installed devonfw IDE
+* User should have basic Java development experience
+
+## Learning goals.
+Here in this tutorial you will learn 
+* To integrate Querydsl in your project
+* To build Querydsl expressions  
+====
+
+[step]
+--
+restoreDevonfwIde(["java","mvn"])
+--
+
+====
+devonfw IDE has been installed for you.
+
+First, clone the `QueryDslTutorial` repository from GitHub. It contains an application with a simple REST service.
+[step]
+== Clone QueryDslTutorial repository
+--
+cloneRepository("", "https://github.com/EduardKrieger/QueryDslTutorial.git")
+--
+
+In the next step, integrate Querydsl into your Maven project.
+====
+
+[step]
+== Add Querydsl dependencies to Maven Project
+--
+changeFile("QueryDslTutorial/pom.xml" , {"file": "files/querydsl-dependencies.txt", "placeholder": "<QueryDslDependencies>"})
+changeFile("QueryDslTutorial/pom.xml" , {"file": "files/querydsl-annotation-processor.txt", "placeholder": "<AnnotationProcessor>"})
+--
+
+Next, navigate to the devonfw/QueryDslTutorial directory.
+[step]
+--
+changeWorkspace("devonfw/workspaces/main/QueryDslTutorial")
+--
+
+The data model consists of a Fruit entity with Id, name, color, and price fields.
+
+To extend the application with custom queries in Querydsl, we need to create a FruitFragment-interface and its implementation. This will be extended by the FruitRepository along with the CrudRepository.
+
+[step]
+== Create FruitFragment Interface
+--
+createFile("src/main/java/org/acme/spring/data/jpa/repo/fruit/FruitFragment.java","files/FruitFragment.java")
+--
+
+[step]
+== Extend FruitRepository with FruitFragment Interface
+--
+changeFile("src/main/java/org/acme/spring/data/jpa/repo/fruit/FruitRepository.java", {"content": "public interface FruitRepository extends CrudRepository<Fruit, Long>, FruitFragment {", "placeholder": "public interface FruitRepository extends CrudRepository<Fruit, Long> {"})
+--
+
+[step]
+== Implement FruitFragment Interface
+--
+createFile("src/main/java/org/acme/spring/data/jpa/repo/fruit/FruitFragmentImpl.java","files/FruitFragmentImpl.java")
+--
+
+[step]
+== Querying with Querydsl
+--
+displayContent("Querydsl Expressions", [{ "file": "files/findAllQueryDslFunc.asciidoc" }])
+--
+
+[step]
+== Implement GET-Request in FruitResource
+--
+changeFile("src/main/java/org/acme/spring/data/jpa/repo/fruit/FruitResource.java", {"placeholder": "return null;", "file": "files/function.txt"})
+--
+====
+Now you can run the application in development mode.
+[step]
+== Run Application
+--
+executeCommand("mvn compile quarkus:dev", "mvn compile quarkus:dev")
+--
+
+Accessing the application with the following link will send a GET-request for fruits named Cherry. The `FruitResource` will call the `FindByName` method and pass the `name` parameter to the `FruitRepository`'s `findAllQueryDslName` method, which it inherents from the `FruitFragment` interface. The querying occurs in the method's implementation, as explained in step 6.
+https://[[HOST_SUBDOMAIN]]-8080-[[KATACODA_HOST]].environments.katacoda.com/fruits/name/Cherry
+====
+
+====
+== Conclusion
+To summarize, we learned how to integrate Querydsl into your Maven project and querying with Querydsl. For more information on queries, visit the Querydsl link:https://querydsl.com/static/querydsl/latest/reference/html_single/[documentation]
+====
