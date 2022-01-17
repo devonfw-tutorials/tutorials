@@ -1,6 +1,6 @@
 Finally, test the REST service.
 
-Open a new terminal and type in the folling command to make a POST request and create a new pet:
+Open a new terminal and type in the following command to make a POST request and create a new pet:
 
 curl -X POST -H "Content-Type: application/json" -d '{"name": "Alex", "tag": "Dog"}' http://localhost:8080/pets
 

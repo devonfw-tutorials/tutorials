@@ -44,7 +44,7 @@ To create the REST service with the OpenAPI generator, you need the OpenAPI spec
 
 For this tutorial we will use a predefined API called 'Petstore'. You can find this and some more examples on the [GitHub repository of OpenAPI-Specification](https://github.com/OAI/OpenAPI-Specification/tree/main/schemas).
 
-So create a file `petstore-api.yaml` in the folder `src/main/resources` of the Quarkus project.
+So, create a file `petstore-api.yaml` in the folder `src/main/resources` of the Quarkus project.
 [step]
 == Create the REST API specification
 --
@@ -68,7 +68,7 @@ Now every time you build the project, the plugin will generate the correspong Ja
 The OpenAPI generator is able to generate full REST services. Since we used the option '<interfaceOnly>true</interfaceOnly>', only the interface for this API is generated.
 This allows us to create the REST service and implement the logic in it ourselves.
 
-So create a class `PetstoreRestService` which implements the API generated from the generator plugin. Use the code shown below.
+So, create a class `PetstoreRestService` which implements the API generated from the generator plugin. Use the code shown below.
 
 [step]
 == Create the REST service
@@ -82,7 +82,7 @@ This code uses a simple list to store the entities. You can, of course, use more
 ====
 Now build and run the application.
 
-We pass the option `quarkus.http.host=0.0.0.0` here so that the service is available in Katacoda from outside. For local testing you do not need this.
+We pass the option `quarkus.http.host=0.0.0.0` here so that the service is available in Katacoda from outside. For local testing, you do not need this.
 
 [step]
 == Build and run the application
