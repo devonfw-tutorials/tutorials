@@ -61,7 +61,7 @@ jobs:
       - name: run buildRun.sh ${{ github.event.inputs.logLevel }}
         env:
           # remove maven download logs as it might cause random build failures: https://stackoverflow.com/a/66801171 
-          MAVEN_OPTS: "-Djansi.force=true -Djansi.passthrough=true -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"
+          MAVEN_ARGS: "-Djansi.force=true -Djansi.passthrough=true -B -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn"
         run: sh buildRun.sh -p ${{ matrix.tutorial }} ${{ github.event.inputs.logLevel }}
       
       - name: Multiple Repositories Dispatcher
