@@ -1,0 +1,78 @@
+= Cobigen Template Creation Tutorial
+
+====
+One of the main features of Cobigen is being able to be able to easily create new templates to generate exactly what the user wants.
+This tutorial will teach you how to do exactly that: Create templates that result in what you want to be generated and configuring existing templates to suit your needs better.
+
+Template functionality is written in the Freemarker template language, which some basics will be taught of.
+What is not written in Freemarker will be written in the language you want to generate, which in this tutorial will be Java.
+====
+
+[step]
+--
+restoreDevonfwIde(["java","mvn"])
+--
+
+To begin you need to install CobiGen and create a Java Project.
+[step]
+== Install CobiGen and create Java Project
+--
+installCobiGen()
+createDevon4jProject("com.example.application.cobigenexample")
+--
+
+Create the entity class which will be passed to the cobigen cli generator later
+[step]
+--
+createFile("cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java", "files/CustomerEntity.java")
+--
+
+Now Build the java project
+[step]
+--
+buildJava("cobigenexample", false)
+--
+
+====
+Now we will generate some files and use one as an example to show what parts of the java code get used to generate the result.
+[step]
+--
+adaptTemplatesCobiGen()
+cobiGenJava("cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java",[1,3,5,6,8])
+--
+To properly show which parts of the input file were used, please take a look at the following link: https://github.com/devonfw/cobigen/wiki/cobigen-javaplugin#template-object-model.
+What is shown there is the so called "model". Depending on the type of input (Java, OpenAPI, txt etc.), differing kinds of models will be used, in this case Java.
+
+Now, open the input file.
+-
+`cobigenexample/core/src/main/java/com/example/application/cobigenexample/customermanagement/dataaccess/api/CustomerEntity.java`{{open}}
+
+You should now have the input file open here and the model open in another browser.
+The model is designed in a way to easily portray the different parts of a java class, containing the class itself and everything that it contains.
+Translating from the input file to the model, it is filled in the following way: The pojo is the whole class itself. It is mostly use as a reference point to reach other parts of the input file and rarely by itself.
+
+line 1 is pojo.package.
+line 6 contains pojo.name which is simply the class' name (in this case CustomerEntity) as well as pojo.implementedTypes which is a list of classes the input class implements.
+lines 8-12 are the pojo.fields: Each variable that is declared here is added to the list and can be accessed that way. For each field, the name and type among others can be accessed via dot operator (field.name, field.type). How you can access individual fields will be shown in the next step.
+The following lines that contain the methods are gathered in the same way as the fields.
+
+Later on we will also create a file that contains everything in the model.
+
+====
+
+Next, we will open a template file that shows a lot of things you can do while generating.
+-
+`devonfw/workspaces/main/CobiGen_Templates\src\main\templates\crud_java_server_app\templates\java\${variables.rootPackage}\${variables.component}\dataaccess\api\repo\${variables.entityName}Repository.java.ftl`{{open}}
+
+This is a freemarker template file, which are in large part text files, though the freemarker template language gives quite a lot of possibilities.
+Every bit of plaintext found in this file is added as-is to the generation result, though everything contained in either brackets following a dollar sign like this ${} or in html-like tags with a hashtag like this <# >.
+Everything from the brackets is taken from the model while the parts from the tags are freemarker specific expressions (Simply refer to a freemarker reference sheet to see all possibilities https://freemarker.apache.org/docs/ref.html).
+
+Let's take a look at lines 43-74 to show how to use the model in conjunction with freemarker to create the template.
+Line 43 starts a loop that iterates through all the fields of the input file (list pojo.fields as field).
+Line 44 starts a built-in freemarker function which line 50 ends. As the name of the function suggests, everything between these tags gets compressed, meaning the elimination of all white space. This is simply done for formatting, as white space in the template also translates to white space in the generation result.
+In line 45, a new freemarker variable is created called newFieldType. The special thing about this is the use of JavaUtil. This function is not inherent to Freemarker but from Cobigen to execute some java code (since there are quite a few things that are easier in Java than Freemarker). 
+-
+`devonfw/workspaces/main/CobiGen_Templates\src\main\java\com.devonfw.cobigen\utils\JavaUtil.java`{{open}}
+
+You can have a quick look into the JavaUtil file if you want to see what kind of functions are done in Java as opposed to Freemarker.
