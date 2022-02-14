@@ -1,4 +1,4 @@
-= Title of my new tutorial
+= WIP: Starting a new tutorial
 ====
 In this section you can write the description of the tutorial. This can consist of several lines.
 
