@@ -1,4 +1,13 @@
 = devon4j architecture in practice
+
+[tags]
+--
+technology=java
+difficulty=beginner
+topic=architecture
+asset=devon4j
+--
+
 ====
 ## Prerequisites
 

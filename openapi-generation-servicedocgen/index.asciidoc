@@ -1,4 +1,13 @@
 = OpenAPI and Swagger UI generation with ServicedocGen plugin
+
+[tags]
+--
+technology=java;servicedocgen;openapi;maven;quarkusio;quarkus;swagger;swaggerui;quarkus-quickstarts
+difficulty=intermediate
+topic=plugin;documentation
+asset=devon4j
+--
+
 ====
 This tutorial will teach you how to use the [ServicedocGen maven plugin](http://www.mojohaus.org/servicedocgen-maven-plugin/) to generate the OpenAPI specification and Swagger UI from your REST APIs.
 

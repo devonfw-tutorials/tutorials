@@ -1,4 +1,12 @@
 = Angular Data Mocking and Service: A way to test the untestables
+
+[tags]
+--
+technology=angular;devon4ng
+difficulty=beginner
+topic=testing;mock;unit test;service
+--
+
 ====
 In this scenario, you will learn how to write a simple mock service that helps us by feeding data into our components. 
 

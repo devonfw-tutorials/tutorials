@@ -1,4 +1,12 @@
 = Setting up devonfw Code Generator(i.e. CobiGen)
+
+[tags]
+--
+technology=cobigen;java;cobigen CLI;eclipse;devonfw
+difficulty=beginner
+topic=setup
+--
+
 ====
 CobiGen is a generic incremental code generator. It allows you to generate application code based on the devonfw architecture including all software layers. 
 There is also a CobiGen Command Line Interface(CLI) where you can start the setup following the generation of code. 

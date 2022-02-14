@@ -1,4 +1,12 @@
 = OpenAPI and Swagger UI generation with Quarkus Smallrye extension
+
+[tags]
+--
+technology=java;openapi;maven;quarkusio;quarkus;smallrye;swagger;swaggerui;quarkus-quickstarts
+difficulty=intermediate
+topic=plugin;documentation
+asset=devon4j
+--
 ====
 This tutorial will show you how to include the Quarkus Smallrye OpenAPI extension in Quarkus projects to automatically generate OpenAPI specifications and Swagger UI from your REST APIs.
 For more information about OpenAPI and the Smallrye OpenAPI extension, see the [devon4j documentation](https://github.com/devonfw/devon4j/blob/master/documentation/guide-openapi.asciidoc) or the [official Quarkus guide](https://quarkus.io/guides/openapi-swaggerui).

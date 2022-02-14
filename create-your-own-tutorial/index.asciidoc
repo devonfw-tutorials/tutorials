@@ -1,4 +1,12 @@
 = Create your own tutorial
+
+[tags]
+--
+technology=asciidoc;katacoda;wiki
+difficulty=beginner
+topic=tutorial;documentation
+--
+
 ==== 
 In this scenario, you will learn how to create your own tutorial using the tutorial compiler.
 

@@ -1,4 +1,12 @@
 = Develop a devon4j CXF REST Client using Synchronous call
+
+[tags]
+--
+technology=java;http;spring data;jpa;flyway;cxf;jax-rs
+difficulty=intermediate
+topic=rest;rest api;authentication;api;client
+asset=devon4j;mythaystar
+--
 ====
 REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. We give best practices that lead to simple, easy and pragmatic "HTTP APIs".
 
