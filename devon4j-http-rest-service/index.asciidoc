@@ -1,5 +1,18 @@
 = Develop a Devon4j HTTP REST Service
 ====
+[tags]
+
+--
+
+technology=java;http;spring data;jpa;flyway;cxf;jax-rs
+
+difficulty=intermediate
+
+topic=rest;rest api;authentication;api;client
+
+asset=devon4j;mythaystar
+
+--
 ## Prerequisites
 * User should have development experience in Java programming.
 * Basic knowledge of link:https://www.redhat.com/en/topics/api/what-is-a-rest-api[REST].
