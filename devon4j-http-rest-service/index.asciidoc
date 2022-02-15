@@ -1,0 +1,66 @@
+= Develop a Devon4j HTTP REST Service
+====
+## Prerequisites
+* User should have development experience in Java programming.
+* Basic knowledge of link:https://www.redhat.com/en/topics/api/what-is-a-rest-api[REST].
+* Get the link:https://github.com/devonfw/ide/blob/master/documentation/setup.asciidoc[devonfw-ide]
+
+## Learning Goal
+
+In this tutorial, you will learn how to implement a simple REST service.
+
+REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP.
+
+First of all, we should get the devonfw-ide loaded.
+
+====
+[step]
+--
+restoreDevonfwIde(["java", "vscode"])
+--
+====
+
+## Create the devon4j REST Service
+
+In this step, we will see how to implement a REST service in a devon4j project. 
+
+First of all, we must create a devon4j project to work with.
+
+====
+[step]
+--
+createDevon4jProject("com.example.application.httprestservice")
+--
+====
+
+Once the project is created, we will start building the application.
+
+In the files folder, there are some Java files that will be needed in the application development.
+
+We need to copy them into the project as follows:
+
+====
+[step]
+--
+createFile("httprestservice/core/src/main/java/com/example/application/httprestservice/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
+--
+====
+
+Here , you can see "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean. To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService).
+
+Then, we can launch the application and do GET requests.
+
+====
+[step]
+--
+changeFile("httprestservice/core/src/main/resources/application.properties", { "file": "files/server_application.txt" }) changeFile("httprestservice/core/src/main/resources/config/application.properties", { "file": "files/server_config_application.txt" })
+buildJava("httprestservice", false) 
+--
+====
+
+====
+[step]
+--
+runServerJava("httprestservice/server", { "startupTime": 1000, "port": 8081, "path": "httprestservice" })
+--
+====
