@@ -56,16 +56,9 @@ We need to copy them into the project as follows:
 [step]
 --
 createFile("httprestservice/core/src/main/java/com/example/application/httprestservice/visitormanagement/service/impl/rest/VisitormanagementRestServiceImpl.java", "files/VisitormanagementRestServiceImpl.java")
---
-====
-
-====
-[step]
---
 createFile("httprestservice/core/src/main/java/com/example/application/httprestservice/visitormanagement/service/impl/rest/VisitormanagementRestService.java", "files/VisitormanagementRestService.java")
 --
 ====
-
 Here , you can see "VisitormanagementRestServiceImpl.java" is annotated with @Named to make it a spring-bean. To get return response to client "returnResponseToClient()" can be accessed via HTTP GET under the URL path "/visitormanagement/v1/clientrequest". It will return its result (String) as JSON (see @Produces in VisitormanagementRestService).
 
 Then, we can launch the application and do GET requests.
