@@ -17,7 +17,7 @@ Some additional text...
 The explanation for the step
 [step]
 --
-restoreDevonfwIde(["java", "mvn"])
+restoreDevonfwIde(["java", "mvn", "vscode"])
 --
 The explanation of the results
 ====
