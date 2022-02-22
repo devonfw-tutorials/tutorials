@@ -1,5 +1,0 @@
-<dependencies>
-<dependency>
-  <groupId>com.devonfw.java.starters</groupId>
-  <artifactId>devon4j-starter-cxf-client-rest</artifactId>
-</dependency> 

@@ -1,0 +1,32 @@
+= Flutter
+== How...
+====
+Flutter
+
+## Prerequisites
+* First prerequisite
+* Second prerequisite 
+
+## Learning goals
+Describe in few words what the user is going to learn in this tutorial.
+
+Some additional text...
+====
+
+====
+The explanation for the step
+[step]
+--
+installDevonfwIde(["java", "mvn", "vscode"])
+--
+The explanation of the results
+====
+
+====
+The explanation for the step
+[step]
+--
+create file
+--
+The explanation of the results
+====
