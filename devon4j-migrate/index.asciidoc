@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=java;devonfw
+technology=Java;devonfw
 difficulty=beginner
 topic=migration;version
 asset=devon4j

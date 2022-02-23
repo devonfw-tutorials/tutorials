@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=angular;angular material;css;html
+technology=Angular;Angular Material;CSS;HTML
 difficulty=beginner
 topic=style;UI component library;component;animation;layout
 asset=devon4j

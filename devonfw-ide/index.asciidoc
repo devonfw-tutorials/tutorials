@@ -4,7 +4,7 @@
 --
 technology=devonfw;devon
 difficulty=beginner
-topic=setup;ide;installation
+topic=setup;IDE;installation
 --
 
 ====

@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=angular;devon4ng
+technology=Angular;devon4ng
 difficulty=beginner
 topic=testing;mock;unit test;service
 --

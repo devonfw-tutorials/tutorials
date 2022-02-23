@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=java;servicedocgen;openapi;maven;quarkusio;quarkus;swagger;swaggerui;quarkus-quickstarts
+technology=Java;ServicedocGen;OpenAPI;Maven;QuarkusIO;Quarkus;Swagger;Swagger UI;quarkus-quickstarts
 difficulty=intermediate
 topic=plugin;documentation
 asset=devon4j

@@ -3,7 +3,7 @@
 
 [tags]
 --
-technology=angular
+technology=Angular
 difficulty=beginner
 topic=architecture;module
 asset=devon4ng

@@ -2,9 +2,9 @@
 
 [tags]
 --
-technology=java;devon4j;devon4ng
+technology=Java;devon4j;devon4ng
 difficulty=beginner
-topic=jumpthequeue;end-to-end;e2e
+topic=Jump The Queue;end-to-end;e2e
 --
 
 ====

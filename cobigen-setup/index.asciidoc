@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=cobigen;java;cobigen CLI;eclipse;devonfw
+technology=CobiGen;Java;CobiGen CLI;Eclipse;devonfw
 difficulty=beginner
 topic=setup
 --
