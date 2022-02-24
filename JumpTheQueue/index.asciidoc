@@ -1,4 +1,12 @@
 = Jump start an end-to-end devonfw sample application.
+
+[tags]
+--
+technology=Java;devon4j;devon4ng
+difficulty=beginner
+topic=Jump The Queue;end-to-end;e2e
+--
+
 ====
 Jump The Queue is a small application based on the devonfw framework, which you can create yourself by following our simple step-by-step tutorial. By doing so, you will learn about the app development workflow and gain insight into the design of a professional business information system.
 

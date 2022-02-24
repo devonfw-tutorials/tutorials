@@ -1,4 +1,13 @@
 = Migrate a devon4j project to the latest version
+
+[tags]
+--
+technology=Java;devonfw
+difficulty=beginner
+topic=migration;version
+asset=devon4j
+--
+
 ====
 This tutorial mainly focuses on migrating an older version of devon4j project to the latest version using devon4j migrate command.
 

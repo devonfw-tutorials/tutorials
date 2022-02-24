@@ -1,4 +1,12 @@
 = Bootstrap your devonfw development environment
+
+[tags]
+--
+technology=devonfw;devon
+difficulty=beginner
+topic=setup;IDE;installation
+--
+
 ====
 devonfw offers complete IDE solution integrated with a lot​ of integrated tooling and initial settings​. 
 It massively speeds up development, reduces risks and helps deliver better results.
