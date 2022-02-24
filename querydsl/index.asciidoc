@@ -17,7 +17,7 @@ restoreDevonfwIde(["java","mvn"])
 --
 
 ====
-devonfw IDE has been installed for you.
+devonfw-ide has been installed for you.
 
 First, clone the `QueryDslTutorial` repository from GitHub. It contains an application with a simple REST service.
 [step]
@@ -26,7 +26,8 @@ First, clone the `QueryDslTutorial` repository from GitHub. It contains an appli
 cloneRepository("", "https://github.com/EduardKrieger/QueryDslTutorial.git")
 --
 
-In the next step, integrate Querydsl into your Maven project.
+In order to use Querydsl, we need to add the Querydsl dependencies to our Maven project and configure the Maven APT plugin. 
+The JPAAnnotationProcessor will find domain types annotated with the javax.persistence.Entity annotation and generate query types for them.
 ====
 
 [step]
@@ -80,7 +81,7 @@ Now you can run the application in development mode.
 [step]
 == Run Application
 --
-executeCommand("mvn compile quarkus:dev", "mvn compile quarkus:dev")
+executeCommand("devon mvn compile quarkus:dev", "devon mvn compile quarkus:dev", "quarkus.http.host=0.0.0.0")
 --
 
 Accessing the application with the following link will send a GET-request for fruits named Cherry. The `FruitResource` will call the `FindByName` method and pass the `name` parameter to the `FruitRepository`'s `findAllQueryDslName` method, which it inherents from the `FruitFragment` interface. The querying occurs in the method's implementation, as explained in step 6.
