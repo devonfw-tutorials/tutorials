@@ -1,5 +1,14 @@
 = Boost Angular’s Performance by Lazy Loading your Modules with devon4ng
 == Learn how to defer initialization of modules in Angular until it is needed
+
+[tags]
+--
+technology=Angular
+difficulty=intermediate
+topic=architecture;lazy loading;module;design pattern
+asset=devon4ng;My Thai Star
+--
+
 ====
 In single-page-applications as the application size increases its loading speed decreases (since typically the entire application is loaded at once). Lazy loading is a design pattern that defers initialization of objects until it is needed. Angular handles lazy loading through the routing module which redirects to requested pages. Those pages can be loaded at start or on demand. In this tutorial you will build a simple app to understand how lazyloading is implemented in Angular.
 
