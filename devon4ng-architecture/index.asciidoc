@@ -1,5 +1,14 @@
 = devon4ng architecture
 == Understand the architecture principles followed by devon4ng (the angular asset of devonfw)
+
+[tags]
+--
+technology=Angular
+difficulty=beginner
+topic=architecture;module
+asset=devon4ng
+--
+
 ====
 ## Prerequisites
 
