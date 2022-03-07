@@ -26,7 +26,10 @@ Follow the Steps below to create a file.
 createFile("pathToTheFile/fileName.txt")
 --
 This should create a txt-file names fileName.
+====
 
+
+====
 Step to show an image
 [step]
 --
@@ -36,3 +39,11 @@ This should display the Capgemini logo.
 ====
 
  
+====
+
+[step]
+
+--
+This should just be a Step.
+--
+====
