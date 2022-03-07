@@ -18,6 +18,7 @@ This tutorial was created just for testing purpose.
 
 More information about devonfw can be found on https://devonfw.com/
 ====
+
 ====
 Follow the Steps below to create a file.
 [step]
@@ -41,4 +42,4 @@ This should display the Capgemini logo.
 
 This tutorial should work, create the file and show the Capgemini logo.
  
- ====
+====
