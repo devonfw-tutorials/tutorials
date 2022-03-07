@@ -1,0 +1,28 @@
+= A First TestTutorial
+
+[tags]
+--
+technology=devonfw;devon
+difficulty=beginner
+topic=justATest
+--
+====
+This tutorial was created just for testing purpose.
+
+### Prerequisites
+* No Prerequisites are required. 
+
+### Learning goals
+* This tutorial does absoluly nothing other than exist.
+
+
+More information about devonfw can be found on https://devonfw.com/
+====
+====
+Follow the Steps below to create a file.
+[step]
+--
+createFile("pathToTheFile/fileName.txt")
+--
+This should create a txt-file names fileName.
+====
