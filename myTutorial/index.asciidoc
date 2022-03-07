@@ -1,0 +1,20 @@
+= Bootstrap your devonfw development environment
+
+[tags]
+--
+technology=devonfw;devon
+difficulty=beginner
+topic=tutorialTest
+--
+
+====
+
+
+### Prerequisites
+
+
+### Learning goals
+
+[step]
+
+====
