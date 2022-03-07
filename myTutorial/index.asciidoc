@@ -25,6 +25,7 @@ Follow the Steps below to create a file.
 createFile("pathToTheFile/fileName.txt")
 --
 This should create a txt-file names fileName.
+====
 
 [step]
 --
@@ -32,4 +33,3 @@ displayContent("Image test", {"image": "images/Capgemini.jpg"},
 --
 This should display the Capgemini logo.
 
-====
