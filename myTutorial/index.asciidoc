@@ -1,4 +1,4 @@
-= devon4ng architecture
+= My test Title
 == Understand the architecture principles followed by devon4ng (the angular asset of devonfw)
 
 [tags]
