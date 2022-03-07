@@ -26,10 +26,10 @@ createFile("pathToTheFile/fileName.txt")
 --
 This should create a txt-file names fileName.
 ====
-
+====
 [step]
 --
-displayContent("Image test", {"image": "images/Capgemini.jpg"},
+displayContent("Image test", [{"image": "images/Capgemini.jpg"}]),
 --
 This should display the Capgemini logo.
-
+====
