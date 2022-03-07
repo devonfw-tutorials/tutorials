@@ -26,9 +26,7 @@ Follow the Steps below to create a file.
 createFile("pathToTheFile/fileName.txt")
 --
 This should create a txt-file names fileName.
-====
 
-====
 Step to show an image
 [step]
 --
@@ -37,8 +35,4 @@ displayContent("Image test", [{"image": "images/Capgemini.jpg"}]),
 This should display the Capgemini logo.
 ====
 
-
-## Conclusion
-
-This tutorial should work, create the file and show the Capgemini logo.
  
