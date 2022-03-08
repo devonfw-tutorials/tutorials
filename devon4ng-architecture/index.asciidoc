@@ -1,4 +1,4 @@
-= devon4ng architecture
+= Title of my new tutorial
 == Understand the architecture principles followed by devon4ng (the angular asset of devonfw)
 
 [tags]
