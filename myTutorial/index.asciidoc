@@ -1,0 +1,14 @@
+= Title myTutorial
+
+====
+Description of the tutorial
+
+## Prerequisites
+* First prerequisite
+* Second prerequisite 
+
+## Learning goals
+Describe in few words what the user is going to learn in this tutorial.
+
+Some additional text...
+====
