@@ -2,9 +2,10 @@
 
 [tags]
 --
-technology=CobiGen;Java;CobiGen CLI;Eclipse;devonfw
+technology=CobiGen;Eclipse
 difficulty=beginner
 topic=setup
+asset=CobiGen
 --
 
 ====

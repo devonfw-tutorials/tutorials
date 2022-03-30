@@ -2,10 +2,10 @@
 
 [tags]
 --
-technology=Java;devonfw;Maven
+technology=Maven
 difficulty=beginner
 topic=project generation;setup;architecture;first application
-asset=devon4j;My Thay Star
+asset=devon4j
 --
 
 ====

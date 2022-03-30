@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=asciidoc;Katacoda;wiki;tutorial-compiler
+technology=Tutorial Compiler
 difficulty=beginner
 topic=tutorial;documentation
 --

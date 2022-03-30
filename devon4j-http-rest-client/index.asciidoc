@@ -2,10 +2,10 @@
 
 [tags]
 --
-technology=Java;HTTP;Spring Data;Spring JPA;Flyway;Apache CXF;JAX-RS
+technology=Spring JPA;Flyway;Apache CXF;JAX-RS
 difficulty=intermediate
 topic=Rest;Rest API;authentication;API;client
-asset=devon4j;My Thai Star
+asset=devon4j
 --
 ====
 REST (REpresentational State Transfer) is an inter-operable protocol for services that is more lightweight than SOAP. We give best practices that lead to simple, easy and pragmatic "HTTP APIs".
