@@ -2,9 +2,10 @@
 
 [tags]
 --
-technology=devonfw;devon
+technology=devonfw IDE
 difficulty=beginner
 topic=setup;IDE;installation
+asset=devonfw-ide
 --
 
 ====

@@ -6,7 +6,7 @@
 technology=Angular
 difficulty=intermediate
 topic=architecture;lazy loading;module;design pattern
-asset=devon4ng;My Thai Star
+asset=devon4ng
 --
 
 ====

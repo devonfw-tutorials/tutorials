@@ -2,7 +2,6 @@
 
 [tags]
 --
-technology=Java
 difficulty=beginner
 topic=architecture
 asset=devon4j
