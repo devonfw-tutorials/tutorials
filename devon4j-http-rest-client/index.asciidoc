@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=Java;Spring JPA;Flyway;Apache CXF;JAX-RS
+technology=Spring JPA;Flyway;Apache CXF;JAX-RS
 difficulty=intermediate
 topic=Rest;Rest API;authentication;API;client
 asset=devon4j
