@@ -2,7 +2,7 @@
 
 [tags]
 --
-technology=CobiGen;Java;Eclipse
+technology=CobiGen;Eclipse
 difficulty=beginner
 topic=setup
 asset=CobiGen
