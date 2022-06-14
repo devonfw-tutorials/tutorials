@@ -1,6 +1,6 @@
 = devonfw Tutorials
 
-Welcome to the devonfw repository for all devonfw assets. You can find all ready to use tutorials on https://katacoda.com/devonfw[Katacoda].
+Welcome to the devonfw repository for all devonfw assets. You can find all ready to use tutorials on https://katacoda.com/devonfw[Katacoda] (moving to Killercoda).
 
 == How to Create Your Tutorial
 
